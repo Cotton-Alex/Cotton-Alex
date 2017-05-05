@@ -48,6 +48,9 @@
     padding: 0; }
 }
 
+.top {
+  margin-top: 25px; }
+
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {

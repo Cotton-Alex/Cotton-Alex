@@ -336,7 +336,7 @@ th,
 td {
   padding: 8px 8px;
   text-align: left;
-  border-bottom: 1px solid 0,0,0,.05; }
+  border-bottom: 1px solid rgba(0,0,0,0.05); }
 th:first-child,
 td:first-child {
   padding-left: 0; }

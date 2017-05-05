@@ -129,10 +129,14 @@ body {
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; }
-light {
-  background-color: rgba(255,255,255,0.75); }
-dark {
-  background-color: rgba(0,0,0,0.60) }
+
+.light {
+  background-color: rgba(255,255,255,0.75);
+}
+
+.dark {
+  background-color: rgba(0,0,0,0.60)
+}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

@@ -111,7 +111,38 @@
     <div id="one" class="row dark">
       <div class="twelve columns top">
         <h5>Section 1</h5>
-        
+        <div class="six columns top">
+        <h6>example code:</h6>
+          <br/>
+        <p>function boardGame(title, players, genre, age, designerFirstName, designerLastName) {
+  this.designerName = {
+    designerFirstName,
+    designerLastName
+  };
+  this.age = age;
+  this.players = players;
+  this.genre = genre;
+};
+boardGame.prototype.greeting = function() {
+  alert(title ' is a ' + this.genre + ' game for ' + players + ' age ' + this.age + ' and was designed by ' + this.designerName + '.');
+          };</p>
+          </div>
+        <div class="six columns top">
+        <h6>output:</h6>
+          <br/>
+        <script>function boardGame(title, players, genre, age, designerFirstName, designerLastName) {
+  this.designerName = {
+    designerFirstName,
+    designerLastName
+  };
+  this.age = age;
+  this.players = players;
+  this.genre = genre;
+};
+boardGame.prototype.greeting = function() {
+  alert(title ' is a ' + this.genre + ' game for ' + players + ' age ' + this.age + ' and was designed by ' + this.designerName + '.');
+          };</script>
+          </div>
       </div>
     </div>
     

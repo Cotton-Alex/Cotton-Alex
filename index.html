@@ -155,7 +155,12 @@ boardGame.prototype.greeting = function() {
         <div id="three" class="row dark">
       <div class="twelve columns top">
         <h5>Section 3</h5>
-
+        <script type="text/javascript">
+          var json = '["apple","orange","banana","strawberry"]';
+          var data = JSON.parse(json);
+          console.log(data); // ["apple", "orange", "banana", "strawberry"]
+          alert( data[3] ); // "strawberry"
+        </script>
         
         </div>
     </div>

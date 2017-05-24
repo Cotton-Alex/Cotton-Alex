@@ -14,6 +14,7 @@ body {
 /*Navigation Style -------------------------------------------------- */
 nav {
 	text-align: center;
+	border-bottom: 2px solid black;
 }
 nav ul {
 	margin-bottom: 0px;

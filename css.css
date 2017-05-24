@@ -14,7 +14,6 @@ body {
 /*Navigation Style -------------------------------------------------- */
 nav {
 	text-align: center;
-	border-bottom: 2px solid black;
 }
 nav ul {
 	margin-bottom: 0px;
@@ -24,6 +23,7 @@ nav ul li {
 	display: inline-block;
 	margin: auto;
 	text-align: center;
+	border-bottom: 1px solid black;
 }
 nav li a:link {
 	display: inline-block;

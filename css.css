@@ -10,3 +10,8 @@ body {
   padding: 0 20px;
   box-sizing: border-box; }
 
+nav ul li {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+}

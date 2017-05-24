@@ -2,12 +2,11 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
-
-.container {
+  color: #222;
   position: relative;
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
+

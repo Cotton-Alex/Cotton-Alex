@@ -79,8 +79,9 @@ nav li a:active {
     height: 100px;
     border-radius: 100%;  
     background: lightskyblue;
+    background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
     animation-name: ballBounce;
-    animation-play-state: paused;
+    animation-play-state: paused; 
     animation-duration: .25s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -89,8 +90,6 @@ nav li a:active {
 }
 
 @keyframes ballBounce {
-    0% {transform: translateX(0px); }
-    100% {transform: translateX(200px); }
     0% {transform: translateY(0px); }
     100% {transform: translateY(80px); }
     0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}

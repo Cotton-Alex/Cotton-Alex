@@ -13,36 +13,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css.css">
-<script> 
-  	function stringify(){ 
-  		var me = { 
-  		"fruit":"Apples", 
-  		"type":"Gala", 
-  		"quantity" : "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg">", 
-  		}; 
-  		 
-  		var string = JSON.stringify(me); 
-  		var object = JSON.parse(string); 
-  		 
-  		document.getElementById('stringifyOutput').innerHTML = string; 
-  		document.getElementById('parseOutput').innerHTML = "I have " + object.quantity + " of " + object.type + " " + object.fruit; 
-  	} 
-  
-  	 
-  	</script>
-<!--  	<script> 
-  	function phoenixborn(){ 
-  		var phoenixList = {
-			  "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg" height="250" alt="">",
-                          "name": "Namine Hymntide",
-			  "from" : "Phoenixborn of Soaksend",
-			  "stats": {
-                                "battfield" : ["6"],
-				"life": ["17"],
-				"spellboard": ["4"],
-                                "ability": ["Calming Melody"],
-			  } 	 
-  	</script>-->
 </head>
     <body>
       <header>
@@ -72,19 +42,27 @@
      <h2></h2>
 <button onclick="stringify()">Stringify & Parse Example</button>
 <div id="stringifyOutput"></div>
-<br>
-<div id="parseOutput"></div>
-<br> 
+<div id="parseOutput"></div> 
+    <script> 
+        function stringify () {
+            var phoenixCard = {
+                "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg",
+                "name": "Namine Hymntide",
+                "from": "Phoenixborn of Soaksend",
+                "stats": {
+                    "battfield" : ["6"],
+                    "life": ["17"],
+                    "spellboard": ["4"],
+                    "ability": ["Calming Melody"]
+                }
+            };
+        }  
+        var string = JSON.stringify(phoenixCard); 
+        var object = JSON.parse(string); 
 
-
-<!--<button onclick="stringify()">Stringify & Parse Example</button
--->
-
-<div id="example-JSON"></div>
-
-<script src="json.js"></script>
-
-
+        document.getElementById('stringifyOutput').innerHTML = string; 
+        document.getElementById('parseOutput').innerHTML = "I have " + object.fruit + " of " + object.type + " " + object.quantity; 
+    </script>
 <!--//                     [
 //			{
 //			  "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg" height="250" alt="">",

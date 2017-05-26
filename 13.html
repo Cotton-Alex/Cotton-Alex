@@ -38,12 +38,49 @@
           </nav>
         </div>
       </header>
-      <h1>13</h1>
-<!--------------------------------------------------------------------------->     
+      <h1>13: CSS Animation</h1>
       
       
       
+<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    width
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <br>
+    <br>
+    <br>
+    <div>The width of the box below changes based on the number in the box</div>
+    <div id="containerA"><p> </p>
+    <div id="animA"></div>
+    </div>
+    <script>
+    animA.style.transition= "height 2s ease 0s";
+    animA.style.transition= "width 2s ease 0s";
+    </script>
+    <p>Height: <input type="number" step="5" onchange="animA.style.height=this.value+'px'"></p>
+    <p>Width: <input type="number" step="5" onchange="animA.style.width=this.value+'px'"></p>
+    <br>
+    <br>
+    <br>
 
+    
+ <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    shadow - bounce
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->       
+    <div>
+        <button onclick="bounce()">Drop</button>
+        <br>
+        <br>
+        <div id="animB"></div>
+    </div>
+
+    <script>
+        function bounce() {
+            document.getElementById("animB").style.animationPlayState = "running";
+        }
+    </script>   
+ 
+ 
+    
       
     </body>
 </html>

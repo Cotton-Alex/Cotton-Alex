@@ -48,117 +48,65 @@
                 function stringify () {
                     var phoenixCard = [
                         {
-			  "cards": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg" height="250" alt="">",
+			  "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg",
                           "name": "Namine Hymntide",
 			  "from": "Phoenixborn of Soaksend",
 			  "stats": {
-                                "battfield": ["6"],
+                                "battlefield": ["6"],
 				"life": ["17"],
 				"spellboard": ["4"],
-                                "ability": ["Calming Melody"],
+                                "ability": ["Calming Melody"]
 			  }
 			},
 			{
-                          "card": "<imgsrc="https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg" height="250" alt="">
-			  "name": "Namine Hymntide",
-			  "from" : "Phoenixborn of Soaksend",
+                          "card": "https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg",
+			  "name": "Rin Northfell",
+			  "from" : "Phoenixborn of Frostdale",
 			  "stats": {
-                                "battfield" : ["6"],
+                                "battlefield" : ["6"],
 				"life": ["17"],
 				"spellboard": ["4"],
-                                "ability": ["Calming Melody"],
+                                "ability": ["Ice Buff"]
 			  }
 			},
 			{
                           
-                          "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg" height="250" alt="">
+                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg",
 			  "name": "Namine Hymntide",
 			  "from" : "Phoenixborn of Soaksend",
 			  "stats": {
-                                "battfield" : ["6"],
+                                "battlefield" : ["6"],
 				"life": ["17"],
 				"spellboard": ["4"],
-                                "ability": ["Calming Melody"],
+                                "ability": ["Calming Melody"]
 			  }
 			},
                         {
-                          "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg" height="250" alt="">
+                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg",
 			  "name": "Namine Hymntide",
 			  "from" : "Phoenixborn of Soaksend",
 			  "stats": {
-                                "battfield" : ["6"],
+                                "battlefield" : ["6"],
 				"life": ["17"],
 				"spellboard": ["4"],
-                                "ability": ["Calming Melody"],
+                                "ability": ["Calming Melody"]
 			  }
 			
 			}
-		  ]
-                 
+		  ];
+                
                 var string = JSON.stringify(phoenixCard); 
-                var object = JSON.parse(string); 
-
+                var object = JSON.parse(string);
                 document.getElementById('stringifyOutput').innerHTML = string; 
-                document.getElementById('parseOutput').innerHTML = "I have " + phoenixCard[0].card + " of " + phoenixCard[0].name + " " + phoenixCard[0].from;  
+                document.getElementById('parseOutput').innerHTML = 
+                        "<div><img class='pbPic' src='" + phoenixCard[0].card + "' height='250'>" + 
+                        "<div class='pbInfo'>Name: " + phoenixCard[0].name + "<br>"
+                        + phoenixCard[0].from + "<br>\n\
+                        Battlefield: " + phoenixCard[0].stats.battlefield + "<br>\n\
+                        Life: " + phoenixCard[0].stats.life + "<br>\n\
+                        Spellboard: " + phoenixCard[0].stats.spellboard + "<br>\n\
+                        Ability: " + phoenixCard[0].stats.ability + '</div></div><br><br><br>';
             }   
             </script>
-<!--//                     [
-//			{
-//			  "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg" height="250" alt="">",
-//                          "name": "Namine Hymntide",
-//			  "from" : "Phoenixborn of Soaksend",
-//			  "stats": {
-//                                "battfield" : ["6"],
-//				"life": ["17"],
-//				"spellboard": ["4"],
-//                                "ability": ["Calming Melody"],
-//			  }
-//			},
-//			{
-//                          "card": "<imgsrc="https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg" height="250" alt="">
-//			  "name": "Namine Hymntide",
-//			  "from" : "Phoenixborn of Soaksend",
-//			  "stats": {
-//                                "battfield" : ["6"],
-//				"life": ["17"],
-//				"spellboard": ["4"],
-//                                "ability": ["Calming Melody"],
-//			  }
-//			},
-//			{
-//                          
-//                          "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg" height="250" alt="">
-//			  "name": "Namine Hymntide",
-//			  "from" : "Phoenixborn of Soaksend",
-//			  "stats": {
-//                                "battfield" : ["6"],
-//				"life": ["17"],
-//				"spellboard": ["4"],
-//                                "ability": ["Calming Melody"],
-//			  }
-//			},
-//                        {
-//                          "card": "<img src="https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg" height="250" alt="">
-//			  "name": "Namine Hymntide",
-//			  "from" : "Phoenixborn of Soaksend",
-//			  "stats": {
-//                                "battfield" : ["6"],
-//				"life": ["17"],
-//				"spellboard": ["4"],
-//                                "ability": ["Calming Melody"],
-//			  }
-//			
-//			}
-//		  ]
-//  		 
-//  		var string = JSON.phoenixborn(phoenixList); 
-//  		var object = JSON.parse(string); 
-//  		 
-//  		document.getElementById('stringifyOutput').innerHTML = string; 
-//  		document.getElementById('parseOutput').innerHTML = "I have " + object.quantity + " of " + object.type + " " + object.fruit; 
-//  	} -->
-  
-
-
     </body>
 </html>

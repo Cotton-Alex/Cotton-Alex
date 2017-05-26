@@ -48,11 +48,11 @@
     <br>
     <br>
     <br>
-    <div>The width of the box below changes based on the number in the box</div>
+    <div>The height & width of the box below change based on the number in the box. </div>
+    <br>
     <div id="animA"></div>
     <script>
-    animA.style.transition= "height 2s ease 0s";
-    animA.style.transition= "width 2s ease 0s";
+    animA.style.transition= "width 2s ease 0s, height 2s ease 0s";
     </script>
     <p>Height: <input type="number" step="5" onchange="animA.style.height=this.value+'px'"></p>
     <p>Width: <input type="number" step="5" onchange="animA.style.width=this.value+'px'"></p>
@@ -61,10 +61,11 @@
     <br>
 
     
- <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     shadow - bounce
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->       
-    <div>
+ <div>The Drop button changes the style.animationPlayState of the object below from paused to running.</div>   
+ <div>
         <button onclick="bounce()">Drop</button>
         <br>
         <br>

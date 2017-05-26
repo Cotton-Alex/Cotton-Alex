@@ -89,6 +89,8 @@ nav li a:active {
 }
 
 @keyframes ballBounce {
+    0% {transform: translateX(0px); }
+    100% {transform: translateX(200px); }
     0% {transform: translateY(0px); }
     100% {transform: translateY(80px); }
     0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}

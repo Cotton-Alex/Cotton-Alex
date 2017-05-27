@@ -96,7 +96,7 @@ nav li a:active {
     border-radius: 100%;
     background: lightskyblue;
     background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
-    padding-bottom: 200px;
+    margin-bottom: 200px;
     animation-name: ballBounce;
     animation-play-state: paused; 
     animation-duration: .25s;

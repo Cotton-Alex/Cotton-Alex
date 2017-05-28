@@ -39,19 +39,27 @@
         </header>
       
         <h1>03: JSON Parse and Stringify</h1>
-        
-        <button onclick="stringify()">Stringify & Parse Example</button>
         <br>
         <br>
-        <div id="stringifyOut"></div>
-        <br>
-        <br>
-        <p>Use slider to select the different arrays within the JSON data:</p>
+        <p><h3>Use slider to select the different arrays within the JSON data:</h3></p>
         <input type="range" id="sliderRange" onInput="stringify()" value="0" max="14">
         <br>
-        <div id="parseOut"></div>
+        <br>
+        <div id="parseData"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <br>
+        <br>
+        <button onclick="stringify()">Stringify & Parse Example</button> -->
+        <div id="stringifyExplain"></div>
+        <div id="stringifyData"></div>
+        <br>
+        <br>
             <script> 
                 function stringify () {
+                    var stringifyExplain = ("<p><h3>Stringify was used to convert the following JSON data to a string:</h3></p>");
                     var i = document.getElementById("sliderRange").value;
                     var phoenixCard = [
                         {
@@ -222,8 +230,9 @@
 		  ];
                 var string = JSON.stringify(phoenixCard); 
                 var object = JSON.parse(string);
-                document.getElementById('stringifyOut').innerHTML = string; 
-                document.getElementById('parseOut').innerHTML = 
+                document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
+                document.getElementById('stringifyData').innerHTML = string; 
+                document.getElementById('parseData').innerHTML = 
                         "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" + 
                         "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
                         + phoenixCard[i].from + "<br>\n\

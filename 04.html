@@ -41,61 +41,86 @@
         <h1>04: AJAX Requesting a JSON File</h1>
         <br>
         <br>
-        <p><h3>Display JSON data from an external file:</h3></p>
-    <button type="button" onclick="loadDoc('http://Cotton-Alex.github.io/phoenixborn.json', stringify)">Go Go Gadget JSON!</button>
-    <br>
-    <br>
-    <div id="parseData"></div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div id="stringifyExplain"></div>
-    <div id="stringifyData"></div>
-    <br>
-    <br>
-    
-    
-    <div id="phoneixDiv">
-        <input type="button" value="Load JSON" onclick="loadJSON( 'http://Cotton-Alex.github.io/phoenixborn.json', 'phoenixDiv', true)"/>
-    </div>
-    
-    
-    <script>
-        function loadJSON(url, divId, isJSON) {
-            var xmlhttp;
-            xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange =
-                function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        responseWrangler(xmlhttp.responseText, divId, isJSON);
-                    }
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-        };
-        
-        function responseWrangler(response, divId, isJSON) {
-            var responseText = (isJson) ? JSON.parse(response) : response;
-            document.getElementById( divId ).innerHTML = (isJSON) ? responseText.JSONKey : responseText
-        }
-        
-        function stringify() {
-            var stringifyExplain = ("<p><h3>Stringify was used to convert the above JSON data to this string:</h3></p>");
-            var i = document.getElementById("sliderRange").value;
+        <h3>Display JSON data from an external file:</h3>
+        <button type="button" onclick="loadDoc('http://Cotton-Alex.github.io/phoenixborn.json', stringify)">Go Go Gadget JSON!</button>
+        <br>
+        <br>
+        <div id="parseData"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="stringifyExplain"></div>
+        <div id="stringifyData"></div>
+        <br>
+        <br>
 
-            var string = JSON.stringify(phoenixCard);
-            var object = JSON.parse(string);
-            document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
-            document.getElementById('stringifyData').innerHTML = string;
-            document.getElementById('parseData').innerHTML =
-                    "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
-                    "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
-                    + phoenixCard[i].from + "<br>\n\
+
+        <div id="phoneixDiv">
+            <input type="button" value="Load JSON" onclick="loadJSON('/phoenixborn.json', 'phoenixDiv', true)"/>
+        </div>
+
+
+        <script>
+            var phoenixCard;
+            function loadJSON(url, divId) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200)
+                                responseWrangler(xmlhttp.responseText);
+                            };
+                            
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+                
+        };
+
+                function responseWrangler(response) {
+                    var responseText = (isJson) ? JSON.parse(response) : response;
+                    document.getElementById(divId).innerHTML = (isJSON) ? responseText.JSONKey : responseText;
+                }
+
+                function stringify() {
+                    var stringifyExplain = ("<h3>Stringify was used to convert the above JSON data to this string:</h3>");
+                    var i = document.getElementById("sliderRange").value;
+
+                    var string = JSON.stringify(phoenixCard);
+                    var object = JSON.parse(string);
+                    document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
+                    document.getElementById('stringifyData').innerHTML = string;
+                    document.getElementById('parseData').innerHTML =
+                            "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
+                            "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
+                            + phoenixCard[i].from + "<br>\n\
                 Battlefield: " + phoenixCard[i].stats.battlefield + "<br>\n\
                 Life: " + phoenixCard[i].stats.life + "<br>\n\
                 Spellboard: " + phoenixCard[i].stats.spellboard + "<br>\n\
                 Ability: " + phoenixCard[i].stats.ability + '</div></div><br><br><br>';
-        }
-    </script>
-</body>
+                }
+        </script>
+        
+        
+
+        
+        <script>
+	var movie;
+	function getFileFromServer(url, divId) {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {      
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+					doSomethingWithTheResponse(xmlhttp.responseText);
+				};
+		
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+        
+	}
+        
+	function doSomethingWithTheResponse(response) {
+		var responseText = JSON.parse(response);
+		movie = responseText.data.movies[0];
+		document.getElementById('movieName').innerHTML = movie.title;
+	}
+</script>
+    </body>
 </html>

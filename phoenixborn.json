@@ -1,0 +1,269 @@
+[
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Aradel_Cards_Phoenixborn.jpg",
+        "name": "Aradel Summergaard",
+        "from": "Phoenixborn of Evermist Valley",
+        "stats": {
+            "battlefield": ["8"],
+            "life": ["16"],
+            "spellboard": ["4"],
+            "ability": ["Water Blast"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Aradel_Cards_Conjuration_Blue_Jaguar.jpg",
+            "name": ["Blue Jaguar"],
+            "type": ["Conjuration"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/brennen.jpg",
+        "name": "Brennen Blackcloud",
+        "from": "Phoenixborn of Blackcloud",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["20"],
+            "spellboard": ["3"],
+            "ability": ["Spirit Burn"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ninja%20card.jpg",
+            "name": ["Blackcloud Ninja"],
+            "type": ["Ally"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Coal_Cards_Phoenixborn_version2.jpg",
+        "name": "Coal Roarkwin",
+        "from": "Phoenixborn of Rustwatch",
+        "stats": {
+            "battlefield": ["6"],
+            "life": ["15"],
+            "spellboard": ["5"],
+            "ability": ["Slash"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Coal_Cards_One_Hundred_Blades_0.jpg",
+            "name": ["One Hundred Blades"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/dimona_0.jpg",
+        "name": "Dimona Odinstar",
+        "from": "Phoenixborn of Rayward",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["17"],
+            "spellboard": ["5"],
+            "ability": ["Order"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/rayward_0.jpg",
+            "name": ["Rayward Knight"],
+            "type": ["Ally"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/art_jessa.jpg",
+        "name": "Jessa Na Ni",
+        "from": "Phoenixborn of the Bloodwoods Clan",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["18"],
+            "spellboard": ["4"],
+            "ability": ["Screams of the Departed"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/art_fear.jpg",
+            "name": ["Fear"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Leo_Sunshadow.jpg",
+        "name": "Leo Sunshadow",
+        "from": "Phoenixborn of Neverset",
+        "stats": {
+            "battlefield": ["6"],
+            "life": ["19"],
+            "spellboard": ["3"],
+            "ability": ["Summon Glow Finch"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Spell-Anguish.jpg",
+            "name": ["Anguish"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        },
+        "unique2": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Conjuration-Glow_Finch.jpg",
+            "name": ["Glow Finch"],
+            "type": ["Conjuration"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/lulu_phoenixborn_card.jpg",
+        "name": "Lulu Firestone",
+        "from": "Phoenixborn of Gorrenrock",
+        "stats": {
+            "battlefield": ["4"],
+            "life": ["21"],
+            "spellboard": ["4"],
+            "ability": ["Bolster"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/lulu_special_card.jpg",
+            "name": ["Phoenix Barrage"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/maeoni.jpg",
+        "name": "Maeoni Viper",
+        "from": "Phoenixborn of Gorrenrock",
+        "stats": {
+            "battlefield": ["3"],
+            "life": ["22"],
+            "spellboard": ["4"],
+            "ability": ["Strike"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/silver_snake.jpg",
+            "name": ["Silver Snake"],
+            "type": ["Conjuration"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg",
+        "name": "Namine Hymntide",
+        "from": "Phoenixborn of Soaksend",
+        "stats": {
+            "battlefield": ["6"],
+            "life": ["17"],
+            "spellboard": ["4"],
+            "ability": ["Calming Melody"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Action_Spell-Encore.jpg",
+            "name": ["Encore"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Noah_Cards_Phoenixborn.jpg",
+        "name": "Noah Redmoon",
+        "from": "Phoenixborn of Viros",
+        "stats": {
+            "battlefield": ["6"],
+            "life": ["20"],
+            "spellboard": ["3"],
+            "ability": ["Shadow Target"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Noah_Cards_Conjuration_Masked_Wolf.jpg",
+            "name": ["Masked Wolf"],
+            "type": ["Conjuration"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg",
+        "name": "Odette Diamondcrest",
+        "from": "Phoenixborn of Lordswall",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["17"],
+            "spellboard": ["4"],
+            "ability": ["Retribution"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Action_Spell-Sword_of_Virtue.jpg",
+            "name": ["Sword of Virtue"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Orrick_Gilstream.jpg",
+        "name": "Orrick Gilstream",
+        "from": "Phoenixborn of Gobi",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["19"],
+            "spellboard": ["4"],
+            "ability": ["Bounty"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Ally-Gobi_Sunshield.jpg",
+            "name": ["Gobi Sunshield"],
+            "type": ["Ally"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg",
+        "name": "Rin Northfell",
+        "from": "Phoenixborn of Frostdale",
+        "stats": {
+            "battlefield": ["6"],
+            "life": ["17"],
+            "spellboard": ["4"],
+            "ability": ["Ice Buff"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ice%20buff%20card.jpg",
+            "name": ["Ice Buff"],
+            "type": ["Conjured Alteration Spell"],
+            "location": ["Unit"]   
+        },
+        "unique2": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/rinsfurypreview.jpg",
+            "name": ["Rin's Fury"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Saria_Cards_Phoenixborn.jpg",
+        "name": "Saria Guideman",
+        "from": "Phoenixborn of Lighthouse Bay",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["20"],
+            "spellboard": ["4"],
+            "ability": ["Heart's Pull"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Saria_Cards_Conjuration_Seaside_Raven_0.jpg",
+            "name": ["Seaside Raven"],
+            "type": ["Conjuration"],
+            "location": ["Battlefield"]   
+        }
+    },
+    {
+        "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg",
+        "name": "Victoria Glassfire",
+        "from": "Phoenixborn of Smogborough",
+        "stats": {
+            "battlefield": ["5"],
+            "life": ["18"],
+            "spellboard": ["4"],
+            "ability": ["Shadow Spring"]
+        },
+        "unique": {
+            "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Spell-Illusionary_Cycle.jpg",
+            "name": ["Illusionary Cycle"],
+            "type": ["Action Spell"],
+            "location": ["Discard"]   
+        }
+    }
+]

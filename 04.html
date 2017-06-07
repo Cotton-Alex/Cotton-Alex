@@ -55,10 +55,29 @@
         <br>
         <br>
 
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Go Go Gadget AJAX!</button>
+</div>
 
-        <div id="phoneixDiv">
-            <input type="button" value="Load JSON" onclick="loadJSON('/phoenixborn.json', 'phoenixDiv', true)"/>
-        </div>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "phoenixborn.json", true);
+  xhttp.send();
+}
+</script>
+
+
+
+
+
 
 
         <script>

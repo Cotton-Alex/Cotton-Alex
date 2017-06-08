@@ -42,7 +42,8 @@
         <br>
         <br>
         <h3>Display JSON data from an external file:</h3>
-        <button type="button" onclick="loadDoc('/phoenixborn.json', stringify)">Go Go Gadget JSON!</button>
+        <button type="button" onclick="stringify()">Go Go Gadget JSON!</button>
+        <input type="range" id="sliderRange" onInput="stringify()" value="0" max="14">
         <br>
         <br>
         <div id="parseData"></div>
@@ -55,91 +56,46 @@
         <br>
         <br>
 
-<div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Go Go Gadget AJAX!</button>
-</div>
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "phoenixborn.json", true);
-  xhttp.send();
-}
-</script>
-
-
-
-
-
-
+        <div id="demo">
+            <h2>The XMLHttpRequest Object</h2>
+            <button type="button" onclick="loadDoc()">Go Go Gadget AJAX!</button>
+        </div>
 
         <script>
-            var phoenixCard;
-            function loadJSON(url, divId, isJSON) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange =
-                        function () {
-                            if (xmlhttp.readyState === 4 && XMLHttp.status === 200)
-                                responseWrangler(xmlhttp.responseText, divId, isJSON);
-                        };
-
-                xmlhttp.open("GET", url, true);
-                xmlhttp.send();
-
-    }
-
-            function responseWrangler(response, divId, isJSON) {
-                var responseText = (isJSON) ? JSON.parse(response) : response;
-                document.getElementById( divId ).innerHTML = (isJSON) ? responseText.JSONKey : responseText;
-            }
-
             function stringify() {
                 var stringifyExplain = ("<h3>Stringify was used to convert the above JSON data to this string:</h3>");
                 var i = document.getElementById("sliderRange").value;
-
                 var string = JSON.stringify(phoenixCard);
                 var object = JSON.parse(string);
-                document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
-                document.getElementById('stringifyData').innerHTML = string;
-                document.getElementById('parseData').innerHTML =
-                        "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
-                        "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
-                        + phoenixCard[i].from + "<br>\n\
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
+                        document.getElementById('stringifyData').innerHTML = string;
+                        document.getElementById('parseData').innerHTML =
+                                "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
+                                "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
+                                + phoenixCard[i].from + "<br>\n\
                 Battlefield: " + phoenixCard[i].stats.battlefield + "<br>\n\
                 Life: " + phoenixCard[i].stats.life + "<br>\n\
                 Spellboard: " + phoenixCard[i].stats.spellboard + "<br>\n\
                 Ability: " + phoenixCard[i].stats.ability + '</div></div><br><br><br>';
-            }
-        </script>
-
-
-
-
-        <script>
-            var movie;
-            function getFileFromServer(url, divId) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        doSomethingWithTheResponse(xmlhttp.responseText);
+                    }
                 };
-
-                xmlhttp.open("GET", url, true);
-                xmlhttp.send();
-
+                xhttp.open("GET", "phoenixborn.json", true);
+                xhttp.send();
             }
 
-            function doSomethingWithTheResponse(response) {
-                var responseText = JSON.parse(response);
-                movie = responseText.data.movies[0];
-                document.getElementById('movieName').innerHTML = movie.title;
+            function loadDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        document.getElementById("demo").innerHTML =
+                                this.responseText;
+                    }
+                };
+                xhttp.open("GET", "phoenixborn.json", true);
+                xhttp.send();
             }
         </script>
     </body>

@@ -77,7 +77,7 @@ function triesCount(){
     document.getElementById("triesNumber").innerHTML = tries;
 }
 
-function touchVsClick() {
+function touchVsc() {
     document.getElementById("touchVsClick").style.color = "blue";
 }
 

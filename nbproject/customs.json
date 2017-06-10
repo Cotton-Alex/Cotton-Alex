@@ -1,0 +1,14 @@
+{
+    "elements": {},
+    "attributes": {
+        "onmousover": {
+            "context": "button"
+        },
+        "ontouchstart": {
+            "context": "div"
+        },
+        "text\"": {
+            "context": "input"
+        }
+    }
+}

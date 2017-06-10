@@ -1,246 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
 
-  <meta charset="utf-8">
-  <title>cit261</title>
+        <meta charset="utf-8">
+        <title>cit261</title>
 
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <!-- FONT -->
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css.css">
-</head>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css.css">
+    </head>
     <body>
         <header>
             <div>
                 <nav>
                     <ul>
-                      <li><a href="index.html">:: home ::</a></li>
-                      <li><a href="01.html">01</a></li>
-                      <li><a href="02.html">02</a></li>
-                      <li><a href="03.html">03</a></li>
-                      <li><a href="04.html">04</a></li>
-                      <li><a href="05.html">05</a></li>
-                      <li><a href="06.html">06</a></li>
-                      <li><a href="07.html">07</a></li>
-                      <li><a href="08.html">08</a></li>
-                      <li><a href="09.html">09</a></li>
-                      <li><a href="10.html">10</a></li>
-                      <li><a href="11.html">11</a></li>
-                      <li><a href="12.html">12</a></li>
-                      <li><a href="13.html">13</a></li>
+                        <li id="menuHome"><a href="index.html">:: home ::</a></li>
+                        <li id="menu01"><a href="01.html">01</a></li>
+                        <li id="menu02"><a href="02.html">02</a></li>
+                        <li id="menu03"><a href="03.html">03</a></li>
+                        <li id="menu04"><a href="04.html">04</a></li>
+                        <li id="menu05"><a href="05.html">05</a></li>
+                        <li id="menu06"><a href="06.html">06</a></li>
+                        <li id="menu07"><a href="07.html">07</a></li>
+                        <li id="menu08"><a href="08.html">08</a></li>
+                        <li id="menu09"><a href="09.html">09</a></li>
+                        <li id="menu10"><a href="10.html">10</a></li>
+                        <li id="menu11"><a href="11.html">11</a></li>
+                        <li id="menu12"><a href="12.html">12</a></li>
+                        <li id="menu13"><a href="13.html">13</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-      
+
         <h1>03: JSON Parse and Stringify</h1>
         <br>
         <br>
         <p><h3>Use slider to select the different arrays within the JSON data:</h3></p>
-        <input type="range" id="sliderRange" onInput="stringify()" value="0" max="14">
-        <br>
-        <br>
-        <div id="parseData"></div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <!-- <br>
-        <br>
-        <button onclick="stringify()">Stringify & Parse Example</button> -->
-        <div id="stringifyExplain"></div>
-        <div id="stringifyData"></div>
-        <br>
-        <br>
-            <script> 
-                function stringify () {
-                    var stringifyExplain = ("<p><h3>Stringify was used to convert the above JSON data to this string:</h3></p>");
-                    var i = document.getElementById("sliderRange").value;
-                    var phoenixCard = [
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Aradel_Cards_Phoenixborn.jpg",
-                          "name": "Aradel Summergaard",
-		   	  "from": "Phoenixborn of Evermist Valley",
-			  "stats": {
-                                "battlefield": ["8"],
-				"life": ["16"],
-				"spellboard": ["4"],
-                                "ability": ["Water Blast"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/brennen.jpg",
-                          "name": "Brennen Blackcloud",
-		   	  "from": "Phoenixborn of Blackcloud",
-			  "stats": {
-                                "battlefield": ["5"],
-				"life": ["20"],
-				"spellboard": ["3"],
-                                "ability": ["Spirit Burn"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Coal_Cards_Phoenixborn_version2.jpg",
-                          "name": "Coal Roarkwin",
-		   	  "from": "Phoenixborn of Rustwatch",
-			  "stats": {
-                                "battlefield": ["6"],
-				"life": ["15"],
-				"spellboard": ["5"],
-                                "ability": ["Slash"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/dimona_0.jpg",
-                          "name": "Dimona Odinstar",
-		   	  "from": "Phoenixborn of Rayward",
-			  "stats": {
-                                "battlefield": ["5"],
-				"life": ["17"],
-				"spellboard": ["5"],
-                                "ability": ["Order"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/art_jessa.jpg",
-                          "name": "Jessa Na Ni",
-		   	  "from": "Phoenixborn of the Bloodwoods Clan",
-			  "stats": {
-                                "battlefield": ["5"],
-				"life": ["18"],
-				"spellboard": ["4"],
-                                "ability": ["Screams of the Departed"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Leo_Sunshadow.jpg",
-                          "name": "Leo Sunshadow",
-		   	  "from": "Phoenixborn of Neverset",
-			  "stats": {
-                                "battlefield": ["6"],
-				"life": ["19"],
-				"spellboard": ["3"],
-                                "ability": ["Summon Glow Finch"]
-			  }
-			},
-                         {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/lulu_phoenixborn_card.jpg",
-                          "name": "Lulu Firestone",
-		   	  "from": "Phoenixborn of Gorrenrock",
-			  "stats": {
-                                "battlefield": ["4"],
-				"life": ["21"],
-				"spellboard": ["4"],
-                                "ability": ["Bolster"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/maeoni.jpg",
-                          "name": "Maeoni Viper",
-		   	  "from": "Phoenixborn of Gorrenrock",
-			  "stats": {
-                                "battlefield": ["3"],
-				"life": ["22"],
-				"spellboard": ["4"],
-                                "ability": ["Strike"]
-			  }
-			},
-                        {
-			  "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg",
-                          "name": "Namine Hymntide",
-		   	  "from": "Phoenixborn of Soaksend",
-			  "stats": {
-                                "battlefield": ["6"],
-				"life": ["17"],
-				"spellboard": ["4"],
-                                "ability": ["Calming Melody"]
-			  }
-			},
-                        {
-                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Noah_Cards_Phoenixborn.jpg",
-			  "name": "Noah Redmoon",
-			  "from" : "Phoenixborn of Viros",
-			  "stats": {
-                                "battlefield" : ["6"],
-				"life": ["20"],
-				"spellboard": ["3"],
-                                "ability": ["Shadow Target"]
-			  }
-			},
-                        {
-                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg",
-			  "name": "Odette Diamondcrest",
-			  "from" : "Phoenixborn of Lordswall",
-			  "stats": {
-                                "battlefield" : ["5"],
-				"life": ["17"],
-				"spellboard": ["4"],
-                                "ability": ["Retribution"]
-			  }
-			},
-                        {
-                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Orrick_Gilstream.jpg",
-			  "name": "Orrick Gilstream",
-			  "from" : "Phoenixborn of Gobi",
-			  "stats": {
-                                "battlefield" : ["5"],
-				"life": ["19"],
-				"spellboard": ["4"],
-                                "ability": ["Bounty"]
-			  }
-			},
-                        {
-                          "card": "https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg",
-			  "name": "Rin Northfell",
-			  "from" : "Phoenixborn of Frostdale",
-			  "stats": {
-                                "battlefield" : ["6"],
-				"life": ["17"],
-				"spellboard": ["4"],
-                                "ability": ["Ice Buff"]
-			  }
-			},
-                        {
-                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Saria_Cards_Phoenixborn.jpg",
-			  "name": "Saria Guideman",
-			  "from" : "Phoenixborn of Lighthouse Bay",
-			  "stats": {
-                                "battlefield" : ["5"],
-				"life": ["20"],
-				"spellboard": ["4"],
-                                "ability": ["Heart's Pull"]
-			  }
-			},
-                        {
-                          "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg",
-			  "name": "Victoria Glassfire",
-			  "from" : "Phoenixborn of Smogborough",
-			  "stats": {
-                                "battlefield" : ["5"],
-				"life": ["18"],
-				"spellboard": ["4"],
-                                "ability": ["Shadow Spring"]
-			  }
-			}
-		  ];
-                var string = JSON.stringify(phoenixCard); 
-                var object = JSON.parse(string);
-                document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
-                document.getElementById('stringifyData').innerHTML = string; 
-                document.getElementById('parseData').innerHTML = 
-                        "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" + 
-                        "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
-                        + phoenixCard[i].from + "<br>\n\
-                        Battlefield: " + phoenixCard[i].stats.battlefield + "<br>\n\
-                        Life: " + phoenixCard[i].stats.life + "<br>\n\
-                        Spellboard: " + phoenixCard[i].stats.spellboard + "<br>\n\
-                        Ability: " + phoenixCard[i].stats.ability + '</div></div><br><br><br>';
-            }   
-            </script>
-    </body>
+    <input type="range" id="sliderRange" onInput="stringify()" value="0" max="14">
+    <br>
+    <br>
+    <div id="parseData"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- <br>
+    <br>
+    <button onclick="stringify()">Stringify & Parse Example</button> -->
+    <div id="stringifyExplain"></div>
+    <div id="stringifyData"></div>
+    <br>
+    <br>
+    <script>
+        function stringify() {
+            var stringifyExplain = ("<p><h3>Stringify was used to convert the above JSON data to this string:</h3></p>");
+            var i = document.getElementById("sliderRange").value;
+            var phoenixCard = [
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Aradel_Cards_Phoenixborn.jpg",
+                    "name": "Aradel Summergaard",
+                    "from": "Phoenixborn of Evermist Valley",
+                    "stats": {
+                        "battlefield": ["8"],
+                        "life": ["16"],
+                        "spellboard": ["4"],
+                        "ability": ["Water Blast"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/brennen.jpg",
+                    "name": "Brennen Blackcloud",
+                    "from": "Phoenixborn of Blackcloud",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["20"],
+                        "spellboard": ["3"],
+                        "ability": ["Spirit Burn"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Coal_Cards_Phoenixborn_version2.jpg",
+                    "name": "Coal Roarkwin",
+                    "from": "Phoenixborn of Rustwatch",
+                    "stats": {
+                        "battlefield": ["6"],
+                        "life": ["15"],
+                        "spellboard": ["5"],
+                        "ability": ["Slash"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/dimona_0.jpg",
+                    "name": "Dimona Odinstar",
+                    "from": "Phoenixborn of Rayward",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["17"],
+                        "spellboard": ["5"],
+                        "ability": ["Order"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/art_jessa.jpg",
+                    "name": "Jessa Na Ni",
+                    "from": "Phoenixborn of the Bloodwoods Clan",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["18"],
+                        "spellboard": ["4"],
+                        "ability": ["Screams of the Departed"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Leo_Sunshadow.jpg",
+                    "name": "Leo Sunshadow",
+                    "from": "Phoenixborn of Neverset",
+                    "stats": {
+                        "battlefield": ["6"],
+                        "life": ["19"],
+                        "spellboard": ["3"],
+                        "ability": ["Summon Glow Finch"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/lulu_phoenixborn_card.jpg",
+                    "name": "Lulu Firestone",
+                    "from": "Phoenixborn of Gorrenrock",
+                    "stats": {
+                        "battlefield": ["4"],
+                        "life": ["21"],
+                        "spellboard": ["4"],
+                        "ability": ["Bolster"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/maeoni.jpg",
+                    "name": "Maeoni Viper",
+                    "from": "Phoenixborn of Gorrenrock",
+                    "stats": {
+                        "battlefield": ["3"],
+                        "life": ["22"],
+                        "spellboard": ["4"],
+                        "ability": ["Strike"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg",
+                    "name": "Namine Hymntide",
+                    "from": "Phoenixborn of Soaksend",
+                    "stats": {
+                        "battlefield": ["6"],
+                        "life": ["17"],
+                        "spellboard": ["4"],
+                        "ability": ["Calming Melody"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Noah_Cards_Phoenixborn.jpg",
+                    "name": "Noah Redmoon",
+                    "from": "Phoenixborn of Viros",
+                    "stats": {
+                        "battlefield": ["6"],
+                        "life": ["20"],
+                        "spellboard": ["3"],
+                        "ability": ["Shadow Target"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg",
+                    "name": "Odette Diamondcrest",
+                    "from": "Phoenixborn of Lordswall",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["17"],
+                        "spellboard": ["4"],
+                        "ability": ["Retribution"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Orrick_Gilstream.jpg",
+                    "name": "Orrick Gilstream",
+                    "from": "Phoenixborn of Gobi",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["19"],
+                        "spellboard": ["4"],
+                        "ability": ["Bounty"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg",
+                    "name": "Rin Northfell",
+                    "from": "Phoenixborn of Frostdale",
+                    "stats": {
+                        "battlefield": ["6"],
+                        "life": ["17"],
+                        "spellboard": ["4"],
+                        "ability": ["Ice Buff"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Saria_Cards_Phoenixborn.jpg",
+                    "name": "Saria Guideman",
+                    "from": "Phoenixborn of Lighthouse Bay",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["20"],
+                        "spellboard": ["4"],
+                        "ability": ["Heart's Pull"]
+                    }
+                },
+                {
+                    "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg",
+                    "name": "Victoria Glassfire",
+                    "from": "Phoenixborn of Smogborough",
+                    "stats": {
+                        "battlefield": ["5"],
+                        "life": ["18"],
+                        "spellboard": ["4"],
+                        "ability": ["Shadow Spring"]
+                    }
+                }
+            ];
+            var string = JSON.stringify(phoenixCard);
+            var object = JSON.parse(string);
+            document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
+            document.getElementById('stringifyData').innerHTML = string;
+            document.getElementById('parseData').innerHTML =
+                    "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
+                    "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
+                    + phoenixCard[i].from + "<br>\n\
+                Battlefield: " + phoenixCard[i].stats.battlefield + "<br>\n\
+                Life: " + phoenixCard[i].stats.life + "<br>\n\
+                Spellboard: " + phoenixCard[i].stats.spellboard + "<br>\n\
+                Ability: " + phoenixCard[i].stats.ability + '</div></div><br><br><br>';
+        }
+    </script>
+</body>
 </html>

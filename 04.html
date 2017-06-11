@@ -41,8 +41,8 @@
         <br>
         <br>
         <h3>Display JSON data from an external file:</h3>
-        <button type="button" onclick="stringify()">Go Go Gadget JSON!</button>
-        <input type="range" id="sliderRange" onInput="stringify()" value="0" max="14">
+        <!--        <button type="button" onclick="stringify()">Go Go Gadget AJAX!</button>-->
+        <input type="range" id="sliderRange" onInput="jsonString('/Cotton-Alex.github/phoenixborn.json', 'parseData', true)" value="0" max="14">
         <br>
         <br>
         <div id="parseData"></div>
@@ -50,51 +50,68 @@
         <br>
         <br>
         <br>
-        <div id="stringifyExplain"></div>
-        <div id="stringifyData"></div>
+        <!--        <div id="stringifyExplain"></div>
+                <div id="stringifyData"></div>-->
         <br>
         <br>
 
-        <div id="demo">
-            <h2>The XMLHttpRequest Object</h2>
-            <button type="button" onclick="loadDoc()">Go Go Gadget AJAX!</button>
+        <div id="rawJSON">
+            <h2>AJAX can serialize a JSON file and that can be displayed as a string.</h2>
+            <button type="button" onclick="jsonString('/Cotton-Alex.github/phoenixborn.json', 'stringData', true)">Stringify</button>
         </div>
-
+        <div id="stringData"></div>
         <script>
-            function stringify() {
-                var stringifyExplain = ("<h3>Stringify was used to convert the above JSON data to this string:</h3>");
+//            function AJAXify() {
+//                var stringifyExplain = ("<h3>Stringify was used to convert the above JSON data to this string:</h3>");
+//                var i = document.getElementById("sliderRange").value;
+////                var string = JSON.stringify();
+////                var object = JSON.parse(string);
+//                var xhttp = new XMLHttpRequest();
+//                xhttp.onreadystatechange = function () {
+//                    if (this.readyState === 4 && this.status === 200) {
+////                        document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
+////                        document.getElementById('stringifyData').innerHTML = string;
+//                        document.getElementById('parseData').innerHTML =
+//                                "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
+//                                "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
+//                                + phoenixCard[i].from + "<br>\n\
+//                Battlefield: " + phoenixCard[i].stats.battlefield + "<br>\n\
+//                Life: " + phoenixCard[i].stats.life + "<br>\n\
+//                Spellboard: " + phoenixCard[i].stats.spellboard + "<br>\n\
+//                Ability: " + phoenixCard[i].stats.ability + '</div></div><br><br><br>';
+//                    }
+//                };
+//                xhttp.open("GET", "phoenixborn.json", true);
+//                xhttp.send();
+//            }
+
+            function jsonString(url, divId, isJSON) {
                 var i = document.getElementById("sliderRange").value;
-                var string = JSON.stringify(phoenixCard);
-                var object = JSON.parse(string);
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        document.getElementById('stringifyExplain').innerHTML = stringifyExplain;
-                        document.getElementById('stringifyData').innerHTML = string;
-                        document.getElementById('parseData').innerHTML =
-                                "<div><img class='pbPic' src='" + phoenixCard[i].card + "' height='250'>" +
-                                "<div class='pbInfo'>Name: " + phoenixCard[i].name + "<br>"
-                                + phoenixCard[i].from + "<br>\n\
-                Battlefield: " + phoenixCard[i].stats.battlefield + "<br>\n\
-                Life: " + phoenixCard[i].stats.life + "<br>\n\
-                Spellboard: " + phoenixCard[i].stats.spellboard + "<br>\n\
-                Ability: " + phoenixCard[i].stats.ability + '</div></div><br><br><br>';
-                    }
-                };
-                xhttp.open("GET", "phoenixborn.json", true);
-                xhttp.send();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange =
+                        function () {
+                            if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+                                parseDataFunc(xmlhttp.responseText, divId, isJSON, i);
+
+                        };
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
             }
 
-            function loadDoc() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        document.getElementById("demo").innerHTML =
-                                this.responseText;
-                    }
-                };
-                xhttp.open("GET", "phoenixborn.json", true);
-                xhttp.send();
+            function parseDataFunc(response, divId, isJSON, i) {
+                var responseText = (isJSON) ? JSON.parse(response) : response;
+                document.getElementById(divId).innerHTML = "<ul><li><div><img class='pbPic' src='" + responseText[i].card
+                        + "' height='250'>" + "<div class='pbInfo'>Name: " + responseText[i].name + "<br>"
+                        + responseText[i].from + "<br>\n\
+                Battlefield: " + responseText[i].stats.battlefield + "<br>\n\
+                Life: " + responseText[i].stats.life + "<br>\n\
+                Spellboard: " + responseText[i].stats.spellboard + "<br>\n\
+                Ability: " + responseText[i].stats.ability + "</div></div></li>\n\
+                \n\
+                <li><div><img class='pbPic' src='" + responseText[i].unique.card + "' height='250'>"
+                + "<div class='pbInfo'>Name: " + responseText[i].unique.name + "<br>"
+                + "Type: " + responseText[i].unique.type + "<br>"
+                + "Placement: " + responseText[i].unique.location + "<br></div></div></li></ul><br><br><br>";
             }
         </script>
     </body>

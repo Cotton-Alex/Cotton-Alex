@@ -42,7 +42,7 @@
         <br>
         <h3>Display JSON data from an external file:</h3>
         <!--        <button type="button" onclick="stringify()">Go Go Gadget AJAX!</button>-->
-        <input type="range" id="sliderRange" onInput="jsonString('/Cotton-Alex.github/phoenixborn.json', 'parseData', true)" value="0" max="14">
+        <input type="range" id="sliderRange" onInput="jsonString('/phoenixborn.json', 'parseData', true)" value="0" max="14">
         <br>
         <br>
         <div id="parseData"></div>
@@ -57,7 +57,7 @@
 
         <div id="rawJSON">
             <h2>AJAX can serialize a JSON file and that can be displayed as a string.</h2>
-            <button type="button" onclick="jsonString('/Cotton-Alex.github/phoenixborn.json', 'stringData', true)">Stringify</button>
+            <button type="button" onclick="jsonString('/phoenixborn.json', 'stringData', true)">Stringify</button>
         </div>
         <div id="stringData"></div>
         <script>

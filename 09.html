@@ -39,8 +39,7 @@
                 </nav>
             </div>
         </header>
-        <h1>09: Standard JavaScript Events Including those for Mobile Devices</h1>
-        <!--------------------------------------------------------------------------->     
+        <h1>09: Standard JavaScript Events Including those for Mobile Devices</h1>    
         <br>
         <div>
             <h2>alert:</h2>
@@ -51,22 +50,22 @@
             <h2>focus & blur</h2>
             <form id="focusBlur">
                 <p>A field becomes focused when your select it and your cursor is inside it.<br>
-                    A field becomes blurred when you select something else and your cursor leaves it.<br>
-                    Focus and blur were used here to affect the text.</p>
-                <span id="fAndB">Focus & Blur: </span><input id="fAndB" onfocus="focusFAndB()" onblur="blurFAndB()" type="text"><br>
-                <span id="bAndF">Blur & Focus: </span><input id="bAndF" onfocus="focusBAndF()" onblur="blurBAndF()" type="text"><br>
+                   A field becomes blurred when you select something else and your cursor leaves it.<br>
+                   Focus and blur were used here to affect the text.</p>
+                <span id="fAndB">Focus & Blur: </span><input onfocus="focusFAndB()" onblur="blurFAndB()" type="text"><br>
+                <span id="bAndF">Blur & Focus: </span><input onfocus="focusBAndF()" onblur="blurBAndF()" type="text"><br>
             </form>
         </div>
         <br>
         <div>
-            <h2>Click</h2>
+            <h2>click</h2>
             <div>
                 <button type="button" onClick="clickCount()">Clicky McClickerson</button><span> Clicks: <a id="addClick">0</a></span>
             </div>
         </div>
         <br>
         <div>
-            <h2>Change</h2>
+            <h2>change</h2>
             <p>Match the number: Press the "New Number" button for a random number from 0-100 and then slide the slider to match it.</p>
             <button type="button" onClick="slideGame()">New Game</button>
             <div>Match: <a id="matchNumber"></a></div><div>Slide Value: <a id="slideNumber"></a></div>

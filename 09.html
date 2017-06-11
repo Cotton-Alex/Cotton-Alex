@@ -13,6 +13,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css.css">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
         <script type="text/javascript" src="js.js"></script>
     </head>
     <body onload="loadOn()">
@@ -60,7 +61,7 @@
         <div>
             <h2>Click</h2>
             <div>
-            <button type="button" onClick="clickCount()">Clicky McClickerson</button><span> Clicks: <a id="addClick">0</a></span>
+                <button type="button" onClick="clickCount()">Clicky McClickerson</button><span> Clicks: <a id="addClick">0</a></span>
             </div>
         </div>
         <br>
@@ -72,25 +73,26 @@
             <input type="range" id="sliderValue" onChange="slideChange(), triesCount(0)" value="0" max="100">
             <div>Tries: <a id="triesNumber"></a></div>
         </div>
-            <h2>mouseout</h2>
-            <div>
-                <button type="button" onClick="mouseOutClickCount()" onmouseout="mouseOutCount()">Click me... don't leave!</button><span> Clicks: <a id="mouseOutAddClick">0</a></span><span> Outs: <a id="mouseOutAdd">0</a></span>
-            </div>
+        <h2>mouseout</h2>
+        <div>
+            <button type="button" onClick="mouseOutClickCount()" onmouseout="mouseOutCount()">Click me... don't leave!</button><span> Clicks: <a id="mouseOutAddClick">0</a></span><span> Outs: <a id="mouseOutAdd">0</a></span>
+        </div>
         <br>
         <div>
             <h2>mouseover</h2>
             <p>I'm not in the business of giving money away so you're gonna have to work it.</p>
-            <button id="mouseOverButtonId" onmouseover="mouseOverButton()" onclick="location.href = 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Usdollar100front.jpg';">CLICK FOR FREE MONEY!!!</button>
-        </div>
-        <br>
-        <div>
-            <h2>onTouchStart</h2>
-            <p>Touch events aren't as easy as one might thing. They are a bit more involved than other javascript events.<br>
-                The Heading(h1) element below is using both "onclick" and "ontouchstart" to affect the text.<br>
-            I was pleasantly surprised when it actually worked.<br>
-            Touching and holding on a touchscreen turns the text blue while tapping or clicking turns the text red.</p>
-            <h1 id="touchVsClick" onclick="tvsClick()" ontouchstart="touchVsc()">Click for Red and Touch for Blue</h1>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br>
-    </body>
-</html>
+            <h1><i class="em em-dollar" id="mouseOverButtonId" onmouseover="mouseOverButton()" onclick="location.href = 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Usdollar100front.jpg';"></i></h1>
+            <!-- <button id="mouseOverButtonId" onmouseover="mouseOverButton()" onclick="location.href = 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Usdollar100front.jpg';">CLICK FOR FREE MONEY!!!</button>
+            </div>-->
+            <br>
+            <div>
+                <h2>onTouchStart</h2>
+                <p>Touch events aren't as easy as one might thing. They are a bit more involved than other javascript events.<br>
+                    The Heading(h1) element below is using both "onclick" and "ontouchstart" to affect the text.<br>
+                    I was pleasantly surprised when it actually worked.<br>
+                    Touching and holding on a touchscreen turns the text blue while tapping or clicking turns the text red.</p>
+                <h1 id="touchVsClick" onclick="tvsClick()" ontouchstart="touchVsc()">Click <i class="em em-computer"></i> for Red and Touch <i class="em em-iphone"></i> for Blue</h1>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br>
+            </body>
+            </html>

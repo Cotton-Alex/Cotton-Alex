@@ -102,23 +102,22 @@ nav li a:active {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 #pbAJAX li {
-    border: 3px solid Blue;
     display: inline-block;
     margin: auto;
-    align: top;
+    vertical-align: top;
 }
 
 .pbPicAJAX {
     display: inline-block;
-    border: 3px solid Blue;
     height: 350px;
     float: right;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
 }
 
-#pbInfoAJAX {
-    display: inline-block;
+.pbInfoAJAX {
+    padding-left: 20px;
+    margin-left: 7px;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  13: CSS Animations  ::::::::::::::::::::::::::::::::::::::::::*/

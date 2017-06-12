@@ -42,27 +42,20 @@
         <br>
         <h3>Display JSON data from an external file:</h3>
         <!--        <button type="button" onclick="stringify()">Go Go Gadget AJAX!</button>-->
-        <input type="range" id="sliderRange" onInput="jsonString('/Cotton-Alex.github/phoenixborn.json', 'parseData', true)" value="0" max="14">
+        <input type="range" id="sliderRange" onInput="jsonParse('/Cotton-Alex.github/phoenixborn.json', 'parseData', true)" value="0" max="14">
         <br>
         <br>
         <div id="parseData"></div>
         <br>
         <br>
-        <br>
-        <br>
-        <!--        <div id="stringifyExplain"></div>
-                <div id="stringifyData"></div>-->
-        <br>
-        <br>
-
         <div id="rawJSON">
             <h2>AJAX can serialize a JSON file and that can be displayed as a string.</h2>
-            <button type="button" onclick="jsonString('/Cotton-Alex.github/phoenixborn.json', 'stringData', true)">Stringify</button>
+            <button type="button" id="rawJSON" onclick="jsonString('/Cotton-Alex.github/ajaxTextFile.txt', 'rawJSON', false)">Stringify</button>
         </div>
         <div id="stringData"></div>
         
         <script>
-            function jsonString(url, divId, isJSON) {
+            function jsonParse(url, divId, isJSON) {
                 var i = document.getElementById("sliderRange").value;
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange =
@@ -89,7 +82,25 @@
                 <li><div><img class='pbPicAJAX' src='" + responseText[i].unique.card + "' height='250'>"
                 + "<div class='pbInfoAJAX'>Unique Card: " + responseText[i].unique.name + "<br>"
                 + "Type: " + responseText[i].unique.type + "<br>"
-                + "Placement: " + responseText[i].unique.location + "<br></div></div></li></ul><br><br><br>";
+                + "Placement: " + responseText[i].unique.location + "<br></div></div></li></ul><br>";
+            }
+            
+            function jsonString(url, divId, isJSON) {
+                var i = document.getElementById("sliderRange").value;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange =
+                        function () {
+                            if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+                                parseDataFunc2(xmlhttp.responseText, divId, isJSON, i);
+
+                        };
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+            }
+            
+            function parseDataFunc2(response, divId, isJSON, i) {
+                var responseText = (isJSON) ? JSON.parse(response) : response;
+                document.getElementById(divId).innerHTML = response;
             }
         </script>
     </body>

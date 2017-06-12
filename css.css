@@ -67,6 +67,7 @@ nav li a:active {
 #menu03, #menu04, #menu09, #menu13 {
     border-bottom: 2px solid black;
 }
+
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  03: JSON Stringify & Parse  ::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
@@ -81,20 +82,44 @@ nav li a:active {
     width: 300px;
 }
 
-/*.pbContain {
+.pbContain {
     float:left;
-}*/
+}
 
-/*.pbPic {
+.pbPic {
     height: 350px;
     float: left;
     padding-right: 25px;
-}*/
+}
 
 .pbInfo {
     padding-top: 100px;
 }
 
+
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  04: AJAX  ::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+#pbAJAX li {
+    border: 3px solid Blue;
+    display: inline-block;
+    margin: auto;
+    align: top;
+}
+
+.pbPicAJAX {
+    display: inline-block;
+    border: 3px solid Blue;
+    height: 350px;
+    float: right;
+    padding: 20px;
+    margin: auto;
+}
+
+#pbInfoAJAX {
+    display: inline-block;
+}
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  13: CSS Animations  ::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

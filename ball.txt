@@ -1,1 +1,1 @@
-<a id="animB" onclick="bounce()">Drop Me</a>
+<a onclick="bounce()"><div id="animB"></div></a>

@@ -1,0 +1,9 @@
+<button onclick="bounce()">Drop</button>
+        <br>
+        <br>
+        <div id="animB"></div>
+        <script>
+            function bounce() {
+                document.getElementById("animB").style.animationPlayState = "running";
+            }
+        </script>

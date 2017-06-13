@@ -1,3 +1,5 @@
-<p>I could go on like this for days...</p><br>
-<div
-<button id="rawJSON" type="button" onclick="jsonString('/Cotton-Alex.github/ajaxTextFile.txt', 'rawJSON', false)">Stringify</button>
+
+<div id="rawJSON">
+<p>Ajax pulled this file from the server, checked to see if it was JSON format, and then displayed it's data. The only problem is that this text isn't a bouncing ball</p>
+<button type="button" onclick="jsonString('/Cotton-Alex.github/ball.txt', 'rawJSON', false)">Turn this text into a ball that can bounce!</button>
+</div>

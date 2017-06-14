@@ -84,9 +84,9 @@ function clearBackgroundColor(name) {
 function localStorageGreeting () {
     if (typeof(localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.background !== null) {
-            document.getElementById("lsGreeting").innerHTML = <div id="newDiv">What's your name?</div>;
+            document.getElementById("lsGreeting").innerHTML = "<div id=" + "'newDiv'" + ">What's your name?</div>;";
         }else {
-            document.getElementById("lsGreeting").innerHTML = "<div id=" + "newDiv" + ">Welcome back!</div>";
+            document.getElementById("lsGreeting").innerHTML = "<div id=" + "'newDiv'" + ">Welcome back!</div>";
         }
 } else {
     alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");

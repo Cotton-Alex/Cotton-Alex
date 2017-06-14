@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
     display: block;
     font-size: 15px;
-    background: ""
+    background: white;
 }
 
 table {
@@ -65,7 +65,7 @@ nav li a:active {
     text-shadow: 2px 2px 2px rgba(0,0,0,.25);
 }
 
-#menu03, #menu04, #menu09, #menu13 {
+#menu03, #menu04, #menu05, #menu09, #menu13 {
     border-bottom: 2px solid black;
 }
 

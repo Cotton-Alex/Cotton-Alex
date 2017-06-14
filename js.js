@@ -59,10 +59,26 @@ function bounce() {
 /*::::  05: Local Storage  :::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
+function checkLocalStorage() {
+    if (typeof(localStorage) !== "undefined") { //checking for browser compatibility with local storage
+        if (localStorage.background !== null) {
+            var bgColor = localStorage.getItem('backgroundColor');
+            document.body.style.background = bgColor;
+        }else {
+            return;
+        }
+} else {
+    alert("Some features on this site are incimpatible with your browser. For the best experience please update this browser or use a different one.");
+    }   
+}
 function backgroundColor(bgColor) {
-    document.body.style.color = bgColor;
+    localStorage.setItem("backgroundColor", bgColor);
+    document.body.style.background = bgColor;
 }
 
+function clearBackgroundColor(name) {
+    localStorage.removeItem(name);
+}
 
 
 /* SECTION 09 *****************************************************************/

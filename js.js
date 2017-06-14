@@ -55,6 +55,14 @@ function bounce() {
     document.getElementById("animB").style.animationPlayState = "running";
 }
 
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  05: Local Storage  :::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+function backgroundColor(bgColor) {
+    document.body.style.color = bgColor;
+}
+
 
 
 /* SECTION 09 *****************************************************************/

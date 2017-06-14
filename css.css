@@ -66,7 +66,7 @@ nav li a:active {
 }
 
 #menu03, #menu04, #menu05, #menu09, #menu13 {
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
@@ -179,9 +179,6 @@ nav li a:active {
     0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
     100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
 }
-
-
-
 
 #mouseOverButtonId {
     position: relative;

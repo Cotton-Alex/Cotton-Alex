@@ -17,7 +17,7 @@
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
-    <body onload="checkLocalStorage()">
+    <body onload="checkLocalStorage(), localStorageGreeting()">
         <header>
             <div>
                 <nav>
@@ -57,7 +57,7 @@
             </tr>
         </table>
         <br>
-        <div id="lsGreeting" onload="localStorageGreeting()">been here before?</div>
+        <div id="lsGreeting">This text should never show</div>
         <br>
     </body>
 </html>

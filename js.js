@@ -61,7 +61,7 @@ function bounce() {
 
 function checkLocalStorage() {
     if (typeof(localStorage) !== "undefined") { //checking for browser compatibility with local storage
-        if (localStorage.background !== null) {
+        if (localStorage.backgroundColor !== null) {
             var bgColor = localStorage.getItem('backgroundColor');
             document.body.style.background = bgColor;
         }else {
@@ -79,18 +79,33 @@ function backgroundColor(bgColor) {
 
 function clearBackgroundColor(name) {
     localStorage.removeItem(name);
+    location.reload();
 }
 
 function localStorageGreeting () {
     if (typeof(localStorage) !== "undefined") { //checking for browser compatibility with local storage
-        if (localStorage.firstName !== null) {
-            document.getElementById("lsGreeting").innerHTML = "<div id=" + "'newDiv'" + ">What's your name?</div>;";
+        if (localStorage.getItem("visitorName") !== null) {
+            var vName = localStorage.getItem("visitorName");
+            document.getElementById("lsGreeting").innerHTML = "<span><b>" + vName + "!!</b> That's right. Welcome back " + vName + ", I knew you looked familiar!</span> <button onclick=" + "'clearVisitorName()'" + ">I can try to forget your name if you click here...</button>";
         }else {
-            document.getElementById("lsGreeting").innerHTML = "<div id=" + "'newDiv'" + ">Welcome back!</div>";
+            document.getElementById("lsGreeting").innerHTML = "<div>Hi there, I kinda feel like I recognize you.<br> Remind me your name again...</div> <span><input id=" + "'visitorNameField'" + "type=" + "'text'" + "></span><button type=" +"'submit'" + "onClick=" + "'visitorNameStorage()'" + ">Remember now?</button>";
         }
 } else {
     alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
     }   
+}
+
+function visitorNameStorage() {
+    var vName = document.getElementById("visitorNameField").value;
+    console.log(vName);
+    localStorage.setItem("visitorName", vName);
+    location.reload();
+}
+
+function clearVisitorName() {
+//    var vName = localStorage.getItem("visitorName");
+    localStorage.removeItem("visitorName");
+    location.reload();
 }
 
 /* SECTION 09 *****************************************************************/

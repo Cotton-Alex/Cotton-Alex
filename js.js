@@ -190,12 +190,13 @@ function tvsClick() {
 
 function draw(x,y) {
     var canvas = document.getElementById("canvas1");
-    var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext("2d");
     ctx.save();
-    ctx.clearRect(0,0,550,400);
-    ctx.fillStyle = ("rgba(0,200,0,1)");
-    ctx.fullRect (x, 20, 50, 50);
+    ctx.clearRect (0,0,550,400);
+    ctx.fillStyle = "rgba(0,200,0,1)";
+    ctx.fillRect (x, 20, 50, 50);
     ctx.restore();
     x += 1;
-    var loopTimer = setTimeout('draw('+x+','+y+')',200);
+    var loopTimer = setTimeout('draw('+x+','+y+')',30);
+
 }

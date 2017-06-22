@@ -190,26 +190,24 @@ function tvsClick() {
 
 function draw(x,y) {
     var canvas = document.getElementById("canvas1");
+    var ctxCir=canvas.getContext("2d");
     var ctx = canvas.getContext("2d");
     ctx.save();
     ctx.clearRect (0,0,550,400);
     ctx.fillStyle = "rgba(150,150,150,1)";
     ctx.fillRect (x, 20, 50, 50);
     ctx.restore();
-    while (x <= 400) {
-        x += 1;
-    }
-
-    var loopTimer = setTimeout('draw('+x+','+y+')',30);
+    x += 8;
+    //var loopTimer = setTimeout('draw('+x+','+y+')',30);
     
-//    var ctxCir=canvas.getContext("2d");
-//    ctxCir.save();
-//    ctxCir.clearRect (0,0,550,400);
-//    ctxCir.beginPath();
-//    ctxCir.arc(100,75,50,0,2*Math.PI);
-//    ctxCir.stroke();
-//    ctxCir.restore();
-//    x += 1;
-//    var loopTimer = setTimeout('draw('+x+','+y+')',30);
+    var ctxCir=canvas.getContext("2d");
+    ctxCir.save();
+    ctxCir.clearRect (0,0,550,400);
+    ctxCir.beginPath();
+    ctxCir.arc(100,75,50,0,2*Math.PI);
+    ctxCir.stroke();
+    ctxCir.restore();
+    x += 1;
+    var loopTimer = setTimeout('draw('+x+','+y+')',30);
 }
 

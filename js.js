@@ -60,16 +60,16 @@ function bounce() {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 function checkLocalStorage() {
-    if (typeof(localStorage) !== "undefined") { //checking for browser compatibility with local storage
+    if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.backgroundColor !== null) {
             var bgColor = localStorage.getItem('backgroundColor');
             document.body.style.background = bgColor;
-        }else {
+        } else {
             return;
         }
-} else {
-    alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
-    }   
+    } else {
+        alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
+    }
 }
 
 function backgroundColor(bgColor) {
@@ -82,17 +82,17 @@ function clearBackgroundColor(name) {
     location.reload();
 }
 
-function localStorageGreeting () {
-    if (typeof(localStorage) !== "undefined") { //checking for browser compatibility with local storage
+function localStorageGreeting() {
+    if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.getItem("visitorName") !== null) {
             var vName = localStorage.getItem("visitorName");
             document.getElementById("lsGreeting").innerHTML = "<span><b>" + vName + "!!</b> That's right. Welcome back " + vName + ", I knew you looked familiar!</span> <button onclick=" + "'clearVisitorName()'" + ">I can try to forget your name if you click here...</button>";
-        }else {
-            document.getElementById("lsGreeting").innerHTML = "<div>Hi there, I kinda feel like I recognize you.<br> Remind me your name again...</div> <span><input id=" + "'visitorNameField'" + "type=" + "'text'" + "></span><button type=" +"'submit'" + "onClick=" + "'visitorNameStorage()'" + ">Remember now?</button>";
+        } else {
+            document.getElementById("lsGreeting").innerHTML = "<div>Hi there, I kinda feel like I recognize you.<br> Remind me your name again...</div> <span><input id=" + "'visitorNameField'" + "type=" + "'text'" + "></span><button type=" + "'submit'" + "onClick=" + "'visitorNameStorage()'" + ">Remember now?</button>";
         }
-} else {
-    alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
-    }   
+    } else {
+        alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
+    }
 }
 
 function visitorNameStorage() {
@@ -188,26 +188,66 @@ function tvsClick() {
 /*::::  10: Audio, Video, Canvas  ::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-function draw(x,y) {
+function draw(x, y) {
     var canvas = document.getElementById("canvas1");
-    var ctxCir=canvas.getContext("2d");
     var ctx = canvas.getContext("2d");
     ctx.save();
-    ctx.clearRect (0,0,550,400);
-    ctx.fillStyle = "rgba(150,150,150,1)";
-    ctx.fillRect (x, 20, 50, 50);
-    ctx.restore();
-    x += 8;
-    //var loopTimer = setTimeout('draw('+x+','+y+')',30);
+
+    ctx.clearRect(0, 0, 300, 300);
     
-    var ctxCir=canvas.getContext("2d");
-    ctxCir.save();
-    ctxCir.clearRect (0,0,550,400);
-    ctxCir.beginPath();
-    ctxCir.arc(100,75,50,0,2*Math.PI);
-    ctxCir.stroke();
-    ctxCir.restore();
-    x += 1;
-    var loopTimer = setTimeout('draw('+x+','+y+')',30);
+
+    ctx.fillStyle = "rgba(0, 0, 255, .25)";
+    ctx.beginPath();
+    ctx.rect(0, 0, 150, 150);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.fillStyle = "rgba(255, 0, 0, .5)";
+    ctx.beginPath();
+    ctx.rect(150, 0, 150, 150);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.fillStyle = "rgba(0, 255, 0, .5)";
+    ctx.beginPath();
+    ctx.rect(0, 150, 150, 150);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.fillStyle = "rgba(125, 255, 255, .5)";
+    ctx.beginPath();
+    ctx.rect(150, 150, 150, 150);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.fillStyle = "rgba(255, 255, 255, .5)";
+    ctx.beginPath();
+    ctx.rect(0, 0, 300, 300);
+    ctx.closePath();
+    ctx.fill();
+    
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(x, y, 12, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+    x += .6;
+    if (x >= 300) {
+        x = 0;
+    }
+    var loopTimer = setTimeout('draw(' + x + ',' + (150.0 - Math.sin(x * Math.PI / 90) * 120) + ')', 10);
+
+    for (x = 0; x < 360; x += 20) {
+        ctx.moveTo(x + 5, 150);
+        ctx.lineTo(x, 150);
+    }
+    ctx.moveTo(0, 180);
+
+    for (x = 0; x <= 360; x += 1) {
+        y = 150.0 - Math.sin(x * Math.PI / 90) * 120;
+        ctx.lineTo(x, y);
+    }
+    ctx.stroke();
 }
 

@@ -170,50 +170,59 @@ nav li a:active {
 }
 
 #ctx {
-    
-}
-
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::::  13: CSS Animations  ::::::::::::::::::::::::::::::::::::::::::*/
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-#animA {
-    width:100px;
-    height: 100px;  
-    background-color: lightskyblue; 
-}
-
-#animB {
-    width:100px;
-    height: 100px;
-    border-radius: 100%;
-    background: lightskyblue;
-    background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
-    margin-bottom: 200px;
-    animation-name: ballBounce;
-    animation-play-state: paused; 
-    animation-duration: .3s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 
 }
+/*@-webkit-keyframes circle {
+    0%   {background-color:red; left:0px; top:0px;}
+    20%  {background-color:orange; left:100px; top:200px;}
+    40%  {background-color:yellow; left:200px; top:100px;}
+    60%  {background-color:green; left: 300px; top:100px;}
+    80%  {background-color:blue; left:400px; top:200px;}
+    100% {background-color:violet; left:500px; top:200px;}
+}*/
+    /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    /*::::  13: CSS Animations  ::::::::::::::::::::::::::::::::::::::::::*/
+    /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    #animA {
+        width:100px;
+        height: 100px;  
+        background-color: lightskyblue; 
+    }
 
-@keyframes ballBounce {
-    0% {transform: translateY(0px); }
-    100% {transform: translateY(80px); }
-    0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
-    100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
-}
+    #animB {
+        width:100px;
+        height: 100px;
+        border-radius: 100%;
+        background: lightskyblue;
+        background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
+        margin-bottom: 200px;
+        animation-name: ballBounce;
+        animation-play-state: paused; 
+        animation-duration: .3s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
 
-#mouseOverButtonId {
-    position: relative;
-    top:0px;
-    left:0px;
-}
+    }
 
-#fAndB {
+    @keyframes ballBounce {
+        0% {transform: translateY(0px); }
+        100% {transform: translateY(80px); }
+        0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
+        100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
+    }
 
-}
+    #mouseOverButtonId {
+        position: relative;
+        top:0px;
+        left:0px;
+    }
 
-#bAndF {
-}
+    #fAndB {
+
+    }
+
+    #bAndF {
+    }
+
+

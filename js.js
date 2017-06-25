@@ -226,13 +226,18 @@ function draw(x, y) {
     ctx.closePath();
     ctx.fill();
     
+    ctx.fillStyle = "black";
+    ctx.font = "13px Arial";
+    ctx.fillText("Surf the sine wave!",(x + 20),(y + 6));
+    
     ctx.fillStyle = "red";
     ctx.beginPath();
-    ctx.arc(x, y, 12, 0, Math.PI * 2, true);
+    ctx.arc(x, y, (y/15), 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.fill();
     ctx.restore();
     x += .6;
+    
     if (x >= 300) {
         x = 0;
     }

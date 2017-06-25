@@ -13,7 +13,8 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css.css">
-        
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
@@ -41,8 +42,32 @@
             </div>
         </header>
         <h1>06: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h1>
-        <!--------------------------------------------------------------------------->     
-        
+        <br>
+        <div>This simple grocery list app is made by manipulating the document object model with some common commands.</div>
+        <br>
+        <table id="domTable">
+            <tr>
+                <th>Item:</th>
+                <th>Price:</th>
+                <th>Edit:</th>
+                <th>Delete:</th>
+            </tr>
+            <tr>
+                <td>Lettuce</td>
+                <td>$2.59</td>
+                <td><i class="em em-pencil" onclick="editARow(this)"/></td>
+                <td><i class="em em-no_entry" onclick="deleteARow(this)"/></td>
+            </tr>
+            <tr id="addItem">
+                <td><input id="item" name="item" onchange="ifEmpty(this)"/></td>
+                <td><input id="price" name="price" onchange="ifEmpty(this)"/></td>
+                <td colspan="2"><i class="em em-heavy_plus_sign" onclick="addItem()"/></td>
+            </tr>
+        </table>
+
+        <script>
+            
+        </script>
 
 
 

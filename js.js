@@ -108,6 +108,113 @@ function clearVisitorName() {
     location.reload();
 }
 
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  06: DOM Manipulation  ::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+function addItem() {
+    var item = document.getElementById("item");
+    var price = document.getElementById("price");
+
+    if (firstName.value === "" || lastName.value === "") {
+        ifEmpty(firstName);
+        ifEmpty(lastName);
+    } else {
+        // Create Row
+        var newRow = document.createElement("tr");
+
+        // Create first name cell and append text
+        var newCell = document.createElement("td");
+        var fnameText = document.createTextNode(item.value);
+        newCell.appendChild(fnameText);
+        newRow.appendChild(newCell);
+
+        // Create last name cell and append text
+        var newCell2 = document.createElement("td");
+        var lnameText = document.createTextNode(price.value);
+        newCell2.appendChild(lnameText);
+        newRow.appendChild(newCell2);
+
+        // Create edit and remove icon image and set their attributes
+        var newCell3 = document.createElement("td");
+        var eimage = document.createElement("img");
+        eimage.setAttribute("src", "media/edit-icon.png");
+        eimage.setAttribute("onclick", "editARow(this)");
+        eimage.setAttribute("alt", "edit icon");
+        newCell3.appendChild(eimage);
+
+        var dimage = document.createElement("img");
+        dimage.setAttribute("src", "media/delete-icon.png");
+        dimage.setAttribute("onclick", "deleteARow(this)");
+        dimage.setAttribute("alt", "delete icon");
+        newCell3.appendChild(dimage);
+        newRow.appendChild(newCell3);
+
+        // Find the table body element
+        // Append the new row before the new input row
+        var tableBody = document.getElementById("domTable");
+        var newInputRow = document.getElementById("newInput");
+        tableBody.insertBefore(newRow, newInputRow);
+
+        // Reset Input Values to Blank
+        item.value = "";
+        price.value = "";
+    }
+}
+
+function deleteARow(icon) {
+    var row = icon.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+
+function editARow(icon) {
+    var row = icon.parentNode.parentNode;
+    var firstNameNode = row.firstChild;
+    var firstNameText = firstNameNode.textContent;
+    var lastNameNode = row.getElementsByTagName("td")[1];
+    var lastNameText = lastNameNode.textContent;
+    firstNameNode.innerHTML = '<input class="firstNameEdit" name="firstNameEdit" value="' + firstNameText + '" onchange="ifEmpty(this)"/>';
+    lastNameNode.innerHTML = '<input class="lastNameEdit" name="lastNameEdit" value="' + lastNameText + '" onchange="ifEmpty(this)"/>';
+    icon.setAttribute("src", "media/save-icon.png");
+    icon.setAttribute("alt", "save icon");
+    icon.setAttribute("onclick", "saveARow(this)");
+}
+
+function saveARow(icon) {
+    var row = icon.parentNode.parentNode;
+    var firstNameNode = row.getElementsByClassName("firstNameEdit")[0];
+    var firstNameText = firstNameNode.value;
+    var lastNameNode = row.getElementsByClassName("lastNameEdit")[0];
+    var lastNameText = lastNameNode.value;
+    if (firstNameText === "" || lastNameText === "") {
+        ifEmpty(firstNameNode);
+        ifEmpty(lastNameNode);
+    } else {
+        firstNameNode.parentNode.innerHTML = firstNameText;
+        lastNameNode.parentNode.innerHTML = lastNameText;
+        icon.setAttribute("src", "media/edit-icon.png");
+        icon.setAttribute("alt", "edit icon");
+        icon.setAttribute("onclick", "editARow(this)");
+    }
+
+}
+
+function ifEmpty(input) {
+
+    if (input.value === "") {
+        input.style.borderColor = "red";
+    } else {
+        input.style.borderColor = "initial";
+    }
+
+}
+
+
+
+
+
+
+
 /* SECTION 09 *****************************************************************/
 
 /* global CSSStyleDeclaration */
@@ -194,50 +301,50 @@ function draw(x, y) {
     ctx.save();
 
     ctx.clearRect(0, 0, 300, 300);
-    
+
 
     ctx.fillStyle = "rgba(0, 0, 255, .25)";
     ctx.beginPath();
     ctx.rect(0, 0, 150, 150);
     ctx.closePath();
     ctx.fill();
-    
+
     ctx.fillStyle = "rgba(255, 0, 0, .5)";
     ctx.beginPath();
     ctx.rect(150, 0, 150, 150);
     ctx.closePath();
     ctx.fill();
-    
+
     ctx.fillStyle = "rgba(0, 255, 0, .5)";
     ctx.beginPath();
     ctx.rect(0, 150, 150, 150);
     ctx.closePath();
     ctx.fill();
-    
+
     ctx.fillStyle = "rgba(125, 255, 255, .5)";
     ctx.beginPath();
     ctx.rect(150, 150, 150, 150);
     ctx.closePath();
     ctx.fill();
-    
+
     ctx.fillStyle = "rgba(255, 255, 255, .5)";
     ctx.beginPath();
     ctx.rect(0, 0, 300, 300);
     ctx.closePath();
     ctx.fill();
-    
+
     ctx.fillStyle = "black";
     ctx.font = "13px Arial";
-    ctx.fillText("Surf the sine wave!",(x + 20),(y + 6));
-    
+    ctx.fillText("Surf the sine wave!", (x + 20), (y + 6));
+
     ctx.fillStyle = "red";
     ctx.beginPath();
-    ctx.arc(x, y, (y/15), 0, Math.PI * 2, true);
+    ctx.arc(x, y, (y / 15), 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.fill();
     ctx.restore();
     x += .6;
-    
+
     if (x >= 300) {
         x = 0;
     }
@@ -256,3 +363,46 @@ function draw(x, y) {
     ctx.stroke();
 }
 
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  12: CSS Transforms  ::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+function trf2() {
+    document.getElementById("trf2").style.transform = "rotate(+20deg)";
+}
+function trf2Up() {
+    document.getElementById("trf2").style.transform = "rotate(-40deg)";
+}
+function trf2Out() {
+    document.getElementById("trf2").style.transform = "rotate(0deg)";
+}
+
+function rotatex(value)
+{
+document.getElementById('flipBox').style.webkitTransform="rotatex(" + value + "deg)";
+document.getElementById('flipBox').style.msTransform="rotatex(" + value + "deg)";
+document.getElementById('flipBox').style.MozTransform="rotatex(" + value + "deg)";
+document.getElementById('flipBox').style.OTransform="rotatex(" + value + "deg)";
+document.getElementById('flipBox').style.transform="rotatex(" + value + "deg)";
+document.getElementById('xval').innerHTML=value + "deg";
+}
+
+function rotatey(value)
+{
+document.getElementById('flipBox').style.webkitTransform="rotatey(" + value + "deg)";
+document.getElementById('flipBox').style.msTransform="rotatey(" + value + "deg)";
+document.getElementById('flipBox').style.MozTransform="rotatey(" + value + "deg)";
+document.getElementById('flipBox').style.OTransform="rotatey(" + value + "deg)";
+document.getElementById('flipBox').style.transform="rotatey(" + value + "deg)";
+document.getElementById('yval').innerHTML=value + "deg";
+}
+
+function rotatez(value)
+{
+document.getElementById('flipBox').style.webkitTransform="rotatez(" + value + "deg)";
+document.getElementById('flipBox').style.msTransform="rotatez(" + value + "deg)";
+document.getElementById('flipBox').style.MozTransform="rotatez(" + value + "deg)";
+document.getElementById('flipBox').style.OTransform="rotatez(" + value + "deg)";
+document.getElementById('flipBox').style.transform="rotatez(" + value + "deg)";
+document.getElementById('zval').innerHTML=value + "deg";
+}

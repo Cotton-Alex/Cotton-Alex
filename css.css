@@ -162,6 +162,17 @@ nav li a:active {
 }
 
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  06: DOM Manipulation  ::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+#domTable, #domTable td, #domTable th {
+    border: 1px solid black;
+}
+
+i:hover {
+    cursor: pointer;
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  10: Audio, Video, Canvas  ::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
@@ -180,49 +191,120 @@ nav li a:active {
     80%  {background-color:blue; left:400px; top:200px;}
     100% {background-color:violet; left:500px; top:200px;}
 }*/
-    /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-    /*::::  13: CSS Animations  ::::::::::::::::::::::::::::::::::::::::::*/
-    /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-    #animA {
-        width:100px;
-        height: 100px;  
-        background-color: lightskyblue; 
-    }
 
-    #animB {
-        width:100px;
-        height: 100px;
-        border-radius: 100%;
-        background: lightskyblue;
-        background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
-        margin-bottom: 200px;
-        animation-name: ballBounce;
-        animation-play-state: paused; 
-        animation-duration: .3s;
-        animation-timing-function: ease-in;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  11: Transitions  :::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-    }
+#tran1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border: 0px solid black;
+    transition: width 2s ease, background 2s ease, border 2s ease;
+}
+#tran1:hover {
+    width: 300px;
+    background: orange;
+    border: 3px solid black;
+}
 
-    @keyframes ballBounce {
-        0% {transform: translateY(0px); }
-        100% {transform: translateY(80px); }
-        0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
-        100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
-    }
+#tran2 {
+    width:100px;
+    height: 100px;
+    rotation: 20deg;
+    background-color: lightskyblue;
+    border-width: 0px;
+}
 
-    #mouseOverButtonId {
-        position: relative;
-        top:0px;
-        left:0px;
-    }
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  12: CSS Transforms  ::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-    #fAndB {
+#trf1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border: 0px solid black;
+}
 
-    }
+#trf1:hover {
+    transform:rotate(6deg)
+}
 
-    #bAndF {
-    }
+#trf2 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border: 0px solid black;
+}
+
+#trf3:hover {
+    transform:rotate(12deg)
+}
+#flipBoxOuter {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 50px;
+    padding: 10px;
+    border: 0px solid black;
+    -webkit-perspective: 300px; /* Chrome, Safari, Opera  */
+}
+#flipBox
+{
+width:300px;
+height:300px;
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
+-webkit-perspective: 300px; /* Chrome, Safari, Opera */
+
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::  13: CSS Animations  ::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+#animA {
+    width:100px;
+    height: 100px;
+    rotation: 20deg;
+    background-color: lightskyblue; 
+}
+
+#animB {
+    width:100px;
+    height: 100px;
+    border-radius: 100%;
+    background: lightskyblue;
+    background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
+    margin-bottom: 200px;
+    animation-name: ballBounce;
+    animation-play-state: paused; 
+    animation-duration: .3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes ballBounce {
+    0% {transform: translateY(0px); }
+    100% {transform: translateY(80px); }
+    0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
+    100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
+}
+
+#mouseOverButtonId {
+    position: relative;
+    top:0px;
+    left:0px;
+}
+
+#fAndB {
+
+}
+
+#bAndF {
+}
 
 

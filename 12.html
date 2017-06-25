@@ -13,11 +13,11 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css.css">
-        
+
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
-    <body onload="checkLocalStorage()">
+    <body onload="checkLocalStorage(), draw(0, 0)">
         <header>
             <div>
                 <nav>
@@ -41,11 +41,33 @@
             </div>
         </header>
         <h1>12: Designing, Defining, and Triggering CSS3 Transforms</h1>
-        <!--------------------------------------------------------------------------->     
+        <p>CSS3 transforms allow you to translate, rotate, scale, and skew elements.
+            <br>A transformation is an effect that lets an element change shape, size and position.
+            <br>CSS3 supports 2D and 3D transformations.
+        </p>
 
-
-
-
-
+        <div id="trf1"></div>
+        <br><br><br>
+        <div id="trf2" onclick="trf2()" onmouseup="trf2Up()" onmouseout="trf2Out()"></div>
+        <br><br><br>
+        
+        <div id="flipBoxOuter">
+            <div id="flipBox">
+                <canvas id="canvas1" width="300" height="300"></canvas>
+            </div>
+        </div>
+        
+        Rotate X: <br>
+        <input type="range" min="-360" max="360" value="7" onInput="rotatex(this.value)" /><br>
+        transform: rotate x(<span id="xval">7deg</span>);
+        <br>
+        Rotate Y: <br>
+        <input type="range" min="-360" max="360" value="7" onInput="rotatey(this.value)" /><br>
+        transform: rotate y(<span id="yval">7deg</span>);
+        <br>
+        Rotate Z: <br>
+        <input type="range" min="-360" max="360" value="7" onInput="rotatez(this.value)" /><br>
+        transform: rotate z(<span id="zval">7deg</span>);
+        <br><br><br><br><br><br><br><br><br>
     </body>
 </html>

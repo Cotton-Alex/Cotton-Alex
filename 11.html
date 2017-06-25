@@ -41,10 +41,20 @@
             </div>
         </header>
         <h1>11: Designing, Defining, and Triggering CSS3 Transitions</h1>
-        <!--------------------------------------------------------------------------->     
+        <p>CSS3 transitions allows you to change property values smoothly (from one value to another), over a given duration.</p>
 
-
-
+        <div id="tran1"></div>
+        <br>
+        <br>
+        <div>The height & width of the box below change based on the number in the box. </div>
+        <br>
+        <div id="tran2"></div>
+        <script>
+            tran2.style.transition = "width 2s ease 0s, height 2s ease";
+        </script>
+        <p>Height: <input type="number" step="5" onchange="tran2.style.height = this.value + 'px'"></p>
+        <p>Width: <input type="number" step="5" onchange="tran2.style.width = this.value + 'px'"></p>
+<!--        <p>Border: <input type="number" step="1" onchange="tran2.style.border = this.value + 'px'"></p>-->
 
 
     </body>

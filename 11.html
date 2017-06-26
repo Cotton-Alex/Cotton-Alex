@@ -13,7 +13,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css.css">
-        
+
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
@@ -41,7 +41,8 @@
             </div>
         </header>
         <h1>11: Designing, Defining, and Triggering CSS3 Transitions</h1>
-        <p>CSS3 transitions allows you to change property values smoothly (from one value to another), over a given duration.</p>
+        <p>CSS3 transitions allows you to change property values smoothly (from one value to another), over a given duration.<br>
+        Notice the easing is different for the width and height, creating more a more interesting transition.</p>
 
         <div id="tran1"></div>
         <br>
@@ -52,10 +53,62 @@
         <script>
             tran2.style.transition = "width 2s ease 0s, height 2s ease";
         </script>
-        <p>Height: <input type="number" step="5" onchange="tran2.style.height = this.value + 'px'"></p>
-        <p>Width: <input type="number" step="5" onchange="tran2.style.width = this.value + 'px'"></p>
-<!--        <p>Border: <input type="number" step="1" onchange="tran2.style.border = this.value + 'px'"></p>-->
-
-
+        <p>Height: <input type="number" value="100" step="5" onchange="tran2.style.height = this.value + 'px'"></p>
+        <p>Width: <input type="number" value="100" step="5" onchange="tran2.style.width = this.value + 'px'"></p>
+        <!--        <p>Border: <input type="number" step="1" onchange="tran2.style.border = this.value + 'px'"></p>-->
+        <br>
+        <br>
+        <div class="row" id="row1">
+        <div class="wave" id="wave01"></div>
+        <div class="wave" id="wave02"></div>
+        <div class="wave" id="wave03"></div>
+        <div class="wave" id="wave04"></div>
+        <div class="wave" id="wave05"></div>
+        <div class="wave" id="wave06"></div>
+        <div class="wave" id="wave07"></div>
+        <div class="wave" id="wave08"></div>
+        <div class="wave" id="wave09"></div>
+        <div class="wave" id="wave10"></div>
+        </div>
+        <br>
+        <div class="row" id="row2">
+        <div class="wave" id="wave11"></div>
+        <div class="wave" id="wave12"></div>
+        <div class="wave" id="wave13"></div>
+        <div class="wave" id="wave14"></div>
+        <div class="wave" id="wave15"></div>
+        <div class="wave" id="wave16"></div>
+        <div class="wave" id="wave17"></div>
+        <div class="wave" id="wave18"></div>
+        <div class="wave" id="wave19"></div>
+        <div class="wave" id="wave20"></div>
+        </div>
+        <br>
+        <div class="row" id="row3">
+        <div class="wave" id="wave21"></div>
+        <div class="wave" id="wave22"></div>
+        <div class="wave" id="wave23"></div>
+        <div class="wave" id="wave24"></div>
+        <div class="wave" id="wave25"></div>
+        <div class="wave" id="wave26"></div>
+        <div class="wave" id="wave27"></div>
+        <div class="wave" id="wave28"></div>
+        <div class="wave" id="wave29"></div>
+        <div class="wave" id="wave30"></div>
+        </div>
+        <br>
+        <div class="row" id="row4">
+        <div class="wave" id="wave31"></div>
+        <div class="wave" id="wave32"></div>
+        <div class="wave" id="wave33"></div>
+        <div class="wave" id="wave34"></div>
+        <div class="wave" id="wave35"></div>
+        <div class="wave" id="wave36"></div>
+        <div class="wave" id="wave37"></div>
+        <div class="wave" id="wave38"></div>
+        <div class="wave" id="wave39"></div>
+        <div class="wave" id="wave40"></div>
+        </div>
+        <br>
     </body>
 </html>

@@ -13,7 +13,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css.css">
-        
+
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
@@ -44,22 +44,7 @@
 
 
 
-        <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-            width
-        :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-        <br>
-        <br>
-        <br>
-        <div>The height & width of the box below change based on the number in the box. </div>
-        <br>
-        <div id="animA"></div>
-        <script>
-            animA.style.transition = "width 2s ease 0s, height 2s ease 0s";
-            animA.style.transform.rotate= "width 2s ease 0s";
-        </script>
-        <p>Height: <input type="number" step="5" value="100" onchange="animA.style.height = this.value + 'px'"></p>
-        <p>Width: <input type="number" step="5" value="100" onchange="animA.style.width = this.value + 'px'"></p>
-        <p>Rotate: <input type="number" step="5" value="0" onchange="animA.style.transform =" + rotate + "this.value + 'deg'"></p>
+
         <br>
         <br>
         <br>
@@ -71,12 +56,16 @@
         <br> 
         <div>The Drop button changes the style.animationPlayState of the object below from paused to running.</div>
         <br>
-        <button onclick="bounce()">Drop</button>
+        <button onclick="bounceB()">Drop</button>
         <br>
         <br>
-        <div id="animB"></div>
+        <div id="bounceParentB">
+            <div id="animB"></div>
+        </div>
+        <br>
         <script>
-            function bounce() {
+            function bounceB() {
+                document.getElementById("bounceParentB").style.animationPlayState = "running";
                 document.getElementById("animB").style.animationPlayState = "running";
             }
         </script>

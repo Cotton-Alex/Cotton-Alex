@@ -65,9 +65,9 @@ nav li a:active {
     text-shadow: 2px 2px 2px rgba(0,0,0,.25);
 }
 
-#menu03, #menu04, #menu05, #menu07, #menu08, #menu09, #menu10, #menu12, #menu13 {
+/*#menu03, #menu04, #menu05, #menu07, #menu08, #menu09, #menu10, #menu12, #menu13 {
     border-bottom: 3px solid black;
-}
+}*/
 
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  03: JSON Stringify & Parse  ::::::::::::::::::::::::::::::::::*/
@@ -285,6 +285,19 @@ transform:rotate(7deg);
     background-color: lightskyblue; 
 }
 
+#bounceParentB {
+    animation-name: ballRollB;
+    animation-play-state: paused;
+    animation-duration: 2.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+}
+@keyframes ballRollB{
+    0% {transform: translateX(0px); }
+    100% {transform: translateX(400px); }    
+}
+
 #animB {
     width:100px;
     height: 100px;
@@ -292,22 +305,20 @@ transform:rotate(7deg);
     background: lightskyblue;
     background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
     margin-bottom: 200px;
-    animation-name: ballBounce;
+    animation-name: ballBounceB;
     animation-play-state: paused; 
     animation-duration: .3s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-
 }
 
-@keyframes ballBounce {
+@keyframes ballBounceB {
     0% {transform: translateY(0px); }
     100% {transform: translateY(80px); }
     0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
     100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
 }
-
 #mouseOverButtonId {
     position: relative;
     top:0px;

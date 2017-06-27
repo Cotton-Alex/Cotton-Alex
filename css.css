@@ -217,24 +217,29 @@ i:hover {
     background-color: lightskyblue;
     border-width: 0px;
 }
-
-.wave {
+.waveContainer {
     display: inline-block;
-    margin:2px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align:center;
+    width: 36px;
+    height: 36px;
+}
+.wave { 
+    margin: auto;
     width: 30px;
     height: 30px;
     background: lightskyblue;
     transition: width .2s ease, height .2s ease, background .1s ease, border .1s ease-out;
 }
 .wave:hover {
-    margin:2px;
-    width: 5px;
-    height: 5px;
-    background: pink;
-    border: 2px solid black;
+    margin: auto;
+    width: 105%;
+    height: 105%;
+    background: lightgreen;
 }
 .row {
-    margin:-15px;
+    margin:-12px;
     padding:0px;
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

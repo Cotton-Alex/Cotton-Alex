@@ -27,3 +27,24 @@ function parseDataFunc(response, divId, isJSON, i) {
             + "Placement: " + responseText[i].unique.location + "<br>"
             + "TTS JSON Info: " + responseText[i].tts + "</div></div></li></ul><br>";
 }
+
+function jsonString(url, divId, isJSON) {
+    var i = document.getElementById("sliderRange").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange =
+            function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+                    parseDataFunc2(xmlhttp.responseText, divId, isJSON, i);
+            };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+function parseDataFunc2(response, divId, isJSON, i) {
+    var responseText = (isJSON) ? JSON.parse(response) : response;
+    document.getElementById(divId).innerHTML = response;
+}
+
+function bounce() {
+    document.getElementById("animB").style.animationPlayState = "running";
+}

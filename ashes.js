@@ -1,9 +1,5 @@
-/* Javascript file to hold some of the functions used in this site ************/
 
 
-
-
-/* SECTION 04 *****************************************************************/
 
 function jsonParse(url, divId, isJSON) {
     var i = document.getElementById("sliderRange").value;
@@ -17,6 +13,7 @@ function jsonParse(url, divId, isJSON) {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+
 function parseDataFunc(response, divId, isJSON, i) {
     var responseText = (isJSON) ? JSON.parse(response) : response;
     document.getElementById(divId).innerHTML =
@@ -47,19 +44,6 @@ function jsonString(url, divId, isJSON) {
     xmlhttp.send();
 }
 
-function parseDataFunc2(response, divId, isJSON, i) {
-    var responseText = (isJSON) ? JSON.parse(response) : response;
-    document.getElementById(divId).innerHTML = response;
-}
-
-function bounce() {
-    document.getElementById("animB").style.animationPlayState = "running";
-}
-
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::::  05: Local Storage  :::::::::::::::::::::::::::::::::::::::::::*/
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
 function checkLocalStorage() {
     if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.backgroundColor !== null) {
@@ -71,16 +55,6 @@ function checkLocalStorage() {
     } else {
         alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
     }
-}
-
-function backgroundColor(bgColor) {
-    localStorage.setItem("backgroundColor", bgColor);
-    document.body.style.background = bgColor;
-}
-
-function clearBackgroundColor(name) {
-    localStorage.removeItem(name);
-    location.reload();
 }
 
 function localStorageGreeting() {
@@ -208,209 +182,4 @@ function ifEmpty(input) {
         input.style.borderColor = "initial";
     }
 
-}
-
-
-
-
-
-
-
-/* SECTION 09 *****************************************************************/
-
-/* global CSSStyleDeclaration */
-
-function loadOn() {
-    alert('This alert was just created by an onload event handler');
-}
-
-function mouseOverButton() {
-    with (document.getElementById("mouseOverButtonId").style) {
-        left = (Math.random() * 200) + "px";
-        top = (Math.random() * 150) + "px";
-    }
-}
-
-function focusFAndB() {
-    document.getElementById("fAndB").style.textTransform = "uppercase";
-}
-
-function blurFAndB() {
-    document.getElementById("fAndB").style.textTransform = "lowercase";
-}
-
-function focusBAndF() {
-    document.getElementById("bAndF").style.textTransform = "uppercase";
-}
-
-function blurBAndF() {
-    document.getElementById("bAndF").style.textTransform = "lowercase";
-}
-
-var clicks = 0;
-function clickCount() {
-    clicks += 1;
-    document.getElementById("addClick").innerHTML = clicks;
-}
-
-var mouseOutClicks = 0;
-function mouseOutClickCount() {
-    mouseOutClicks += 1;
-    document.getElementById("mouseOutAddClick").innerHTML = mouseOutClicks;
-}
-
-var mouseOutOuts = 0;
-function mouseOutCount() {
-    mouseOutOuts += 1;
-    document.getElementById("mouseOutAdd").innerHTML = mouseOutOuts;
-}
-
-function slideGame() {
-    document.getElementById("triesNumber").innerHTML = 0;
-    document.getElementById("slideNumber").innerHTML = 0;
-    document.getElementById("sliderValue").innerHTML = 0;
-    var r = (Math.floor(Math.random() * 100));
-    document.getElementById("matchNumber").innerHTML = r;
-}
-
-function slideChange() {
-    var slideNumber = document.getElementById("sliderValue").value;
-    document.getElementById("slideNumber").innerHTML = slideNumber;
-}
-
-var tries = 0;
-function triesCount() {
-    tries += 1;
-    document.getElementById("triesNumber").innerHTML = tries;
-}
-
-function touchVsc() {
-    document.getElementById("touchVsClick").style.color = "blue";
-}
-
-function tvsClick() {
-    document.getElementById("touchVsClick").style.color = "red";
-}
-
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::::  10: Audio, Video, Canvas  ::::::::::::::::::::::::::::::::::::*/
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-function draw(x, y) {
-    var canvas = document.getElementById("canvas1");
-    var ctx = canvas.getContext("2d");
-    ctx.save();
-
-    ctx.clearRect(0, 0, 300, 300);
-
-
-    ctx.fillStyle = "rgba(0, 0, 255, .25)";
-    ctx.beginPath();
-    ctx.rect(0, 0, 150, 150);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle = "rgba(255, 0, 0, .5)";
-    ctx.beginPath();
-    ctx.rect(150, 0, 150, 150);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle = "rgba(0, 255, 0, .5)";
-    ctx.beginPath();
-    ctx.rect(0, 150, 150, 150);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle = "rgba(125, 255, 255, .5)";
-    ctx.beginPath();
-    ctx.rect(150, 150, 150, 150);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle = "rgba(255, 255, 255, .5)";
-    ctx.beginPath();
-    ctx.rect(0, 0, 300, 300);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle = "black";
-    ctx.font = "13px Arial";
-    ctx.fillText("Surf the sine wave!", (x + 20), (y + 6));
-
-    ctx.fillStyle = "red";
-    ctx.beginPath();
-    ctx.arc(x, y, (y / 15), 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fill();
-    ctx.restore();
-    x += .6;
-
-    if (x >= 300) {
-        x = 0;
-    }
-    var loopTimer = setTimeout('draw(' + x + ',' + (150.0 - Math.sin(x * Math.PI / 90) * 120) + ')', 10);
-
-    for (x = 0; x < 360; x += 20) {
-        ctx.moveTo(x + 5, 150);
-        ctx.lineTo(x, 150);
-    }
-    ctx.moveTo(0, 180);
-
-    for (x = 0; x <= 360; x += 1) {
-        y = 150.0 - Math.sin(x * Math.PI / 90) * 120;
-        ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-}
-
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::::  11: CSS Transition  ::::::::::::::::::::::::::::::::::::::::::*/
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-
-
-
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-/*::::  12: CSS Transforms  ::::::::::::::::::::::::::::::::::::::::::*/
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-function trf2() {
-    document.getElementById("trf2").style.transform = "rotate(+20deg)";
-}
-function trf2Up() {
-    document.getElementById("trf2").style.transform = "rotate(-40deg)";
-}
-function trf2Out() {
-    document.getElementById("trf2").style.transform = "rotate(0deg)";
-}
-
-function rotatex(value)
-{
-document.getElementById('flipBox').style.webkitTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.msTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.MozTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.OTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.transform="rotatex(" + value + "deg)";
-document.getElementById('xval').innerHTML=value + "deg";
-}
-
-function rotatey(value)
-{
-document.getElementById('flipBox').style.webkitTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.msTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.MozTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.OTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.transform="rotatey(" + value + "deg)";
-document.getElementById('yval').innerHTML=value + "deg";
-}
-
-function rotatez(value)
-{
-document.getElementById('flipBox').style.webkitTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.msTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.MozTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.OTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.transform="rotatez(" + value + "deg)";
-document.getElementById('zval').innerHTML=value + "deg";
 }

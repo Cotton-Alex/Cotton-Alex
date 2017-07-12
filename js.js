@@ -31,7 +31,8 @@ function parseDataFunc(response, divId, isJSON, i) {
                 <li><div><img class='pbPicAJAX' src='" + responseText[i].unique.card + "' height='250'>"
             + "<div class='pbInfoAJAX'>Unique Card: " + responseText[i].unique.name + "<br>"
             + "Type: " + responseText[i].unique.type + "<br>"
-            + "Placement: " + responseText[i].unique.location + "<br></div></div></li></ul><br>";
+            + "Placement: " + responseText[i].unique.location + "<br>"
+            + "TTS JSON Info: " + responseText[i].tts + "</div></div></li></ul><br>";
 }
 
 function jsonString(url, divId, isJSON) {

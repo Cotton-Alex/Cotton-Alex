@@ -14,6 +14,49 @@
             "name": ["Blue Jaguar"],
             "type": ["Conjuration"],
             "location": ["Battlefield"]   
+        },
+        "tts": "{
+                    "Name": "Card",
+                    "Transform": {
+                        "posX": 19.4771271,
+                        "posY": 1.49562752,
+                        "posZ": 18.1674519,
+                        "rotX": 359.6867,
+                        "rotY": 179.9877,
+                        "rotZ": 179.5112,
+                        "scaleX": 2.376216,
+                        "scaleY": 1.0,
+                        "scaleZ": 2.376216
+                    },
+                    "Nickname": "Aradel Summergaard",
+                    "Description": "",
+                    "ColorDiffuse": {
+                        "r": 0.713235259,
+                        "g": 0.713235259,
+                        "b": 0.713235259
+                    },
+                    "Locked": false,
+                    "Grid": true,
+                    "Snap": true,
+                    "Autoraise": true,
+                    "Sticky": true,
+                    "Tooltip": true,
+                    "CardID": 4505,
+                    "SidewaysCard": false,
+                    "CustomDeck": {
+                        "3": {
+                            "FaceURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1",
+                            "BackURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1{Unique}",
+                            "NumWidth": 10,
+                            "NumHeight": 7,
+                            "BackIsHidden": true,
+                            "UniqueBack": false
+                        }
+                    },
+                    "LuaScript": "",
+                    "LuaScriptState": "",
+                    "GUID": "dcbca4"
+                },"
         }
     },
     {

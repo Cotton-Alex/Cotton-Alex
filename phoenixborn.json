@@ -15,7 +15,7 @@
             "type": ["Conjuration"],
             "location": ["Battlefield"]   
         },
-        "tts": "{
+        "tts": {
                     "Name": "Card",
                     "Transform": {
                         "posX": 19.4771271,
@@ -56,8 +56,8 @@
                     "LuaScript": "",
                     "LuaScriptState": "",
                     "GUID": "dcbca4"
-                },"
-        }
+                }
+        
     },
     {
         "card": "https://play.plaidhatgames.com/sites/default/files/brennen.jpg",

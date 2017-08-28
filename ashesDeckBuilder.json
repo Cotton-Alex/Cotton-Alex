@@ -325,7 +325,7 @@
                         "scaleY": 0.75,
                         "scaleZ": 0.75
                     },
-                    "Nickname": "",
+                    "Nickname": "Wound Token",
                     "Description": "",
                     "ColorDiffuse": {
                         "r": 0.9999999,
@@ -399,7 +399,7 @@
                         "scaleY": 0.75,
                         "scaleZ": 0.75
                     },
-                    "Nickname": "",
+                    "Nickname": "Status Token",
                     "Description": "",
                     "ColorDiffuse": {
                         "r": 0.9999999,
@@ -473,7 +473,7 @@
                         "scaleY": 0.75,
                         "scaleZ": 0.75
                     },
-                    "Nickname": "",
+                    "Nickname": "Exhaust Token",
                     "Description": "",
                     "ColorDiffuse": {
                         "r": 0.9999999,
@@ -516,7 +516,7 @@
                 "scaleY": 0.75,
                 "scaleZ": 0.75
             },
-            "Nickname": "",
+            "Nickname": "Exhaust Token",
             "Description": "",
             "ColorDiffuse": {
                 "r": 0.9999998,
@@ -556,7 +556,7 @@
                 "scaleY": 0.75,
                 "scaleZ": 0.75
             },
-            "Nickname": "",
+            "Nickname": "Status Token",
             "Description": "",
             "ColorDiffuse": {
                 "r": 0.9999998,
@@ -596,7 +596,7 @@
                 "scaleY": 0.75,
                 "scaleZ": 0.75
             },
-            "Nickname": "",
+            "Nickname": "Wound Token",
             "Description": "",
             "ColorDiffuse": {
                 "r": 0.9999998,
@@ -667,7 +667,7 @@
                         "scaleY": 0.75,
                         "scaleZ": 0.75
                     },
-                    "Nickname": "",
+                    "Nickname": "Wound Token",
                     "Description": "",
                     "ColorDiffuse": {
                         "r": 0.9999999,
@@ -741,7 +741,7 @@
                         "scaleY": 0.75,
                         "scaleZ": 0.75
                     },
-                    "Nickname": "",
+                    "Nickname": "Exhaust Token",
                     "Description": "",
                     "ColorDiffuse": {
                         "r": 0.9999999,
@@ -784,7 +784,7 @@
                 "scaleY": 0.75,
                 "scaleZ": 0.75
             },
-            "Nickname": "",
+            "Nickname": "Exhaust Token",
             "Description": "",
             "ColorDiffuse": {
                 "r": 0.9999998,
@@ -855,7 +855,7 @@
                         "scaleY": 0.75,
                         "scaleZ": 0.75
                     },
-                    "Nickname": "",
+                    "Nickname": "Status Token",
                     "Description": "",
                     "ColorDiffuse": {
                         "r": 0.9999999,
@@ -898,7 +898,7 @@
                 "scaleY": 0.75,
                 "scaleZ": 0.75
             },
-            "Nickname": "",
+            "Nickname": "Status Token",
             "Description": "",
             "ColorDiffuse": {
                 "r": 0.9999998,
@@ -938,7 +938,7 @@
                 "scaleY": 0.75,
                 "scaleZ": 0.75
             },
-            "Nickname": "",
+            "Nickname": "Wound Token",
             "Description": "",
             "ColorDiffuse": {
                 "r": 0.9999998,

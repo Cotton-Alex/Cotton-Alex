@@ -20,7 +20,8 @@ function jsonParse(url, divId, isJSON) {
 function parseDataFunc(response, divId, isJSON, i) {
     var responseText = (isJSON) ? JSON.parse(response) : response;
     document.getElementById(divId).innerHTML =
-            "<ul id='pbAJAX'><li><div><img class='pbPicAJAX' src='" + responseText[i].card + "' height='250'>"
+            "<ul id='pbAJAX'><li><div><img class='pbPicAJAX' src='"
+            + responseText[i].card + "' height='250'>"
             + "<div class='pbInfoAJAX'> Name: " + responseText[i].name + "<br>"
             + responseText[i].from + "<br>\n\
                 Battlefield: " + responseText[i].stats.battlefield + "<br>\n\
@@ -28,11 +29,13 @@ function parseDataFunc(response, divId, isJSON, i) {
                 Spellboard: " + responseText[i].stats.spellboard + "<br>\n\
                 Ability: " + responseText[i].stats.ability + "</div></div></li>\n\
                 \n\
-                <li><div><img class='pbPicAJAX' src='" + responseText[i].unique.card + "' height='250'>"
-            + "<div class='pbInfoAJAX'>Unique Card: " + responseText[i].unique.name + "<br>"
+                <li><div><img class='pbPicAJAX' src='" + responseText[i].unique.card
+            + "' height='250'>"
+            + "<div class='pbInfoAJAX'>Unique Card: "
+            + responseText[i].unique.name + "<br>"
             + "Type: " + responseText[i].unique.type + "<br>"
             + "Placement: " + responseText[i].unique.location + "<br>"
-            + "TTS JSON Info: " + responseText[i].tts + "</div></div></li></ul><br>";
+            + "TTS JSON Info: " + responseText[i].tts.CardID + "</div></div></li></ul><br>";
 }
 
 function jsonString(url, divId, isJSON) {
@@ -87,7 +90,11 @@ function localStorageGreeting() {
     if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.getItem("visitorName") !== null) {
             var vName = localStorage.getItem("visitorName");
-            document.getElementById("lsGreeting").innerHTML = "<span><b>" + vName + "!!</b> That's right. Welcome back " + vName + ", I knew you looked familiar!</span> <button onclick=" + "'clearVisitorName()'" + ">I can try to forget your name if you click here...</button>";
+            document.getElementById("lsGreeting").innerHTML = "<span><b>"
+                    + vName + "!!</b> That's right. Welcome back "
+                    + vName + ", I knew you looked familiar!</span> <button onclick="
+                    + "'clearVisitorName()'" + ">I can try to forget your name\n\
+                    if you click here...</button>";
         } else {
             document.getElementById("lsGreeting").innerHTML = "<div>Hi there, I kinda feel like I recognize you.<br> Remind me your name again...</div> <span><input id=" + "'visitorNameField'" + "type=" + "'text'" + "></span><button type=" + "'submit'" + "onClick=" + "'visitorNameStorage()'" + ">Remember now?</button>";
         }

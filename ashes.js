@@ -29,7 +29,7 @@ function parseDataFunc(response, divId, isJSON, i) {
             + "<div class='pbInfoAJAX'>Unique Card: " + responseText[i].unique.name + "<br>"
             + "Type: " + responseText[i].unique.type + "<br>"
             + "Placement: " + responseText[i].unique.location + "<br>"
-            + "TTS JSON Info: " + responseText[i].tts + "</div></div></li></ul><br>";
+            + "TTS JSON Info: " + responseText[i].tts.cardID + "</div></div></li></ul><br>";
 }
 
 function jsonString(url, divId, isJSON) {

@@ -16,48 +16,47 @@
             "location": ["Battlefield"]   
         },
         "tts": {
-                    "Name": "Card",
-                    "Transform": {
-                        "posX": 19.4771271,
-                        "posY": 1.49562752,
-                        "posZ": 18.1674519,
-                        "rotX": 359.6867,
-                        "rotY": 179.9877,
-                        "rotZ": 179.5112,
-                        "scaleX": 2.376216,
-                        "scaleY": 1.0,
-                        "scaleZ": 2.376216
-                    },
-                    "Nickname": "Aradel Summergaard",
-                    "Description": "",
-                    "ColorDiffuse": {
-                        "r": 0.713235259,
-                        "g": 0.713235259,
-                        "b": 0.713235259
-                    },
-                    "Locked": false,
-                    "Grid": true,
-                    "Snap": true,
-                    "Autoraise": true,
-                    "Sticky": true,
-                    "Tooltip": true,
-                    "CardID": 4505,
-                    "SidewaysCard": false,
-                    "CustomDeck": {
-                        "3": {
-                            "FaceURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1",
-                            "BackURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1{Unique}",
-                            "NumWidth": 10,
-                            "NumHeight": 7,
-                            "BackIsHidden": true,
-                            "UniqueBack": false
-                        }
-                    },
-                    "LuaScript": "",
-                    "LuaScriptState": "",
-                    "GUID": "dcbca4"
+            "name": ["Card"],
+            "Transform": {
+                "posX": 19.4771271,
+                "posY": 1.49562752,
+                "posZ": 18.1674519,
+                "rotX": 359.6867,
+                "rotY": 179.9877,
+                "rotZ": 179.5112,
+                "scaleX": 2.376216,
+                "scaleY": 1.0,
+                "scaleZ": 2.376216
+            },
+            "Nickname": "Aradel Summergaard",
+            "Description": "",
+            "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+            },
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "CardID": [4505],
+            "SidewaysCard": false,
+            "CustomDeck": {
+                "3": {
+                    "FaceURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1",
+                    "BackURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1{Unique}",
+                    "NumWidth": 10,
+                    "NumHeight": 7,
+                    "BackIsHidden": true,
+                    "UniqueBack": false
                 }
-        
+            },
+            "LuaScript": "",
+            "LuaScriptState": "",
+            "GUID": "dcbca4"
+        }
     },
     {
         "card": "https://play.plaidhatgames.com/sites/default/files/brennen.jpg",
@@ -74,6 +73,48 @@
             "name": ["Blackcloud Ninja"],
             "type": ["Ally"],
             "location": ["Battlefield"]   
+        },
+        "tts": {
+            "Name": "Card",
+            "Transform": {
+                "posX": 72.45041,
+                "posY": 2.04284954,
+                "posZ": 33.62417,
+                "rotX": -1.62179913E-06,
+                "rotY": 180.000046,
+                "rotZ": 3.823273E-06,
+                "scaleX": 2.376216,
+                "scaleY": 1.0,
+                "scaleZ": 2.376216
+            },
+            "Nickname": "Brennen Blackcloud (alt)",
+            "Description": "",
+            "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+            },
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "CardID": 8000,
+            "SidewaysCard": false,
+            "CustomDeck": {
+                "52": {
+                    "FaceURL": "http://i.imgur.com/zxfxza5.png",
+                    "BackURL": "http://i.imgur.com/L5aP7Ke.png",
+                    "NumWidth": 10,
+                    "NumHeight": 7,
+                    "BackIsHidden": true,
+                    "UniqueBack": false
+                }
+            },
+            "LuaScript": "",
+            "LuaScriptState": "",
+            "GUID": "96dde2"
         }
     },
     {

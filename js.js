@@ -17,6 +17,7 @@ function jsonParse(url, divId, isJSON) {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+
 function parseDataFunc(response, divId, isJSON, i) {
     var responseText = (isJSON) ? JSON.parse(response) : response;
     document.getElementById(divId).innerHTML =
@@ -34,8 +35,7 @@ function parseDataFunc(response, divId, isJSON, i) {
             + "<div class='pbInfoAJAX'>Unique Card: "
             + responseText[i].unique.name + "<br>"
             + "Type: " + responseText[i].unique.type + "<br>"
-            + "Placement: " + responseText[i].unique.location + "<br>"
-            + "TTS JSON Info: " + responseText[i].tts.CardID + "</div></div></li></ul><br>";
+            + "Placement: " + responseText[i].unique.location + "</div></div></li></ul><br>";
 }
 
 function jsonString(url, divId, isJSON) {

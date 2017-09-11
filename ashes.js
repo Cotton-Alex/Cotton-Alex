@@ -17,7 +17,8 @@ function jsonParse(url, divId, isJSON) {
 function parseDataFunc(response, divId, isJSON, i) {
     var responseText = (isJSON) ? JSON.parse(response) : response;
     document.getElementById(divId).innerHTML =
-            "<ul id='pbAJAX'><li><div><img class='pbPicAJAX' src='" + responseText[i].card + "' height='250'>"
+            "<ul id='pbAJAX'><li><div><img class='pbPicAJAX' src='"
+            + responseText[i].card + "' height='250'>"
             + "<div class='pbInfoAJAX'> Name: " + responseText[i].name + "<br>"
             + responseText[i].from + "<br>\n\
                 Battlefield: " + responseText[i].stats.battlefield + "<br>\n\
@@ -82,3 +83,7 @@ function clearVisitorName() {
     localStorage.removeItem("visitorName");
     location.reload();
 }
+
+//function saveFile() {
+//    fswriteFile('pxbrn4TTS.json', json, 'utf8', callback);
+//}

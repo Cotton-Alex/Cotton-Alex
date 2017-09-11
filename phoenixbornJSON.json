@@ -1,5 +1,6 @@
 [
-    {
+    {   
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Aradel_Cards_Phoenixborn.jpg",
         "name": "Aradel Summergaard",
         "from": "Phoenixborn of Evermist Valley",
@@ -14,9 +15,52 @@
             "name": "Blue Jaguar",
             "type": "Conjuration",
             "location": "Battlefield"   
+        },
+        "tts": {
+            "name": "Card",
+            "Transform": {
+                "posX": 19.4771271,
+                "posY": 1.49562752,
+                "posZ": 18.1674519,
+                "rotX": 359.6867,
+                "rotY": 179.9877,
+                "rotZ": 179.5112,
+                "scaleX": 2.376216,
+                "scaleY": 1.0,
+                "scaleZ": 2.376216
+            },
+            "Nickname": "Aradel Summergaard",
+            "Description": "",
+            "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+            },
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "CardID": 4505,
+            "SidewaysCard": false,
+            "CustomDeck": {
+                "3": {
+                    "FaceURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1",
+                    "BackURL": "https://www.dropbox.com/s/71ezakt5kfaxhvq/phoenixborn_and_reference.jpg?dl=1{Unique}",
+                    "NumWidth": 10,
+                    "NumHeight": 7,
+                    "BackIsHidden": true,
+                    "UniqueBack": false
+                }
+            },
+            "LuaScript": "",
+            "LuaScriptState": "",
+            "GUID": "dcbca4"
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/brennen.jpg",
         "name": "Brennen Blackcloud",
         "from": "Phoenixborn of Blackcloud",
@@ -31,9 +75,52 @@
             "name": ["Blackcloud Ninja"],
             "type": ["Ally"],
             "location": ["Battlefield"]   
+        },
+        "tts": {
+            "Name": "Card",
+            "Transform": {
+                "posX": 72.45041,
+                "posY": 2.04284954,
+                "posZ": 33.62417,
+                "rotX": -1.62179913E-06,
+                "rotY": 180.000046,
+                "rotZ": 3.823273E-06,
+                "scaleX": 2.376216,
+                "scaleY": 1.0,
+                "scaleZ": 2.376216
+            },
+            "Nickname": "Brennen Blackcloud (alt)",
+            "Description": "",
+            "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+            },
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "CardID": 8000,
+            "SidewaysCard": false,
+            "CustomDeck": {
+                "52": {
+                    "FaceURL": "http://i.imgur.com/zxfxza5.png",
+                    "BackURL": "http://i.imgur.com/L5aP7Ke.png",
+                    "NumWidth": 10,
+                    "NumHeight": 7,
+                    "BackIsHidden": true,
+                    "UniqueBack": false
+                }
+            },
+            "LuaScript": "",
+            "LuaScriptState": "",
+            "GUID": "96dde2"
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Coal_Cards_Phoenixborn_version2.jpg",
         "name": "Coal Roarkwin",
         "from": "Phoenixborn of Rustwatch",
@@ -51,6 +138,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/dimona_0.jpg",
         "name": "Dimona Odinstar",
         "from": "Phoenixborn of Rayward",
@@ -68,6 +156,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/art_jessa.jpg",
         "name": "Jessa Na Ni",
         "from": "Phoenixborn of the Bloodwoods Clan",
@@ -85,6 +174,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Leo_Sunshadow.jpg",
         "name": "Leo Sunshadow",
         "from": "Phoenixborn of Neverset",
@@ -108,6 +198,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/lulu_phoenixborn_card.jpg",
         "name": "Lulu Firestone",
         "from": "Phoenixborn of Gorrenrock",
@@ -125,6 +216,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/maeoni.jpg",
         "name": "Maeoni Viper",
         "from": "Phoenixborn of Gorrenrock",
@@ -142,6 +234,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Namine_Hymntide.jpg",
         "name": "Namine Hymntide",
         "from": "Phoenixborn of Soaksend",
@@ -159,6 +252,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Noah_Cards_Phoenixborn.jpg",
         "name": "Noah Redmoon",
         "from": "Phoenixborn of Viros",
@@ -176,6 +270,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH04-Pheonixborn-Odette_Diamondcrest.jpg",
         "name": "Odette Diamondcrest",
         "from": "Phoenixborn of Lordswall",
@@ -193,6 +288,7 @@
         }
     },
     {
+        "cardClass": "phoenixborn",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Orrick_Gilstream.jpg",
         "name": "Orrick Gilstream",
         "from": "Phoenixborn of Gobi",
@@ -210,6 +306,7 @@
         }
     },
     {
+        "cardClass": "spell",
         "card": "https://play.plaidhatgames.com/sites/default/files/rin%20card.jpg",
         "name": "Rin Northfell",
         "from": "Phoenixborn of Frostdale",
@@ -233,6 +330,7 @@
         }
     },
     {
+        "cardClass": "ally",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH01_PHG_Website_Articles_Saria_Cards_Phoenixborn.jpg",
         "name": "Saria Guideman",
         "from": "Phoenixborn of Lighthouse Bay",
@@ -250,6 +348,7 @@
         }
     },
     {
+        "cardClass": "ally",
         "card": "https://play.plaidhatgames.com/sites/default/files/ASH03-Phoenixborn-Victoria_Glassfire.jpg",
         "name": "Victoria Glassfire",
         "from": "Phoenixborn of Smogborough",

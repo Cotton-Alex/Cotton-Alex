@@ -45,10 +45,10 @@
         <div>
             <script>
                 
-                //object literal - create an object with key/value pairs inside braces
-                var john = {
-                    name:'John',
-                    lastName:'Smith',
+                //object literal - create an object with key/value pairs (properties) inside braces
+                var john = {//john object
+                    name:'John',//name property
+                    lastName:'Smith',//lastName property
                     height:'6 ft',
                     weight: 200,
                     yearOfBirth: 1990,
@@ -85,6 +85,7 @@
                 console.log(jane);
                 
                 //Object Methods
+                //v1.0
                 var brigham = {
                     name:'Brigham',
                     lastName:'Cotton',
@@ -101,6 +102,31 @@
                 console.log(brigham.family);
                 console.log(brigham.family[3]);
                 console.log(brigham.calculateAge(2010));
+                
+                var today = new Date();
+                var year = today.getFullYear();//gets current year and sets variable
+                
+                //v2.0
+                var hazel = {
+                    name:'Hazel',
+                    lastName:'Cotton',
+                    yearOfBirth: 2011,
+                    job:'Student',
+                    isMarried: false,
+                    family:['Alex', 'Darcie', 'Ginger', 'Brigham', 'Clementine'],
+                    calculateAge: function() {//method of the hazel object
+                        //return 2017 - this.yearOfBirth;
+                        this.age = year - this.yearOfBirth;//creates new property and calculates it's value
+                    }
+                };
+                
+                //console.log(brigham.calculateAge());
+                //var age = brigham.calculateAge();
+                //brigham.age = age;
+                //console.log(brigham);
+                
+                hazel.calculateAge();
+                console.log(hazel);
                 
             </script>
         </div>

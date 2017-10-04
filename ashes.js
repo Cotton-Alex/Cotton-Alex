@@ -1,5 +1,11 @@
-
-
+//************** NOTES ***************
+// 1. An idea to get js to build the json file: a json array holds all of the
+// information about the cards to display on the screen. The user can choose
+// cards by clicking checkboxes or using up/down buttons to choose the number
+// of each card they want in their deck. Once finished, they'll press a
+// "create deck" button that will add the selections via concat to another
+// json file that already includes everything except the cards. This file will
+// be stored in local storage until I can figure out how to download it.
 
 function jsonParse(url, divId, isJSON) {
     var i = document.getElementById("sliderRange").value;

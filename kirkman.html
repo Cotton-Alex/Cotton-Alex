@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><input type="button" id="theButton" value="START"></input> Checks: <span id="checks">0</span></p>
+        <div style="height:125px">
+            <div id="canvas" style="position:relative"></div>
+        </div>
+        <script>
+            for (var a = "NEW", d = 3, g = 5 * d, h = (g - 1) / (d - 1), l = document.getElementById("canvas"), m = 0; 5 > m; m++)for (var n = 0; 7 > n; n++)for (var p = 0; 3 > p; p++){var q = document.createElement("span"); q.id = "span" + n + m + p; q.style.position = "absolute"; q.style.top = 25 * m + "px"; q.style.left = 40 + 100 * n + 20 * p + "px"; q.innerHTML = "x"; l.appendChild(q)}for (var r = document.getElementById("checks"), s = 0; s < g * h; s++)var t = new Int8Array(5 * h * d); for (var u = new Int8Array(h * g), v = new Int8Array(g * g), s = 0; s < t.length; s++)t[s] = - 1; for (s = 0; s < u.length; s++)u[s] = 0;
+            for (s = 0; s < v.length; s++)v[s] = 0; function x(b, e, f){var c = b * g + e * d + f; w = t[c]; if ( - 1 !== w)for (document.getElementById("span" + b + e + f).innerHTML = "x", t[c] = - 1, c = u[b * g + w] = 0; c < f; c++)v[t[b * g + e * d + c] * g + w] = !1}var y = 0, z = 0;
+            function A(){if ("PAUSED" !== a){for (var b = Math.floor(y / g), e = Math.floor(y % g / d), f = Math.floor(y % d), c = Math.max(t[b * g + e * d + f] + 1, 0 === f?0 === e?0:t[b * g + (e - 1) * d + 0]:t[b * g + e * d + (f - 1)] + 1); c < g; c++)if (z++, r.innerHTML = z, !(u[b * g + c] || 0 < b && 0 === e && 1 === f && c < t[(b - 1) * g + 0 * d + 1])){if (0 < b && e < d && 0 === f && c != e)break; if (0 < b && f < d - 1 && c >= g - d)break; var k; a:{for (k = 0; k < f; k++)if (v[t[b * g + e * d + k] * g + c]){k = !1; break a}k = !0}if (k){x(b, e, f); document.getElementById("span" + b + e + f).innerHTML = String.fromCharCode(65 + c); t[b * g + e * d + f] = c; u[b * g + c] = 1; for (k = 0; k <
+                    f; k++)v[t[b * g + e * d + k] * g + c] = !0; y++; setTimeout(A); return}}y--; x(b, e, f); setTimeout(A)}}theButton.onclick = function(){"NEW" === a?(y = 0, a = "RUNNING", A(), theButton.value = "PAUSE"):"PAUSED" === a?(a = "RUNNING", A(), theButton.value = "PAUSE"):"RUNNING" === a && (a = "PAUSED", theButton.value = "RESUME")};
+        </script>
+
+    </body>
+</html>

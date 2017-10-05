@@ -13,7 +13,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="css.css">
-        
+
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
@@ -44,26 +44,26 @@
         <h1>02: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h1>
         <div>
             <script>
-                
+
                 //object literal - create an object with key/value pairs (properties) inside braces
                 var john = {//john object
-                    name:'John',//name property
-                    lastName:'Smith',//lastName property
-                    height:'6 ft',
+                    name: 'John', //name property
+                    lastName: 'Smith', //lastName property
+                    height: '6 ft',
                     weight: 200,
                     yearOfBirth: 1990,
-                    job:'Teacher',
+                    job: 'Teacher',
                     isMarried: false
                 };
-                
+
                 // two ways to call a value by key name
                 console.log(john.lastName); // dot notation
                 console.log(john['lastName']); // square brackets surrounding key
-                
+
                 // you can call a value with a variable that contains the key
                 var xyz = 'job';
                 console.log(john[xyz]);
-                
+
                 // properties can be changed using dot notation and square brackets
                 john.lastName = 'Miller';
                 john['job'] = 'Programmer';
@@ -71,7 +71,7 @@
 
                 // all properties of the object will be in the log
                 console.log(john);
-                
+
                 //create an empty object and fill in keys and properties later
                 var jane = new Object();
                 jane.name = 'Jane';
@@ -81,60 +81,83 @@
                 jane['yearOfBirth'] = 1955;
                 jane['job'] = 'Retired';
                 jane.isMarried = true;
-                
+
                 console.log(jane);
-                
+
                 //Object Methods
                 //v1.0
                 var brigham = {
-                    name:'Brigham',
-                    lastName:'Cotton',
+                    name: 'Brigham',
+                    lastName: 'Cotton',
                     yearOfBirth: 2010,
-                    job:'Student',
+                    job: 'Student',
                     isMarried: false,
-                    family:['Alex', 'Darcie', 'Ginger', 'Hazel', 'Clementine'],
-                    calculateAge: function() {
+                    family: ['Alex', 'Darcie', 'Ginger', 'Hazel', 'Clementine'],
+                    calculateAge: function () {
                         return 2017 - this.yearOfBirth;
                     }
                 };
-                
+
                 console.log(brigham);
                 console.log(brigham.family);
                 console.log(brigham.family[3]);
                 console.log(brigham.calculateAge(2010));
-                
+
                 var today = new Date();
                 var year = today.getFullYear();//gets current year and sets variable
-                
+
                 //v2.0
                 var hazel = {
-                    name:'Hazel',
-                    lastName:'Cotton',
+                    name: 'Hazel',
+                    lastName: 'Cotton',
                     yearOfBirth: 2011,
-                    job:'Student',
+                    job: 'Student',
                     isMarried: false,
-                    family:['Alex', 'Darcie', 'Ginger', 'Brigham', 'Clementine'],
-                    calculateAge: function() {//method of the hazel object
+                    family: ['Alex', 'Darcie', 'Ginger', 'Brigham', 'Clementine'],
+                    calculateAge: function () {//method of the hazel object
                         //return 2017 - this.yearOfBirth;
                         this.age = year - this.yearOfBirth;//creates new property and calculates it's value
                     }
                 };
-                
+
                 //console.log(brigham.calculateAge());
                 //var age = brigham.calculateAge();
                 //brigham.age = age;
                 //console.log(brigham);
-                
+
                 hazel.calculateAge();
                 console.log(hazel);
-                
-                console.log(null === 0);//false
-                console.log(null !== 0);//true
-                console.log(null < 0);//false
-                console.log(null > 0);//false
-                console.log(null <= 0);//true
-                console.log(null >= 0);//true
-                
+
+
+                //Function Constructor
+
+                var ginger = {
+                    name: 'Ginger',
+                    lastName: 'Cotton',
+                    yearOfBirth: 2007,
+                    job: 'Student'
+                };
+
+                var Person = function (name, lastName, yearOfBirth, job) {
+                    this.name = name;
+                    this.lastName = lastName;
+                    this.yearOfBirth = yearOfBirth;
+                    this.job = job;
+                };
+
+                Person.prototype.calculateAge = function () {
+                    this.age = year - this.yearOfBirth;
+                };
+
+                var clementine = new Person('Clementine', 'Cotton', 2016, 'Infant');
+
+                clementine.calculateAge();
+                console.log(clementine);
+
+
+
+
+
             </script>
         </div>
     </body>

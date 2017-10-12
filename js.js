@@ -12,7 +12,6 @@ function jsonParse(url, divId, isJSON) {
             function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
                     parseDataFunc(xmlhttp.responseText, divId, isJSON, i);
-
             };
     xmlhttp.open("GET", url, true);
     xmlhttp.send();

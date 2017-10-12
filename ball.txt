@@ -1,1 +1,1 @@
-<a onclick="bounce()"><div id="animB"></div></a>
+<a onclick="jsonString('startAgain.txt', 'rawJSON', false)"><div id="animC"></div></a>

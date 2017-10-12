@@ -7,19 +7,19 @@
 
 function jsonParse(url, divId, isJSON) {
     var i = document.getElementById("sliderRange").value;
-    var xmlhttp = new XMLHttpRequest();
+    var xmlhttp = new XMLHttpRequest();//connection to server
     xmlhttp.onreadystatechange =
             function () {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
-                    parseDataFunc(xmlhttp.responseText, divId, isJSON, i);
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) //is the file done loading and error free?
+                    parseDataFunc(xmlhttp.responseText, divId, isJSON, i);//pass info to the parse function
             };
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", url, true);// Send a Request To a Server
     xmlhttp.send();
 }
 
 function parseDataFunc(response, divId, isJSON, i) {
-    var responseText = (isJSON) ? JSON.parse(response) : response;
-    document.getElementById(divId).innerHTML =
+    var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
+    document.getElementById(divId).innerHTML = //update page with JSON info
             "<ul id='pbAJAX'><li><div><img class='pbPicAJAX' src='"
             + responseText[i].card + "' height='250'>"
             + "<div class='pbInfoAJAX'> Name: " + responseText[i].name + "<br>"
@@ -393,30 +393,30 @@ function trf2Out() {
 
 function rotatex(value)
 {
-document.getElementById('flipBox').style.webkitTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.msTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.MozTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.OTransform="rotatex(" + value + "deg)";
-document.getElementById('flipBox').style.transform="rotatex(" + value + "deg)";
-document.getElementById('xval').innerHTML=value + "deg";
+    document.getElementById('flipBox').style.webkitTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.msTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.MozTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.OTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.transform = "rotatex(" + value + "deg)";
+    document.getElementById('xval').innerHTML = value + "deg";
 }
 
 function rotatey(value)
 {
-document.getElementById('flipBox').style.webkitTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.msTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.MozTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.OTransform="rotatey(" + value + "deg)";
-document.getElementById('flipBox').style.transform="rotatey(" + value + "deg)";
-document.getElementById('yval').innerHTML=value + "deg";
+    document.getElementById('flipBox').style.webkitTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.msTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.MozTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.OTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.transform = "rotatey(" + value + "deg)";
+    document.getElementById('yval').innerHTML = value + "deg";
 }
 
 function rotatez(value)
 {
-document.getElementById('flipBox').style.webkitTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.msTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.MozTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.OTransform="rotatez(" + value + "deg)";
-document.getElementById('flipBox').style.transform="rotatez(" + value + "deg)";
-document.getElementById('zval').innerHTML=value + "deg";
+    document.getElementById('flipBox').style.webkitTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.msTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.MozTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.OTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.transform = "rotatez(" + value + "deg)";
+    document.getElementById('zval').innerHTML = value + "deg";
 }

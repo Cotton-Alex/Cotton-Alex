@@ -12,10 +12,10 @@
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css.css">
-        
+        <link rel="stylesheet" href="river.css">
+
         <!-- SCRIPTS -->
-        <script type="text/javascript" src="ashes.js"></script>
+        <script type="text/javascript" src="river.js"></script>
     </head>
     <body>
         <header>
@@ -36,33 +36,29 @@
                         <li id="menu11"><a href="11.html">11</a></li>
                         <li id="menu12"><a href="12.html">12</a></li>
                         <li id="menu13"><a href="13.html">13</a></li>
-                        <li id="menu14"><a href="ashes.html">:: Ashes Deck Builder ::</a></li>
+                        <li id="menu14"><a href="river.html">Carrot - Rabbit - Fox</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <h1>ASHES: Rise of the Phoenixborn</h1>
-        <h2>:::  DECK BUILDER  :::</h2>
-        <br>
-        <br>
-        <h3>Display JSON data from an external file:</h3>
-        <input type="range" id="sliderRange" onInput="jsonParse('https://cotton-alex.github.io/phoenixborn.json', 'parseData', true)" value="0" max="14">
-        <br>
-        <br>
-        <div id="parseData"></div>
-        <br>
-        <br>
-        <div id="rawJSON">
-            <h2>AJAX can serialize a JSON file and that can then be displayed as a string.</h2>
-            <button type="button" onclick="jsonString('ajaxTextFile.txt', 'rawJSON', false)">Stringify</button>
+        <h1>The Carrot, the Rabbit, and the Fox</h1>
+        <h2>:::  a riddle  :::</h2>
+        <div id="topBank">
+            <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img id="carrot" src="images/carrot.png" alt="carrot" draggable="true" ondragstart="drag(event)">
+                <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ondragstart="drag(event)">
+                <img id="fox" src="images/fox.png" alt="fox" draggable="true" ondragstart="drag(event)">
+            </div>
         </div>
-        <div id="stringData"></div>
+
+        <div id="water">
+            <div id="boat" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+
+        <div id="bottomBank">
+            <div id="bottomDrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-       
     </body>
 </html>

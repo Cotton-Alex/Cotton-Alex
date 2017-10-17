@@ -1,4 +1,3 @@
-
 <div id="rawJSON">
     <h2>AJAX can serialize a JSON file and that can then be displayed as a string.</h2>
     <button type="button" onclick="jsonString('ajaxTextFile.txt', 'rawJSON', false)">Stringify</button>

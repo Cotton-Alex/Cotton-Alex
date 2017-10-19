@@ -89,6 +89,13 @@ nav li a:active {
  max-height: 320px;
  background-color: aqua;
 }
+#alerts {
+ width: 30%;
+ max-height: 298px;
+ background: white;
+ border-color: black;
+ border-radius: 5%;
+}
 
 #bottomBank {
  width: 100%;

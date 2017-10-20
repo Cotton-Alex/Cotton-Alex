@@ -113,7 +113,7 @@ nav li a:active {
     float: left;
 }
 
-#rabbit {
+#rabbit { 
     width: 75px;
     height: 75px;
     margin: auto;
@@ -128,20 +128,20 @@ nav li a:active {
 }
 
 #topDrop {
-    width: 228px;
-    height: 76px;
+    width: 225px;
+    height: 75px;
     margin: auto;
     border: 1px solid #aaaaaa;
 }
 #boat {
-    width: 76px;
-    height: 162px;
+    width: 75px;
+    height: 75px;
     margin: auto;
     border: 1px solid #aaaaaa;
 }
 #bottomDrop {
-    width: 228px;
-    height: 76px;
+    width: 225px;
+    height: 75px;
     margin: auto;
     border: 1px solid #aaaaaa;
 }

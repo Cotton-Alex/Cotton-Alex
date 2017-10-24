@@ -11,9 +11,19 @@ function allowDrop(ev) {
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
     var dropFrom = (ev.target.parentNode.id);
+    if (boatLocation === 0) {
+        document.getElementById("bottomDrop").setAttribute("onDrop", false);
+        document.getElementById("topDrop").setAttribute("onDrop", "drop(event)");
+    }
+    if (boatLocation === 1) {
+        document.getElementById("topDrop").setAttribute("onDrop", false);
+        document.getElementById("bottomDrop").setAttribute("onDrop", "drop(event)");
+    }
+    
     console.log("------------------- drag");
     console.log("object = " + ev.target.id);
     console.log("dropFrom = " + dropFrom);
+    
 }
 
 function drop(ev) {
@@ -25,8 +35,8 @@ function drop(ev) {
         console.log("object = " + ev.target);
         console.log("dropFrom = " + dropFrom);
         console.log("dropTo = " + dropTo);
-        if (((dropFrom === "topDrop") && (dropTo === "bottomDrop")) || ((dropFrom === "bottomDrop") && (dropTo === "topDrop")))
-            return false;
+//        if (((dropFrom === "topDrop") && (dropTo === "bottomDrop")) || ((dropFrom === "bottomDrop") && (dropTo === "topDrop")))
+//            return false;
         if (!ev.target.getAttribute("ondrop"))
             return false;
     var data = ev.dataTransfer.getData("text");
@@ -78,7 +88,7 @@ function boatCross() {
            console.log("(boatLocation === 1) error");
            return false;
         }
-        document.getElementById("boat").style.transform = "translateY(0%)";
+        document.getElementById("boat").style.translate = "vertical-align: botom;";
         boatLocation = 0;
         return;
     }

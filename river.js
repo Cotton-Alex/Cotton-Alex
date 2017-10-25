@@ -11,6 +11,12 @@ function allowDrop(ev) {
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
     var dropFrom = (ev.target.parentNode.id);
+    if ((dropFrom === "topDrop") && (boatLocation === 1)) {
+        return false;
+    }
+    if ((dropFrom === "bottomDrop") && (boatLocation === 0)) {
+        return false;
+    }
     if (boatLocation === 0) {
         document.getElementById("bottomDrop").setAttribute("onDrop", false);
         document.getElementById("topDrop").setAttribute("onDrop", "drop(event)");
@@ -23,6 +29,7 @@ function drag(ev) {
     console.log("------------------- drag");
     console.log("object = " + ev.target.id);
     console.log("dropFrom = " + dropFrom);
+    console.log("boatLocation = " + boatLocation);
     
 }
 
@@ -88,7 +95,7 @@ function boatCross() {
            console.log("(boatLocation === 1) error");
            return false;
         }
-        document.getElementById("boat").style.translate = "vertical-align: botom;";
+        document.getElementById("boat").style.transform = "translateY(0%)";
         boatLocation = 0;
         return;
     }

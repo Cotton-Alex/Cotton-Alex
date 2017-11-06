@@ -8,7 +8,7 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function drag(ev) {
+function drag(ev ) {
     ev.dataTransfer.setData("text", ev.target.id);
     var dropFrom = (ev.target.parentNode.id);
     if ((dropFrom === "topDrop") && (boatLocation === 1)) {
@@ -25,12 +25,10 @@ function drag(ev) {
         document.getElementById("topDrop").setAttribute("onDrop", false);
         document.getElementById("bottomDrop").setAttribute("onDrop", "drop(event)");
     }
-    
     console.log("------------------- drag");
     console.log("object = " + ev.target.id);
     console.log("dropFrom = " + dropFrom);
     console.log("boatLocation = " + boatLocation);
-    
 }
 
 function drop(ev) {

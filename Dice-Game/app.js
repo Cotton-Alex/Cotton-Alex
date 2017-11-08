@@ -1,22 +1,3 @@
-/*
- GAME RULES:
- 
- - The game has 2 players, playing in rounds
- - In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
- - BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
- - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
- - The first player to reach 100 points on GLOBAL score wins the game
- 
- */
-
-
-
-// -----   TODO    -----/-
-// the roll dice button will go under the current score for the player who is currently playing
-// when a 1 is rolled the roll dice button will move to the other player
-
-
-
 var scores, roundScore, activePlayer, gamePlaying;
 
 init();
@@ -27,7 +8,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
     // update the ui
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-    
+
     // Check for win
     if (scores[activePlayer] >= 100) {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
@@ -41,6 +22,34 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         nextPlayer();
     }
 });
+
+function diceRoll() {
+    var diceBounce = Math.floor(Math.random() * 10) + 5;
+
+    //create loop
+    for (var i = 0; i < diceBounce; i++) {
+        
+        //random dice number
+        dice = Math.floor(Math.random() * 6) + 1;
+        
+        //random angle
+        var diceAngle = Math.floor(Math.random() * 180) + 1;
+        
+        //display dice number
+        var diceDOM = document.querySelector('.dice');
+        diceDOM.style.display = 'block';
+        diceDOM.src = 'dice-' + dice + '.png';
+        
+        //transform dice angle
+        diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
+        
+        //wait some time
+        //setTimeout (3);
+        
+        //send back through loop
+        i++;
+    };
+}
 
 function nextPlayer() {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -82,7 +91,35 @@ function init() {
 }
 
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
+
 for (var i = 0; i, playerBtnRoll.length; i++) {
+    //diceRoll();
+    
+    
+    var diceBounce = Math.floor(Math.random() * 10) + 5;
+    console.log("original diceBounce = " + diceBounce);
+    //create loop
+    for (var i = 0; diceBounce; i++) {
+        console.log('Current diceBounce =' + diceBounce);
+        //random dice number
+        dice = Math.floor(Math.random() * 6) + 1;
+        console.log('dice = ' + dice);
+        //random angle
+        var diceAngle = Math.floor(Math.random() * 180) + 1;
+        console.log('diceAngle = ' + diceAngle);
+        //display dice number
+        //var diceDOM = document.querySelector('.dice');
+        //diceDOM.style.display = 'block';
+        //diceDOM.src = 'dice-' + dice + '.png';
+        
+        //transform dice angle
+        //diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
+        
+        //wait some time
+        //setTimeout (3);
+    }
+    
+    
     playerBtnRoll[i].addEventListener('click', function () {
 
         //random number

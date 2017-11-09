@@ -155,9 +155,12 @@ i {
     top: 467px;
 }
 
+#diceID {
+    
+}
+
 .dice {
     position: absolute;
-    trasnform: rotate(45deg);
     left: 50%;
     top: 178px;
     transform: translateX(-50%);

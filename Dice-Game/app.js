@@ -24,30 +24,34 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 });
 
 function diceRoll() {
-    var diceBounce = Math.floor(Math.random() * 10) + 5;
+    var diceBounce = Math.floor(Math.random() * 5) + 5;
+    console.log('diceRoll Initial diceBounce = ' + diceBounce);
 
     //create loop
     for (var i = 0; i < diceBounce; i++) {
         
+        console.log('Current diceBounce =' + diceBounce);
         //random dice number
         dice = Math.floor(Math.random() * 6) + 1;
-        
+        console.log('dice = ' + dice);
         //random angle
         var diceAngle = Math.floor(Math.random() * 180) + 1;
-        
+        console.log('diceAngle = ' + diceAngle);
         //display dice number
         var diceDOM = document.querySelector('.dice');
+            
+        
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
-        
+        document.querySelector('#diceID').style.transform = 'rotate(' + diceAngle + 'deg);';
         //transform dice angle
-        diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
-        
+
         //wait some time
-        //setTimeout (3);
-        
+            
+
         //send back through loop
-        i++;
+        console.log('diceRoll i = ' + i);
+        setTimeout(diceRoll, 500);
     };
 }
 
@@ -90,40 +94,38 @@ function init() {
     document.querySelector('.dice').style.display = 'none';
 }
 
+
+//var diceBounce = Math.floor(Math.random() * 10) + 5;
+//console.log("original diceBounce = " + diceBounce);
+//create loop
+//for (var i = 0; diceBounce; i++) {
+//console.log('Current diceBounce =' + diceBounce);
+//random dice number
+//dice = Math.floor(Math.random() * 6) + 1;
+//console.log('dice = ' + dice);
+//random angle
+//var diceAngle = Math.floor(Math.random() * 180) + 1;
+//console.log('diceAngle = ' + diceAngle);
+//display dice number
+//var diceDOM = document.querySelector('.dice');
+//diceDOM.style.display = 'block';
+//diceDOM.src = 'dice-' + dice + '.png';
+
+//transform dice angle
+//diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
+
+//wait some time
+//setTimeout ("", 3000);
+//}
+
+
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
-
 for (var i = 0; i, playerBtnRoll.length; i++) {
-    //diceRoll();
-    
-    
-    var diceBounce = Math.floor(Math.random() * 10) + 5;
-    console.log("original diceBounce = " + diceBounce);
-    //create loop
-    for (var i = 0; diceBounce; i++) {
-        console.log('Current diceBounce =' + diceBounce);
-        //random dice number
-        dice = Math.floor(Math.random() * 6) + 1;
-        console.log('dice = ' + dice);
-        //random angle
-        var diceAngle = Math.floor(Math.random() * 180) + 1;
-        console.log('diceAngle = ' + diceAngle);
-        //display dice number
-        //var diceDOM = document.querySelector('.dice');
-        //diceDOM.style.display = 'block';
-        //diceDOM.src = 'dice-' + dice + '.png';
-        
-        //transform dice angle
-        //diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
-        
-        //wait some time
-        //setTimeout (3);
-    }
-    
-    
-    playerBtnRoll[i].addEventListener('click', function () {
 
+    playerBtnRoll[i].addEventListener('click', function () {
+        diceRoll();
         //random number
-        dice = Math.floor(Math.random() * 6) + 1;
+        dice = (Math.floor(Math.random() * 6) + 1);
 
         //display result
         var diceDOM = document.querySelector('.dice');

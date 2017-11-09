@@ -43,7 +43,7 @@ function diceRoll() {
         
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
-        document.querySelector('#diceID').style.transform = 'rotate(' + diceAngle + 'deg);';
+        document.querySelector('player-current-box').style.transform = 'rotate(' + diceAngle + 'deg);';
         //transform dice angle
 
         //wait some time

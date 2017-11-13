@@ -17,7 +17,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         document.querySelector('.btn-hold').style.display = 'none';
         document.querySelector('#roll-0').style.display = 'none';
         document.querySelector('#roll-1').style.display = 'none';
-        document.querySelector('.dice').style.display = 'none';
+        //document.querySelector('.dice').style.display = 'none';
     } else {
         nextPlayer();
     }
@@ -87,7 +87,7 @@ function init() {
     document.querySelector('.btn-hold').style.display = 'block';
     document.querySelector('#roll-0').style.display = 'block';
     document.querySelector('#roll-1').style.display = 'none';
-    document.querySelector('.dice').style.display = 'none';
+    //document.querySelector('.dice').style.display = 'none';
 }
 
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
@@ -96,10 +96,10 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
     //diceRoll();
     
     
-    var diceBounce = Math.floor(Math.random() * 10) + 5;
+    var diceBounce = Math.floor(Math.random() * 5) + 5;
     console.log("original diceBounce = " + diceBounce);
     //create loop
-    for (var i = 0; diceBounce; i++) {
+    for (var i = 0; i < diceBounce; i++) {
         console.log('Current diceBounce =' + diceBounce);
         //random dice number
         dice = Math.floor(Math.random() * 6) + 1;
@@ -108,15 +108,16 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
         var diceAngle = Math.floor(Math.random() * 180) + 1;
         console.log('diceAngle = ' + diceAngle);
         //display dice number
-        //var diceDOM = document.querySelector('.dice');
-        //diceDOM.style.display = 'block';
-        //diceDOM.src = 'dice-' + dice + '.png';
+        var diceDOM = document.querySelector('.dice');
+        diceDOM.style.display = 'block';
+        diceDOM.src = 'dice-' + dice + '.png';
         
         //transform dice angle
-        //diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
+        diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
         
         //wait some time
-        //setTimeout (3);
+        setTimeout (3);
+        console.log('setTimeout = ran');
     }
     
     

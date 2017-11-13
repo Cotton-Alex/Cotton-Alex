@@ -47,8 +47,9 @@ function diceRoll() {
             var diceDOM = document.querySelector('.dice');
             diceDOM.style.display = 'block';
             diceDOM.src = 'dice-' + diceBounceNumber + '.png';
-            document.getElementById('diceID').style.left = (40 + (Math.random() * 10)) + "%";
-            document.getElementById('diceID').style.top = (20 + (Math.random() * 10)) + "%";
+            //document.getElementById('diceID').style.margin = (100 + (Math.random() * 6)) + "px 0 0 " + (0 + (Math.random() * 20)) + "px";
+            document.getElementById('diceID').style.left = (42 + (Math.random() * 6)) + "%";
+            document.getElementById('diceID').style.top = (20 + (Math.random() * 8)) + "%";
 
             //transform dice angle
             //diceDOM.style.display.transform = 'rotate(' + diceAngle + 'deg);';
@@ -109,7 +110,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
         diceRoll();
         //random number
         dice = (Math.floor(Math.random() * 6) + 1);
-
+        console.log("final dice roll = " + dice);
         //display result
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';

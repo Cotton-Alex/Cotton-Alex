@@ -118,7 +118,7 @@ var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
                 //display result
                 var diceDOM = document.querySelector('.dice');
                 diceDOM.style.display = 'block';
-                diceDOM.src = 'player-' + activePlayer + '-dice-' + diceBounceNumber + '.png';
+                diceDOM.src = 'player-' + activePlayer + '-dice-' + dice + '.png';
                 document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
                 document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
                 

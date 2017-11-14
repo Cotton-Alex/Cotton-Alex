@@ -46,7 +46,7 @@ function diceRoll(diceBounceTimes) {
 
             var diceDOM = document.querySelector('.dice');
             diceDOM.style.display = 'block';
-            diceDOM.src = 'dice-' + diceBounceNumber + '.png';
+            diceDOM.src = 'player-' + activePlayer + '-dice-' + diceBounceNumber + '.png';
             //document.getElementById('diceID').style.margin = (100 + (Math.random() * 50)) + "px 0 0 " + (0 + (Math.random() * 240)) + "px";
             document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
             document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";

@@ -119,6 +119,7 @@ var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
                 var diceDOM = document.querySelector('.dice');
                 diceDOM.style.display = 'block';
                 diceDOM.src = 'player-' + activePlayer + '-dice-' + dice + '.png';
+                responsiveVoice.speak("You've rolled a " + dice + ".");
                 document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
                 document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
                 

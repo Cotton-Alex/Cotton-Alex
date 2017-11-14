@@ -8,7 +8,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
     // update the ui
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-
+    
     // Check for win
     if (scores[activePlayer] >= 100) {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
@@ -17,38 +17,51 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         document.querySelector('.btn-hold').style.display = 'none';
         document.querySelector('#roll-0').style.display = 'none';
         document.querySelector('#roll-1').style.display = 'none';
-        //document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.dice').style.display = 'none';
     } else {
         nextPlayer();
     }
 });
 
-function diceRoll() {
-    var diceBounce = Math.floor(Math.random() * 10) + 5;
+function diceRoll(diceBounceTimes) {
+    //var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
+    console.log('diceRoll Initial diceBounceTimes = ' + diceBounceTimes);
 
     //create loop
-    for (var i = 0; i < diceBounce; i++) {
-        
-        //random dice number
-        dice = Math.floor(Math.random() * 6) + 1;
-        
-        //random angle
-        var diceAngle = Math.floor(Math.random() * 180) + 1;
-        
-        //display dice number
-        var diceDOM = document.querySelector('.dice');
-        diceDOM.style.display = 'block';
-        diceDOM.src = 'dice-' + dice + '.png';
-        
-        //transform dice angle
-        diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
-        
-        //wait some time
-        //setTimeout (3);
-        
-        //send back through loop
-        i++;
-    };
+    for (var i = 0; i < diceBounceTimes; i++) {
+        setTimeout(function () {
+            console.log('Current diceBounceTimes =' + i);
+
+            //random dice number
+            diceBounceNumber = Math.floor(Math.random() * 6) + 1;
+            console.log('dice = ' + diceBounceNumber);
+
+            //random angle
+            var diceAngle = Math.floor(Math.random() * 180) + 1;
+            console.log('diceAngle = ' + diceAngle);
+
+            //time delay between number displays and rotations
+            //setTimeout(function() {
+            //display dice number
+
+            var diceDOM = document.querySelector('.dice');
+            diceDOM.style.display = 'block';
+            diceDOM.src = 'dice-' + diceBounceNumber + '.png';
+            //document.getElementById('diceID').style.margin = (100 + (Math.random() * 50)) + "px 0 0 " + (0 + (Math.random() * 240)) + "px";
+            document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
+            document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
+
+            //transform dice angle
+            //diceDOM.style.display.transform = 'rotate(' + diceAngle + 'deg);';
+            document.querySelector('#diceID').style.transform = 'rotate(' + diceAngle + 'deg)';
+            
+            //send back through loop
+            console.log('diceRoll i = ' + i);
+            //setTimeout(diceRoll, 500);
+        }, 200 * i);
+
+    }
+    ;
 }
 
 function nextPlayer() {
@@ -87,59 +100,40 @@ function init() {
     document.querySelector('.btn-hold').style.display = 'block';
     document.querySelector('#roll-0').style.display = 'block';
     document.querySelector('#roll-1').style.display = 'none';
-    //document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.dice').style.display = 'none';
 }
 
+//var playerBtnRoll = document.querySelectorAll('.btn-roll');
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
-
 for (var i = 0; i, playerBtnRoll.length; i++) {
-    //diceRoll();
-    
-    
-    var diceBounce = Math.floor(Math.random() * 5) + 5;
-    console.log("original diceBounce = " + diceBounce);
-    //create loop
-    for (var i = 0; i < diceBounce; i++) {
-        console.log('Current diceBounce =' + diceBounce);
-        //random dice number
-        dice = Math.floor(Math.random() * 6) + 1;
-        console.log('dice = ' + dice);
-        //random angle
-        var diceAngle = Math.floor(Math.random() * 180) + 1;
-        console.log('diceAngle = ' + diceAngle);
-        //display dice number
-        var diceDOM = document.querySelector('.dice');
-        diceDOM.style.display = 'block';
-        diceDOM.src = 'dice-' + dice + '.png';
-        
-        //transform dice angle
-        diceDOM.style.transform = 'rotate ' + diceAngle + 'deg;';
-        
-        //wait some time
-        setTimeout (3);
-        console.log('setTimeout = ran');
-    }
-    
-    
-    playerBtnRoll[i].addEventListener('click', function () {
-
+playerBtnRoll[i].addEventListener('click', function () {
+var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
+        diceRoll(diceBounceTimes);
+        setTimeout(function () {
         //random number
-        dice = Math.floor(Math.random() * 6) + 1;
+        dice = (Math.floor(Math.random() * 6) + 1);
+                console.log("final dice roll = " + dice);
+                //display result
+                var diceDOM = document.querySelector('.dice');
+                diceDOM.style.display = 'block';
+                diceDOM.src = 'dice-' + dice + '.png';
+                document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
+                document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
+                
 
-        //display result
-        var diceDOM = document.querySelector('.dice');
-        diceDOM.style.display = 'block';
-        diceDOM.src = 'dice-' + dice + '.png';
-
-        //update the round score IF rolled number was not 1
-        if (dice !== 1) {
-            //add score
-            roundScore += dice;
-            document.querySelector('#current-' + activePlayer).textContent = roundScore;
+                //update the round score IF rolled number was not 1
+                if (dice !== 1) {
+        //add score
+        roundScore += dice;
+                //document.querySelector('#player-' + activePlayer + 'panel').gradient = ("0deg, #EB4D4D " + (roundScore + dice) + "%, #fff " + (roundScore + dice) + "%");
+                //document.querySelector('#player-' + activePlayer + '-panel').background.color = "#EB4D4D";
+                //document.querySelector('#player-' + activePlayer + '-panel').style.color = "#555";
+                document.querySelector('#current-' + activePlayer).textContent = roundScore;
+                document.querySelector('.player-' + activePlayer + '-panel').style.background = "linear-gradient(0deg, #EB4D4D " + (roundScore + dice) + "%, #fff " + (roundScore + dice) + "%";
         } else {
-            //next player
-            nextPlayer();
+        //next player
+        nextPlayer();
         }
-
-    });
-}
+        }, 200 * diceBounceTimes);
+        });
+        }

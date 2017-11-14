@@ -69,8 +69,8 @@ function nextPlayer() {
     roundScore = 0;
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
-    document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');
+    //document.querySelector('.player-0-panel').classList.toggle('active');
+    //document.querySelector('.player-1-panel').classList.toggle('active');
     if (activePlayer === 1) {
         document.querySelector('#roll-0').style.display = 'none';
         document.querySelector('#roll-1').style.display = 'block';
@@ -101,6 +101,8 @@ function init() {
     document.querySelector('#roll-0').style.display = 'block';
     document.querySelector('#roll-1').style.display = 'none';
     document.querySelector('.dice').style.display = 'none';
+    document.querySelector('#player-0-progressBar').style.height = "0%";
+    document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');
@@ -120,7 +122,6 @@ var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
                 document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
                 document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
                 
-
                 //update the round score IF rolled number was not 1
                 if (dice !== 1) {
         //add score
@@ -129,9 +130,11 @@ var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
                 //document.querySelector('#player-' + activePlayer + '-panel').background.color = "#EB4D4D";
                 //document.querySelector('#player-' + activePlayer + '-panel').style.color = "#555";
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
-                document.querySelector('.player-' + activePlayer + '-panel').style.background = "linear-gradient(0deg, #EE9696 " + (roundScore + dice) + "%, #fff " + (roundScore + dice) + "%";
+                document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + roundScore + "%";
         } else {
         //next player
+        roundScore = 0;
+        document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + "%";
         nextPlayer();
         }
         }, 200 * diceBounceTimes);

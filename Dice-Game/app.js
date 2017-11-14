@@ -129,7 +129,7 @@ var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
                 //document.querySelector('#player-' + activePlayer + '-panel').background.color = "#EB4D4D";
                 //document.querySelector('#player-' + activePlayer + '-panel').style.color = "#555";
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
-                document.querySelector('.player-' + activePlayer + '-panel').style.background = "linear-gradient(0deg, #EB4D4D " + (roundScore + dice) + "%, #fff " + (roundScore + dice) + "%";
+                document.querySelector('.player-' + activePlayer + '-panel').style.background = "linear-gradient(0deg, #EE9696 " + (roundScore + dice) + "%, #fff " + (roundScore + dice) + "%";
         } else {
         //next player
         nextPlayer();

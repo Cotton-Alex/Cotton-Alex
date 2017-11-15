@@ -6,7 +6,7 @@
             "2": "Maybe next time.",
             "3": "Bummer.",
             "4": "",
-            "5": "There's a one in six change every time. No matter what.",
+            "5": "There's a one in six chance every time. No matter what.",
             "6": "So close!"
         }
         
@@ -18,7 +18,7 @@
             "2": "Well, it could have been a one.",
             "3": "Roll again, but with feeling this time.",
             "4": "",
-            "5": "Maybe keep what you've got.",
+            "5": "Maybe you should just keep what you've got.",
             "6": "You can do better than that. Roll again."
         }
         
@@ -52,9 +52,9 @@
             "0": "You rolled a five.",
             "1": "Five. Nice roll.",
             "2": "Good one.",
-            "3": "Hey, a five!.",
+            "3": "Hey! A five!.",
             "4": "",
-            "5": "Keep it.",
+            "5": "I'd keep it.",
             "6": "Roll again!"
         }
         
@@ -66,7 +66,7 @@
             "2": "Nice.",
             "3": "Six! Right on!",
             "4": "",
-            "5": "Hold. You don't want to lose that one.",
+            "5": "Time to hold. You don't want to lose that one.",
             "6": "I feel another six coming up."
         }
         

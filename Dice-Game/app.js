@@ -1,4 +1,4 @@
-var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber;
+var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response;
 //responsiveVoice.setDefaultVoice("US English Female");
 init();
 
@@ -116,9 +116,11 @@ function jsonParse(url, dice, commentNumber, isJSON) {
 
 function parseDataFunc(response, dice, commentNumber, isJSON) {
     var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
-    responseText[dice].comment[commentNumber];
-    console.log(response, dice, commentNumber, isJSON);
+//    responseText[dice].comment[commentNumber];
+//    console.log(response, dice, commentNumber, isJSON);
     console.log(responseText[dice].comment[commentNumber]);
+    responsiveVoice.speak("" + responseText[dice].comment[commentNumber] + "");
+    //document.getElementById("voiceString").innerHTML = responseText[dice].comment[commentNumber];
 }
 
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');
@@ -140,8 +142,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
             document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
             // voice comment on dice roll
             var commentNumber = (Math.floor(Math.random() * 6));
-            var voiceComment = jsonParse("diceComments.json", dice, commentNumber, "true");
-            responsiveVoice.speak("" + voiceComment);
+            jsonParse("diceComments.json", dice, commentNumber, "true");
             //update the round score IF rolled number was not 1
             if (dice !== 1) {
                 //add score

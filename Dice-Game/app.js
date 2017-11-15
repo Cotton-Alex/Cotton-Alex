@@ -1,5 +1,5 @@
 var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber;
-
+//responsiveVoice.setDefaultVoice("US English Female");
 init();
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
@@ -101,22 +101,22 @@ function init() {
     document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
-function jsonParse(url, dice, isJSON) {
-    var i = document.getElementById("sliderRange").value;
+function jsonParse(url, dice, commentNumber, isJSON) {
+    dice = dice - 1;
     var xmlhttp = new XMLHttpRequest();//connection to server
     xmlhttp.onreadystatechange =
             function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) //is the file done loading and error free?
                     parseDataFunc(xmlhttp.responseText, dice, commentNumber, isJSON);//pass info to the parse function
             };
-    xmlhttp.open("GET", url, true);// Send a Request To a Server
+    xmlhttp.open("GET", url, dice, commentNumber, true);// Send a Request To a Server
     xmlhttp.send();
 }
 
-function parseDataFunc(response, divId, isJSON, i) {
+function parseDataFunc(response, dice, i, isJSON) {
     var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
-    responseText[i].comment;
-    console.log(responseText[i].comment);
+    responseText[dice].comment.commentNumber;
+    console.log(responseText[dice.comment.commentNumber]);
 }
 
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');
@@ -139,9 +139,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
             // voice comment on dice roll
             var commentNumber = (Math.floor(Math.random() * 6));
             var voiceComment = jsonParse("diceComments.json", dice, commentNumber, "true");
-            responsiveVoice.speak(voiceComment);
-            
-
+            responsiveVoice.speak("" + voiceComment);
             //update the round score IF rolled number was not 1
             if (dice !== 1) {
                 //add score

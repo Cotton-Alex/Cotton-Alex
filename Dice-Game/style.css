@@ -78,6 +78,7 @@ body {
 }
 
 .middleGround {
+/*  TODO - animate Linear gradient to show whos winning*/
     background: linear-gradient(90deg, #2C729E 0%, #EB4D4D 100%);
     width: 30%;
     float: left;
@@ -99,6 +100,15 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     position: relative;
+    color: #2C729E
+}
+
+#name-0 {
+   color: #EB4D4D; 
+}
+
+#name-1 {
+   color: #2C729E; 
 }
 
 .player-score {
@@ -127,6 +137,10 @@ body {
     color: #EB4D4D;
     top: -4px;
     right: 0px;
+}
+
+.active #name-1::after {
+    color: #2C729E;
 }
 
 #player-0-box {
@@ -212,7 +226,12 @@ i {
     width: 100%;
     margin: 18px 50% 0 50%;
     padding: 12px;
+    color: #EB4D4D;
     text-align: center;
+}
+
+#roll-1, #ion-1 {
+    color: #2C729E;
 }
 
 .btn-hold {

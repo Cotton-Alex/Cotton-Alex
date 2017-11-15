@@ -103,6 +103,7 @@ function init() {
 
 function jsonParse(url, dice, commentNumber, isJSON) {
     dice = dice - 1;
+    console.log(url, dice, commentNumber, isJSON);
     var xmlhttp = new XMLHttpRequest();//connection to server
     xmlhttp.onreadystatechange =
             function () {
@@ -113,10 +114,11 @@ function jsonParse(url, dice, commentNumber, isJSON) {
     xmlhttp.send();
 }
 
-function parseDataFunc(response, dice, i, isJSON) {
+function parseDataFunc(response, dice, commentNumber, isJSON) {
     var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
-    responseText[dice].comment.commentNumber;
-    console.log(responseText[dice.comment.commentNumber]);
+    responseText[dice].comment[commentNumber];
+    console.log(response, dice, commentNumber, isJSON);
+    console.log(responseText[dice].comment[commentNumber]);
 }
 
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');

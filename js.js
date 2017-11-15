@@ -19,6 +19,7 @@ function jsonParse(url, divId, isJSON) {
 
 function parseDataFunc(response, divId, isJSON, i) {
     var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
+    console.log(responseText, divId, isJSON, i);
     document.getElementById(divId).innerHTML = //update page with JSON info
             "<ul id='pbAJAX'><li><div><img class='pbPicAJAX' src='"
             + responseText[i].card + "' height='250'>"

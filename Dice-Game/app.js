@@ -1,4 +1,4 @@
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber;
 
 init();
 
@@ -8,7 +8,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
     // update the ui
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-    
+
     // Check for win
     if (scores[activePlayer] >= 100) {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
@@ -24,7 +24,6 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 });
 
 function diceRoll(diceBounceTimes) {
-    //var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
     console.log('diceRoll Initial diceBounceTimes = ' + diceBounceTimes);
 
     //create loop
@@ -40,24 +39,21 @@ function diceRoll(diceBounceTimes) {
             var diceAngle = Math.floor(Math.random() * 180) + 1;
             console.log('diceAngle = ' + diceAngle);
 
-            //time delay between number displays and rotations
             //setTimeout(function() {
             //display dice number
 
             var diceDOM = document.querySelector('.dice');
             diceDOM.style.display = 'block';
             diceDOM.src = 'player-' + activePlayer + '-dice-' + diceBounceNumber + '.png';
-            //document.getElementById('diceID').style.margin = (100 + (Math.random() * 50)) + "px 0 0 " + (0 + (Math.random() * 240)) + "px";
             document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
             document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
 
             //transform dice angle
-            //diceDOM.style.display.transform = 'rotate(' + diceAngle + 'deg);';
             document.querySelector('#diceID').style.transform = 'rotate(' + diceAngle + 'deg)';
-            
+
             //send back through loop
             console.log('diceRoll i = ' + i);
-            //setTimeout(diceRoll, 500);
+            //time delay between each iteration
         }, 200 * i);
 
     }
@@ -69,8 +65,8 @@ function nextPlayer() {
     roundScore = 0;
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
-    //document.querySelector('.player-0-panel').classList.toggle('active');
-    //document.querySelector('.player-1-panel').classList.toggle('active');
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
     if (activePlayer === 1) {
         document.querySelector('#roll-0').style.display = 'none';
         document.querySelector('#roll-1').style.display = 'block';
@@ -105,39 +101,59 @@ function init() {
     document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
+function jsonParse(url, dice, isJSON) {
+    var i = document.getElementById("sliderRange").value;
+    var xmlhttp = new XMLHttpRequest();//connection to server
+    xmlhttp.onreadystatechange =
+            function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) //is the file done loading and error free?
+                    parseDataFunc(xmlhttp.responseText, dice, commentNumber, isJSON);//pass info to the parse function
+            };
+    xmlhttp.open("GET", url, true);// Send a Request To a Server
+    xmlhttp.send();
+}
+
+function parseDataFunc(response, divId, isJSON, i) {
+    var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
+    responseText[i].comment;
+    console.log(responseText[i].comment);
+}
+
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
 for (var i = 0; i, playerBtnRoll.length; i++) {
-playerBtnRoll[i].addEventListener('click', function () {
-var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
+    playerBtnRoll[i].addEventListener('click', function () {
+        var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
         diceRoll(diceBounceTimes);
         setTimeout(function () {
-        //random number
-        dice = (Math.floor(Math.random() * 6) + 1);
-                console.log("final dice roll = " + dice);
-                //display result
-                var diceDOM = document.querySelector('.dice');
-                diceDOM.style.display = 'block';
-                diceDOM.src = 'player-' + activePlayer + '-dice-' + dice + '.png';
-                responsiveVoice.speak("You've rolled a " + dice + ".");
-                document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
-                document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
-                
-                //update the round score IF rolled number was not 1
-                if (dice !== 1) {
-        //add score
-        roundScore += dice;
-                //document.querySelector('#player-' + activePlayer + 'panel').gradient = ("0deg, #EB4D4D " + (roundScore + dice) + "%, #fff " + (roundScore + dice) + "%");
-                //document.querySelector('#player-' + activePlayer + '-panel').background.color = "#EB4D4D";
-                //document.querySelector('#player-' + activePlayer + '-panel').style.color = "#555";
+            //random number
+            dice = (Math.floor(Math.random() * 6) + 1);
+            console.log("final dice roll = " + dice);
+            //display result
+            var diceDOM = document.querySelector('.dice');
+            diceDOM.style.display = 'block';
+            diceDOM.src = 'player-' + activePlayer + '-dice-' + dice + '.png';
+            //random dice location
+            document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
+            document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
+            // voice comment on dice roll
+            var commentNumber = (Math.floor(Math.random() * 6));
+            var voiceComment = jsonParse("diceComments.json", dice, commentNumber, "true");
+            responsiveVoice.speak(voiceComment);
+            
+
+            //update the round score IF rolled number was not 1
+            if (dice !== 1) {
+                //add score
+                roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
                 document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + roundScore + "%";
-        } else {
-        //next player
-        roundScore = 0;
-        document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + "%";
-        nextPlayer();
-        }
+            } else {
+                //next player
+                roundScore = 0;
+                document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + "%";
+                nextPlayer();
+            }
         }, 200 * diceBounceTimes);
-        });
-        }
+    });
+}

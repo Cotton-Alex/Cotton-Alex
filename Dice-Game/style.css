@@ -21,9 +21,9 @@ body {
     position: relative;
     height: 100vh;
     color: #555;
-    background-size: cover;
-    background-position: center;
-    
+/*    background-size: cover;
+    background-position: center;*/
+    background: linear-gradient(90deg, #EB4D4D 0%, #2C729E 100%);
 }
 
 .wrapper {
@@ -39,7 +39,7 @@ body {
     float: left;
     height: 500px;
     padding: 20px;
-    transition: width 2s ease 0s, height 2s ease;
+/*    transition: width 2s ease 0s, height 2s ease;*/
 }
 
 .player-0-panel {
@@ -47,8 +47,8 @@ body {
     float: left;
     height: 500px;
     padding: 20px;
-    background: linear-gradient(0deg, #EB4D4D 0%, #fff 0%);
-    transition: background 3s ease-in-out;
+/*    background: linear-gradient(0deg, #EB4D4D 0%, #fff 0%);
+    transition: background 3s ease-in-out;*/
 }
 
 .progressBarWrapper {
@@ -66,16 +66,19 @@ body {
     height: .0001%;
     padding: 0px;
     transition: height .75s ease-in-out;
+/*    background-color: #EB4D4D;*/
+}
+
+#player-0-progressBar {
     background-color: #EB4D4D;
 }
 
-#player-0-progressBar
 #player-1-progressBar {
-    background-color: #EB4D4D;
+    background-color: #2C729E;
 }
 
 .middleGround {
-    background-color: #2C729E;
+    background: linear-gradient(90deg, #2C729E 0%, #EB4D4D 100%);
     width: 30%;
     float: left;
     height: 500px;
@@ -106,7 +109,15 @@ body {
     margin-bottom: 80px;
 }
 
-.active { background-color: #f7f7f7; }
+#score-0 {
+    color: #EB4D4D;
+}
+
+#score-1 {
+    color: #2C729E;
+}
+
+/*.active { background-color: #f7f7f7; }*/
 .active .player-name { font-weight: 300; }
 
 .active .player-name::after {
@@ -118,8 +129,17 @@ body {
     right: 0px;
 }
 
-.player-current-box {
+#player-0-box {
     background-color: #EB4D4D;
+    color: #fff;
+    width: 40%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+#player-1-box {
+    background-color: #2C729E;
     color: #fff;
     width: 40%;
     margin: 0 auto;
@@ -131,7 +151,7 @@ body {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 12px;
-    color: #222;
+    color: #fff;
 }
 
 .player-current-score {

@@ -40,10 +40,6 @@ body {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 }
 
-#main {
-    transition: rotatey 3s ease-in-out;
-}
-
 .player-1-panel {
     width: 33%;
     float: left;
@@ -283,11 +279,12 @@ i {
 /* entire container, keeps perspective */
 .wrapper {
     perspective: 1000;
+    transform-style: preserve-3d;
 }
-    /* flip the pane when hovered */
+/*     flip the pane when hovered 
     .wrapper:hover .flipWrapper, .wrapper.hover .flipWrapper {
         transform: rotateY(180deg);
-    }
+    }*/
 
 .wrapper, .front, .back {
     width: 800px;
@@ -298,7 +295,7 @@ i {
 .flipWrapper {
     transition: 0.6s;
     transform-style: preserve-3d;
-
+    perspective: 1000;
     position: relative;
 }
 
@@ -314,7 +311,7 @@ i {
 /* front pane, placed above back */
 .front {
     z-index: 2;
-    /* for firefox 31 */
+     for firefox 31 
     transform: rotateY(0deg);
 }
 
@@ -323,7 +320,7 @@ i {
     transform: rotateY(180deg);
 }
 
-.wrapper:hover .flipWrapper, .wrapper.hover .flipper, .wrapper.flip .flipWrapper 
+.wrapper .flipWrapper, .wrapper.hover .flipper, .wrapper.flip .flipWrapper 
 {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
 }

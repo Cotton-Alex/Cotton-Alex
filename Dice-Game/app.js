@@ -106,15 +106,15 @@ function init() {
     document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
-document.querySelector('.btn-settings').classList.toggle('flip');
+document.querySelector('.btn-settings').addEventLestener('click', flip());
 
 function flip()
 {
-    document.querySelector('#main').style.webkitTransform = "rotatey(180deg)";
-    document.querySelector('#main').style.msTransform = "rotatey(180deg)";
-    document.querySelector('#main').style.MozTransform = "rotatey(180deg)";
-    document.querySelector('#main').style.OTransform = "rotatey(180deg)";
-    document.querySelector('#main').style.transform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.webkitTransform.toggle = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.msTransform.toggle = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.MozTransform.toggle = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.OTransform.toggle = "rotatey(180deg)";
+    document.querySelector('#flipWrapper').style.transform.toggle = "rotatey(180deg)";
 }
 
 function jsonParse(url, dice, commentNumber, isJSON) {
@@ -142,7 +142,7 @@ function parseDataFunc(response, dice, commentNumber, isJSON) {
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
 for (var i = 0; i, playerBtnRoll.length; i++) {
-    playerBtnRoll[i].addEventListener('click', function () {
+    playerBtnRoll(i).addEventListener('click', function () {
         var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
         diceRoll(diceBounceTimes);
         setTimeout(function () {

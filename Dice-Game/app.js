@@ -1,5 +1,10 @@
 var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response;
-//responsiveVoice.setDefaultVoice("US English Female");
+responsiveVoice.setDefaultVoice("US English Female");
+
+ 	
+var voicelist = responsiveVoice.getVoices();
+console.log(voicelist);
+
 init();
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
@@ -101,7 +106,7 @@ function init() {
     document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
-document.querySelector('.btn-settings').addEventListener('click', flip);
+document.querySelector('.btn-settings').classList.toggle('flip');
 
 function flip()
 {
@@ -160,6 +165,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
                 roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
                 document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + roundScore + "%";
+//                document.querySelector('#player-' + activePlayer + '-progressBar').style.background = "linear-gradient(90deg, #EB4D4D" + 25 + "%, #2C729E " +75 + "%)";
             } else {
                 //next player
                 roundScore = 0;

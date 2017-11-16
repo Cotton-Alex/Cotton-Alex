@@ -24,6 +24,8 @@ body {
 /*    background-size: cover;
     background-position: center;*/
     background: linear-gradient(90deg, #EB4D4D 0%, #2C729E 100%);
+    transition: linear-gradient 0.3s, color 0.3s;
+    transition: background 3s ease-in-out;
 }
 
 .wrapper {
@@ -32,6 +34,10 @@ body {
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+}
+
+#main {
+    transition: rotatey 3s ease-in-out;
 }
 
 .player-1-panel {
@@ -184,7 +190,6 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 300;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover { font-weight: 600; }
@@ -225,6 +230,7 @@ i {
 .btn-roll {
     width: 100%;
     margin: 18px 50% 0 50%;
+    font-size: 20px;
     padding: 12px;
     color: #EB4D4D;
     text-align: center;
@@ -236,6 +242,13 @@ i {
 
 .btn-hold {
     color: #fff;
+    font-size: 20px;
+    position: relative;
+    top: 365px;
+}
+
+.btn-settings {
+    color:#fff;
     position: relative;
     top: 420px;
 }

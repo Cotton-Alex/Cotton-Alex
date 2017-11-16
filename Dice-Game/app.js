@@ -46,7 +46,7 @@ function diceRoll(diceBounceTimes) {
             diceDOM.style.display = 'block';
             diceDOM.src = 'player-' + activePlayer + '-dice-' + diceBounceNumber + '.png';
             document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
-            document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
+            document.getElementById('diceID').style.top = (0 + (Math.random() * 160)) + "px";
 
             //transform dice angle
             document.querySelector('#diceID').style.transform = 'rotate(' + diceAngle + 'deg)';
@@ -99,6 +99,17 @@ function init() {
     document.querySelector('.dice').style.display = 'none';
     document.querySelector('#player-0-progressBar').style.height = "0%";
     document.querySelector('#player-1-progressBar').style.height = "0%";
+}
+
+document.querySelector('.btn-settings').addEventListener('click', flip);
+
+function flip()
+{
+    document.querySelector('#main').style.webkitTransform = "rotatey(180deg)";
+    document.querySelector('#main').style.msTransform = "rotatey(180deg)";
+    document.querySelector('#main').style.MozTransform = "rotatey(180deg)";
+    document.querySelector('#main').style.OTransform = "rotatey(180deg)";
+    document.querySelector('#main').style.transform = "rotatey(180deg)";
 }
 
 function jsonParse(url, dice, commentNumber, isJSON) {

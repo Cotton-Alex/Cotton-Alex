@@ -15,8 +15,6 @@
     clear: both;
 }
 
-
-
 body {
     font-family: Lato;
     font-weight: 300;
@@ -66,10 +64,12 @@ body {
 }
 
 .progressBarWrapper {
+    
     position: relative;
     width: 2%;
     float: left;
     height: 500px;
+    background-color: #fff
 }
 
 .progressBars {

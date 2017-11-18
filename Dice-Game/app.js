@@ -106,16 +106,29 @@ function init() {
     document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
-//document.querySelector('.btn-settings').addEventLestener('click', flip());
-//
-//function flip()
-//{
-//    document.querySelector('.flipWrapper').style.webkitTransform.toggle = "rotatey(180deg)";
-//    document.querySelector('.flipWrapper').style.msTransform.toggle = "rotatey(180deg)";
-//    document.querySelector('.flipWrapper').style.MozTransform.toggle = "rotatey(180deg)";
-//    document.querySelector('.flipWrapper').style.OTransform.toggle = "rotatey(180deg)";
-//    document.querySelector('#flipWrapper').style.transform.toggle = "rotatey(180deg)";
-//}
+document.querySelector('.btn-settings').addEventListener('click', flip);
+
+function flip()
+{
+    console.log("Settings clicked");
+    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.msTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.OTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.transform = "rotatey(180deg)";
+}
+
+document.querySelector('.btn-play').addEventListener('click', flipBack);
+
+function flipBack()
+{
+    console.log("Settings clicked");
+    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.OTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.transform = "rotatey(0deg)";
+}
 
 function jsonParse(url, dice, commentNumber, isJSON) {
     dice = dice - 1;

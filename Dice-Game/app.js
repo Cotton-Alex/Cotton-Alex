@@ -1,7 +1,7 @@
-var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response;
-responsiveVoice.setDefaultVoice("US English Female");
 
- 	
+var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response;
+
+responsiveVoice.setDefaultVoice("UK English Female"); 	
 var voicelist = responsiveVoice.getVoices();
 console.log(voicelist);
 
@@ -106,16 +106,16 @@ function init() {
     document.querySelector('#player-1-progressBar').style.height = "0%";
 }
 
-document.querySelector('.btn-settings').addEventLestener('click', flip());
-
-function flip()
-{
-    document.querySelector('.flipWrapper').style.webkitTransform.toggle = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.msTransform.toggle = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.MozTransform.toggle = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.OTransform.toggle = "rotatey(180deg)";
-    document.querySelector('#flipWrapper').style.transform.toggle = "rotatey(180deg)";
-}
+//document.querySelector('.btn-settings').addEventLestener('click', flip());
+//
+//function flip()
+//{
+//    document.querySelector('.flipWrapper').style.webkitTransform.toggle = "rotatey(180deg)";
+//    document.querySelector('.flipWrapper').style.msTransform.toggle = "rotatey(180deg)";
+//    document.querySelector('.flipWrapper').style.MozTransform.toggle = "rotatey(180deg)";
+//    document.querySelector('.flipWrapper').style.OTransform.toggle = "rotatey(180deg)";
+//    document.querySelector('#flipWrapper').style.transform.toggle = "rotatey(180deg)";
+//}
 
 function jsonParse(url, dice, commentNumber, isJSON) {
     dice = dice - 1;
@@ -132,9 +132,9 @@ function jsonParse(url, dice, commentNumber, isJSON) {
 
 function parseDataFunc(response, dice, commentNumber, isJSON) {
     var responseText = (isJSON) ? JSON.parse(response) : response;// if xmlhttp.responseText/response is JSON then parse it
-//    responseText[dice].comment[commentNumber];
-//    console.log(response, dice, commentNumber, isJSON);
-    console.log(responseText[dice].comment[commentNumber]);
+    //responseText[dice].comment[commentNumber];
+    console.log("JSON = " + response, dice, commentNumber, isJSON);
+    console.log("Chosen text = " + responseText[dice].comment[commentNumber]);
     responsiveVoice.speak("" + responseText[dice].comment[commentNumber] + "");
     //document.getElementById("voiceString").innerHTML = responseText[dice].comment[commentNumber];
 }
@@ -142,7 +142,7 @@ function parseDataFunc(response, dice, commentNumber, isJSON) {
 //var playerBtnRoll = document.querySelectorAll('.btn-roll');
 var playerBtnRoll = document.querySelectorAll('.btn-roll');
 for (var i = 0; i, playerBtnRoll.length; i++) {
-    playerBtnRoll(i).addEventListener('click', function () {
+    playerBtnRoll[i].addEventListener('click', function () {
         var diceBounceTimes = Math.floor(Math.random() * 3) + 3;
         diceRoll(diceBounceTimes);
         setTimeout(function () {

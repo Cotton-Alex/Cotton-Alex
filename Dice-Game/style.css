@@ -274,24 +274,24 @@ i {
 
 /**********************************************
 *** Card FLipper
-**********************************************/
+*********************************************
 
-/* entire container, keeps perspective */
+ entire container, keeps perspective 
 .wrapper {
     perspective: 1000;
     transform-style: preserve-3d;
 }
-/*     flip the pane when hovered 
+     flip the pane when hovered 
     .wrapper:hover .flipWrapper, .wrapper.hover .flipWrapper {
         transform: rotateY(180deg);
-    }*/
+    }
 
 .wrapper, .front, .back {
     width: 800px;
     height: 500px;
 }
 
-/* flip speed goes here */
+ flip speed goes here 
 .flipWrapper {
     transition: 0.6s;
     transform-style: preserve-3d;
@@ -299,7 +299,7 @@ i {
     position: relative;
 }
 
-/* hide back of pane during swap */
+ hide back of pane during swap 
 .front, .back {
     backface-visibility: hidden;
 
@@ -308,14 +308,14 @@ i {
     left: 0;
 }
 
-/* front pane, placed above back */
+ front pane, placed above back 
 .front {
     z-index: 2;
      for firefox 31 
     transform: rotateY(0deg);
 }
 
-/* back, initially hidden pane */
+ back, initially hidden pane 
 .back {
     transform: rotateY(180deg);
 }
@@ -323,4 +323,4 @@ i {
 .wrapper .flipWrapper, .wrapper.hover .flipper, .wrapper.flip .flipWrapper 
 {
     transform: rotateY(0deg);
-}
+}*/

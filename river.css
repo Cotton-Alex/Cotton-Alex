@@ -75,38 +75,38 @@ nav li a:active {
 }*/
 
 #topBank{
- width: 100%;
- height: 15%;
- min-height: 80px;
- max-height:160px;
- background-color: green;
+    width: 100%;
+    height: 15%;
+    min-height: 80px;
+    max-height:160px;
+    background-color: green;
 }
 
 #water {
- width: 100%;
- height: 40%;
- position: relative;
- min-height: 160px;
- max-height: 320px;
- background-color: aqua;
+    width: 100%;
+    height: 40%;
+    position: relative;
+    min-height: 160px;
+    max-height: 320px;
+    background-color: aqua;
 }
 
 #alerts {
- width: 30%;
- max-height: 298px;
- background: white;
- border-color: black;
- border-radius: 10px;
- padding: 2px;
- float: right;
+    width: 30%;
+    max-height: 298px;
+    background: white;
+    border-color: black;
+    border-radius: 10px;
+    padding: 2px;
+    float: right;
 }
 
 #bottomBank {
- width: 100%;
- height: 15%;
- min-height: 80px;
- max-height:160px;
- background-color: green;
+    width: 100%;
+    height: 15%;
+    min-height: 80px;
+    max-height:160px;
+    background-color: green;
 }
 
 #carrot {
@@ -140,8 +140,8 @@ nav li a:active {
     width: 75px;
     height: 75px;
     margin: auto;
-/*    position: absolute;   
-    top: 100%;*/
+    /*    position: absolute;   
+        top: 100%;*/
     border: 1px solid #aaaaaa;
 }
 #bottomDrop {

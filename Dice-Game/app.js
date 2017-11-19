@@ -1,9 +1,23 @@
 
-var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response;
+var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response, voiceList;
+var winScore = 100;
 
-responsiveVoice.setDefaultVoice("UK English Female"); 	
+var voice = ('US English Female');
+responsiveVoice.setDefaultVoice(voice);
 var voicelist = responsiveVoice.getVoices();
 console.log(voicelist);
+
+var select = document.getElementById("voiceSelect"),
+        voiceList = responsiveVoice.getVoices();
+
+for (var i = 0; i < voiceList.length; i++)
+{
+    var option = document.createElement("OPTION"),
+            txt = document.createTextNode(voiceList[i]);
+    option.appendChild(txt);
+    option.setAttribute("value", voiceList[i]);
+    select.insertBefore(option, select.lastChild);
+}
 
 init();
 
@@ -177,7 +191,11 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
                 //add score
                 roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
-                document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + roundScore + "%";
+                var totalPlusCurrent = scores[activePlayer] + roundScore;
+                if (totalPlusCurrent >= winScore) {
+                    totalPlusCurrent = winScore;
+                }
+                document.querySelector('#player-' + activePlayer + '-progressBar').style.height = totalPlusCurrent + "%";
 //                document.querySelector('#player-' + activePlayer + '-progressBar').style.background = "linear-gradient(90deg, #EB4D4D" + 25 + "%, #2C729E " +75 + "%)";
             } else {
                 //next player

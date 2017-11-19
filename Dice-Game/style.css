@@ -38,7 +38,7 @@ body {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 }
 
-.player-1-panel {
+.player-1-panel, .backRight {
     width: 33%;
     float: left;
     height: 500px;
@@ -47,7 +47,7 @@ body {
 /*    transition: width 2s ease 0s, height 2s ease;*/
 }
 
-.player-0-panel {
+.player-0-panel, .backleft {
     width: 33%;
     float: left;
     height: 500px;
@@ -250,9 +250,17 @@ i {
 }
 
 .btn-settings, .btn-play {
+    text-align: center;
     color:#fff;
     position: relative;
-    top: 415px;
+}
+
+.btn-settings {
+    top: 400px;
+}
+
+.btn-play {
+    top: 460px;
 }
 
 #diceID src {

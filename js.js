@@ -119,43 +119,48 @@ function clearVisitorName() {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  06: DOM Manipulation  ::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+//var itemText, priceText;
+
+var item = "item";
+var price = "0.00";
+
+
 
 function addItem() {
     var item = document.getElementById("item");
     var price = document.getElementById("price");
 
-    if (firstName.value === "" || lastName.value === "") {
-        ifEmpty(firstName);
-        ifEmpty(lastName);
+    if (item.value === "" || price.value === "") {
+        ifEmpty(item);
+        ifEmpty(price);
     } else {
         // Create Row
         var newRow = document.createElement("tr");
 
-        // Create first name cell and append text
+        // Create item cell and append text
         var newCell = document.createElement("td");
-        var fnameText = document.createTextNode(item.value);
-        newCell.appendChild(fnameText);
+        var itemText = document.createTextNode(item.value);
+        newCell.appendChild(itemText);
         newRow.appendChild(newCell);
 
-        // Create last name cell and append text
+        // Create price cell and append text
         var newCell2 = document.createElement("td");
-        var lnameText = document.createTextNode(price.value);
-        newCell2.appendChild(lnameText);
+        var priceText = document.createTextNode(price.value);
+        newCell2.appendChild(priceText);
         newRow.appendChild(newCell2);
 
         // Create edit and remove icon image and set their attributes
         var newCell3 = document.createElement("td");
-        var eimage = document.createElement("img");
-        eimage.setAttribute("src", "media/edit-icon.png");
-        eimage.setAttribute("onclick", "editARow(this)");
-        eimage.setAttribute("alt", "edit icon");
-        newCell3.appendChild(eimage);
-
-        var dimage = document.createElement("img");
-        dimage.setAttribute("src", "media/delete-icon.png");
-        dimage.setAttribute("onclick", "deleteARow(this)");
-        dimage.setAttribute("alt", "delete icon");
-        newCell3.appendChild(dimage);
+        var editImage = document.createElement("img");
+        editImage.setAttribute("class", "em em-pencil");
+        editImage.setAttribute("onclick", "editARow(this)");
+        newCell3.appendChild(editImage);
+        
+        var newCell4 = document.createElement("td");
+        var deleteImage = document.createElement("img");
+        deleteImage.setAttribute("class", "em em-no_entry");
+        deleteImage.setAttribute("onclick", "deleteARow(this)");
+        newCell3.appendChild(deleteImage);
         newRow.appendChild(newCell3);
 
         // Find the table body element
@@ -165,8 +170,8 @@ function addItem() {
         tableBody.insertBefore(newRow, newInputRow);
 
         // Reset Input Values to Blank
-        item.value = "";
-        price.value = "";
+        item.value = "item";
+        price.value = "0.00";
     }
 }
 
@@ -177,31 +182,29 @@ function deleteARow(icon) {
 
 function editARow(icon) {
     var row = icon.parentNode.parentNode;
-    var firstNameNode = row.firstChild;
-    var firstNameText = firstNameNode.textContent;
-    var lastNameNode = row.getElementsByTagName("td")[1];
-    var lastNameText = lastNameNode.textContent;
-    firstNameNode.innerHTML = '<input class="firstNameEdit" name="firstNameEdit" value="' + firstNameText + '" onchange="ifEmpty(this)"/>';
-    lastNameNode.innerHTML = '<input class="lastNameEdit" name="lastNameEdit" value="' + lastNameText + '" onchange="ifEmpty(this)"/>';
-    icon.setAttribute("src", "media/save-icon.png");
-    icon.setAttribute("alt", "save icon");
+    var itemNode = row.firstChild;
+    var itemText = itemNode.textContent;
+    var priceNode = row.getElementsByTagName("td")[1];
+    var priceText = priceNode.textContent;
+    itemNode.innerHTML = '<input class="itemEdit" name="itemEdit" value="' + itemText + '" onchange="ifEmpty(this)"/>';
+    priceNode.innerHTML = '<input class="priceEdit" name="priceEdit" value="' + priceText + '" onchange="ifEmpty(this)"/>';
+    icon.setAttribute("class", "em em-heavy_check_mark");
     icon.setAttribute("onclick", "saveARow(this)");
 }
 
 function saveARow(icon) {
     var row = icon.parentNode.parentNode;
-    var firstNameNode = row.getElementsByClassName("firstNameEdit")[0];
-    var firstNameText = firstNameNode.value;
-    var lastNameNode = row.getElementsByClassName("lastNameEdit")[0];
-    var lastNameText = lastNameNode.value;
-    if (firstNameText === "" || lastNameText === "") {
-        ifEmpty(firstNameNode);
-        ifEmpty(lastNameNode);
+    var itemNode = row.getElementsByClassName("itemEdit")[0];
+    var itemText = itemNode.value;
+    var priceNode = row.getElementsByClassName("priceEdit")[0];
+    var priceText = priceNode.value;
+    if (itemText === "" || priveText === "") {
+        ifEmpty(itemNode);
+        ifEmpty(priceNode);
     } else {
-        firstNameNode.parentNode.innerHTML = firstNameText;
-        lastNameNode.parentNode.innerHTML = lastNameText;
-        icon.setAttribute("src", "media/edit-icon.png");
-        icon.setAttribute("alt", "edit icon");
+        itemNode.parentNode.innerHTML = itemText;
+        priceNode.parentNode.innerHTML = priceText;
+        icon.setAttribute("class", "em em-heavy_check_mark.png");
         icon.setAttribute("onclick", "editARow(this)");
     }
 

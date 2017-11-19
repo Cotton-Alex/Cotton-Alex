@@ -8,7 +8,7 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function drag(ev ) {
+function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
     var dropFrom = (ev.target.parentNode.id);
     if ((dropFrom === "topDrop") && (boatLocation === 1)) {
@@ -36,14 +36,14 @@ function drop(ev) {
     //var dropFrom = (ev.target.id);
     var dropFrom = (ev.target.parentNode.id);
     var dropTo = (ev.target.id);
-        console.log("------------------- drop");
-        console.log("object = " + ev.target);
-        console.log("dropFrom = " + dropFrom);
-        console.log("dropTo = " + dropTo);
+    console.log("------------------- drop");
+    console.log("object = " + ev.target);
+    console.log("dropFrom = " + dropFrom);
+    console.log("dropTo = " + dropTo);
 //        if (((dropFrom === "topDrop") && (dropTo === "bottomDrop")) || ((dropFrom === "bottomDrop") && (dropTo === "topDrop")))
 //            return false;
-        if (!ev.target.getAttribute("ondrop"))
-            return false;
+    if (!ev.target.getAttribute("ondrop"))
+        return false;
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
@@ -51,17 +51,17 @@ function dropBoat(ev) {
     ev.preventDefault();
     //var dropFrom = (ev.target.parentNode.id);
     var dropTo = (ev.target.id);
-        console.log("------------------- dropBoat");
-        console.log("object = " + ev.target.id);
-        console.log("dropFrom = " + dropFrom);
-        console.log("dropTo = " + dropTo);
+    console.log("------------------- dropBoat");
+    console.log("object = " + ev.target.id);
+    console.log("dropFrom = " + dropFrom);
+    console.log("dropTo = " + dropTo);
     var dropFrom = (ev.target.parentNode.id);
     var targetChildCount = ev.target.childElementCount;
-        if (targetChildCount === 1) {
-            return false;
-        }
-        if (!ev.target.getAttribute("ondrop"))
-            return false;
+    if (targetChildCount === 1) {
+        return false;
+    }
+    if (!ev.target.getAttribute("ondrop"))
+        return false;
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
@@ -81,24 +81,23 @@ function boatCross() {
     console.log("waterheight = " + waterHeight);
     if (boatLocation === 0) {
         if ((carrotParentId === "topDrop" && rabbitParentId === "topDrop") || (rabbitParentId === "topDrop" && foxParentId === "topDrop")) {
-           console.log("(boatLocation === 0) error");
-           return false;
-       }
+            console.log("(boatLocation === 0) error");
+            return false;
+        }
         document.getElementById("boat").style.transform = "translateY(100%)";
         boatLocation = 1;
         return;
     }
     if (boatLocation === 1) {
         if ((carrotParentId === "bottomDrop" && rabbitParentId === "bottomDrop") || (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop")) {
-           console.log("(boatLocation === 1) error");
-           return false;
+            console.log("(boatLocation === 1) error");
+            return false;
         }
         document.getElementById("boat").style.transform = "translateY(0%)";
         boatLocation = 0;
         return;
-    }
-    else {
+    } else {
         console.log("function boatCross error");
     }
-       
+
 }

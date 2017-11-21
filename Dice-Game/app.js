@@ -10,8 +10,8 @@ console.log(voicelist);
 //document.getElementById(‘#roll-0’).addEventListener("click", responsiveVoice.clickEvent);
 //document.getElementById(‘#roll-1’).addEventListener("click", responsiveVoice.clickEvent);
 
-document.querySelector('#roll-0').addEventListener("click", responsiveVoice.clickEvent);
-document.querySelector('#roll-1').addEventListener("click", responsiveVoice.clickEvent);
+//document.querySelector('#roll-0').addEventListener("click", responsiveVoice.clickEvent);
+//document.querySelector('#roll-1').addEventListener("click", responsiveVoice.clickEvent);
 
 var select = document.getElementById("voiceSelect"),
         voiceList = responsiveVoice.getVoices();

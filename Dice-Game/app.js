@@ -7,8 +7,8 @@ responsiveVoice.setDefaultVoice(voice);
 var voicelist = responsiveVoice.getVoices();
 console.log(voicelist);
 
-//document.getElementById(‘#roll-0’).addEventListener("click", responsiveVoice.clickEvent);
-//document.getElementById(‘#roll-1’).addEventListener("click", responsiveVoice.clickEvent);
+document.getElementById('roll-0').addEventListener("click", responsiveVoice.clickEvent);
+document.getElementById('roll-1').addEventListener("click", responsiveVoice.clickEvent);
 
 //document.querySelector('#roll-0').addEventListener("click", responsiveVoice.clickEvent);
 //document.querySelector('#roll-1').addEventListener("click", responsiveVoice.clickEvent);
@@ -82,7 +82,6 @@ function diceRoll(diceBounceTimes) {
         }, 200 * i);
 
     }
-    ;
 }
 
 function nextPlayer() {

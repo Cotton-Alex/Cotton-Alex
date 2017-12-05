@@ -19,12 +19,15 @@ var select = document.getElementById("voiceSelect"),
 for (var i = 0; i < voiceList.length; i++)
 {
     var option = document.createElement("OPTION"),
-            txt = document.createTextNode(voiceList[i]);
+            txt = document.createTextNode(voiceList[i].name);
     option.appendChild(txt);
     option.setAttribute("value", voiceList[i]);
     select.insertBefore(option, select.lastChild);
 }
 
+console.log("option = " + option.value);
+console.log("select = " + select);
+    
 init();
 
 document.querySelector('.btn-hold').addEventListener('click', function () {

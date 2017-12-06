@@ -1,10 +1,12 @@
 
-var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response, voiceList;
+var scores, roundScore, activePlayer, gamePlaying, responsiveVoice, commentNumber, response, voiceList, voice;
 var winScore = 100;
 
-var voice = ('US English Female');
+voice = ('US English Female');
 responsiveVoice.setDefaultVoice(voice);
-var voicelist = responsiveVoice.getVoices();
+console.log("voice = " + voice);
+
+voicelist = responsiveVoice.getVoices();
 console.log(voicelist);
 
 //document.getElementById('roll-0').addEventListener("click", responsiveVoice.clickEvent);
@@ -27,7 +29,7 @@ for (var i = 0; i < voiceList.length; i++)
 
 console.log("option = " + option.value);
 console.log("select = " + select);
-    
+
 init();
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
@@ -144,7 +146,16 @@ document.querySelector('.btn-play').addEventListener('click', flipBack);
 
 function flipBack()
 {
-    console.log("Settings clicked");
+    console.log("Play clicked");
+    voice = document.getElementById('voiceSelect');
+    let newVoice = voice.selectedOptions;
+    let output = "";
+    for (let i=0; i<newVoice.length; i++) {
+        output = newVoice[i].label;
+    }
+    output.innerHTML = output;
+    console.log(output);
+    console.log("new voice = " + voice);
     document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
     document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
     document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";

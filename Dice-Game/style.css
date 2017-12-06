@@ -286,6 +286,7 @@ i {
 /* hide back of pane during swap */
 .front, .back {
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -296,6 +297,7 @@ i {
     z-index: 2;
 /*     for firefox 31 */
     transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
@@ -311,5 +313,6 @@ i {
     margin-top: 50px;
     transition: all .75s ease;
     transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
     position: relative;
 }

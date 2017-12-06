@@ -147,15 +147,18 @@ document.querySelector('.btn-play').addEventListener('click', flipBack);
 function flipBack()
 {
     console.log("Play clicked");
-    voice = document.getElementById('voiceSelect');
-    let newVoice = voice.selectedOptions;
+    voiceChoice = document.getElementById('voiceSelect');
+    let newVoice = voiceChoice.selectedOptions;
     let output = "";
     for (let i=0; i<newVoice.length; i++) {
         output = newVoice[i].label;
     }
-    output.innerHTML = output;
-    console.log(output);
-    console.log("new voice = " + voice);
+    voice = (output);
+    console.log("voice = " + voice);
+    responsiveVoice.setDefaultVoice(voice);
+//    output.innerHTML = output;
+//    console.log("output = " + output);
+//    console.log("new voice = " + voice);
     document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
     document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
     document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";

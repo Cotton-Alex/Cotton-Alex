@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
-<!--        <link rel="stylesheet" href="../StackEffects/css/normalize.css" type="text/css"/>-->
+        <!--        <link rel="stylesheet" href="../StackEffects/css/normalize.css" type="text/css"/>-->
         <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 
 
@@ -16,36 +16,42 @@
         <div class="wrapper clearfix">
             <div class="flipWrapper">
                 <div class="front">
-                    <div class="player-0-panel active">
-                        <div class="player-name" id="name-0">Player 1</div>
-                        <div class="player-score" id="score-0">45</div>
-                        <div class="player-current-box" id="player-0-box">
-                            <div class="player-current-label">Current</div>
-                            <div class="player-current-score" id="current-0">11</div>
+                    <div class="panelFlip">
+                        <div class="player-0-panel active">
+                            <div class="player-name" id="name-0">Player 1</div>
+                            <div class="player-score" id="score-0">45</div>
+                            <div class="player-current-box" id="player-0-box">
+                                <div class="player-current-label">Current</div>
+                                <div class="player-current-score" id="current-0">11</div>
+                            </div>
+                            <button class="btn-roll" id="roll-0"><i class="ion-ios-loop"></i>Roll dice</button> 
                         </div>
-                        <button class="btn-roll" id="roll-0"><i class="ion-ios-loop"></i>Roll dice</button> 
                     </div>
-                    <div class="progressBarWrapper">
-                        <div class="progressBars" id="player-0-progressBar"></div>
-                    </div>
-                    <div class="middleGround">
-                        <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-                        <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
-                        <button class="btn-settings"><i class="ion-ios-settings-outline"></i>Settings</button>
-                        <img id="diceID" src="dice-5.png" alt="Dice" class="dice clearfix">
-                    </div>
-                    <div class="progressBarWrapper">
-                        <div class="progressBars" id="player-1-progressBar"></div>
-                    </div>
-                    <div class="player-1-panel">
-                        <div class="player-name" id="name-1">Player 2</div>
-                        <div class="player-score" id="score-1">72</div>
-                        <div class="player-current-box" id="player-1-box">
-                            <div class="player-current-label">Current</div>
-                            <div class="player-current-score" id="current-1">0</div>
+                    <div class="panelFlip">
+                        <div class="progressBarWrapper">
+                            <div class="progressBars" id="player-0-progressBar"></div>
                         </div>
-                        <button class="btn-roll" id="roll-1"><i class="ion-ios-loop" id="ion-1"></i>Roll dice</button>
+                        <div class="middleGround">
+                            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+                            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+                            <button class="btn-settings"><i class="ion-ios-settings-outline"></i>Settings</button>
+                            <img id="diceID" src="dice-5.png" alt="Dice" class="dice clearfix">
+                        </div>
+                        <div class="progressBarWrapper">
+                            <div class="progressBars" id="player-1-progressBar"></div>
+                        </div>
                     </div>
+                    <div class="panelFlip">
+                        <div class="player-1-panel">
+                            <div class="player-name" id="name-1">Player 2</div>
+                            <div class="player-score" id="score-1">72</div>
+                            <div class="player-current-box" id="player-1-box">
+                                <div class="player-current-label">Current</div>
+                                <div class="player-current-score" id="current-1">0</div>
+                            </div>
+                            <button class="btn-roll" id="roll-1"><i class="ion-ios-loop" id="ion-1"></i>Roll dice</button>
+                        </div>
+                    </div>     
                 </div>
                 <div class="back">
                     <div class="player-0-panel active">
@@ -54,13 +60,15 @@
                     <div class="progressBarWrapper">
                     </div>
                     <div class="middleGround">
+                        <div id="selectWrap">
                         <select id="voiceSelect"></select>
+                        </div>
                         <button class="btn-play"><i class="ion-ios-settings-outline"></i>Play</button>
                     </div>
                     <div class="progressBarWrapper">
                     </div>
                     <div class="backRight">
-                        
+
                     </div>
 
                 </div>

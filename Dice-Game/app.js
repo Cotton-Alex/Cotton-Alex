@@ -204,7 +204,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
             diceDOM.src = 'player-' + activePlayer + '-dice-' + dice + '.png';
             //random dice location
             document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
-            document.getElementById('diceID').style.top = (65 + (Math.random() * 160)) + "px";
+            document.getElementById('diceID').style.top = (45 + (Math.random() * 160)) + "px";
             // voice comment on dice roll
             var commentNumber = (Math.floor(Math.random() * 6));
             jsonParse("diceComments.json", dice, commentNumber, "true");

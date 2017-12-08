@@ -8,6 +8,16 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
+var draggable = document.getElementByClass('draggable');
+  draggable.addEventListener('touchmove', function(event) {
+    var touch = event.targetTouches[0];
+    
+    // Place element where the finger is
+    draggable.style.left = touch.pageX-15 + 'px';
+    draggable.style.top = touch.pageY-0 + 'px';
+    event.preventDefault();
+  }, false);
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
     var dropFrom = (ev.target.parentNode.id);

@@ -8,7 +8,7 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-var nodeList = document.getElementsByClassName('draggable');
+var nodeList = document.getElementsById('rabbit');
 
 console.log("nodeList = " + nodeList);
  

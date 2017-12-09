@@ -8,6 +8,37 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
+document.querySelector('#rabbit').addEventListener('click', move(rabbit));
+document.querySelector('#carrot').addEventListener('click', move(carrot));
+document.querySelector('#fox').addEventListener('click', move(fox));
+
+function move(object) {
+    console.log("object = " + object);
+}
+
+
+function flipBack()
+{
+    console.log("Play clicked");
+    voiceChoice = document.getElementById('voiceSelect');
+    let newVoice = voiceChoice.selectedOptions;
+    let output = "";
+    for (let i=0; i<newVoice.length; i++) {
+        output = newVoice[i].label;
+    }
+    voice = (output);
+    console.log("voice = " + voice);
+    responsiveVoice.setDefaultVoice(voice);
+//    output.innerHTML = output;
+//    console.log("output = " + output);
+//    console.log("new voice = " + voice);
+    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.OTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.transform = "rotatey(0deg)";
+}
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
     var dropFrom = (ev.target.parentNode.id);

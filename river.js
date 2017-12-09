@@ -8,32 +8,32 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-var nodeList = document.getElementsById('rabbit');
+//var nodeList = document.getElementsById('rabbit');
+//
+//console.log("nodeList = " + nodeList);
+// 
+//  for(var i=0;i<nodeList.length;i++) {
+//    var obj = nodeList[i];
+//    console.log("obj = " + obj);
+//    obj.addEventListener('touchmove', function(event) {
+//      var touch = event.targetTouches[0];
+//      
+//      // Place element where the finger is
+//      event.target.style.left = touch.pageX-15 + 'px';
+//      event.target.style.top = touch.pageY + 'px';
+//      event.preventDefault();
+//    }, false);
+//  }
 
-console.log("nodeList = " + nodeList);
- 
-  for(var i=0;i<nodeList.length;i++) {
-    var obj = nodeList[i];
-    console.log("obj = " + obj);
-    obj.addEventListener('touchmove', function(event) {
-      var touch = event.targetTouches[0];
-      
-      // Place element where the finger is
-      event.target.style.left = touch.pageX-15 + 'px';
-      event.target.style.top = touch.pageY + 'px';
-      event.preventDefault();
-    }, false);
-  }
-
-//var draggable = document.getElementByClassName('draggable');
-//  draggable.addEventListener('touchmove', function(event) {
-//    var touch = event.targetTouches[0];
-//    
-//    // Place element where the finger is
-//    draggable.style.left = touch.pageX-15 + 'px';
-//    draggable.style.top = touch.pageY-0 + 'px';
-//    event.preventDefault();
-//  }, false);
+var draggable = document.getElementsById('rabbit');
+  draggable.addEventListener('touchmove', function(event) {
+    var touch = event.targetTouches[0];
+    
+    // Place element where the finger is
+    draggable.style.left = touch.pageX-15 + 'px';
+    draggable.style.top = touch.pageY-0 + 'px';
+    event.preventDefault();
+  }, false);
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);

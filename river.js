@@ -8,15 +8,29 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-var draggable = document.getElementByClassName('draggable');
-  draggable.addEventListener('touchmove', function(event) {
-    var touch = event.targetTouches[0];
-    
-    // Place element where the finger is
-    draggable.style.left = touch.pageX-15 + 'px';
-    draggable.style.top = touch.pageY-0 + 'px';
-    event.preventDefault();
-  }, false);
+var nodeList = document.getElementsByClassName('draggable');
+ 
+  for(var i=0;i<nodeList.length;i++) {
+    var obj = nodeList[i];
+    obj.addEventListener('touchmove', function(event) {
+      var touch = event.targetTouches[0];
+      
+      // Place element where the finger is
+      event.target.style.left = touch.pageX-15 + 'px';
+      event.target.style.top = touch.pageY + 'px';
+      event.preventDefault();
+    }, false);
+  }
+
+//var draggable = document.getElementByClassName('draggable');
+//  draggable.addEventListener('touchmove', function(event) {
+//    var touch = event.targetTouches[0];
+//    
+//    // Place element where the finger is
+//    draggable.style.left = touch.pageX-15 + 'px';
+//    draggable.style.top = touch.pageY-0 + 'px';
+//    event.preventDefault();
+//  }, false);
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);

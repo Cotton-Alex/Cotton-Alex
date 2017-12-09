@@ -47,25 +47,16 @@
         <div id="topBank">
             <button type="button" onClick="boatCross()">Cross the river</button> 
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ondragstart="drag(event)">
-                <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ondragstart="drag(event)">
-                <img id="fox" src="images/fox.png" alt="fox" draggable="true" ondragstart="drag(event)">
-                
-                
-<!--         ************** resize images to 75x75 so they can become css background-image and be changed by js ************************
-
-                <div id="carrot" draggable="true" ondragstart="drag(event)"></div>
-                <div id="rabbit" draggable="true" ondragstart="drag(event)"></div>
-                <div id="fox" draggable="true" ondragstart="drag(event)"></div>-->
-
-
+                <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="move('carrot')" onClick="move('carrot')" ondragstart="drag(event)">
+                <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" onClick="move('rabbit')" ondragstart="drag(event)">
+                <img id="fox" src="images/fox.png" alt="fox" draggable="true" onClick="move('fox')" ondragstart="drag(event)">
             </div>
         </div>
 
         <div id="water">
             <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>
 <!--            <div id="alerts">
-                <p id="alertsText">Help the farmer get everything across the river. He can only take one at a time. Be careful, they might eat eachother.</p>
+                <p id="alertText">Help the farmer get everything across the river. He can only take one at a time. Be careful, they might eat eachother.</p>
             </div>-->
         </div>
 

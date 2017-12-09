@@ -114,6 +114,7 @@ nav li a:active {
     height: 75px;
     margin: auto;
     float: left;
+    -webkit-user-drag: 
 }
 
 #rabbit { 
@@ -121,6 +122,7 @@ nav li a:active {
     height: 75px;
     margin: auto;
     float: left;
+    -webkit-user-drag:
 }
 
 #fox {
@@ -128,6 +130,8 @@ nav li a:active {
     height: 75px;
     margin: auto;
     float: left;
+    -webkit-user-drag:
+    -webkit-touch;
 }
 
 #topDrop {

@@ -17,7 +17,7 @@
         <!-- SCRIPTS -->
         <script type="text/javascript" src="river.js"></script>
     </head>
-    <body>
+    <body onload="draw(), checkLocalStorage()">>
         <header>
             <div>
                 <nav>
@@ -48,14 +48,14 @@
             <button type="button" onClick="boatCross()">Cross the river</button> 
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="move('carrot')" onClick="move('carrot')" ondragstart="drag(event)">
-                <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" onClick="move('rabbit')" ondragstart="drag(event)">
-                <img id="fox" src="images/fox.png" alt="fox" draggable="true" onClick="move('fox')" ondragstart="drag(event)">
+                <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ontouchstart="move('rabbit')" onClick="move('rabbit')" ondragstart="drag(event)">
+                <img id="fox" src="images/fox.png" alt="fox" draggable="true" ontouchstart="move('fox')" onClick="move('fox')" ondragstart="drag(event)">
             </div>
         </div>
 
         <div id="water">
-            <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>
             <canvas id="canvasWater"></canvas>
+            <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>
 <!--            <div id="alerts">
                 <p id="alertText">Help the farmer get everything across the river. He can only take one at a time. Be careful, they might eat eachother.</p>
             </div>-->

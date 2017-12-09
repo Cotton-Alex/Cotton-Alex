@@ -9,9 +9,12 @@ function allowDrop(ev) {
 }
 
 var nodeList = document.getElementsByClassName('draggable');
+
+console.log("nodeList = " + nodeList);
  
   for(var i=0;i<nodeList.length;i++) {
     var obj = nodeList[i];
+    console.log("obj = " + obj);
     obj.addEventListener('touchmove', function(event) {
       var touch = event.targetTouches[0];
       

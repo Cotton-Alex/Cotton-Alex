@@ -8,7 +8,7 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-var draggable = document.getElementByClass('draggable');
+var draggable = document.getElementByClassName('draggable');
   draggable.addEventListener('touchmove', function(event) {
     var touch = event.targetTouches[0];
     

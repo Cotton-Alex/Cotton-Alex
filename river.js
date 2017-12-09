@@ -14,6 +14,9 @@ document.querySelector('#fox').addEventListener('click', move(fox));
 
 function move(object) {
     console.log("object = " + object);
+    document.getElementById('boat').appendChild(
+    document.getElementById("'" + object + "'")
+    );
 }
 
 

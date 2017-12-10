@@ -17,7 +17,7 @@
         <!-- SCRIPTS -->
         <script type="text/javascript" src="river.js"></script>
     </head>
-    <body onload="draw(), checkLocalStorage()">>
+    <body onload="draw(), checkLocalStorage()">
         <header>
             <div>
                 <nav>
@@ -44,8 +44,10 @@
         </header>
         <h1>The Carrot, the Rabbit, and the Fox</h1>
         <h2>:::  a riddle  :::</h2>
+        <!--<div id="appWrap">-->
+         
         <div id="topBank">
-            <button type="button" onClick="boatCross()">Cross the river</button> 
+            <button type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="move('carrot')" onClick="move('carrot')" ondragstart="drag(event)">
                 <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ontouchstart="move('rabbit')" onClick="move('rabbit')" ondragstart="drag(event)">
@@ -64,6 +66,7 @@
         <div id="bottomBank">
             <div id="bottomDrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
+        <!--</div>-->
         <br>
         <br>
     </body>

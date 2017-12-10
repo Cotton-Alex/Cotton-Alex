@@ -74,6 +74,10 @@ nav li a:active {
     border-bottom: 3px solid black;
 }*/
 
+#appWrap {
+    /*position: relative;*/
+}
+
 #topBank{
     width: 100%;
     height: 15%;
@@ -82,23 +86,39 @@ nav li a:active {
     background-color: green;
 }
 
-/*#water {
+#water {
     width: 100%;
-    height: 40%;
-    position: relative;
-    min-height: 160px;
-    max-height: 320px;
-    background-color: aqua;
-}*/
-
-#canvasWater {
-    z-index: 0;
-    width: 100%;
-    height: 40%;
+    height: 100%;
     position: relative;
     min-height: 160px;
     max-height: 320px;
 }
+
+#canvasWater {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    /*height: 100%;*/
+    min-height: 160px;
+    max-height: 320px;
+}
+
+#boat {
+    position: absolute;
+    z-index: 1;
+    border: 1px black;
+    width: 75px;
+    height: 75px;
+    border: 1px solid #aaaaaa;
+    margin: auto;
+    right: 0;
+    left: 0;
+
+}
+
 #alerts {
     width: 30%;
     max-height: 298px;
@@ -110,6 +130,7 @@ nav li a:active {
 }
 
 #bottomBank {
+    position: relative;
     width: 100%;
     height: 15%;
     min-height: 80px;
@@ -139,25 +160,17 @@ nav li a:active {
     margin: auto;
     float: left;
     -webkit-user-drag:
-    -webkit-touch;
 }
 
 #topDrop {
     width: 225px;
     height: 75px;
-    margin: auto;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
     border: 1px solid #aaaaaa;
 }
-#boat {
-    z-index: 0;
-    border: 1px black;
-    width: 75px;
-    height: 75px;
-    margin: auto;
-    position: relative;   
-        /*top: 100%;*/
-    border: 1px solid #aaaaaa;
-}
+
 #bottomDrop {
     width: 225px;
     height: 75px;
@@ -165,24 +178,6 @@ nav li a:active {
     border: 1px solid #aaaaaa;
 }
 
-#animC {
-    width:100px;
-    height: 100px;
-    border-radius: 100%;
-    background: lightskyblue;
-    background: radial-gradient(circle at 50px 20px, #bee6ff, lightskyblue);
-    margin-bottom: 200px;
-    animation-name: ballBounceB;
-    animation-play-state: running;
-    animation-duration: .3s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes ballBounceB {
-    0% {transform: translateY(0px); }
-    100% {transform: translateY(80px); }
-    0% {box-shadow: 0px 100px 30px -30px rgba(0,0,0,.2)}
-    100% {box-shadow: 0px 20px 10px -10px rgba(0,0,0,.5)}
+#crossRiver {
+    float: left;
 }

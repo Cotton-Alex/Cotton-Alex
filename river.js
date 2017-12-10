@@ -85,7 +85,7 @@ function boatCross() {
     var rabbitParentId = (rabbitParentNode.id);
     var foxParentNode = document.getElementById("fox").parentNode;
     var foxParentId = (foxParentNode.id);
-    var waterHeight = (document.getElementById("water").width);
+    var waterHeight = (document.getElementById("water").offsetHeight);
     console.log("------------------- boatCross");
     console.log("carrotParentId = " + carrotParentId);
     console.log("rabbitParentId = " + rabbitParentId);
@@ -96,7 +96,7 @@ function boatCross() {
             console.log("(boatLocation === 0) error");
             return false;
         }
-        document.getElementById("boat").style.transform = "translateY(100%)";
+        document.getElementById("boat").style.bottom = "0%";
         boatLocation = 1;
         return;
     }
@@ -105,8 +105,9 @@ function boatCross() {
             console.log("(boatLocation === 1) error");
             return false;
         }
-        document.getElementById("boat").style.transform = "translateY(0%)";
+        document.getElementById("boat").style.bottom = null;
         boatLocation = 0;
+        
         return;
     } else {
         console.log("function boatCross error");

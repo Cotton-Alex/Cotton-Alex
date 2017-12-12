@@ -5,9 +5,22 @@ var boatLocation = 0;
 var dropFrom = "";
 var dropTo = "";
 var waterFlow = 0;
+var winPossible = true;
 
 function allowDrop(ev) {
     ev.preventDefault();
+//    document.getElementById("boatFront").style.display = "none";
+}
+
+function allowDropBoat(ev) {
+    ev.preventDefault();
+    document.getElementById("boatFront").setAttribute("background-image", "none");
+    document.getElementById("boatFront").style.display = "none";
+}
+
+function showBoatFront(ev) {
+    ev.preventDefault();
+    document.getElementById("boatFront").setAttribute("background-image", "url=(/images/boat_front.png)");
 }
 
 function touchScreenMove(object) {
@@ -60,6 +73,7 @@ function dropBoat(ev) {
         return false;
     }
     var data = ev.dataTransfer.getData("text");
+//    document.getElementById("boatFront").style.display = "block";
     ev.target.appendChild(document.getElementById(data));
 }
 
@@ -79,22 +93,29 @@ function boatCross() {
     if (boatLocation === 0) {
         if (carrotParentId === "topDrop" && rabbitParentId === "topDrop" && foxParentId !== "topDrop") {
             console.log("(boatLocation === 0) error");
+            var audio = new Audio('audio/chomp.wav');
+            audio.play();
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
+            winPossible = false;
             console.log("carrot changed to carrot_bite");
             document.getElementById("boat").style.bottom = "0%";
+            document.getElementById("boatFront").style.bottom = "0%";
             boatLocation = 1;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
         } else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
             console.log("(boatLocation === 0) error");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
+            winPossible = false;
             console.log("rabbit changed to Rabbit_bite");
             document.getElementById("boat").style.bottom = "0%";
+            document.getElementById("boatFront").style.bottom = "0%";
             boatLocation = 1;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
         } else {
             document.getElementById("boat").style.bottom = "0%";
+            document.getElementById("boatFront").style.bottom = "0%";
             boatLocation = 1;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
@@ -104,21 +125,26 @@ function boatCross() {
         if (carrotParentId === "bottomDrop" && rabbitParentId === "bottomDrop" && foxParentId !== "bottomDrop") {
             console.log("(boatLocation === 1) error");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
+            winPossible = false;
             console.log("carrot changed to carrot_bite");
             document.getElementById("boat").style.bottom = null;
+            document.getElementById("boatFront").style.bottom = null;
             boatLocation = 0;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return false;
         } else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
             console.log("(boatLocation === 1) error");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
+            winPossible = false;
             console.log("rabbit changed to Rabbit_bite");
             document.getElementById("boat").style.bottom = null;
+            document.getElementById("boatFront").style.bottom = null;
             boatLocation = 0;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return false;
         } else
             document.getElementById("boat").style.bottom = null;
+            document.getElementById("boatFront").style.bottom = null;
         boatLocation = 0;
         movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
         return;
@@ -365,5 +391,22 @@ function draw(x, y) {
     ctx.beginPath();
 
     var loopTimer = setTimeout('draw()', 60);
+}
 
+function reset() {
+    document.getElementById("boat").style.bottom = null;
+    document.getElementById("boatFront").style.bottom = null;
+    document.getElementById("carrot").setAttribute("src", "images/carrot.png");
+    document.getElementById("rabbit").setAttribute("src", "images/rabbit.png");
+    document.getElementById("fox").setAttribute("src", "images/fox.png");
+    document.getElementById("topDrop").appendChild(document.getElementById("carrot"));
+    document.getElementById("topDrop").appendChild(document.getElementById("rabbit"));
+    document.getElementById("topDrop").appendChild(document.getElementById("fox"));
+    document.getElementById("carrot").setAttribute("draggable", "true");
+    document.getElementById("rabbit").setAttribute("draggable", "true");
+    document.getElementById("fox").setAttribute("draggable", "true");
+    document.getElementById("topDrop").setAttribute("ondrop", "drop(event)");
+    document.getElementById("topDrop").setAttribute("ondragover", "allowDrop(event)");
+    document.getElementById("bottomDrop").setAttribute("ondrop", null);
+    document.getElementById("bottomDrop").setAttribute("ondragover", null);
 }

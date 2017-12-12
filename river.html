@@ -49,6 +49,7 @@
 
         <div id="topBank">
             <button type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>
+            <button type="button" id="reset" onClick="reset()">Reset</button>
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="touchScreenMove('carrot')" onClick="touchScreenMove('carrot')" ondragstart="drag(event)">
                 <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ontouchstart="touchScreenMove('rabbit')" onClick="touchScreenMove('rabbit')" ondragstart="drag(event)">
@@ -59,6 +60,8 @@
         <div id="water">
             <canvas id="canvasWater"></canvas>
             <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>
+            <div id="boatFront" ondragover="allowDropBoat(event)" ondragleave="showBoatFront(event)" ></div>
+            <!--<img id="boatFront" src="images/boat_front.png" alt="boat_front">-->
             <!--            <div id="alerts">
                             <p id="alertText">Help the farmer get everything across the river. He can only take one at a time. Be careful, they might eat eachother.</p>
                         </div>-->

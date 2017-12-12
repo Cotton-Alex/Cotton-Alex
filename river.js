@@ -10,36 +10,18 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-//document.querySelector('#rabbit').addEventListener('click', move(rabbit));
-//document.querySelector('#carrot').addEventListener('click', move(carrot));
-//document.querySelector('#fox').addEventListener('click', move(fox));
-
-function move(object) {
+function touchScreenMove(object) {
 //    console.log("object = " + object);
 //    document.getElementById('boat').appendChild(
 //            document.getElementById(object)
 //            );
-    console.log(object + " triggered move function");
+    console.log(object + " triggered touchScreenMove function");
 }
 
 function drag(ev) {
     console.log("ev.target.parentNode.id = " + ev.target.parentNode.id);
     ev.dataTransfer.setData("text", ev.target.id);
     dropFrom = (ev.target.parentNode.id);
-//    if ((dropFrom === "topDrop") && (boatLocation === 1)) {
-//        return false;
-//    }
-//    if ((dropFrom === "bottomDrop") && (boatLocation === 0)) {
-//        return false;
-//    }
-//    if (boatLocation === 0) {
-//        document.getElementById("bottomDrop").setAttribute("onDrop", false);
-//        document.getElementById("topDrop").setAttribute("onDrop", "drop(event)");
-//    }
-//    if (boatLocation === 1) {
-//        document.getElementById("topDrop").setAttribute("onDrop", false);
-//        document.getElementById("bottomDrop").setAttribute("onDrop", "drop(event)");
-//    }
     console.log("------------------- drag");
     console.log("object = " + ev.target.id);
     console.log("dropFrom = " + dropFrom);
@@ -49,22 +31,21 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     object = (ev.target.id);
-    //var dropFrom = (ev.target.parentNode.id);
     var dropTo = (ev.target.id);
     console.log("------------------- drop");
     console.log("object = " + object);
     console.log("dropFrom = " + dropFrom);
     console.log("dropTo = " + dropTo);
-//        if (((dropFrom === "topDrop") && (dropTo === "bottomDrop")) || ((dropFrom === "bottomDrop") && (dropTo === "topDrop")))
-//            return false;
-    if (!ev.target.getAttribute("ondrop"))
+    if (!ev.target.getAttribute("ondrop")) {
         return false;
+    }
     var data = ev.dataTransfer.getData("text");
+    console.log("function drop data = " + data);
     ev.target.appendChild(document.getElementById(data));
 }
+
 function dropBoat(ev) {
     ev.preventDefault();
-    //var dropFrom = (ev.target.parentNode.id);
     var dropTo = (ev.target.id);
     console.log("------------------- dropBoat");
     console.log("object = " + ev.target.id);
@@ -75,8 +56,9 @@ function dropBoat(ev) {
     if (targetChildCount === 1) {
         return false;
     }
-    if (!ev.target.getAttribute("ondrop"))
+    if (!ev.target.getAttribute("ondrop")) {
         return false;
+    }
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
@@ -94,19 +76,14 @@ function boatCross() {
     console.log("rabbitParentId = " + rabbitParentId);
     console.log("foxParentId = " + foxParentId);
     console.log("waterheight = " + waterHeight);
-//    draggableUpdate(carrotParentId, rabbitParentId, foxParentId);
     if (boatLocation === 0) {
-        document.getElementById("topDrop").setAttribute("ondrop", "drop(event)");
-        document.getElementById("topDrop").setAttribute("ondragover", "allowdrop(event)");
-        document.getElementById("bottomDrop").setAttribute("ondrop", null);
-        document.getElementById("bottomDrop").setAttribute("ondragover", null);
         if (carrotParentId === "topDrop" && rabbitParentId === "topDrop" && foxParentId !== "topDrop") {
             console.log("(boatLocation === 0) error");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
             console.log("carrot changed to carrot_bite");
             document.getElementById("boat").style.bottom = "0%";
             boatLocation = 1;
-            draggableUpdate(carrotParentId, rabbitParentId, foxParentId);
+            movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
         } else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
             console.log("(boatLocation === 0) error");
@@ -114,25 +91,23 @@ function boatCross() {
             console.log("rabbit changed to Rabbit_bite");
             document.getElementById("boat").style.bottom = "0%";
             boatLocation = 1;
-            draggableUpdate(carrotParentId, rabbitParentId, foxParentId);
+            movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
-        } else
+        } else {
             document.getElementById("boat").style.bottom = "0%";
-        boatLocation = 1;
-        draggableUpdate(carrotParentId, rabbitParentId, foxParentId);
-        return;
+            boatLocation = 1;
+            movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
+            return;
+        }
     }
     if (boatLocation === 1) {
-        document.getElementById("topDrop").setAttribute("ondrop", null);
-        document.getElementById("topDrop").setAttribute("ondragover", null);
-        document.getElementById("bottomDrop").setAttribute("ondrop", "drop(event)");
-        document.getElementById("bottomDrop").setAttribute("ondragover", "allowdrop(event)");
         if (carrotParentId === "bottomDrop" && rabbitParentId === "bottomDrop" && foxParentId !== "bottomDrop") {
             console.log("(boatLocation === 1) error");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
             console.log("carrot changed to carrot_bite");
             document.getElementById("boat").style.bottom = null;
             boatLocation = 0;
+            movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return false;
         } else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
             console.log("(boatLocation === 1) error");
@@ -140,23 +115,28 @@ function boatCross() {
             console.log("rabbit changed to Rabbit_bite");
             document.getElementById("boat").style.bottom = null;
             boatLocation = 0;
+            movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return false;
         } else
             document.getElementById("boat").style.bottom = null;
         boatLocation = 0;
-
+        movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
         return;
     } else {
         console.log("function boatCross error");
     }
 
 }
-function draggableUpdate(carrotParentId, rabbitParentId, foxParentId) {
-    console.log("------------------- draggableUpdate");
+function movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId) {
+    console.log("------------------- movementRulesUpdate");
     console.log("carrotParentId = " + carrotParentId);
     console.log("rabbitParentId = " + rabbitParentId);
     console.log("foxParentId = " + foxParentId);
     if (boatLocation === 0) {
+        document.getElementById("topDrop").setAttribute("ondrop", "drop(event)");
+        document.getElementById("topDrop").setAttribute("ondragover", "allowDrop(event)");
+        document.getElementById("bottomDrop").setAttribute("ondrop", null);
+        document.getElementById("bottomDrop").setAttribute("ondragover", null);
         if (carrotParentId === "topDrop") {
             document.getElementById("carrot").setAttribute("draggable", "true");
         }
@@ -176,8 +156,11 @@ function draggableUpdate(carrotParentId, rabbitParentId, foxParentId) {
             document.getElementById("fox").setAttribute("draggable", "false");
             return;
         }
-    }
-    else if (boatLocation === 1) {
+    } else if (boatLocation === 1) {
+        document.getElementById("topDrop").setAttribute("ondrop", null);
+        document.getElementById("topDrop").setAttribute("ondragover", null);
+        document.getElementById("bottomDrop").setAttribute("ondrop", "drop(event)");
+        document.getElementById("bottomDrop").setAttribute("ondragover", "allowDrop(event)");
         if (carrotParentId === "topDrop") {
             document.getElementById("carrot").setAttribute("draggable", "false");
         }
@@ -197,22 +180,19 @@ function draggableUpdate(carrotParentId, rabbitParentId, foxParentId) {
             document.getElementById("fox").setAttribute("draggable", "true");
             return;
         }
-    }else{
-        console.log("function draggableUpdate error");
+    } else {
+        console.log("function movementRulesUpdate error");
     }
 }
 
 function draw(x, y) {
     var canvas = document.getElementById("canvasWater");
     var ctx = canvas.getContext("2d");
-    //ctx.save();
 
     waterFlow++;
     if (waterFlow === 90) {
         waterFlow = 0;
     }
-
-    //console.log(waterFlow);
 
     for (x = -100; x <= 600; x += 1) {
         y = -10 - Math.sin((x - waterFlow) * Math.PI / 45) * 9;
@@ -386,5 +366,4 @@ function draw(x, y) {
 
     var loopTimer = setTimeout('draw()', 60);
 
-    //ctx.stroke();
 }

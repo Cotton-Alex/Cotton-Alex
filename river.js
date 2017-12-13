@@ -6,6 +6,9 @@ var dropFrom = "";
 var dropTo = "";
 var waterFlow = 0;
 var winPossible = true;
+var carrotBite = false;
+var rabbitBite = false;
+var checkWin = false;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -55,6 +58,7 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     console.log("function drop data = " + data);
     ev.target.appendChild(document.getElementById(data));
+    checkWin();
 }
 
 function dropBoat(ev) {
@@ -77,6 +81,29 @@ function dropBoat(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
 
+function bite(object) {
+    if (object === "carrot") {
+        if (carrotBite === false) {
+            var audio = new Audio('audio/chomp.wav');
+            audio.play();
+            carrotBite = true;
+            console.log("carrotBite = " + carrotBite);
+            return;
+        }
+    }
+    if (object === "rabbit") {
+        if (rabbitBite === false) {
+            var audio = new Audio('audio/comic_bite.wav');
+            audio.play();
+            rabbitBite = true;
+            console.log("rabbitBite = " + rabbitBite);
+            return;
+        }
+    } else {
+        return;
+    }
+}
+
 function boatCross() {
     var carrotParentNode = document.getElementById("carrot").parentNode;
     var carrotParentId = (carrotParentNode.id);
@@ -92,22 +119,19 @@ function boatCross() {
     console.log("waterheight = " + waterHeight);
     if (boatLocation === 0) {
         if (carrotParentId === "topDrop" && rabbitParentId === "topDrop" && foxParentId !== "topDrop") {
-            console.log("(boatLocation === 0) error");
-            var audio = new Audio('audio/chomp.wav');
-            audio.play();
+            bite("carrot");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
             winPossible = false;
-            console.log("carrot changed to carrot_bite");
             document.getElementById("boat").style.bottom = "0%";
             document.getElementById("boatFront").style.bottom = "0%";
             boatLocation = 1;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
-        } else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
-            console.log("(boatLocation === 0) error");
+        }
+        else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
+            bite("rabbit");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
-            console.log("rabbit changed to Rabbit_bite");
             document.getElementById("boat").style.bottom = "0%";
             document.getElementById("boatFront").style.bottom = "0%";
             boatLocation = 1;
@@ -123,36 +147,36 @@ function boatCross() {
     }
     if (boatLocation === 1) {
         if (carrotParentId === "bottomDrop" && rabbitParentId === "bottomDrop" && foxParentId !== "bottomDrop") {
-            console.log("(boatLocation === 1) error");
+            bite("carrot");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
             winPossible = false;
-            console.log("carrot changed to carrot_bite");
             document.getElementById("boat").style.bottom = null;
             document.getElementById("boatFront").style.bottom = null;
             boatLocation = 0;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
-            return false;
-        } else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
-            console.log("(boatLocation === 1) error");
+            return;
+        }
+        else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
+            bite("carrot");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
-            console.log("rabbit changed to Rabbit_bite");
             document.getElementById("boat").style.bottom = null;
             document.getElementById("boatFront").style.bottom = null;
             boatLocation = 0;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
-            return false;
-        } else
+            return;
+        } else {
             document.getElementById("boat").style.bottom = null;
             document.getElementById("boatFront").style.bottom = null;
-        boatLocation = 0;
-        movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
-        return;
+            boatLocation = 0;
+            movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
+            return;
+        }
     } else {
-        console.log("function boatCross error");
+        console.log("boatCross error");
     }
-
 }
+
 function movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId) {
     console.log("------------------- movementRulesUpdate");
     console.log("carrotParentId = " + carrotParentId);
@@ -208,6 +232,22 @@ function movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId) {
         }
     } else {
         console.log("function movementRulesUpdate error");
+    }
+}
+
+function checkWin() {
+    var carrotParentNode = document.getElementById("carrot").parentNode;
+    var carrotParentId = (carrotParentNode.id);
+    var rabbitParentNode = document.getElementById("rabbit").parentNode;
+    var rabbitParentId = (rabbitParentNode.id);
+    var foxParentNode = document.getElementById("fox").parentNode;
+    var foxParentId = (foxParentNode.id);
+    if (carrotBite === false
+            && rabbitBite === false
+            && carrotParentId === "bottomDrop"
+            && rabbitParentId === "bottomDrop"
+            && foxParentId === "bottomDrop") {
+        
     }
 }
 
@@ -409,4 +449,6 @@ function reset() {
     document.getElementById("topDrop").setAttribute("ondragover", "allowDrop(event)");
     document.getElementById("bottomDrop").setAttribute("ondrop", null);
     document.getElementById("bottomDrop").setAttribute("ondragover", null);
+    carrotBite = false;
+    rabbitBite = false;
 }

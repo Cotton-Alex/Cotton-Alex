@@ -33,10 +33,11 @@ function showBoatFront(ev) {
 }
 
 function touchScreenMove(object) {
-//    console.log("object = " + object);
-//    document.getElementById('boat').appendChild(
-//            document.getElementById(object)
-//            );
+    if 
+    console.log("object = " + object);
+    document.getElementById('boat').appendChild(
+            document.getElementById(object)
+            );
     console.log(object + " triggered touchScreenMove function");
 }
 

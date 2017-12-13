@@ -10,6 +10,12 @@ var carrotBite = false;
 var rabbitBite = false;
 var checkWin = false;
 
+var fixed = document.getElementById('fixed');
+
+fixed.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+}, false);
+
 function allowDrop(ev) {
     ev.preventDefault();
 //    document.getElementById("boatFront").style.display = "none";
@@ -127,8 +133,7 @@ function boatCross() {
             boatLocation = 1;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
-        }
-        else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
+        } else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
             bite("rabbit");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
@@ -155,8 +160,7 @@ function boatCross() {
             boatLocation = 0;
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
-        }
-        else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
+        } else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
             bite("carrot");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
@@ -247,7 +251,7 @@ function checkWin() {
             && carrotParentId === "bottomDrop"
             && rabbitParentId === "bottomDrop"
             && foxParentId === "bottomDrop") {
-        
+
     }
 }
 

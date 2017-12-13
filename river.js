@@ -10,15 +10,8 @@ var carrotBite = false;
 var rabbitBite = false;
 var checkWin = false;
 
-var fixed = document.getElementById('fixed');
-
-fixed.addEventListener('touchmove', function (e) {
-    e.preventDefault();
-}, false);
-
 function allowDrop(ev) {
     ev.preventDefault();
-//    document.getElementById("boatFront").style.display = "none";
 }
 
 function allowDropBoat(ev) {
@@ -33,7 +26,6 @@ function showBoatFront(ev) {
 }
 
 function touchScreenMove(object) {
-    if 
     console.log("object = " + object);
     document.getElementById('boat').appendChild(
             document.getElementById(object)

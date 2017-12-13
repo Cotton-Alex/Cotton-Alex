@@ -8,7 +8,7 @@ var waterFlow = 0;
 var winPossible = true;
 var carrotBite = false;
 var rabbitBite = false;
-var checkWin = false;
+var win = false;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -26,11 +26,42 @@ function showBoatFront(ev) {
 }
 
 function touchScreenMove(object) {
-    console.log("object = " + object);
-    document.getElementById('boat').appendChild(
-            document.getElementById(object)
-            );
-    console.log(object + " triggered touchScreenMove function");
+    var objectParentNode = document.getElementById(object).parentNode;
+    var objectParentId = (objectParentNode.id);
+    var carrotParentNode = document.getElementById("carrot").parentNode;
+    var carrotParentId = (carrotParentNode.id);
+    var rabbitParentNode = document.getElementById("rabbit").parentNode;
+    var rabbitParentId = (rabbitParentNode.id);
+    var foxParentNode = document.getElementById("fox").parentNode;
+    var foxParentId = (foxParentNode.id);
+    if (objectParentId === "topDrop" || objectParentId === "bottomDrop") {
+        if (carrotParentId === "boat" || rabbitParentId === "boat" || foxParentId === "boat") {
+            return;
+        } else if (objectParentId === "topDrop" && boatLocation === 0) {
+            document.getElementById('boat').appendChild(
+                    document.getElementById(object)
+                    );
+        } else if (objectParentId === "bottomDrop" && boatLocation === 1) {
+            document.getElementById('boat').appendChild(
+                    document.getElementById(object)
+                    );
+            checkWin();
+        } else {
+            return;
+        }
+    }
+    if (boatLocation === 0 && objectParentId === "boat") {
+        document.getElementById('topDrop').appendChild(
+                document.getElementById(object)
+                );
+    } else if (boatLocation === 1 && objectParentId === "boat") {
+        document.getElementById('bottomDrop').appendChild(
+                document.getElementById(object)
+                );
+        checkWin();
+    } else {
+        return;
+    }
 }
 
 function drag(ev) {
@@ -239,12 +270,14 @@ function checkWin() {
     var rabbitParentId = (rabbitParentNode.id);
     var foxParentNode = document.getElementById("fox").parentNode;
     var foxParentId = (foxParentNode.id);
-    if (carrotBite === false
+    if (win === false
+            && carrotBite === false
             && rabbitBite === false
             && carrotParentId === "bottomDrop"
             && rabbitParentId === "bottomDrop"
             && foxParentId === "bottomDrop") {
-
+        win = true;
+        console.log("WINNER WINNER CHICKEN DINNER!!!");
     }
 }
 

@@ -41,6 +41,8 @@ dark blue - #00ccff
     border: 1px solid #333;
     border-radius: 6px;
     box-shadow: 0 3px #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .btn:hover {background-color: #4ddbff}

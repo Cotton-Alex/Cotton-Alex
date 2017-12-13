@@ -43,14 +43,22 @@ dark blue - #00ccff
     box-shadow: 0 3px #333;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
 }
 
-.btn:hover {background-color: #4ddbff}
+.btn:hover {background-color: #4ddbff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
 .btn:active {
     background-color: #00aadd;
     box-shadow: 0 0px #333;
     transform: translateY(3px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #reset {

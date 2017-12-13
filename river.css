@@ -1,9 +1,11 @@
 html {
+    width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
 body {
+    overflow: hidden;
     line-height: 1.6;
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -20,50 +22,94 @@ body {
     /*background: white;*/
 }
 
+/*
+text is #fff - white
+light blue - #99ebff
+medium blue - #4ddbff
+dark blue - #00ccff
+*/
+
+.btn {
+    padding: 6px 6px;
+    margin: 2px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    background-color: #99ebff;
+    border: 1px solid #333;
+    border-radius: 6px;
+    box-shadow: 0 3px #333;
+}
+
+.btn:hover {background-color: #4ddbff}
+
+.btn:active {
+    background-color: #00aadd;
+    box-shadow: 0 0px #333;
+    transform: translateY(3px);
+}
+
+#reset {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#crossRiver {
+    z-index: 6;
+    position: absolute;
+    bottom: 10px;
+    right: 2%;
+}
+
 #appWrap {
     /*position: relative;*/
 }
 
 #topBank{
+    z-index: 1;
+    position: absolute;
+    top:0;
     width: 100%;
     height: 15%;
     min-height: 80px;
-    max-height:160px;
+    /*max-height:160px;*/
     background-color: green;
 }
 
 #bottomBank {
-    position: relative;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
     width: 100%;
     height: 15%;
     min-height: 80px;
-    max-height:160px;
+    /*max-height:160px;*/
     background-color: green;
 }
 
 #water {
+    /*z-index: 0;*/
+    top: 15%;
+    bottom: 15%;
     width: 100%;
-    height: 100%;
+    height: 70%;
     position: relative;
-    min-height: 160px;
-    max-height: 320px;
 }
 
 #canvasWater {
     position: absolute;
     z-index: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
     width: 100%;
     height: 100%;
-    min-height: 160px;
-    max-height: 320px;
 }
 
 #boat {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     border: 1px black;
     width: 75px;
     height: 75px;
@@ -79,7 +125,7 @@ body {
 #boatFront {
     position: absolute;
     pointer-events: none;
-    z-index: 3;
+    z-index: 5;
     width: 75px;
     height: 75px;
     margin: auto;
@@ -101,7 +147,7 @@ body {
 }
 
 #carrot {
-    z-index: 2;
+    z-index: 4;
     width: 75px;
     height: 75px;
     margin: auto;
@@ -110,7 +156,7 @@ body {
 }
 
 #rabbit {
-    z-index: 2;
+    z-index: 4;
     width: 75px;
     height: 75px;
     margin: auto;
@@ -119,7 +165,7 @@ body {
 }
 
 #fox {
-    z-index: 2;
+    z-index: 4;
     width: 75px;
     height: 75px;
     margin: auto;
@@ -128,18 +174,25 @@ body {
 }
 
 #topDrop {
+    z-index: 1;
+    position: absolute;
     width: 225px;
     height: 75px;
-    top: 0;
-    bottom: 0;
-    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: auto;
     background-image: url(images/rock_base.png);
 }
 
 #bottomDrop {
+    z-index: 1;
+    position: absolute;
     width: 225px;
     height: 75px;
-    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     background-image: url(images/rock_base.png);
 }
 

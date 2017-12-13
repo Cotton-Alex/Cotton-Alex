@@ -4,7 +4,7 @@
             "0": "There goes the carrot.",
             "1": "Well, that's too bad.",
             "2": "That poor carrot never had a chance.",
-            "3": "Bummer.",
+            "3": "It was just a matter of time.",
             "4": "Can you blame him though?",
             "5": "ouch!",
             "6": "No carrot soup tonight.",
@@ -20,15 +20,15 @@
         "comment": {
             "0": "Poor little guy. He never saw it coming.",
             "1": "Oops.",
-            "2": "Tough luck fuzzy tail.",
-            "3": "Maybe their feet aren't so lucky afterall.",
+            "2": "Tough luck, fuzzy tail.",
+            "3": "Maybe their feet aren't so lucky after all.",
             "4": "",
             "5": "Yikes!",
             "6": "It's the circle of life or something like that.",
             "7": "You could have at least let him eat the carrot first.",
-            "8": "No more hoppin' down the bunny trail for that one.",
+            "8": "No more hopping down the bunny trail for that one.",
             "9": "That was horrific.",
-            "10": "Thumper! Nooooooo!.",
+            "10": "Thumper! No!.",
             "11": "Nom! Nom! Nom!"
         }
         
@@ -38,14 +38,14 @@
             "0": "Way to go!",
             "1": "I knew you could do it!",
             "2": "I have to admit, I was a little worried for most of that.",
-            "3": "You can do better than that.",
+            "3": "Are you going to eat the carrot?",
             "4": "Yay!",
             "5": "Nice.",
             "6": "Winner winner chicken dinner!",
             "7": "Winning!",
             "8": "You won. That's nice and all, but the rabbit and the fox are still very hungry.",
-            "9": "NIce, no murder in this round.",
-            "10": "Thumper! Nooooooo! Just kidding, you won.",
+            "9": "Nice, no murder in this round.",
+            "10": "You won!",
             "11": "High five?"
         }
         

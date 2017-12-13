@@ -9,18 +9,16 @@ var winPossible = true;
 var carrotBite = false;
 var rabbitBite = false;
 var win = false;
-var responsiveVoice = "";
-var commentNumber = "";
-var response = "";
-var voiceList = "";
-var voice = "";
+var carrotSpeak = false;
+var rabbitSpeak = false;
+var responsiveVoice, commentNumber, response, voiceList, voice;
 
 voice = ('US English Female');
-responsiveVoice.setDefaultVoice(voice);
+//responsiveVoice.setDefaultVoice(voice);
 console.log("voice = " + voice);
 
-voicelist = responsiveVoice.getVoices();
-console.log(voicelist);
+//voicelist = responsiveVoice.getVoices();
+//console.log(voicelist);
 
 function jsonParse(url, group, commentNumber, isJSON) {
     console.log(url, group, commentNumber, isJSON);
@@ -149,6 +147,12 @@ function bite(object) {
             audio.play();
             carrotBite = true;
             console.log("carrotBite = " + carrotBite);
+            if (carrotSpeak === false) {
+                setTimeout(function () {
+                commentNumber = (Math.floor(Math.random() * 12));
+                jsonParse("riverComments.json", 0, commentNumber, "true");
+                carrotSpeak = true;}, 700);
+            }
             return;
         }
     }
@@ -158,6 +162,12 @@ function bite(object) {
             audio.play();
             rabbitBite = true;
             console.log("rabbitBite = " + rabbitBite);
+            if (rabbitSpeak === false) {
+                setTimeout(function () {
+                commentNumber = (Math.floor(Math.random() * 12));
+                jsonParse("riverComments.json", 1, commentNumber, "true");
+                rabbitSpeak = true;}, 700);
+            }
             return;
         }
     } else {
@@ -182,8 +192,6 @@ function boatCross() {
         if (carrotParentId === "topDrop" && rabbitParentId === "topDrop" && foxParentId !== "topDrop") {
             bite("carrot");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
-            commentNumber = (Math.floor(Math.random() * 12));
-            jsonParse("riverComments.json", 0, commentNumber, "true");
             winPossible = false;
             document.getElementById("boat").style.bottom = "0%";
             document.getElementById("boatFront").style.bottom = "0%";
@@ -309,10 +317,14 @@ function checkWin() {
             && carrotParentId === "bottomDrop"
             && rabbitParentId === "bottomDrop"
             && foxParentId === "bottomDrop") {
-        win = true;
         console.log("WINNER WINNER CHICKEN DINNER!!!");
+        setTimeout(function () {
+                commentNumber = (Math.floor(Math.random() * 12));
+                jsonParse("riverComments.json", 2, commentNumber, "true");
+                win = true;}, 700);
+            }
     }
-}
+
 
 function draw(x, y) {
     var canvas = document.getElementById("canvasWater");
@@ -516,4 +528,6 @@ function reset() {
     carrotBite = false;
     rabbitBite = false;
     win = false;
+    carrotSpeak = false;
+    rabbitSpeak = false;
 }

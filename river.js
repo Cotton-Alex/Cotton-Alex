@@ -9,6 +9,37 @@ var winPossible = true;
 var carrotBite = false;
 var rabbitBite = false;
 var win = false;
+var responsiveVoice = "";
+var commentNumber = "";
+var response = "";
+var voiceList = "";
+var voice = "";
+
+voice = ('US English Female');
+responsiveVoice.setDefaultVoice(voice);
+console.log("voice = " + voice);
+
+voicelist = responsiveVoice.getVoices();
+console.log(voicelist);
+
+function jsonParse(url, group, commentNumber, isJSON) {
+    console.log(url, group, commentNumber, isJSON);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange =
+            function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+                    parseDataFunc(xmlhttp.responseText, group, commentNumber, isJSON);
+            };
+    xmlhttp.open("GET", url, group, commentNumber, true);
+    xmlhttp.send();
+}
+
+function parseDataFunc(response, group, commentNumber, isJSON) {
+    var responseText = (isJSON) ? JSON.parse(response) : response;
+    console.log("JSON = " + response, group, commentNumber, isJSON);
+    console.log("Chosen text = " + responseText[group].comment[commentNumber]);
+    responsiveVoice.speak("" + responseText[group].comment[commentNumber] + "");
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -151,6 +182,8 @@ function boatCross() {
         if (carrotParentId === "topDrop" && rabbitParentId === "topDrop" && foxParentId !== "topDrop") {
             bite("carrot");
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
+            commentNumber = (Math.floor(Math.random() * 12));
+            jsonParse("riverComments.json", 0, commentNumber, "true");
             winPossible = false;
             document.getElementById("boat").style.bottom = "0%";
             document.getElementById("boatFront").style.bottom = "0%";
@@ -185,7 +218,7 @@ function boatCross() {
             movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId);
             return;
         } else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
-            bite("carrot");
+            bite("rabbit");
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
             document.getElementById("boat").style.bottom = null;

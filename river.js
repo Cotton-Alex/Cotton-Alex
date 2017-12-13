@@ -464,6 +464,7 @@ function draw(x, y) {
 }
 
 function reset() {
+    boatLocation = 0;
     document.getElementById("boat").style.bottom = null;
     document.getElementById("boatFront").style.bottom = null;
     document.getElementById("carrot").setAttribute("src", "images/carrot.png");
@@ -481,4 +482,5 @@ function reset() {
     document.getElementById("bottomDrop").setAttribute("ondragover", null);
     carrotBite = false;
     rabbitBite = false;
+    win = false;
 }

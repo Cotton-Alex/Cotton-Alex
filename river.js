@@ -13,12 +13,46 @@ var carrotSpeak = false;
 var rabbitSpeak = false;
 var responsiveVoice, commentNumber, response, voiceList, voice;
 
+
 voice = ('US English Female');
 //responsiveVoice.setDefaultVoice(voice);
 console.log("voice = " + voice);
 
 //voicelist = responsiveVoice.getVoices();
 //console.log(voicelist);
+
+function menuOn() {
+//    console.log(menuOn);
+//    document.getElementById("menu").setAttribute("left", "50%");
+    document.getElementById("menu").style.left = "50%";
+}
+
+function menuOff() {
+//    console.log(menuOff);
+//    document.getElementById("menu").setAttribute("left", "-150%");
+    document.getElementById("menu").style.left = "-150%";
+}
+function checkLocalStorage() {
+    if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
+        if (localStorage.showMenu !== null) {
+            var displayMenu = localStorage.getItem('showMenu');
+                if (displayMenu === false) {
+                     document.getElementById("menu").setAttribute.left = "-150%";
+                } else {
+                    return;
+                }
+        } else {
+            return;
+        }
+    } else {
+        alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
+    }
+}
+
+function showMenu(displayMenu) {
+    localStorage.setItem("showMenu", displayMenu);
+    document.body.style.background = bgColor;
+}
 
 function jsonParse(url, group, commentNumber, isJSON) {
     console.log(url, group, commentNumber, isJSON);
@@ -149,9 +183,10 @@ function bite(object) {
             console.log("carrotBite = " + carrotBite);
             if (carrotSpeak === false) {
                 setTimeout(function () {
-                commentNumber = (Math.floor(Math.random() * 12));
-                jsonParse("riverComments.json", 0, commentNumber, "true");
-                carrotSpeak = true;}, 700);
+                    commentNumber = (Math.floor(Math.random() * 12));
+                    jsonParse("riverComments.json", 0, commentNumber, "true");
+                    carrotSpeak = true;
+                }, 700);
             }
             return;
         }
@@ -164,9 +199,10 @@ function bite(object) {
             console.log("rabbitBite = " + rabbitBite);
             if (rabbitSpeak === false) {
                 setTimeout(function () {
-                commentNumber = (Math.floor(Math.random() * 12));
-                jsonParse("riverComments.json", 1, commentNumber, "true");
-                rabbitSpeak = true;}, 700);
+                    commentNumber = (Math.floor(Math.random() * 12));
+                    jsonParse("riverComments.json", 1, commentNumber, "true");
+                    rabbitSpeak = true;
+                }, 700);
             }
             return;
         }
@@ -319,16 +355,37 @@ function checkWin() {
             && foxParentId === "bottomDrop") {
         console.log("WINNER WINNER CHICKEN DINNER!!!");
         setTimeout(function () {
-                commentNumber = (Math.floor(Math.random() * 12));
-                jsonParse("riverComments.json", 2, commentNumber, "true");
-                win = true;}, 700);
-            }
+            commentNumber = (Math.floor(Math.random() * 12));
+            jsonParse("riverComments.json", 2, commentNumber, "true");
+            win = true;
+        }, 700);
     }
+}
 
 
 function draw(x, y) {
     var canvas = document.getElementById("canvasWater");
     var ctx = canvas.getContext("2d");
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.msImageSmoothingEnabled = false;
+    ctx.ImageSmoothingEnabled = false;
+
+//    var red_fish_left = new Image();
+//    red_fish_left.addEventListener('load', function () {
+//        ctx.drawImage(red_fish_left,25,25,100,100);
+//    }, false);
+//    
+//    red_fish_left.src = 'images/red_fish_left.png';
+//    console.log(red_fish_left.src);
+
+
+//    var yellow_fish_left = new Image();    
+//    yellow_fish_left.onLoad = function () {
+//        ctx.drawImage(yellow_fish_left,100,100);
+//    };
+//    yellow_fish_left.src = 'images/yellow_fish_left.png';
+//    console.log(yellow_fish_left.src);
 
     waterFlow++;
     if (waterFlow === 90) {

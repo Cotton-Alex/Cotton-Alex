@@ -22,6 +22,25 @@ body {
     /*background: white;*/
 }
 
+.menu {
+    
+}
+
+#menu {
+    position: absolute;
+    z-index: 8;
+    /*border: 1px black;*/
+    width: 85%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(153, 235, 255, .95);
+    border:2px #000 solid;
+    border-radius: 15px;
+    transition: left 2s ease 0s;
+}
+
 /*
 text is #fff - white
 light blue - #99ebff
@@ -30,6 +49,7 @@ dark blue - #00ccff
 */
 
 .btn {
+    position: absolute;
     padding: 6px 6px;
     margin: 2px;
     font-size: 12px;
@@ -46,13 +66,16 @@ dark blue - #00ccff
     appearance: none;
 }
 
-.btn:hover {background-color: #4ddbff;
+.btn:hover {
+    position: absolute;
+    background-color: #4ddbff;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 
 .btn:active {
+    position: absolute;
     background-color: #00aadd;
     box-shadow: 0 0px #333;
     transform: translateY(3px);

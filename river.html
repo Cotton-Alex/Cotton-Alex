@@ -14,17 +14,25 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="river.css">
+        <link rel="stylesheet" href="normalize.css">
 
         <!-- SCRIPTS -->
         <script type="text/javascript" src="river.js"></script>
         <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>-->
     </head>
-    <!--    <body onload="draw(), checkLocalStorage()">-->
-    <body onload="draw()">
+    <body>
+<!--    <body onload="draw(), checkLocalStorage()">-->
+        <div class="menu" id="menu">
+            <div class="menu" id="menuFront">
+                <button class="btn" type="button" id="menuOff" onClick="menuOff()">Done</button>
+            </div>
+            <div class="menu" id="menuBack">
+            </div>
+            
+        </div>
         <div id="topBank">
-            <button type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>
-            <button type="button" id="reset" onClick="reset()">Reset</button>
+            <button class="btn" type="button" id="menuOn" onClick="menuOn()">Menu</button>
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="touchScreenMove('carrot')" on onClick="touchScreenMove('carrot')" ondragstart="drag(event)">
                 <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ontouchstart="touchScreenMove('rabbit')" onClick="touchScreenMove('rabbit')" ondragstart="drag(event)">
@@ -36,13 +44,11 @@
             <canvas id="canvasWater"></canvas>
             <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>
             <div id="boatFront" ondragover="allowDropBoat(event)" ondragleave="showBoatFront(event)"></div>
-            <!--<img id="boatFront" src="images/boat_front.png" alt="boat_front">-->
-            <!--            <div id="alerts">
-                            <p id="alertText">Help the farmer get everything across the river. He can only take one at a time. Be careful, they might eat eachother.</p>
-                        </div>-->
+            <button class="btn" type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>
         </div>
 
         <div id="bottomBank">
+            <button class="btn" type="button" id="reset" onClick="reset()">Reset</button>
             <div id="bottomDrop" ondrop=null ondragover=null></div>
         </div>
         <!--</div>-->

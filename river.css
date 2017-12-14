@@ -84,6 +84,37 @@ dark blue - #00ccff
     appearance: none;
 }
 
+#menuOn{
+    position: absolute;
+    left: 2%;
+    top: 10px;
+    /*transform: translateY(-50%);*/
+}
+#menuOff {
+    position: absolute;
+    bottom: 10px;
+    right: 2%;
+}
+
+#menuTitle {
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: xx-large;
+}
+
+#instructions {
+    position:absolute;
+    top: 45%;
+    padding: 10%;
+    /*margin:10%;*/
+}
+
+#menuTitle div{
+    float:left;
+}
+
 #reset {
     position: absolute;
     left: 2%;

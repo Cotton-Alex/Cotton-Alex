@@ -21,11 +21,23 @@
         <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>-->
     </head>
-    <body>
-<!--    <body onload="draw(), checkLocalStorage()">-->
+    <!--<body>-->
+    <body onload="draw(), checkLocalStorage()">
         <div class="menu" id="menu">
             <div class="menu" id="menuFront">
-                <button class="btn" type="button" id="menuOff" onClick="menuOff()">Done</button>
+                <div id="menuTitle">
+                    <strong>
+                    <div>The Carrot,</div><br>
+                    <div>The Rabbit,</div><br>
+                    <div>and the Fox.</div>
+                    </strong>
+                </div>
+                <div id="instructions"><p>The carrot, rabbit, and fox is an old
+                            riddle. You play the part of the farmer who is
+                            trying to get the carrot, rabbit, and fox across the
+                            river without any of them getting eaten.
+                            Do you have what it takes?</p></div>
+                <button class="btn" type="button" id="menuOff" onClick="menuOff()">Play</button>
             </div>
             <div class="menu" id="menuBack">
             </div>

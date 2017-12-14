@@ -23,25 +23,36 @@
     </head>
     <!--<body>-->
     <body onload="draw(), checkLocalStorage()">
-        <div class="menu" id="menu">
-            <div class="menu" id="menuFront">
-                <div id="menuTitle">
-                    <strong>
-                    <div>The Carrot,</div><br>
-                    <div>The Rabbit,</div><br>
-                    <div>and the Fox.</div>
-                    </strong>
-                </div>
-                <div id="instructions"><p>The carrot, rabbit, and fox is an old
+        <div class="wrapper clearfix" id="wholeMenu">
+            <div class="flipWrapper">
+                <div class="front" id="menuFront">
+                    <div id="menuTitle">
+                        <div><strong>The Carrot,</strong></div><br>
+                        <div><strong>The Rabbit,</strong></div><br>
+                        <div><strong>and the Fox.</strong></div>
+                    </div>
+                    <div id="instructions"><p>The carrot, rabbit, and fox is an old
                             riddle. You play the part of the farmer who is
                             trying to get the carrot, rabbit, and fox across the
                             river without any of them getting eaten.
                             Do you have what it takes?</p></div>
-                <button class="btn" type="button" id="menuOff" onClick="menuOff()">Play</button>
+                    <div id="menuButtons">
+                        <button class="btn" type="button" id="settings" onClick="flip()">Settings</button>
+                        <button class="btn" type="button" id="menuReset" onClick="reset()">Reset</button>
+                        <button class="btn" type="button" id="play" onClick="menuOff()">Play</button>
+                    </div>
+                </div>
+                <div class="back" id="menuBack">
+            <div id="selectWrap">
+                <select id="voiceSelect"></select>
             </div>
-            <div class="menu" id="menuBack">
+                    <div id="backMenuButtons">
+                        <button class="btn" type="button" id="Save" onClick="flipBack()">Save</button>
+                        <button class="btn" type="button" id="AmenuReset" onClick="reset()">Reset</button>
+                        <button class="btn" type="button" id="Aplay" onClick="menuOff()">Play</button>
+                    </div>
+                </div>
             </div>
-            
         </div>
         <div id="topBank">
             <button class="btn" type="button" id="menuOn" onClick="menuOn()">Menu</button>
@@ -51,7 +62,6 @@
                 <img id="fox" src="images/fox.png" alt="fox" draggable="true" ontouchstart="touchScreenMove('fox')" onClick="touchScreenMove('fox')" ondragstart="drag(event)">
             </div>
         </div>
-
         <div id="water">
             <canvas id="canvasWater"></canvas>
             <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>

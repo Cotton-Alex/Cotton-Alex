@@ -21,17 +21,50 @@ console.log("voice = " + voice);
 //voicelist = responsiveVoice.getVoices();
 //console.log(voicelist);
 
+document.querySelector('#menuOn').addEventListener('click', menuOn);
+
 function menuOn() {
-//    console.log(menuOn);
-//    document.getElementById("menu").setAttribute("left", "50%");
-    document.getElementById("menu").style.left = "50%";
+    console.log(menuOn);
+    document.getElementById("wholeMenu").style.left = "50%";
+}
+ 
+document.querySelector('#play').addEventListener('click', menuOff); 
+ 
+function menuOff() {
+    console.log(menuOff);
+    document.getElementById("wholeMenu").style.left = "-100%";
 }
 
-function menuOff() {
-//    console.log(menuOff);
-//    document.getElementById("menu").setAttribute("left", "-150%");
-    document.getElementById("menu").style.left = "-150%";
+function flip() {
+    console.log("Settings clicked");
+    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.msTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.OTransform = "rotatey(180deg)";
+    document.querySelector('.flipWrapper').style.transform = "rotatey(180deg)";
 }
+
+function flipBack() {
+    console.log("Play clicked");
+    voiceChoice = document.getElementById('voiceSelect');
+    let newVoice = voiceChoice.selectedOptions;
+    let output = "";
+    for (let i=0; i<newVoice.length; i++) {
+        output = newVoice[i].label;
+    }
+    voice = (output);
+    console.log("voice = " + voice);
+    responsiveVoice.setDefaultVoice(voice);
+//    output.innerHTML = output;
+//    console.log("output = " + output);
+//    console.log("new voice = " + voice);
+    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.OTransform = "rotatey(0deg)";
+    document.querySelector('.flipWrapper').style.transform = "rotatey(0deg)";
+}
+
 function checkLocalStorage() {
     if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.showMenu !== null) {
@@ -181,6 +214,7 @@ function bite(object) {
             audio.play();
             carrotBite = true;
             console.log("carrotBite = " + carrotBite);
+            document.getElementById("reset").style.left = "2%";
             if (carrotSpeak === false) {
                 setTimeout(function () {
                     commentNumber = (Math.floor(Math.random() * 12));
@@ -197,6 +231,7 @@ function bite(object) {
             audio.play();
             rabbitBite = true;
             console.log("rabbitBite = " + rabbitBite);
+            document.getElementById("reset").style.left = "2%";
             if (rabbitSpeak === false) {
                 setTimeout(function () {
                     commentNumber = (Math.floor(Math.random() * 12));
@@ -582,6 +617,7 @@ function reset() {
     document.getElementById("topDrop").setAttribute("ondragover", "allowDrop(event)");
     document.getElementById("bottomDrop").setAttribute("ondrop", null);
     document.getElementById("bottomDrop").setAttribute("ondragover", null);
+    document.getElementById("reset").style.left = "-150%";
     carrotBite = false;
     rabbitBite = false;
     win = false;

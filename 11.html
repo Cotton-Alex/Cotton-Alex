@@ -58,6 +58,42 @@
         <p>Width: <input type="number" value="100" step="5" onchange="tran2.style.width = this.value + 'px'"></p>
         <!--        <p>Border: <input type="number" step="1" onchange="tran2.style.border = this.value + 'px'"></p>-->
         <br>
+        <p>Let's use JS to manipulate the CSS.</p>
+        <div id='shapeAParamsWrapper'>
+            <div class='shapeAParams'>
+                <p>Shape A</p>
+                <p>Width: <input id='widthA' type="number" value="100" step="5"></p>
+                <p>Height: <input id='heightA' type="number" value="100" step="5"></p>
+                <p>Color: <input id='colorA' type="text" value="red"></p>
+                <p>Border Size: <input id='borderSizeA' type="number" value="0" step="5"></p>
+                <p>Border Color: <input id='borderColorA' type="text" value="black"></p>
+                <p>Border Radius: <input id='borderRadiusA' type="number" value="0" step="5"></p>
+                <p>Rotation: <input id='rotationA' type="number" value="0" step="5"></p>
+                <p>Transition time: <input id='transTimeA' type="number" value="0"></p>
+                
+            </div>
+            <div class='shapeAParams'>
+                <p>Shape B</p>
+                <p>Width: <input id='widthB' type="number" value="200" step="5"></p>
+                <p>Height: <input id='heightB' type="number" value="50" step="5"></p>
+                <p>Color: <input id='colorB' type="text" value="blue"></p>
+                <p>Border Size: <input id='borderSizeB' type="number" value="10" step="5"></p>
+                <p>Border Color: <input id='borderColorB' type="text" value="orange"></p>
+                <p>Border Radius: <input id='borderRadiusB' type="number" value="100" step="5"></p>
+                <p>Rotation: <input id='rotationB' type="number" value="45" step="5"></p>
+                <p>Transition time: <input id='transTimeB' type="number" value="3"></p>
+            </div>
+        </div>
+        <button class="btn" type="button" id="btnShapeA" onClick="createShapeA()">Make shape A</button>
+        <br>
+        <!--<button class="btn" type="button" id="transitionShapeA" onClick="transitionShapeA()">Change it over time</button>S-->
+        <br>
+        <br>
+        <br>
+                <div id='shapeA'></div>
+        <br>
+        <br>
+        <br>
         <p>The grid below is a work in progress.<br>
             I want to rewrite the whole thing with just a few lines of JS in the next few weeks.</p>
         <div class="row" id="row1">

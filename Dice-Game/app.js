@@ -228,3 +228,14 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
         }, 200 * diceBounceTimes);
     });
 }
+
+
+var p0Red = document.querySelector('#p0Red');
+var p0Green = document.querySelector('#p0Green');
+var p0Blue = document.querySelector('#p0Blue');
+var p0Red_out = document.querySelector('#p0Red_out');
+var p0Green_out = document.querySelector('#p0Green_out');
+var p0Blue_out = document.querySelector('#p0Blue_out');
+var p0Color = "rgb(" + p0Red +", " + p0Green + ", " + p0Blue + ");";
+    document.querySelector('.btn-hold').style.display = 'block';
+    console.log("rgb= " + p0Red, p0Green, p0Blue);

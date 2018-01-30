@@ -58,7 +58,6 @@ body {
 }
 
 .progressBarWrapper {
-    
     position: relative;
     width: 2%;
     float: left;
@@ -178,6 +177,10 @@ body {
 
 .player-current-score {
     font-size: 30px;
+}
+
+fieldset{
+  border: none;
 }
 
 button {

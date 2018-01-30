@@ -196,6 +196,47 @@ i:hover {
 /*::::  11: Transitions  :::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
+.shapeAParams {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.btn {
+    position: absolute;
+    padding: 6px 6px;
+    margin: 2px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    background-color: lightskyblue;
+    border: 1px solid #333;
+    border-radius: 6px;
+    box-shadow: 0 3px #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn:hover {
+    position: absolute;
+    background-color: lightblue;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn:active {
+    position: absolute;
+    background-color: lightblue;
+    box-shadow: 0 0px #333;
+    transform: translateY(3px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 #tran1 {
     width: 100px;
     height: 100px;

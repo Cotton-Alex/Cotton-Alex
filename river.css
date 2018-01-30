@@ -4,8 +4,9 @@ html {
     overflow: hidden;
 }
 
+
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
     line-height: 1.6;
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -13,33 +14,173 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    /*max-width: 960px;*/
     margin: 0 auto;
-    /*padding-left: 20px;*/
     box-sizing: border-box;
-    display: block;
     font-size: 15px;
-    /*background: white;*/
 }
 
-.menu {
-    
-}
+/*----  MENU CARD FLIP  ----  MENU CARD FLIP  ----  MENU CARD FLIP  */
 
-#menu {
-    position: absolute;
-    z-index: 8;
-    /*border: 1px black;*/
+.container {
+    z-index: 6;
     width: 85%;
     height: 85%;
+    position: absolute;
+    transition: transform 1s ease;
+    transition: left 2s ease 0s;
+    /*margin: 0 auto;*/
+/*    border: 5px black;*/
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background-color: rgba(153, 235, 255, .95);
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s ease;
+    -moz-transition: -moz-transform 1s ease;
+    -o-transition: -o-transform 1s ease;
+    transition: transform 1s ease;
+/*    top: 0%;
+    left: 0%;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /*-webkit-transform-origin: 50% 50%;*/
+}
+
+.card div {
+        /*display: block;*/
+/*        height: 100%;
+        width: 100%;*/
+    /*    line-height: 260px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 140px;*/
+    /*position: absolute;*/
+    transition: transform 1s ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 1s ease;
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: rgba(153, 235, 255, 1);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card .back {
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: rgba(153, 235, 255, 1);
+    transition: transform 1s ease;
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+/*    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;*/
+}
+
+/*.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}*/
+
+/*.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#wholeMenu {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    z-index: 7;
+    border: 1px black;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(153, 235, 255, .85);
     border:2px #000 solid;
     border-radius: 15px;
     transition: left 2s ease 0s;
 }
+
+#menuFront {
+    
+}
+
+.wrapper {
+    position: absolute;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    background-color: rgba(153, 235, 255, .85);
+    border:2px #000 solid;
+    border-radius: 15px;
+    transition: left 2s ease 0s;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.front {
+    z-index: 9;
+     for firefox 31 
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+
+ back, initially hidden pane 
+.back {
+    z-index: 8;
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+.flipWrapper {
+    margin-top: 0px;
+    transition: all .75s ease;
+    transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+}*/
+
+/*----  CSS BUTTONS  ----  CSS BUTTONS  ----  CSS BUTTONS  ----  CSS BUTTONS  */  
 
 /*
 text is #fff - white
@@ -49,9 +190,10 @@ dark blue - #00ccff
 */
 
 .btn {
-    position: absolute;
+    /*position: absolute;*/
     padding: 6px 6px;
     margin: 2px;
+    margin-bottom: 8px;
     font-size: 12px;
     text-align: center;
     cursor: pointer;
@@ -67,7 +209,7 @@ dark blue - #00ccff
 }
 
 .btn:hover {
-    position: absolute;
+    /*position: absolute;*/
     background-color: #4ddbff;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -75,7 +217,7 @@ dark blue - #00ccff
 }
 
 .btn:active {
-    position: absolute;
+    /*position: absolute;*/
     background-color: #00aadd;
     box-shadow: 0 0px #333;
     transform: translateY(3px);
@@ -84,53 +226,80 @@ dark blue - #00ccff
     appearance: none;
 }
 
+/*----  MENU  ----  MENU  ----  MENU  ----  MENU  ----  MENU  ----  MENU  */  
+
 #menuOn{
     position: absolute;
     left: 2%;
     top: 10px;
     /*transform: translateY(-50%);*/
 }
-#menuOff {
-    position: absolute;
-    bottom: 10px;
-    right: 2%;
+
+#settings {
+    position: relative;
+    float:left;
+}
+
+#play {
+    position: relative;
+    text-align: center;
+    width: 96%;
+   
+    /*    bottom: 10px;
+        right: 2%;*/
+}
+
+#menuReset {
+    position: relative;
+    float: end;
+    /*    left: 2%;
+        top: 50%;
+        transform: translateY(-50%);*/
 }
 
 #menuTitle {
     position:absolute;
-    top: 20%;
+    line-height: 1;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 #instructions {
     position:absolute;
-    top: 45%;
+    top: 40%;
     padding: 10%;
     /*margin:10%;*/
 }
 
+.menuButtons {
+    position:absolute;
+    bottom:10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
 #menuTitle div{
-    float:left;
+    /*float:left;*/
 }
 
 #reset {
     position: absolute;
-    left: 2%;
+    left: -150%;
     top: 50%;
     transform: translateY(-50%);
+    transition: left 2s ease 0s;
 }
 
+/*---- BODY  ----  BODY  ----  BODY  ----  BODY  ----  BODY  ----  BODY*/
+
 #crossRiver {
-    z-index: 6;
+    z-index: 5;
     position: absolute;
     bottom: 10px;
     right: 2%;
-}
-
-#appWrap {
-    /*position: relative;*/
 }
 
 #topBank{
@@ -169,6 +338,7 @@ dark blue - #00ccff
     z-index: 0;
     width: 100%;
     height: 100%;
+    background: #4ddbff;
 }
 
 #boat {
@@ -260,6 +430,18 @@ dark blue - #00ccff
     background-image: url(images/rock_base.png);
 }
 
-#crossRiver {
-    float: left;
+#selectWrap {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    position: absolute;
+    top: 50px;
+}
+
+#voiceSelect {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    position: relative;
+
 }

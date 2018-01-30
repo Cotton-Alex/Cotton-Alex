@@ -15,33 +15,35 @@ var responsiveVoice, commentNumber, response, voiceList, voice;
 
 
 voice = ('US English Female');
-//responsiveVoice.setDefaultVoice(voice);
+responsiveVoice.setDefabyultVoice(voice);
 console.log("voice = " + voice);
 
-//voicelist = responsiveVoice.getVoices();
-//console.log(voicelist);
+voicelist = responsiveVoice.getVoices();
+console.log(voicelist);
 
 document.querySelector('#menuOn').addEventListener('click', menuOn);
 
 function menuOn() {
     console.log(menuOn);
-    document.getElementById("wholeMenu").style.left = "50%";
+    document.querySelector(".container").style.left = "50%";
 }
  
 document.querySelector('#play').addEventListener('click', menuOff); 
  
 function menuOff() {
-    console.log(menuOff);
-    document.getElementById("wholeMenu").style.left = "-100%";
+    console.log("menuOff");
+    document.querySelector(".container").style.left = "-150%";
 }
+
+
 
 function flip() {
     console.log("Settings clicked");
-    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.msTransform = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.OTransform = "rotatey(180deg)";
-    document.querySelector('.flipWrapper').style.transform = "rotatey(180deg)";
+    document.querySelector('.card').style.webkitTransform = "rotatey(180deg)";
+    document.querySelector('.card').style.msTransform = "rotatey(180deg)";
+    document.querySelector('.card').style.MozTransform = "rotatey(180deg)";
+    document.querySelector('.card').style.OTransform = "rotatey(180deg)";
+    document.querySelector('.card').style.transform = "rotatey(180deg)";
 }
 
 function flipBack() {
@@ -55,14 +57,14 @@ function flipBack() {
     voice = (output);
     console.log("voice = " + voice);
     responsiveVoice.setDefaultVoice(voice);
-//    output.innerHTML = output;
-//    console.log("output = " + output);
-//    console.log("new voice = " + voice);
-    document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
-    document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
-    document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";
-    document.querySelector('.flipWrapper').style.OTransform = "rotatey(0deg)";
-    document.querySelector('.flipWrapper').style.transform = "rotatey(0deg)";
+    output.innerHTML = output;
+    console.log("output = " + output);
+    console.log("new voice = " + voice);
+    document.querySelector('.card').style.webkitTransform = "rotatey(0deg)";
+    document.querySelector('.card').style.msTransform = "rotatey(0deg)";
+    document.querySelector('.card').style.MozTransform = "rotatey(0deg)";
+    document.querySelector('.card').style.OTransform = "rotatey(0deg)";
+    document.querySelector('.card').style.transform = "rotatey(0deg)";
 }
 
 function checkLocalStorage() {

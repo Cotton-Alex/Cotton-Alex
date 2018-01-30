@@ -21,39 +21,38 @@
         <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>-->
     </head>
-    <!--<body>-->
-    <body onload="draw(), checkLocalStorage()">
-        <div class="wrapper clearfix" id="wholeMenu">
-            <div class="flipWrapper">
-                <div class="front" id="menuFront">
+    <body>
+    <!--<body onload="draw(), checkLocalStorage()">-->
+        <section class="container">
+            <div class="card">
+                <div class="front">
                     <div id="menuTitle">
-                        <div><strong>The Carrot,</strong></div><br>
-                        <div><strong>The Rabbit,</strong></div><br>
-                        <div><strong>and the Fox.</strong></div>
-                    </div>
-                    <div id="instructions"><p>The carrot, rabbit, and fox is an old
-                            riddle. You play the part of the farmer who is
-                            trying to get the carrot, rabbit, and fox across the
-                            river without any of them getting eaten.
-                            Do you have what it takes?</p></div>
-                    <div id="menuButtons">
-                        <button class="btn" type="button" id="settings" onClick="flip()">Settings</button>
-                        <button class="btn" type="button" id="menuReset" onClick="reset()">Reset</button>
-                        <button class="btn" type="button" id="play" onClick="menuOff()">Play</button>
-                    </div>
+                                <div><strong>The Carrot,</strong></div><br>
+                                <div><strong>The Rabbit,</strong></div><br>
+                                <div><strong>and the Fox.</strong></div>
+                            </div>
+                            <div id="instructions"><p>The carrot, rabbit, and fox is an old
+                                    riddle. You play the part of the farmer who is
+                                    trying to get the carrot, rabbit, and fox across the
+                                    river without any of them getting eaten.
+                                    Do you have what it takes?</p></div>
+                            <div class="menuButtons">
+                                <button class="btn" type="button" id="play" onClick="menuOff()">Play</button>
+                                <br>
+                                <button class="btn" type="button" id="settings" onClick="flip()">Settings</button>
+                                <button class="btn" type="button" id="menuReset" onClick="reset()">Reset</button>                                
+                            </div>
                 </div>
-                <div class="back" id="menuBack">
-            <div id="selectWrap">
-                <select id="voiceSelect"></select>
-            </div>
-                    <div id="backMenuButtons">
-                        <button class="btn" type="button" id="Save" onClick="flipBack()">Save</button>
-                        <button class="btn" type="button" id="AmenuReset" onClick="reset()">Reset</button>
-                        <button class="btn" type="button" id="Aplay" onClick="menuOff()">Play</button>
+                <div class="back">
+                    <div id="selectWrap">
+                        <select id="voiceSelect"></select>
                     </div>
+                            <div class="menuButtons">
+                                <button class="btn" type="button" id="Save" onClick="flipBack()">Save</button>
+                            </div>
                 </div>
             </div>
-        </div>
+        </section>
         <div id="topBank">
             <button class="btn" type="button" id="menuOn" onClick="menuOn()">Menu</button>
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">

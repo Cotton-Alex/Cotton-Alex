@@ -179,6 +179,10 @@ body {
     font-size: 30px;
 }
 
+fieldset{
+  border: none;
+}
+
 button {
     width: 200px;
     left: 50%;

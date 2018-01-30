@@ -1,0 +1,17 @@
+TODO list:
+
+DICE GAME:
+1. RGB color selector sliders per player on Dice Game settings - hold in local storage
+2. Name per player in dice game - hold in local storage
+3. Simple explanation of the rules
+
+CARROT RABBIT FOX:
+1. toggle water from animation to simple blue
+2. on/off for voice
+3. on/off for sound effects
+
+PUBG STATS:
+1. get API working
+
+BITCOIN:
+1. get API working

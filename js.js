@@ -378,9 +378,45 @@ function draw(x, y) {
 /*::::  11: CSS Transition  ::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
+function createShapeA() {
+    var wA = document.getElementById("widthA").value;
+    var hA = document.getElementById("heightA").value;
+    var cA = document.getElementById("colorA").value;
+    var bsA = document.getElementById("borderSizeA").value;
+    var bcA = document.getElementById("borderColorA").value;
+    var brA = document.getElementById("borderRadiusA").value;
+    var rA = document.getElementById("rotationA").value;
+    var tA = document.getElementById("transTimeA").value;
+    document.getElementById('shapeA').style.width = wA + "px";
+    document.getElementById('shapeA').style.height = hA + "px";
+    document.getElementById('shapeA').style.background = cA;
+    document.getElementById('shapeA').style.border = bsA + "px solid " + bcA;
+    document.getElementById('shapeA').style.borderRadius = brA + "%";
+    document.getElementById('shapeA').style.transform = "rotate(" + rA + "deg)";
+    document.getElementById('shapeA').style.transition = tA + "s";
+    document.getElementById('btnShapeA').textContent = "Change to  B";
+    document.getElementById('btnShapeA').setAttribute( "onClick", "javascript: transitionShapeA()" );
+}
 
-
-
+function transitionShapeA() {
+    var wB = document.getElementById("widthB").value;
+    var hB = document.getElementById("heightB").value;
+    var cB = document.getElementById("colorB").value;
+    var bsB = document.getElementById("borderSizeB").value;
+    var bcB = document.getElementById("borderColorB").value;
+    var brB = document.getElementById("borderRadiusB").value;
+    var rB = document.getElementById("rotationB").value;
+    var tB = document.getElementById("transTimeB").value;
+    document.getElementById('shapeA').style.width = wB + "px";
+    document.getElementById('shapeA').style.height = hB + "px";
+    document.getElementById('shapeA').style.background = cB;
+    document.getElementById('shapeA').style.border = bsB + "px solid " + bcB;
+    document.getElementById('shapeA').style.borderRadius = brB + "%";
+    document.getElementById('shapeA').style.transform = "rotate(" + rB + "deg)";
+    document.getElementById('shapeA').style.transition = tB + "s";
+    document.getElementById('btnShapeA').textContent = "Change to A";
+    document.getElementById('btnShapeA').setAttribute( "onClick", "javascript: createShapeA()" );
+}
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  12: CSS Transforms  ::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/

@@ -414,7 +414,7 @@ function createShapeA() {
             ", border-color " + bctA + "s " + bceA + 
             ", border-radius " + brtA + "s " + breA +
             ", transform " + rtA + "s " + reA;
-    document.getElementById('btnShapeA').textContent = "Change to  B";
+    document.getElementById('btnShapeA').textContent = "Change to B";
     document.getElementById('btnShapeA').setAttribute( "onClick", "javascript: transitionShapeA()" );
     
     console.log("width " + wtA + "s " + weA + 
@@ -462,7 +462,7 @@ function transitionShapeA() {
             ", border-color " + bctB + "s " + bceB + 
             ", border-radius " + brtB + "s " + breB +
             ", transform " + rtB + "s " + reB;
-    document.getElementById('btnShapeA').textContent = "Change to  A";
+    document.getElementById('btnShapeA').textContent = "Change to A";
     document.getElementById('btnShapeA').setAttribute( "onClick", "javascript: createShapeA()" );
     
     console.log("width " + wtB + "s " + weB + 

@@ -380,42 +380,98 @@ function draw(x, y) {
 
 function createShapeA() {
     var wA = document.getElementById("widthA").value;
+    var wtA = document.getElementById("widthTimeA").value;
+    var weA = document.getElementById("widthEaseA").value;
     var hA = document.getElementById("heightA").value;
+    var htA = document.getElementById("heightTimeA").value;
+    var heA = document.getElementById("heightEaseA").value;
     var cA = document.getElementById("colorA").value;
-    var bsA = document.getElementById("borderSizeA").value;
+    var ctA = document.getElementById("colorTimeA").value;
+    var ceA = document.getElementById("colorEaseA").value;
+    var bwA = document.getElementById("borderWidthA").value;
+    var bwtA = document.getElementById("borderWidthTimeA").value;
+    var bweA = document.getElementById("borderWidthEaseA").value;
     var bcA = document.getElementById("borderColorA").value;
+    var bctA = document.getElementById("borderColorTimeA").value;
+    var bceA = document.getElementById("borderColorEaseA").value;
     var brA = document.getElementById("borderRadiusA").value;
+    var brtA = document.getElementById("borderRadiusTimeA").value;
+    var breA = document.getElementById("borderRadiusEaseA").value;
     var rA = document.getElementById("rotationA").value;
-    var tA = document.getElementById("transTimeA").value;
+    var rtA = document.getElementById("rotationTimeA").value;
+    var reA = document.getElementById("rotationEaseA").value;
     document.getElementById('shapeA').style.width = wA + "px";
     document.getElementById('shapeA').style.height = hA + "px";
     document.getElementById('shapeA').style.background = cA;
-    document.getElementById('shapeA').style.border = bsA + "px solid " + bcA;
+    document.getElementById('shapeA').style.border = bwA + "px solid " + bcA;
     document.getElementById('shapeA').style.borderRadius = brA + "%";
     document.getElementById('shapeA').style.transform = "rotate(" + rA + "deg)";
-    document.getElementById('shapeA').style.transition = tA + "s";
+    document.getElementById('shapeA').style.transition = 
+            "width " + wtA + "s " + weA + 
+            ", height " + htA + "s " + heA + 
+            ", background-color " + ctA + "s " + ceA + 
+            ", border-width " + bwtA + "s " + bweA + 
+            ", border-color " + bctA + "s " + bceA + 
+            ", border-radius " + brtA + "s " + breA +
+            ", transform " + rtA + "s " + reA;
     document.getElementById('btnShapeA').textContent = "Change to  B";
     document.getElementById('btnShapeA').setAttribute( "onClick", "javascript: transitionShapeA()" );
+    
+    console.log("width " + wtA + "s " + weA + 
+            ", height " + htA + "s " + heA + 
+            ", background-color " + ctA + "s " + ceA + 
+            ", border-width " + bwtA + "s " + bweA + 
+            ", border-color " + bctA + "s " + bceA + 
+            ", border-radius " + brtA + "s " + breA +
+            ", rotate " + rtA + "s " + reA);
 }
 
 function transitionShapeA() {
     var wB = document.getElementById("widthB").value;
+    var wtB = document.getElementById("widthTimeB").value;
+    var weB = document.getElementById("widthEaseB").value;
     var hB = document.getElementById("heightB").value;
+    var htB = document.getElementById("heightTimeB").value;
+    var heB = document.getElementById("heightEaseB").value;
     var cB = document.getElementById("colorB").value;
-    var bsB = document.getElementById("borderSizeB").value;
+    var ctB = document.getElementById("colorTimeB").value;
+    var ceB = document.getElementById("colorEaseB").value;
+    var bwB = document.getElementById("borderWidthB").value;
+    var bwtB = document.getElementById("borderWidthTimeB").value;
+    var bweB = document.getElementById("borderWidthEaseB").value;
     var bcB = document.getElementById("borderColorB").value;
+    var bctB = document.getElementById("borderColorTimeB").value;
+    var bceB = document.getElementById("borderColorEaseB").value;
     var brB = document.getElementById("borderRadiusB").value;
+    var brtB = document.getElementById("borderRadiusTimeB").value;
+    var breB = document.getElementById("borderRadiusEaseB").value;
     var rB = document.getElementById("rotationB").value;
-    var tB = document.getElementById("transTimeB").value;
+    var rtB = document.getElementById("rotationTimeB").value;
+    var reB = document.getElementById("rotationEaseB").value;
     document.getElementById('shapeA').style.width = wB + "px";
     document.getElementById('shapeA').style.height = hB + "px";
     document.getElementById('shapeA').style.background = cB;
-    document.getElementById('shapeA').style.border = bsB + "px solid " + bcB;
+    document.getElementById('shapeA').style.border = bwB + "px solid " + bcB;
     document.getElementById('shapeA').style.borderRadius = brB + "%";
     document.getElementById('shapeA').style.transform = "rotate(" + rB + "deg)";
-    document.getElementById('shapeA').style.transition = tB + "s";
-    document.getElementById('btnShapeA').textContent = "Change to A";
+    document.getElementById('shapeA').style.transition = 
+            "width " + wtB + "s " + weB + 
+            ", height " + htB + "s " + heB + 
+            ", background-color " + ctB + "s " + ceB + 
+            ", border-width " + bwtB + "s " + bweB + 
+            ", border-color " + bctB + "s " + bceB + 
+            ", border-radius " + brtB + "s " + breB +
+            ", transform " + rtB + "s " + reB;
+    document.getElementById('btnShapeA').textContent = "Change to  A";
     document.getElementById('btnShapeA').setAttribute( "onClick", "javascript: createShapeA()" );
+    
+    console.log("width " + wtB + "s " + weB + 
+            ", height " + htB + "s " + heB + 
+            ", background-color " + ctB + "s " + ceB + 
+            ", border-width " + bwtB + "s " + bweB + 
+            ", border-color " + bctB + "s " + bceB + 
+            ", border-radius " + brtB + "s " + breB +
+            ", transform " + rtB + "s " + reB);
 }
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::  12: CSS Transforms  ::::::::::::::::::::::::::::::::::::::::::*/

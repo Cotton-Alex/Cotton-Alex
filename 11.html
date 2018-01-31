@@ -62,35 +62,142 @@
         <div id='shapeAParamsWrapper'>
             <div class='shapeAParams'>
                 <p>Shape A</p>
-                <p>Width: <input id='widthA' type="number" value="100" step="5"></p>
-                <p>Height: <input id='heightA' type="number" value="100" step="5"></p>
-                <p>Color: <input id='colorA' type="text" value="red"></p>
-                <p>Border Size: <input id='borderSizeA' type="number" value="0" step="5"></p>
-                <p>Border Color: <input id='borderColorA' type="text" value="black"></p>
-                <p>Border Radius: <input id='borderRadiusA' type="number" value="0" step="5"></p>
-                <p>Rotation: <input id='rotationA' type="number" value="0" step="5"></p>
-                <p>Transition time: <input id='transTimeA' type="number" value="0"></p>
-                
+                <div>Width: <input id='widthA' type="number" value="100" step="5"></div>
+                <div>time: <input id='widthTimeA' type="number" value="1"></div>
+                <select id="widthEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Height: <input id='heightA' type="number" value="100" step="5"></div>
+                <div>time: <input id='heightTimeA' type="number" value="1"></div>
+                <select id="heightEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Color: <input id='colorA' type="text" value="lightskyblue"></div>
+                <div>time: <input id='colorTimeA' type="number" value="1"></div>
+                <select id="colorEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Border Size: <input id='borderWidthA' type="number" value="10" step="5"></div>
+                <div>time: <input id='borderWidthTimeA' type="number" value="1"></div>
+                <select id="borderWidthEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Border Color: <input id='borderColorA' type="text" value="lightblue"></div>
+                <div>time: <input id='borderColorTimeA' type="number" value="1"></div>
+                <select id="borderColorEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Border Radius: <input id='borderRadiusA' type="number" value="0" step="5"></div>
+                <div>time: <input id='borderRadiusTimeA' type="number" value="1"></div>
+                <select id="borderRadiusEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Rotation: <input id='rotationA' type="number" value="-15" step="5"></div>
+                <div>time: <input id='rotationTimeA' type="number" value="1"></div>
+                <select id="rotationEaseA">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
             </div>
             <div class='shapeAParams'>
                 <p>Shape B</p>
-                <p>Width: <input id='widthB' type="number" value="200" step="5"></p>
-                <p>Height: <input id='heightB' type="number" value="50" step="5"></p>
-                <p>Color: <input id='colorB' type="text" value="blue"></p>
-                <p>Border Size: <input id='borderSizeB' type="number" value="10" step="5"></p>
-                <p>Border Color: <input id='borderColorB' type="text" value="orange"></p>
-                <p>Border Radius: <input id='borderRadiusB' type="number" value="100" step="5"></p>
-                <p>Rotation: <input id='rotationB' type="number" value="45" step="5"></p>
-                <p>Transition time: <input id='transTimeB' type="number" value="3"></p>
+                <div>Width: <input id='widthB' type="number" value="200" step="5"></div>
+                <div>time: <input id='widthTimeB' type="number" value="1"></div>
+                <select id="widthEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Height: <input id='heightB' type="number" value="130" step="5"></div>
+                <div>time: <input id='heightTimeB' type="number" value="1"></div>
+                <select id="heightEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Color: <input id='colorB' type="text" value="gray"></div>
+                <div>time: <input id='colorTimeB' type="number" value="1"></div>
+                <select id="colorEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Border Size: <input id='borderWidthB' type="number" value="40" step="5"></div>
+                <div>time: <input id='borderWidthTimeB' type="number" value="1"></div>
+                <select id="borderWidthEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Border Color: <input id='borderColorB' type="text" value="orangered"></div>
+                <div>time: <input id='borderColorTimeB' type="number" value="1"></div>
+                <select id="borderColorEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Border Radius: <input id='borderRadiusB' type="number" value="50" step="5"></div>
+                <div>time: <input id='borderRadiusTimeB' type="number" value="1"></div>
+                <select id="borderRadiusEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
+                <div>Rotation: <input id='rotationB' type="number" value="220" step="5"></div>
+                <div>time: <input id='rotationTimeB' type="number" value="1"></div>
+                <select id="rotationEaseB">
+                    <option value="linear">no ease</option>
+                    <option value="ease-in">ease in</option>
+                    <option value="ease-out">ease out</option>
+                    <option value="ease-in-out">ease in & out</option>
+                </select>
+                <br>
             </div>
         </div>
         <button class="btn" type="button" id="btnShapeA" onClick="createShapeA()">Make shape A</button>
         <br>
-        <!--<button class="btn" type="button" id="transitionShapeA" onClick="transitionShapeA()">Change it over time</button>S-->
         <br>
         <br>
-        <br>
-                <div id='shapeA'></div>
+        <div id='shapeA'></div>
         <br>
         <br>
         <br>

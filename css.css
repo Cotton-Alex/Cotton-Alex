@@ -196,9 +196,14 @@ i:hover {
 /*::::  11: Transitions  :::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-.shapeAParams {
+.shapeAParams, .shapeAParams div {
     display: inline-block;
     margin-left: 25px;
+}
+
+.shapeAParams input {
+    width: 6em;
+    background-color: lightskyblue;
 }
 
 .btn {

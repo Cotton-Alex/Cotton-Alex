@@ -13,13 +13,27 @@ var carrotSpeak = false;
 var rabbitSpeak = false;
 var responsiveVoice, commentNumber, response, voiceList, voice;
 
-
 voice = ('US English Female');
-responsiveVoice.setDefabyultVoice(voice);
+responsiveVoice.setDefaultVoice(voice);
 console.log("voice = " + voice);
 
 voicelist = responsiveVoice.getVoices();
 console.log(voicelist);
+
+var select = document.getElementById("voiceSelect"),
+        voiceList = responsiveVoice.getVoices();
+
+for (var i = 0; i < voiceList.length; i++)
+{
+    var option = document.createElement("OPTION"),
+            txt = document.createTextNode(voiceList[i].name);
+    option.appendChild(txt);
+    option.setAttribute("value", voiceList[i]);
+    select.insertBefore(option, select.lastChild);
+}
+
+console.log("option = " + option.value);
+console.log("select = " + select);
 
 document.querySelector('#menuOn').addEventListener('click', menuOn);
 
@@ -34,8 +48,6 @@ function menuOff() {
     console.log("menuOff");
     document.querySelector(".container").style.left = "-150%";
 }
-
-
 
 function flip() {
     console.log("Settings clicked");
@@ -57,9 +69,9 @@ function flipBack() {
     voice = (output);
     console.log("voice = " + voice);
     responsiveVoice.setDefaultVoice(voice);
-    output.innerHTML = output;
-    console.log("output = " + output);
-    console.log("new voice = " + voice);
+//    output.innerHTML = output;
+//    console.log("output = " + output);
+//    console.log("new voice = " + voice);
     document.querySelector('.card').style.webkitTransform = "rotatey(0deg)";
     document.querySelector('.card').style.msTransform = "rotatey(0deg)";
     document.querySelector('.card').style.MozTransform = "rotatey(0deg)";

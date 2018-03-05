@@ -204,6 +204,70 @@ button:focus {
     outline: none;
 }
 
+.nameSave {
+    width: 33pt;
+    float: right;
+    color: #555;
+    background: none;
+    border: #000 1pt solid;
+    font-family: Lato;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    border-radius: 5px;
+    
+}
+
+.nameSave:hover { font-weight: 600; }
+/*.nameSave:hover i { margin-right: 20px; }*/
+
+.nameSave:focus {
+    outline: none;
+}
+
+input[type="text"] {
+    color: #555;
+    background: none;
+    font-family: Lato;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.nameClear {
+    width: 38pt;
+    float: right;
+    display: inline-block;
+    color: #555;
+    background: none;
+    border: #000 1pt solid;
+    font-family: Lato;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    border-radius: 5px;
+    padding-right: 3px;
+    
+}
+
+.nameClear:hover { font-weight: 600; }
+/*.nameSave:hover i { margin-right: 20px; }*/
+
+.nameClear:focus {
+    outline: none;
+}
+
+input[type="text"] {
+    color: #555;
+    background: none;
+    font-family: Lato;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
 i {
     color: #EB4D4D;
     display: inline-block;

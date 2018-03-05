@@ -53,6 +53,52 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     }
 });
 
+function checkLocalStorage() {
+    if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
+        if (localStorage.player0Name !== null) {
+            console.log(localStorage.player0Name);
+            var p0Name = localStorage.getItem('player0Name');
+            document.getElementById("p0NameInput").value = p0Name;
+            document.getElementById("name-0").innerHTML = p0Name;
+            
+        }
+        if (localStorage.player1Name !== null) {
+            console.log(localStorage.player1Name);
+            var p1Name = localStorage.getItem('player1Name');
+            document.getElementById("p1NameInput").value = p1Name;
+            document.getElementById("name-1").innerHTML = p1Name;
+        }
+    } else {
+        alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
+    }
+}
+
+function setPlayer0Name() {
+    var p0Name = document.getElementById("p0NameInput").value;
+    console.log(p0Name);
+    localStorage.setItem("player0Name", p0Name);
+    document.getElementById("name-0").innerHTML = p0Name;
+    }
+
+function setPlayer1Name() {
+    var p1Name = document.getElementById("p1NameInput").value;
+    console.log(p1Name);
+    localStorage.setItem("player1Name", p1Name);
+    document.getElementById("name-1").innerHTML = p1Name;
+}
+
+function clearPlayer0Name() {
+    localStorage.removeItem("player0Name");
+    document.getElementById("p0NameInput").value = "Player 1";
+    document.getElementById("name-0").innerHTML = "Player 1";
+}
+
+function clearPlayer1Name() {
+    localStorage.removeItem("player1Name");
+    document.getElementById("p1NameInput").value = "Player 2";
+    document.getElementById("name-1").innerHTML = "Player 2";
+}
+
 function diceRoll(diceBounceTimes) {
     console.log('diceRoll Initial diceBounceTimes = ' + diceBounceTimes);
 

@@ -207,6 +207,7 @@ button:focus {
 .nameSave {
     width: 33pt;
     float: right;
+    display: inline-block;
     color: #555;
     background: none;
     border: #000 1pt solid;
@@ -216,6 +217,8 @@ button:focus {
     cursor: pointer;
     font-weight: 300;
     border-radius: 5px;
+    padding: 2px 4px 2px 4px;
+    margin: 3px;
     
 }
 
@@ -236,7 +239,7 @@ input[type="text"] {
 }
 
 .nameClear {
-    width: 38pt;
+    width: 40pt;
     float: right;
     display: inline-block;
     color: #555;
@@ -248,7 +251,8 @@ input[type="text"] {
     cursor: pointer;
     font-weight: 300;
     border-radius: 5px;
-    padding-right: 3px;
+    padding: 2px 3px 2px 3px;
+    margin: 3px;
     
 }
 
@@ -317,7 +321,8 @@ i {
 }
 
 .btn-settings, .btn-play {
-    text-align: center;
+    /*text-align: center;*/
+    font-size: 20px;
     color:#fff;
     position: relative;
 }
@@ -407,4 +412,30 @@ i {
     margin: auto;
     position: relative;
 
+}
+#voiceOnOff {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    position: relative;
+    width: 78pt;
+    color: #555;
+    background: #fff;
+    border: #000 1pt solid;
+    font-family: Lato;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 2px 4px 2px 4px;
+    margin: 3px;
+
+}
+
+#voiceOnOff:hover { font-weight: 600; }
+/*.nameSave:hover i { margin-right: 20px; }*/
+
+#voiceOnOff:focus {
+    outline: none;
 }

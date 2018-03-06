@@ -53,21 +53,37 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     }
 });
 
+document.querySelector('#voiceOnOff').addEventListener('click', voiceOnOff);
+
+function voiceOnOff() {
+    console.log("inside toggleVoice function");
+    if (document.getElementById("voiceOnOff").innerHTML === "Voice Off") {
+       document.getElementById("voiceOnOff").innerHTML = "Voice On";
+    } else if (document.getElementById("voiceOnOff").innerHTML === "Voice On") {
+       document.getElementById("voiceOnOff").innerHTML = "Voice Off";
+    } else {
+        return;
+    }
+    
+}
+
 function checkLocalStorage() {
     if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
-        if (localStorage.player0Name !== null) {
-            console.log(localStorage.player0Name);
+        console.log("pre localstorage.player0Name = " + localStorage.player0Name);
+        console.log("pre localstorage.player1Name = " + localStorage.player1Name);
+        if (localStorage.player0Name !== undefined) {
+            console.log("post localstorage.player0Name = " + localStorage.player0Name);
             var p0Name = localStorage.getItem('player0Name');
             document.getElementById("p0NameInput").value = p0Name;
             document.getElementById("name-0").innerHTML = p0Name;
             
-        }
-        if (localStorage.player1Name !== null) {
-            console.log(localStorage.player1Name);
+        if (localStorage.player1Name !== undefined) {
+            console.log("post localstorage.player1Name = " + localStorage.player1Name);
             var p1Name = localStorage.getItem('player1Name');
             document.getElementById("p1NameInput").value = p1Name;
             document.getElementById("name-1").innerHTML = p1Name;
         }
+      }
     } else {
         alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
     }
@@ -253,7 +269,10 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
             document.getElementById('diceID').style.top = (45 + (Math.random() * 160)) + "px";
             // voice comment on dice roll
             var commentNumber = (Math.floor(Math.random() * 6));
-            jsonParse("diceComments.json", dice, commentNumber, "true");
+            // VoiceOnOff check
+            if (document.getElementById("voiceOnOff").innerHTML === "Voice Off") {
+                jsonParse("diceComments.json", dice, commentNumber, "true");
+            }
             //update the round score IF rolled number was not 1
             if (dice !== 1) {
                 //add score

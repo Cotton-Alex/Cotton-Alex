@@ -56,11 +56,11 @@
                 <div class="back">
                     <div class="player-0-panel active">
                         <span>Name:</span>
-                        <span><input id="p0NameInput" type="text" size="18" value="Player 1"></span>
+                        <span><input id="p0NameInput" type="text" maxlength="8" size="18" value="Player 1"></span>
                         <br>
-                        <span><button class="nameClear" type="submit" onClick="clearPlayer0Name()">Clear</button></span>
-                        <button class="nameSave" type="submit" onClick="setPlayer0Name()">Save</button>
-                        <br><br>
+                        <span><button class="nameSave" type="submit" onClick="setPlayer0Name()">Save</button></span>
+                        <button class="nameClear" type="submit" onClick="clearPlayer0Name()">Clear</button>
+                        <br><br><br><br>
                         <div class="playerColorSelector">
                             <fieldset>
                                 <label for="p0Red">R</label>
@@ -76,14 +76,21 @@
                                 <label for="p0Blue">B</label>
                                 <input type="range" min="0" max="255" id="p0Blue" step="1" value="0">
                                 <output for="p0Blue" id="p0Blue_out">0</output>
-                            </fieldset> 
+                            </fieldset>
                         </div>
+                        <br>
+                        <span><button class="nameSave" type="submit" onClick="setPlayer1Name()">Save</button></span>
+                        <button class="nameClear" type="submit" onClick="clearPlayer1Name()">Clear</button>
                     </div>
                     <div class="progressBarWrapper">
                     </div>
                     <div class="middleGround">
                         <div id="selectWrap">
+                            <div id="voiceSection">
                             <select id="voiceSelect"></select>
+                            <br>
+                            <button id="voiceOnOff">Voice Off</button>
+                            </div>
                         </div>
                         <button class="btn-play"><i class="ion-ios-settings-outline"></i>Play</button>
                     </div>
@@ -91,11 +98,11 @@
                     </div>
                     <div class="backRight">
                         <span>Name:</span>
-                        <span><input id="p1NameInput" type="text" size="18" value="Player 2"></span>
+                        <span><input id="p1NameInput" type="text" maxlength="8" size="18" value="Player 2"></span>
                         <br>
-                        <span><button class="nameClear" type="submit" onClick="clearPlayer1Name()">Clear</button></span>
-                        <button class="nameSave" type="submit" onClick="setPlayer1Name()">Save</button>
-                        <br><br>
+                        <span><button class="nameSave" type="submit" onClick="setPlayer1Name()">Save</button></span>
+                        <button class="nameClear" type="submit" onClick="clearPlayer1Name()">Clear</button>
+                        <br><br><br><br>
                         <div class="playerColorSelector">
                             <fieldset>
                                 <label for="p1Red">R</label>

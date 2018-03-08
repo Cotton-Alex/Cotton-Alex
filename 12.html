@@ -77,6 +77,57 @@
         Rotate Z: <br>
         <input type="range" min="-360" max="360" value="7" onInput="rotatez(this.value)" /><br>
         transform: rotate z(<span id="zval">7deg</span>);
+        <br><br><br><br>
+        
+        <!--https://codepen.io/boby2/pen/waPRjO-->
+        <!--https://codepen.io/adamdharrington/pen/edIuv-->
+        
+        <div id="dice3DContainer">
+            <div id="dice3D">
+                <div class="diceSide sideOne" id="sideOne">
+                    <div class="dot" id="oneOne"></div>
+                </div>
+                <div class="diceSide sideTwo" id="sideTwo">
+                    <div class="dot" id="2-1"></div>
+                    <div class="dot" id="2-2"></div>
+                </div>   
+                <div class="diceSide sideThree" id="sideThree">
+                    <div class="dot" id="3-1"></div>
+                    <div class="dot" id="3-2"></div>
+                    <div class="dot" id="3-3"></div>
+                </div>
+                <div class="diceSide sideFour" id="sideFour">
+                    <div class="dot" id="4-1"></div>
+                    <div class="dot" id="4-2"></div>
+                </div>
+                <div class="diceSide sideFive" id="sideFive">
+                    <div class="dot" id="5-1"></div>
+                    <div class="dot" id="fiveFive"></div>
+                    <div class="dot" id="5-3"></div>
+                </div>
+                <div class="diceSide sideSix" id="sideSix">
+                    <div class="dot" id="6-1"></div>
+                    <div class="dot" id="6-2"></div>
+                    <div class="dot" id="6-3"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        Rotate X: <br>
+        <input id="x3DRange" type="range" min="0" max="100" value="0" onInput="rotate3D()" />
+        (<span id="3dXVal">0deg</span>);
+        <br>
+        Rotate Y: <br>
+        <input id="y3DRange" type="range" min="0" max="100" value="0" onInput="rotate3D()" />
+        (<span id="3dYVal">0deg</span>);
+        <br>
+        Rotate Z: <br>
+        <input id="z3DRange" type="range" min="0" max="100" value="0" onInput="rotate3D()" />
+        (<span id="3dZVal">0deg</span>);
+        <br>
+        Angle: <br>
+        <input id="a3DRange" type="range" min="-180" max="180" value="0" onInput="rotate3D()" />
+        (<span id="3dAVal">0deg</span>);
         <br><br><br><br><br><br><br><br><br>
     </body>
 </html>

@@ -516,3 +516,38 @@ function rotatez(value)
     document.getElementById('flipBox').style.transform = "rotatez(" + value + "deg)";
     document.getElementById('zval').innerHTML = value + "deg";
 }
+
+function rotate3D() {
+    var x3D = (document.getElementById('x3DRange').value);
+    var y3D = (document.getElementById('y3DRange').value);
+    var z3D = (document.getElementById('z3DRange').value);
+    var a3D = (document.getElementById('a3DRange').value);
+    console.log("x3D = " + x3D);
+    console.log("y3D = " + y3D);
+    console.log("z3D = " + z3D);
+    console.log("a3D = " + a3D);
+    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('3dXVal').innerHTML = x3D / 100;
+    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('3dYVal').innerHTML = y3D / 100;
+    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('3dZVal').innerHTML = z3D / 100;
+    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('3dAVal').innerHTML = a3D + "deg";
+}

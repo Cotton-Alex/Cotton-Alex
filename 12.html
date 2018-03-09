@@ -17,7 +17,7 @@
         <!-- SCRIPTS -->
         <script type="text/javascript" src="js.js"></script>
     </head>
-    <body onload="checkLocalStorage(), draw(0, 0)">
+    <body onload="rotate3D(), checkLocalStorage(), draw(0, 0)">
         <header>
             <div>
                 <nav>
@@ -48,11 +48,11 @@
             <br>CSS3 supports 2D and 3D transformations.
         </p>
         <br>
-        <h2>Very Simple Transform</h2>
+<!--        <h2>Very Simple Transform</h2>
         <p>When your cursor hovers over the red square rotates the square by 25 degrees. The square goes back when you cursor stops hovering.</p>
         <div id="trf1"></div>
         <br><br><br>     
-        <h2>Less Simple Transform</h2>
+        <h2>Less Simple Transform</h2>-->
 
         <h3>3D Dice</h3>
         <div>
@@ -138,39 +138,39 @@
                 </div>
                 <br>
                 Rotate X: <br>
-                <input id="x3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
+                <input id="x3DRange" type="range" min="-100" max="100" value="4" onInput="rotate3D()" />
                 (<span id="3dXVal">1deg</span>)
                 <br>
                 Rotate Y: <br>
-                <input id="y3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
+                <input id="y3DRange" type="range" min="-100" max="100" value="91" onInput="rotate3D()" />
                 (<span id="3dYVal">1deg</span>)
                 <br>
                 Rotate Z: <br>
-                <input id="z3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
+                <input id="z3DRange" type="range" min="-100" max="100" value="-15" onInput="rotate3D()" />
                 (<span id="3dZVal">1deg</span>)
                 <br>
                 Angle: <br>
-                <input id="a3DRange" type="range" min="1" max="180" value="1" onInput="rotate3D()" />
+                <input id="a3DRange" type="range" min="1" max="180" value="133" onInput="rotate3D()" />
                 (<span id="3dAVal">1deg</span>)
                 <br>
                 Translate X: <br>
-                <input id="tx3DRange" type="range" min="-700" max="700" value="0" onInput="rotate3D()" />
+                <input id="tx3DRange" type="range" min="-700" max="700" value="-46" onInput="rotate3D()" />
                 (<span id="3dTXVal">0px</span>)
                 <br>
                 Translate Y: <br>
-                <input id="ty3DRange" type="range" min="-700" max="700" value="0" onInput="rotate3D()" />
+                <input id="ty3DRange" type="range" min="-700" max="700" value="66" onInput="rotate3D()" />
                 (<span id="3dTYVal">0px</span>)
                 <br>
                 Translate Z: <br>
-                <input id="tz3DRange" type="range" min="-1000" max="1000" value="0" onInput="rotate3D()" />
+                <input id="tz3DRange" type="range" min="-1000" max="1000" value="-41" onInput="rotate3D()" />
                 (<span id="3dTZVal">0px</span>)
                 <br>
                 Scale: <br>
-                <input id="s3DRange" type="range" min="1" max="400" value="100" onInput="rotate3D()" />
+                <input id="s3DRange" type="range" min="1" max="400" value="191" onInput="rotate3D()" />
                 (<span id="3dSVal">1x</span>)
                 <br>
                 Perspective: <br>
-                <input id="p3DRange" type="range" min="200" max="2000" value="1000" onInput="rotate3D()" />
+                <input id="p3DRange" type="range" min="200" max="2000" value="374" onInput="rotate3D()" />
                 (<span id="3dPVal">1000px</span>)
             </div></div>
         <div class="clear"></div>

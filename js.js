@@ -497,6 +497,46 @@ function turnDiceOne() {
     document.getElementById('a3DRange').value = 1;
     rotate3D();
 }
+function turnDiceTwo() {
+    console.log("turnDiceOne function trigger");
+    document.getElementById('x3DRange').value = 100;
+    document.getElementById('y3DRange').value = 1;
+    document.getElementById('z3DRange').value = 100;
+    document.getElementById('a3DRange').value = 179;
+    rotate3D();
+}
+function turnDiceThree() {
+    console.log("turnDiceOne function trigger");
+    document.getElementById('x3DRange').value = -100;
+    document.getElementById('y3DRange').value = 1;
+    document.getElementById('z3DRange').value = 1;
+    document.getElementById('a3DRange').value = 90;
+    rotate3D();
+}
+function turnDiceFour() {
+    console.log("turnDiceOne function trigger");
+    document.getElementById('x3DRange').value = 100;
+    document.getElementById('y3DRange').value = 1;
+    document.getElementById('z3DRange').value = 1;
+    document.getElementById('a3DRange').value = 90;
+    rotate3D();
+}
+function turnDiceFive() {
+    console.log("turnDiceOne function trigger");
+    document.getElementById('x3DRange').value = 1;
+    document.getElementById('y3DRange').value = 100;
+    document.getElementById('z3DRange').value = 1;
+    document.getElementById('a3DRange').value = 90;
+    rotate3D();
+}
+function turnDiceSix() {
+    console.log("turnDiceOne function trigger");
+    document.getElementById('x3DRange').value = 100;
+    document.getElementById('y3DRange').value = 100;
+    document.getElementById('z3DRange').value = 1;
+    document.getElementById('a3DRange').value = 179;
+    rotate3D();
+}
 
 function rotatex(value)
 {

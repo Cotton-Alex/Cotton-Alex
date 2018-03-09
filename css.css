@@ -336,6 +336,7 @@ i:hover {
     position: relative; 
     perspective: 1000px; 
     margin: 4em auto 4em;
+    /*transform: scale(.5, .5);*/
     
 }
 #dice3D {
@@ -367,12 +368,12 @@ i:hover {
         translateZ(100px);
 }
 #sideThree {
-    background: rgba(255, 0, 0, .8);
+    background: rgba(255, 51, 204, .8);
     transform: rotateX(90deg)
         translateZ(100px);
 }
 #sideFour {
-    background: rgba(255, 0, 255, .8);
+    background: rgba(0, 102, 255, .8);
     transform: rotatex(-90deg)
         translateZ(100px);
 }

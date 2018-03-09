@@ -336,6 +336,7 @@ i:hover {
     position: relative; 
     perspective: 1000px; 
     margin: 4em auto 4em;
+    
 }
 #dice3D {
     width: 100%; 
@@ -344,53 +345,144 @@ i:hover {
     transform-style: preserve-3d;
     transition: transform 0.5s ease;
 }
-#dice3D .diceSide { 
+.diceSide { 
     width: 200px; 
     height: 200px; 
-    display: block; 
+    display: block;
+    margin: 10px;
     position: absolute;
+    display: -webkit-flex;
+    /* Safari */
+
+    display: flex;
     /*margin:0px;*/
 }
-#dice3D #sideOne {
-    background: rgba(255, 0, 0, .6);
+#sideOne {
+    background: rgba(255, 0, 0, .8);
     transform: translateZ(100px);
 }
-#dice3D #sideTwo {
-    background: rgba(0, 255, 0, .6);
+#sideTwo {
+    background: rgba(0, 255, 0, .8);
     transform: rotateY(90deg)
         translateZ(100px);
 }
-#dice3D #sideThree {
-    background: rgba(255, 0, 0, .6);
+#sideThree {
+    background: rgba(255, 0, 0, .8);
     transform: rotateX(90deg)
         translateZ(100px);
 }
-#dice3D #sideFour {
-    background: rgba(255, 0, 255, .6);
+#sideFour {
+    background: rgba(255, 0, 255, .8);
     transform: rotatex(-90deg)
         translateZ(100px);
 }
-#dice3D #sideFive {
-    background: rgba(0, 255, 255, .6);
+#sideFive {
+    background: rgba(0, 255, 255, .8);
     transform: rotateY(-90deg)
         translateZ(100px);
 }
-#dice3D #sideSix {
-    background: rgba(255, 255, 0, .6);
+#sideSix {
+    background: rgba(255, 255, 0, .8);
     transform: rotateX(180deg)
         translateZ(100px);
 }
-#dice3D .dot {
-    height: 40px;
-    width: 40px;
-    /*position: relative;*/
-    background-color: black;
-    border-radius: 50%;
+
+.column {
+    width: 66.666665px;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
 }
-#oneOne, #fiveFive{
-    display: block; 
-    position: absolute;
-    margin: 80px 80px;
+
+.dot {
+    height:40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 100%;
+    margin: 8.333333px;
+}
+
+.sideOne {
+    justify-content: center;
+    align-items: center;
+}
+/**********
+        Two Pips
+***********/
+
+.sideTwo {
+    justify-content: space-between;
+}
+
+.sideTwo .dot:nth-of-type(2) {
+    align-self: flex-end;
+}
+/*************
+        Three Pips
+**************/
+
+.sideThree {
+    justify-content: space-between;
+}
+
+.sideThree .column1 .dot {
+    align-self: flex-start;
+}
+
+.sideThree .column2 .dot {
+    align-self: center;
+}
+
+.sideThree .column3 .dot {
+    align-self: flex-end;
+}
+/****************
+        Four Pips
+*****************/
+
+.sideFour {
+    justify-content: space-between;
+}
+
+.sideFour .column {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*********	
+Five Pips 
+***********/
+
+.sideFive {
+    justify-content: space-between;
+}
+
+.sideFive .twodot-column1,
+.sideFive .twodot-column3 {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sideFive .twodot-column1 .dot,
+.sideFive .twodot-column3 .dot {
+    align-self: space-between;
+}
+
+.sideFive .twodot-column2 .dot {
+    align-self: center;
+}
+/************
+        Six Pips
+**************/
+
+.sideSix {
+    justify-content: space-between;
+}
+
+.sideSix .column {
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /*#dice3DContainer {

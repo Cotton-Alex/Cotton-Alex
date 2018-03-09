@@ -59,13 +59,13 @@
             Whaddaya know? It worked.<br>
             I'd like to have the settings hold so the rotation could be on<br>
             several planes at once, but that'll have to wait till later.</p>
-        
+
         <div id="flipBoxOuter">
             <div id="flipBox">
                 <canvas id="canvas1" width="300" height="300"></canvas>
             </div>
         </div>
-        
+
         Rotate X: <br>
         <input type="range" min="-360" max="360" value="7" onInput="rotatex(this.value)" /><br>
         transform: rotate x(<span id="xval">7deg</span>);
@@ -78,56 +78,101 @@
         <input type="range" min="-360" max="360" value="7" onInput="rotatez(this.value)" /><br>
         transform: rotate z(<span id="zval">7deg</span>);
         <br><br><br><br>
-        
+
         <!--https://codepen.io/boby2/pen/waPRjO-->
         <!--https://codepen.io/adamdharrington/pen/edIuv-->
-        
+
         <div id="dice3DContainer">
             <div id="dice3D">
                 <div class="diceSide sideOne" id="sideOne">
-                    <div class="dot" id="oneOne"></div>
+                    <span class="dot"></span>
                 </div>
                 <div class="diceSide sideTwo" id="sideTwo">
-                    <div class="dot" id="2-1"></div>
-                    <div class="dot" id="2-2"></div>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>   
                 <div class="diceSide sideThree" id="sideThree">
-                    <div class="dot" id="3-1"></div>
-                    <div class="dot" id="3-2"></div>
-                    <div class="dot" id="3-3"></div>
+                    <div class="column column1">
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="column column2">
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="column column3">
+                        <span class="dot"></span>
+                    </div> 
                 </div>
                 <div class="diceSide sideFour" id="sideFour">
-                    <div class="dot" id="4-1"></div>
-                    <div class="dot" id="4-2"></div>
+                    <div class="column">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
-                <div class="diceSide sideFive" id="sideFive">
-                    <div class="dot" id="5-1"></div>
-                    <div class="dot" id="fiveFive"></div>
-                    <div class="dot" id="5-3"></div>
+
+                <div class="column">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
-                <div class="diceSide sideSix" id="sideSix">
-                    <div class="dot" id="6-1"></div>
-                    <div class="dot" id="6-2"></div>
-                    <div class="dot" id="6-3"></div>
+            </div>
+            <div class="diceSide sideFive" id="sideFive">
+                <div class="column twodot-column1">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="column twodot-column2">
+                    <span class="dot"></span>
+                </div>
+
+                <div class="column twodot-column3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="diceSide sideSix" id="sideSix">
+                <div class="column">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="column">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="column">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
         </div>
-        <br>
-        Rotate X: <br>
-        <input id="x3DRange" type="range" min="0" max="100" value="0" onInput="rotate3D()" />
-        (<span id="3dXVal">0deg</span>);
-        <br>
-        Rotate Y: <br>
-        <input id="y3DRange" type="range" min="0" max="100" value="0" onInput="rotate3D()" />
-        (<span id="3dYVal">0deg</span>);
-        <br>
-        Rotate Z: <br>
-        <input id="z3DRange" type="range" min="0" max="100" value="0" onInput="rotate3D()" />
-        (<span id="3dZVal">0deg</span>);
-        <br>
-        Angle: <br>
-        <input id="a3DRange" type="range" min="-180" max="180" value="0" onInput="rotate3D()" />
-        (<span id="3dAVal">0deg</span>);
-        <br><br><br><br><br><br><br><br><br>
-    </body>
+    </div>
+    <br>
+    <div id="diceNumberButtons">
+        <button type="button" class="turnDiceButtons" id="turnDiceOne" onclick="turnDiceOne()">1</button>
+        <button type="button" class="turnDiceButtons" id="tuirnDiceTwo" onclick="turnDiceTwo()">2</button>
+        <button type="button" class="turnDiceButtons" id="turnDiceThree" onclick="turnDiceThree()">3</button>
+        <button type="button" class="turnDiceButtons" id="turnDiceFour" onclick="turnDiceFour()">4</button>
+        <button type="button" class="turnDiceButtons" id="turnDiceFive" onclick="turnDiceFive()">5</button>
+        <button type="button" class="turnDiceButtons" id="turnDiceSix" onclick="turnDiceSix()">6</button>
+    </div>
+    <br>
+    Rotate X: <br>
+    <input id="x3DRange" type="range" min="1" max="100" value="1" onInput="rotate3D()" />
+    (<span id="3dXVal">0deg</span>);
+    <br>
+    Rotate Y: <br>
+    <input id="y3DRange" type="range" min="1" max="100" value="1" onInput="rotate3D()" />
+    (<span id="3dYVal">0deg</span>);
+    <br>
+    Rotate Z: <br>
+    <input id="z3DRange" type="range" min="1" max="100" value="1" onInput="rotate3D()" />
+    (<span id="3dZVal">0deg</span>);
+    <br>
+    Angle: <br>
+    <input id="a3DRange" type="range" min="1" max="180" value="1" onInput="rotate3D()" />
+    (<span id="3dAVal">0deg</span>);
+    <br><br><br><br><br><br><br><br><br>
+</body>
 </html>

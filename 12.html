@@ -53,6 +53,130 @@
         <div id="trf1"></div>
         <br><br><br>     
         <h2>Less Simple Transform</h2>
+
+        <h3>3D Dice</h3>
+        <div>
+            <div id="dicePlacementContainer">
+                <div id="dice3DContainer">
+                    <div id="diceTranslateContainer">
+                        <div id="dice3D">
+                            <div class="diceSide sideOne" id="sideOne">
+                                <span class="dot"></span>
+                            </div>
+                            <div class="diceSide sideTwo" id="sideTwo">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>   
+                            <div class="diceSide sideThree" id="sideThree">
+                                <div class="column column1">
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column column2">
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column column3">
+                                    <span class="dot"></span>
+                                </div> 
+                            </div>
+                            <div class="diceSide sideFour" id="sideFour">
+                                <div class="column">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="diceSide sideFive" id="sideFive">
+                                <div class="column twodot-column1">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column twodot-column2">
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column twodot-column3">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="diceSide sideSix" id="sideSix">
+                                <div class="column">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+
+                                <div class="column">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="diceControlsContainer">
+                <div id="diceNumberButtons">
+                    <button type="button" class="turnDiceButtons" id="turnDiceOne" onclick="turnDiceOne()">1</button>
+                    <button type="button" class="turnDiceButtons" id="tuirnDiceTwo" onclick="turnDiceTwo()">2</button>
+                    <button type="button" class="turnDiceButtons" id="turnDiceThree" onclick="turnDiceThree()">3</button>
+                    <button type="button" class="turnDiceButtons" id="turnDiceFour" onclick="turnDiceFour()">4</button>
+                    <button type="button" class="turnDiceButtons" id="turnDiceFive" onclick="turnDiceFive()">5</button>
+                    <button type="button" class="turnDiceButtons" id="turnDiceSix" onclick="turnDiceSix()">6</button>
+                </div>
+                <br>
+                Rotate X: <br>
+                <input id="x3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
+                (<span id="3dXVal">1deg</span>)
+                <br>
+                Rotate Y: <br>
+                <input id="y3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
+                (<span id="3dYVal">1deg</span>)
+                <br>
+                Rotate Z: <br>
+                <input id="z3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
+                (<span id="3dZVal">1deg</span>)
+                <br>
+                Angle: <br>
+                <input id="a3DRange" type="range" min="1" max="180" value="1" onInput="rotate3D()" />
+                (<span id="3dAVal">1deg</span>)
+                <br>
+                Translate X: <br>
+                <input id="tx3DRange" type="range" min="-700" max="700" value="0" onInput="rotate3D()" />
+                (<span id="3dTXVal">0px</span>)
+                <br>
+                Translate Y: <br>
+                <input id="ty3DRange" type="range" min="-700" max="700" value="0" onInput="rotate3D()" />
+                (<span id="3dTYVal">0px</span>)
+                <br>
+                Translate Z: <br>
+                <input id="tz3DRange" type="range" min="-1000" max="1000" value="0" onInput="rotate3D()" />
+                (<span id="3dTZVal">0px</span>)
+                <br>
+                Scale: <br>
+                <input id="s3DRange" type="range" min="1" max="400" value="100" onInput="rotate3D()" />
+                (<span id="3dSVal">1x</span>)
+                <br>
+                Perspective: <br>
+                <input id="p3DRange" type="range" min="200" max="2000" value="1000" onInput="rotate3D()" />
+                (<span id="3dPVal">1000px</span>)
+            </div></div>
+        <div class="clear"></div>
+        <br><br><br>
+
+
         <p>The sliders below control the x, y, and z axis rotation. I was<br>
             just going to use a simple div to show how they work but then I<br>
             wondered if I could 3D rotate the canvas I made a few pages back.<br>
@@ -77,107 +201,6 @@
         Rotate Z: <br>
         <input type="range" min="-360" max="360" value="7" onInput="rotatez(this.value)" /><br>
         transform: rotate z(<span id="zval">7deg</span>);
-        <br><br><br><br>
-
-        <!--https://codepen.io/boby2/pen/waPRjO-->
-        <!--https://codepen.io/adamdharrington/pen/edIuv-->
-
-        <div id="dice3DContainer">
-            <div id="dice3D">
-                <div class="diceSide sideOne" id="sideOne">
-                    <span class="dot"></span>
-                </div>
-                <div class="diceSide sideTwo" id="sideTwo">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>   
-                <div class="diceSide sideThree" id="sideThree">
-                    <div class="column column1">
-                        <span class="dot"></span>
-                    </div>
-
-                    <div class="column column2">
-                        <span class="dot"></span>
-                    </div>
-
-                    <div class="column column3">
-                        <span class="dot"></span>
-                    </div> 
-                </div>
-                <div class="diceSide sideFour" id="sideFour">
-                    <div class="column">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <div class="column">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
-            <div class="diceSide sideFive" id="sideFive">
-                <div class="column twodot-column1">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <div class="column twodot-column2">
-                    <span class="dot"></span>
-                </div>
-
-                <div class="column twodot-column3">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
-            <div class="diceSide sideSix" id="sideSix">
-                <div class="column">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <div class="column">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <div class="column">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div id="diceNumberButtons">
-        <button type="button" class="turnDiceButtons" id="turnDiceOne" onclick="turnDiceOne()">1</button>
-        <button type="button" class="turnDiceButtons" id="tuirnDiceTwo" onclick="turnDiceTwo()">2</button>
-        <button type="button" class="turnDiceButtons" id="turnDiceThree" onclick="turnDiceThree()">3</button>
-        <button type="button" class="turnDiceButtons" id="turnDiceFour" onclick="turnDiceFour()">4</button>
-        <button type="button" class="turnDiceButtons" id="turnDiceFive" onclick="turnDiceFive()">5</button>
-        <button type="button" class="turnDiceButtons" id="turnDiceSix" onclick="turnDiceSix()">6</button>
-    </div>
-    <br>
-    Rotate X: <br>
-    <input id="x3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
-    (<span id="3dXVal">0deg</span>);
-    <br>
-    Rotate Y: <br>
-    <input id="y3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
-    (<span id="3dYVal">0deg</span>);
-    <br>
-    Rotate Z: <br>
-    <input id="z3DRange" type="range" min="-100" max="100" value="1" onInput="rotate3D()" />
-    (<span id="3dZVal">0deg</span>);
-    <br>
-    Angle: <br>
-    <input id="a3DRange" type="range" min="1" max="180" value="1" onInput="rotate3D()" />
-    (<span id="3dAVal">0deg</span>);
-    <br>
-<!--    Scale: <br>
-    <input id="s3DRange" type="range" min="1" max="500" value="100" onInput="rotate3D()" />
-    (<span id="3dSVal">1x</span>);-->
-    
-    <br><br><br><br><br><br><br><br><br>
-</body>
+        <br><br><br><br><br><br><br><br>
+    </body>
 </html>

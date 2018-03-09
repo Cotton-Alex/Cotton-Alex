@@ -487,6 +487,36 @@ function trf2Out() {
     document.getElementById("trf2").style.transform = "rotate(0deg)";
 }
 
+function rotatex(value)
+{
+    document.getElementById('flipBox').style.webkitTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.msTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.MozTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.OTransform = "rotatex(" + value + "deg)";
+    document.getElementById('flipBox').style.transform = "rotatex(" + value + "deg)";
+    document.getElementById('xval').innerHTML = value + "deg";
+}
+
+function rotatey(value)
+{
+    document.getElementById('flipBox').style.webkitTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.msTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.MozTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.OTransform = "rotatey(" + value + "deg)";
+    document.getElementById('flipBox').style.transform = "rotatey(" + value + "deg)";
+    document.getElementById('yval').innerHTML = value + "deg";
+}
+
+function rotatez(value)
+{
+    document.getElementById('flipBox').style.webkitTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.msTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.MozTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.OTransform = "rotatez(" + value + "deg)";
+    document.getElementById('flipBox').style.transform = "rotatez(" + value + "deg)";
+    document.getElementById('zval').innerHTML = value + "deg";
+}
+
 //document.querySelector('.turnDiceButtons').addEventListener('click', turn);
 
 function turnDiceOne() {
@@ -538,76 +568,53 @@ function turnDiceSix() {
     rotate3D();
 }
 
-function rotatex(value)
-{
-    document.getElementById('flipBox').style.webkitTransform = "rotatex(" + value + "deg)";
-    document.getElementById('flipBox').style.msTransform = "rotatex(" + value + "deg)";
-    document.getElementById('flipBox').style.MozTransform = "rotatex(" + value + "deg)";
-    document.getElementById('flipBox').style.OTransform = "rotatex(" + value + "deg)";
-    document.getElementById('flipBox').style.transform = "rotatex(" + value + "deg)";
-    document.getElementById('xval').innerHTML = value + "deg";
-}
-
-function rotatey(value)
-{
-    document.getElementById('flipBox').style.webkitTransform = "rotatey(" + value + "deg)";
-    document.getElementById('flipBox').style.msTransform = "rotatey(" + value + "deg)";
-    document.getElementById('flipBox').style.MozTransform = "rotatey(" + value + "deg)";
-    document.getElementById('flipBox').style.OTransform = "rotatey(" + value + "deg)";
-    document.getElementById('flipBox').style.transform = "rotatey(" + value + "deg)";
-    document.getElementById('yval').innerHTML = value + "deg";
-}
-
-function rotatez(value)
-{
-    document.getElementById('flipBox').style.webkitTransform = "rotatez(" + value + "deg)";
-    document.getElementById('flipBox').style.msTransform = "rotatez(" + value + "deg)";
-    document.getElementById('flipBox').style.MozTransform = "rotatez(" + value + "deg)";
-    document.getElementById('flipBox').style.OTransform = "rotatez(" + value + "deg)";
-    document.getElementById('flipBox').style.transform = "rotatez(" + value + "deg)";
-    document.getElementById('zval').innerHTML = value + "deg";
-}
-
 function rotate3D() {
     var x3D = (document.getElementById('x3DRange').value) / 100;
     var y3D = (document.getElementById('y3DRange').value) / 100;
     var z3D = (document.getElementById('z3DRange').value) / 100;
     var a3D = (document.getElementById('a3DRange').value);
-//    var s3D = (document.getElementById('s3DRange').value) / 100;
+    var s3D = (document.getElementById('s3DRange').value) / 100;
+    var p3D = (document.getElementById('p3DRange').value);
+    var tx3D = (document.getElementById('tx3DRange').value);
+    var ty3D = (document.getElementById('ty3DRange').value);
+    var tz3D = (document.getElementById('tz3DRange').value);
     console.log("x3D = " + x3D);
     console.log("y3D = " + y3D);
     console.log("z3D = " + z3D);
     console.log("a3D = " + a3D);
-//    console.log("s3D = " + s3D);
+    console.log("s3D = " + s3D);
+    console.log("p3D = " + p3D);
+    console.log("tx3D = " + tx3D);
+    console.log("ty3D = " + ty3D);
+    console.log("tz3D = " + tz3D);
     document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
     document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
     document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
     document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
     document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('3dXVal').innerHTML = x3D;
-    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('3dYVal').innerHTML = y3D;
-    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('3dZVal').innerHTML = z3D;
-    document.getElementById('dice3D').style.webkitTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.msTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.MozTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.OTransform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
-    document.getElementById('dice3D').style.transform = "rotate3D(" + x3D + ", " + y3D + ", " + z3D + ", " + a3D + "deg)";
+    document.getElementById('3dXVal').innerHTML = x3D ;
+    document.getElementById('3dYVal').innerHTML = y3D ;
+    document.getElementById('3dZVal').innerHTML = z3D ;
     document.getElementById('3dAVal').innerHTML = a3D + "deg";
-//    document.getElementById('dice3DContainer').style.webkitTransform = "transform: scale(" + s3D + ")";
-//    document.getElementById('dice3DContainer').style.msTransform = "transform: scale(" + s3D + ")";
-//    document.getElementById('dice3DContainer').style.MozTransform = "transform: scale(" + s3D + ")";
-//    document.getElementById('dice3DContainer').style.OTransform = "transform: scale(" + s3D + ")";
-//    document.getElementById('dice3DContainer').style.transform = "transform: scale(" + s3D + ")";
-//    document.getElementById('3dSVal').innerHTML = s3D + "x";
+    document.getElementById('diceTranslateContainer').style.webkitTransform = "translate3d(" + tx3D + "px, " + ty3D + "px, " + tz3D + "px)";
+    document.getElementById('diceTranslateContainer').style.msTransform = "translate3d(" + tx3D + "px, " + ty3D + "px, " + tz3D + "px)";
+    document.getElementById('diceTranslateContainer').style.MozTransform = "translate3d(" + tx3D + "px, " + ty3D + "px, " + tz3D + "px)";
+    document.getElementById('diceTranslateContainer').style.OTransform = "translate3d(" + tx3D + "px, " + ty3D + "px, " + tz3D + "px)";
+    document.getElementById('diceTranslateContainer').style.transform = "translate3d(" + tx3D + "px, " + ty3D + "px, " + tz3D + "px)";
+    document.getElementById('3dTXVal').innerHTML = tx3D + "px";
+    document.getElementById('3dTYVal').innerHTML = ty3D + "px";
+    document.getElementById('3dTZVal').innerHTML = tz3D + "px";
+    document.getElementById('dice3DContainer').style.webkitTransform = "scale(" + s3D + ")";
+    document.getElementById('dice3DContainer').style.msTransform = "scale(" + s3D + ")";
+    document.getElementById('dice3DContainer').style.MozTransform = "scale(" + s3D + ")";
+    document.getElementById('dice3DContainer').style.OTransform = "scale(" + s3D + ")";
+    document.getElementById('dice3DContainer').style.transform = "scale(" + s3D + ")";
+    document.getElementById('3dSVal').innerHTML = s3D + "x";
+    document.getElementById('dice3DContainer').style.webkitPerspective = p3D + "px" ;
+    document.getElementById('dice3DContainer').style.msPerspective = p3D + "px";
+    document.getElementById('dice3DContainer').style.MozPerspective = p3D + "px";
+    document.getElementById('dice3DContainer').style.OPerspective = p3D + "px";
+    document.getElementById('dice3DContainer').style.perspective = p3D + "px";
+    document.getElementById('3dPVal').innerHTML = p3D + "px";
 }
 

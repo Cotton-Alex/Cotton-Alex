@@ -1,5 +1,12 @@
 {
-    "elements": {},
+    "elements": {
+        "div": {
+            "attributes": {
+                "id": {},
+                "class": {}
+            }
+        }
+    },
     "attributes": {
         "onmousover": {
             "context": "button"

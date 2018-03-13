@@ -517,8 +517,6 @@ function rotatez(value)
     document.getElementById('zval').innerHTML = value + "deg";
 }
 
-//document.querySelector('.turnDiceButtons').addEventListener('click', turn);
-
 function turnDiceOne() {
     console.log("turnDiceOne function trigger");
     document.getElementById('x3DRange').value = 1;

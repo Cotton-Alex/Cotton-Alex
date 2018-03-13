@@ -294,13 +294,22 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
     });
 }
 
-
-var p0Red = document.querySelector('#p0Red');
-var p0Green = document.querySelector('#p0Green');
-var p0Blue = document.querySelector('#p0Blue');
-var p0Red_out = document.querySelector('#p0Red_out');
-var p0Green_out = document.querySelector('#p0Green_out');
-var p0Blue_out = document.querySelector('#p0Blue_out');
-var p0Color = "rgb(" + p0Red +", " + p0Green + ", " + p0Blue + ");";
-    document.querySelector('.btn-hold').style.display = 'block';
-    console.log("rgb= " + p0Red, p0Green, p0Blue);
+function playerColorChange() {
+var p0Red = document.querySelector('#p0Red').value;
+document.querySelector('#p0Red_out').value = p0Red;
+var p0Green = document.querySelector('#p0Green').value;
+document.querySelector('#p0Green_out').value = p0Green;
+var p0Blue = document.querySelector('#p0Blue').value;
+document.querySelector('#p0Blue_out').value = p0Blue;   
+var p1Red = document.querySelector('#p1Red').value;
+document.querySelector('#p1Red_out').value = p1Red;
+var p1Green = document.querySelector('#p1Green').value;
+document.querySelector('#p1Green_out').value = p1Green;
+var p1Blue = document.querySelector('#p1Blue').value;
+document.querySelector('#p1Blue_out').value = p1Blue;
+var p0Color = "rgb(" + p0Red +", " + p0Green + ", " + p0Blue + ")";
+var p1Color = "rgb(" + p1Red +", " + p1Green + ", " + p1Blue + ")";
+console.log("p0Color = rgb= " + p0Red, p0Green, p0Blue + ", p1Color = rgb= " + p1Red, p1Green, p1Blue);
+document.querySelector('body').style.background = "linear-gradient(90deg, " + p0Color + " 0%, " + p1Color + " 100%)";
+document.querySelector('.middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
+}

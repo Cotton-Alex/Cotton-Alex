@@ -20,12 +20,7 @@ body {
     font-weight: 300;
     position: relative;
     height: 100vh;
-/*    color: #555;*/
-/*    background-size: cover;
-    background-position: center;*/
-    background: linear-gradient(90deg, #EB4D4D 0%, #2C729E 100%);
-/*    transition: linear-gradient 0.3s, color 0.3s;
-    transition: background 3s ease-in-out;*/
+    background: linear-gradient(90deg, rgb(235, 77, 77) 0%, rgb(44, 114, 158) 100%);
 }
 
 .wrapper, .front, .back {
@@ -43,8 +38,7 @@ body {
     float: left;
     height: 500px;
     padding: 20px;
-    background-color: #fff
-/*    transition: width 2s ease 0s, height 2s ease;*/
+    background-color: #fff;
 }
 
 .player-0-panel, .backleft {
@@ -52,9 +46,7 @@ body {
     float: left;
     height: 500px;
     padding: 20px;
-    background-color: #fff
-/*    background: linear-gradient(0deg, #EB4D4D 0%, #fff 0%);
-    transition: background 3s ease-in-out;*/
+    background-color: #fff;
 }
 
 .progressBarWrapper {
@@ -73,7 +65,6 @@ body {
     height: .0001%;
     padding: 0px;
     transition: height .75s ease-in-out;
-/*    background-color: #EB4D4D;*/
 }
 
 #player-0-progressBar {
@@ -85,7 +76,6 @@ body {
 }
 
 .middleGround {
-/*  TODO - animate Linear gradient to show whos winning*/
     background: linear-gradient(90deg, #2C729E 0%, #EB4D4D 100%);
     width: 30%;
     float: left;
@@ -134,7 +124,6 @@ body {
     color: #2C729E;
 }
 
-/*.active { background-color: #f7f7f7; }*/
 .active .player-name { font-weight: 300; }
 
 .active .player-name::after {
@@ -222,8 +211,9 @@ button:focus {
     
 }
 
-.nameSave:hover { font-weight: 600; }
-/*.nameSave:hover i { margin-right: 20px; }*/
+.nameSave:hover {
+    font-weight: 600;
+}
 
 .nameSave:focus {
     outline: none;
@@ -256,8 +246,9 @@ input[type="text"] {
     
 }
 
-.nameClear:hover { font-weight: 600; }
-/*.nameSave:hover i { margin-right: 20px; }*/
+.nameClear:hover {
+    font-weight: 600;
+}
 
 .nameClear:focus {
     outline: none;

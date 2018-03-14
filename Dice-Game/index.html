@@ -21,7 +21,7 @@
                             <div class="player-name" id="name-0">Player 1</div>
                             <div class="player-score" id="score-0">45</div>
                             <div class="player-current-box" id="player-0-box">
-                                <div class="player-current-label">Current</div>
+                                <div class="player-current-label" id="p0currentLabel">Current</div>
                                 <div class="player-current-score" id="current-0">11</div>
                             </div>
                             <button class="btn-roll" id="roll-0"><i id="ion-player-0" class="ion-ios-loop"></i>Roll dice</button> 
@@ -46,7 +46,7 @@
                             <div class="player-name" id="name-1">Player 2</div>
                             <div class="player-score" id="score-1">72</div>
                             <div class="player-current-box" id="player-1-box">
-                                <div class="player-current-label">Current</div>
+                                <div class="player-current-label" id="p1currentLabel">Current</div>
                                 <div class="player-current-score" id="current-1">0</div>
                             </div>
                             <button class="btn-roll" id="roll-1"><i id="ion-player-1" class="ion-ios-loop" id="ion-1"></i>Roll dice</button>
@@ -79,8 +79,8 @@
                             </fieldset>
                         </div>
                         <br>
-                        <span><button class="nameSave" type="submit" onClick="setPlayer1Name()">Save</button></span>
-                        <button class="nameClear" type="submit" onClick="clearPlayer1Name()">Clear</button>
+                        <span><button class="saveP0Color" type="submit" onClick="setP0Color()">Save</button></span>
+                        <button class="resetP0Color" type="submit" onClick="resetP0Color()">Reset</button>
                     </div>
                     <div class="progressBarWrapper">
                     </div>
@@ -118,7 +118,10 @@
                                 <label for="p1Blue">B</label>
                                 <input type="range" min="0" max="255" id="p1Blue" step="1" value="158" onInput="playerColorChange()">
                                 <output for="p1Blue" id="p1Blue_out">158</output>
-                            </fieldset> 
+                            </fieldset>
+                            <br>
+                        <span><button class="saveP1Color" type="submit" onClick="setP1Color()">Save</button></span>
+                        <button class="resetP1Color" type="submit" onClick="resetP1Color()">Reset</button>
                         </div>
                     </div>
 

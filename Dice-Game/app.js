@@ -58,13 +58,13 @@ document.querySelector('#voiceOnOff').addEventListener('click', voiceOnOff);
 function voiceOnOff() {
     console.log("inside toggleVoice function");
     if (document.getElementById("voiceOnOff").innerHTML === "Voice Off") {
-       document.getElementById("voiceOnOff").innerHTML = "Voice On";
+        document.getElementById("voiceOnOff").innerHTML = "Voice On";
     } else if (document.getElementById("voiceOnOff").innerHTML === "Voice On") {
-       document.getElementById("voiceOnOff").innerHTML = "Voice Off";
+        document.getElementById("voiceOnOff").innerHTML = "Voice Off";
     } else {
         return;
     }
-    
+
 }
 
 function checkLocalStorage() {
@@ -76,14 +76,38 @@ function checkLocalStorage() {
             var p0Name = localStorage.getItem('player0Name');
             document.getElementById("p0NameInput").value = p0Name;
             document.getElementById("name-0").innerHTML = p0Name;
-            
-        if (localStorage.player1Name !== undefined) {
-            console.log("post localstorage.player1Name = " + localStorage.player1Name);
-            var p1Name = localStorage.getItem('player1Name');
-            document.getElementById("p1NameInput").value = p1Name;
-            document.getElementById("name-1").innerHTML = p1Name;
+
+            if (localStorage.player1Name !== undefined) {
+                console.log("post localstorage.player1Name = " + localStorage.player1Name);
+                var p1Name = localStorage.getItem('player1Name');
+                document.getElementById("p1NameInput").value = p1Name;
+                document.getElementById("name-1").innerHTML = p1Name;
+            }
         }
-      }
+        if (localStorage.p0Red !== undefined) {
+            var p0Red = localStorage.getItem('p0Red');
+            var p0Green = localStorage.getItem('p0Green');
+            var p0Blue = localStorage.getItem('p0Blue');
+            document.querySelector('#p0Red').value = p0Red;
+            document.querySelector('#p0Red_out').value = p0Red;
+            document.querySelector('#p0Green').value = p0Green;
+            document.querySelector('#p0Green_out').value = p0Green;
+            document.querySelector('#p0Blue').value = p0Blue;
+            document.querySelector('#p0Blue_out').value = p0Blue;
+            playerColorChange();
+        }
+        if (localStorage.p1Red !== undefined) {
+            var p1Red = localStorage.getItem('p1Red');
+            var p1Green = localStorage.getItem('p1Green');
+            var p1Blue = localStorage.getItem('p1Blue');
+            document.querySelector('#p1Red').value = p1Red;
+            document.querySelector('#p1Red_out').value = p1Red;
+            document.querySelector('#p1Green').value = p1Green;
+            document.querySelector('#p1Green_out').value = p1Green;
+            document.querySelector('#p1Blue').value = p1Blue;
+            document.querySelector('#p1Blue_out').value = p1Blue;
+            playerColorChange();
+        }
     } else {
         alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
     }
@@ -94,7 +118,7 @@ function setPlayer0Name() {
     console.log(p0Name);
     localStorage.setItem("player0Name", p0Name);
     document.getElementById("name-0").innerHTML = p0Name;
-    }
+}
 
 function setPlayer1Name() {
     var p1Name = document.getElementById("p1NameInput").value;
@@ -113,6 +137,24 @@ function clearPlayer1Name() {
     localStorage.removeItem("player1Name");
     document.getElementById("p1NameInput").value = "Player 2";
     document.getElementById("name-1").innerHTML = "Player 2";
+}
+
+function setP0Color() {
+    var p0Red = document.querySelector('#p0Red').value;
+    var p0Green = document.querySelector('#p0Green').value;
+    var p0Blue = document.querySelector('#p0Blue').value;
+    localStorage.setItem("p0Red", p0Red);
+    localStorage.setItem("p0Green", p0Green);
+    localStorage.setItem("p0Blue", p0Blue);   
+}
+
+function setP1Color() {
+    var p1Red = document.querySelector('#p1Red').value;
+    var p1Green = document.querySelector('#p1Green').value;
+    var p1Blue = document.querySelector('#p1Blue').value;
+    localStorage.setItem("p1Red", p1Red);
+    localStorage.setItem("p1Green", p1Green);
+    localStorage.setItem("p1Blue", p1Blue);   
 }
 
 function diceRoll(diceBounceTimes) {
@@ -212,7 +254,7 @@ function flipBack()
     voiceChoice = document.getElementById('voiceSelect');
     let newVoice = voiceChoice.selectedOptions;
     let output = "";
-    for (let i=0; i<newVoice.length; i++) {
+    for (let i = 0; i < newVoice.length; i++) {
         output = newVoice[i].label;
     }
     voice = (output);
@@ -295,36 +337,97 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
 }
 
 function playerColorChange() {
-var p0Red = document.querySelector('#p0Red').value;
-document.querySelector('#p0Red_out').value = p0Red;
-var p0Green = document.querySelector('#p0Green').value;
-document.querySelector('#p0Green_out').value = p0Green;
-var p0Blue = document.querySelector('#p0Blue').value;
-document.querySelector('#p0Blue_out').value = p0Blue;   
-var p1Red = document.querySelector('#p1Red').value;
-document.querySelector('#p1Red_out').value = p1Red;
-var p1Green = document.querySelector('#p1Green').value;
-document.querySelector('#p1Green_out').value = p1Green;
-var p1Blue = document.querySelector('#p1Blue').value;
-document.querySelector('#p1Blue_out').value = p1Blue;
-var p0Color = "rgb(" + p0Red +", " + p0Green + ", " + p0Blue + ")";
-var p1Color = "rgb(" + p1Red +", " + p1Green + ", " + p1Blue + ")";
-console.log("p0Color = rgb= " + p0Red, p0Green, p0Blue + ", p1Color = rgb= " + p1Red, p1Green, p1Blue);
-document.querySelector('body').style.background = "linear-gradient(90deg, " + p0Color + " 0%, " + p1Color + " 100%)";
-document.querySelector('.middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
-document.querySelector('.back .middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
-document.querySelector('#player-0-progressBar').style.background = p0Color ;
-document.querySelector('#player-0-box').style.background = p0Color ;
-document.querySelector('#name-0').style.color = p0Color ;
-document.querySelector('#roll-0').style.color = p0Color ;
-document.querySelector('#score-0').style.color = p0Color ;
-document.querySelector('#ion-player-0').style.color = p0Color ;
-document.querySelector('#roll-0').style.color = p0Color ;
-document.querySelector('#player-1-progressBar').style.background = p1Color ;
-document.querySelector('#player-1-box').style.background = p1Color ;
-document.querySelector('#name-1').style.color = p1Color ;
-document.querySelector('#roll-1').style.color = p1Color ;
-document.querySelector('#score-1').style.color = p1Color ;
-document.querySelector('#ion-player-1').style.color = p1Color ;
-document.querySelector('#roll-1').style.color = p1Color ;
+    var p0Red = document.querySelector('#p0Red').value;
+    document.querySelector('#p0Red_out').value = p0Red;
+    var p0Green = document.querySelector('#p0Green').value;
+    document.querySelector('#p0Green_out').value = p0Green;
+    var p0Blue = document.querySelector('#p0Blue').value;
+    document.querySelector('#p0Blue_out').value = p0Blue;
+    var p1Red = document.querySelector('#p1Red').value;
+    document.querySelector('#p1Red_out').value = p1Red;
+    var p1Green = document.querySelector('#p1Green').value;
+    document.querySelector('#p1Green_out').value = p1Green;
+    var p1Blue = document.querySelector('#p1Blue').value;
+    document.querySelector('#p1Blue_out').value = p1Blue;
+    var p0Color = "rgb(" + p0Red + ", " + p0Green + ", " + p0Blue + ")";
+    var p1Color = "rgb(" + p1Red + ", " + p1Green + ", " + p1Blue + ")";
+    console.log("p0Color = rgb= " + p0Red, p0Green, p0Blue + ", p1Color = rgb= " + p1Red, p1Green, p1Blue);
+    document.querySelector('body').style.background = "linear-gradient(90deg, " + p0Color + " 0%, " + p1Color + " 100%)";
+    document.querySelector('.middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
+    document.querySelector('.back .middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
+    document.querySelector('#player-0-progressBar').style.background = p0Color;
+    document.querySelector('#player-0-box').style.background = p0Color;
+    document.querySelector('#name-0').style.color = p0Color;
+    document.querySelector('#roll-0').style.color = p0Color;
+    document.querySelector('#score-0').style.color = p0Color;
+    document.querySelector('#p0currentLabel').style.color = "white";
+    document.querySelector('#current-0').style.color = "white";
+    document.querySelector('#ion-player-0').style.color = p0Color;
+    document.querySelector('#roll-0').style.color = p0Color;
+    document.querySelector('#player-1-progressBar').style.background = p1Color;
+    document.querySelector('#player-1-box').style.background = p1Color;
+    document.querySelector('#name-1').style.color = p1Color;
+    document.querySelector('#roll-1').style.color = p1Color;
+    document.querySelector('#score-1').style.color = p1Color;
+    document.querySelector('#p1currentLabel').style.color = "white";
+    document.querySelector('#current-1').style.color = "white";
+    document.querySelector('#ion-player-1').style.color = p1Color;
+    document.querySelector('#roll-1').style.color = p1Color;
+    document.querySelector('.btn-new').style.color = "white";
+    document.querySelector('.ion-ios-plus-outline').style.color = "white";
+    document.querySelector('.btn-hold').style.color = "white";
+    document.querySelector('.ion-ios-download-outline').style.color = "white";
+    document.querySelector('.btn-settings').style.color = "white";
+    document.querySelector('.ion-ios-settings-outline').style.color = "white";
+    document.querySelector('.btn-play').style.color = "white";
+    document.querySelector('.ion-ios-settings-outline').style.color = "white";
+    var p0ContrastFactor = Math.round(((parseInt(p0Red) * 299) +
+            (parseInt(p0Green) * 587) +
+            (parseInt(p0Blue) * 114)) / 1000);
+    var p1ContrastFactor = Math.round(((parseInt(p1Red) * 299) +
+            (parseInt(p1Green) * 587) +
+            (parseInt(p1Blue) * 114)) / 1000);
+    console.log("p0 contrastFactor = " + p0ContrastFactor);
+    console.log("p1 contrastFactor = " + p1ContrastFactor);
+    if (p0ContrastFactor > 180) {
+        player0Contrast();
+    }
+    if (p1ContrastFactor > 180) {
+        player1Contrast();
+    }
+    if ((p0ContrastFactor > 180) && (p1ContrastFactor > 180)) {
+        middleGroundContrast();
+    }
 }
+
+function player0Contrast() {
+    document.querySelector('#name-0').style.color = "black";
+    document.querySelector('#roll-0').style.color = "black";
+    document.querySelector('#score-0').style.color = "black";
+    document.querySelector('#p0currentLabel').style.color = "black";
+    document.querySelector('#current-0').style.color = "black";
+    document.querySelector('#ion-player-0').style.color = "black";
+    document.querySelector('#roll-0').style.color = "black";
+}
+
+function player1Contrast() {
+    document.querySelector('#name-1').style.color = "black";
+    document.querySelector('#roll-1').style.color = "black";
+    document.querySelector('#score-1').style.color = "black";
+    document.querySelector('#p1currentLabel').style.color = "black";
+    document.querySelector('#current-1').style.color = "black";
+    document.querySelector('#ion-player-1').style.color = "black";
+    document.querySelector('#roll-1').style.color = "black";
+}
+
+function middleGroundContrast() {
+    document.querySelector('.btn-new').style.color = "black";
+    document.querySelector('.ion-ios-plus-outline').style.color = "black";
+    document.querySelector('.btn-hold').style.color = "black";
+    document.querySelector('.ion-ios-download-outline').style.color = "black";
+    document.querySelector('.btn-settings').style.color = "black";
+    document.querySelector('.ion-ios-settings-outline').style.color = "black";
+    document.querySelector('.btn-play').style.color = "black";
+    document.querySelector('.ion-ios-settings-outline').style.color = "black";
+}
+

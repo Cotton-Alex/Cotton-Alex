@@ -89,7 +89,7 @@ body {
 **********************************************/
 
 .player-name {
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -126,18 +126,18 @@ body {
 
 .active .player-name { font-weight: 300; }
 
-.active .player-name::after {
+.active .player-name:after {
     content: "\2022";
     font-size: 35px;
     position: absolute;
-    color: #EB4D4D;
+    color: inherit;
     top: -4px;
     right: 0px;
 }
 
-.active #name-1::after {
+/*.active #name-1:after {
     color: #2C729E;
-}
+}*/
 
 #player-0-box {
     background-color: #EB4D4D;

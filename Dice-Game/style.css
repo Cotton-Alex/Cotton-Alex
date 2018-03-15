@@ -146,6 +146,7 @@ body {
     margin: 0 auto;
     padding: 12px;
     text-align: center;
+    transition: outline .75s ease-in-out;
 }
 
 #player-1-box {
@@ -155,6 +156,7 @@ body {
     margin: 0 auto;
     padding: 12px;
     text-align: center;
+    transition: outline .75s ease-in-out;
 }
 
 .player-current-label {

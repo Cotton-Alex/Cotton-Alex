@@ -42,7 +42,9 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         document.querySelector('#roll-0').style.display = 'none';
         document.querySelector('#roll-1').style.display = 'none';
         document.querySelector('.dice').style.display = 'none';
+        document.querySelector('#player-' + activePlayer + '-box').style.outline = 0;
     } else {
+        document.querySelector('#player-' + activePlayer + '-box').style.outline = 0;
         nextPlayer();
     }
 });
@@ -330,8 +332,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
                 var pRed = document.querySelector("#p" + activePlayer + "Red").value;
                 var pGreen = document.querySelector("#p" + activePlayer + "Green").value;
                 var pBlue = document.querySelector("#p" + activePlayer + "Blue").value;
-                console.log("outline: " + roundScore + "px solid rgb(" + pRed + ", " + pGreen + ", " + pBlue + ")");
-                document.querySelector('#player-' + activePlayer + '-box').style.transform = "outline: " + roundScore + "px solid rgb(" + pRed + ", " + pGreen + ", " + pBlue + ")";
+                document.querySelector('#player-' + activePlayer + '-box').style.outline = roundScore + "px solid rgb(" + pRed + ", " + pGreen + ", " + pBlue + ")";
                 var totalPlusCurrent = scores[activePlayer] + roundScore;
                 if (totalPlusCurrent >= winScore) {
                     totalPlusCurrent = winScore;
@@ -340,6 +341,7 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
             } else {
                 //next player
                 roundScore = 0;
+                document.querySelector('#player-' + activePlayer + '-box').style.outline = 0;
                 document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + "%";
                 nextPlayer();
             }

@@ -193,7 +193,7 @@ button:focus {
     outline: none;
 }
 
-.nameSave {
+.nameSave, .colorSave {
     width: 33pt;
     float: right;
     display: inline-block;
@@ -211,11 +211,11 @@ button:focus {
     
 }
 
-.nameSave:hover {
+.nameSave:hover, .colorSave:hover {
     font-weight: 600;
 }
 
-.nameSave:focus {
+.nameSave:focus, .colorSave:focus {
     outline: none;
 }
 
@@ -228,7 +228,7 @@ input[type="text"] {
     font-weight: 300;
 }
 
-.nameClear {
+.nameClear, .colorClear{
     width: 40pt;
     float: right;
     display: inline-block;
@@ -246,11 +246,11 @@ input[type="text"] {
     
 }
 
-.nameClear:hover {
+.nameClear:hover, .colorClear:hover {
     font-weight: 600;
 }
 
-.nameClear:focus {
+.nameClear:focus, .colorClear:focus {
     outline: none;
 }
 

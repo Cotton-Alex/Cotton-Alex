@@ -9,12 +9,6 @@ console.log("voice = " + voice);
 voicelist = responsiveVoice.getVoices();
 console.log(voicelist);
 
-//document.getElementById('roll-0').addEventListener("click", responsiveVoice.clickEvent);
-//document.getElementById('roll-1').addEventListener("click", responsiveVoice.clickEvent);
-
-//document.querySelector('#roll-0').addEventListener("click", responsiveVoice.clickEvent);
-//document.querySelector('#roll-1').addEventListener("click", responsiveVoice.clickEvent);
-
 var select = document.getElementById("voiceSelect"),
         voiceList = responsiveVoice.getVoices();
 
@@ -64,7 +58,6 @@ function voiceOnOff() {
     } else {
         return;
     }
-
 }
 
 function checkLocalStorage() {
@@ -145,7 +138,7 @@ function setP0Color() {
     var p0Blue = document.querySelector('#p0Blue').value;
     localStorage.setItem("p0Red", p0Red);
     localStorage.setItem("p0Green", p0Green);
-    localStorage.setItem("p0Blue", p0Blue);   
+    localStorage.setItem("p0Blue", p0Blue);
 }
 
 function setP1Color() {
@@ -154,7 +147,27 @@ function setP1Color() {
     var p1Blue = document.querySelector('#p1Blue').value;
     localStorage.setItem("p1Red", p1Red);
     localStorage.setItem("p1Green", p1Green);
-    localStorage.setItem("p1Blue", p1Blue);   
+    localStorage.setItem("p1Blue", p1Blue);
+}
+
+function resetP0Color() {
+    localStorage.removeItem("p0Red");
+    localStorage.removeItem("p0Green");
+    localStorage.removeItem("p0Blue");
+    document.getElementById("p0Red").value = 235;
+    document.getElementById("p0Green").value = 77;
+    document.getElementById("p0Blue").value = 77;
+    playerColorChange();
+}
+
+function resetP1Color() {
+    localStorage.removeItem("p1Red");
+    localStorage.removeItem("p1Green");
+    localStorage.removeItem("p1Blue");
+    document.getElementById("p1Red").value = 44;
+    document.getElementById("p1Green").value = 114;
+    document.getElementById("p1Blue").value = 158;
+    playerColorChange();
 }
 
 function diceRoll(diceBounceTimes) {
@@ -189,7 +202,6 @@ function diceRoll(diceBounceTimes) {
             console.log('diceRoll i = ' + i);
             //time delay between each iteration
         }, 200 * i);
-
     }
 }
 
@@ -219,8 +231,6 @@ function init() {
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
-    document.querySelector('#name-0').textContent = 'Player 1';
-    document.querySelector('#name-1').textContent = 'Player 2';
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
@@ -260,9 +270,6 @@ function flipBack()
     voice = (output);
     console.log("voice = " + voice);
     responsiveVoice.setDefaultVoice(voice);
-//    output.innerHTML = output;
-//    console.log("output = " + output);
-//    console.log("new voice = " + voice);
     document.querySelector('.flipWrapper').style.webkitTransform = "rotatey(0deg)";
     document.querySelector('.flipWrapper').style.msTransform = "rotatey(0deg)";
     document.querySelector('.flipWrapper').style.MozTransform = "rotatey(0deg)";
@@ -320,12 +327,16 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
                 //add score
                 roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
+                var pRed = document.querySelector("#p" + activePlayer + "Red").value;
+                var pGreen = document.querySelector("#p" + activePlayer + "Green").value;
+                var pBlue = document.querySelector("#p" + activePlayer + "Blue").value;
+                console.log("outline: " + roundScore + "px solid rgb(" + pRed + ", " + pGreen + ", " + pBlue + ")");
+                document.querySelector('#player-' + activePlayer + '-box').style.transform = "outline: " + roundScore + "px solid rgb(" + pRed + ", " + pGreen + ", " + pBlue + ")";
                 var totalPlusCurrent = scores[activePlayer] + roundScore;
                 if (totalPlusCurrent >= winScore) {
                     totalPlusCurrent = winScore;
                 }
                 document.querySelector('#player-' + activePlayer + '-progressBar').style.height = totalPlusCurrent + "%";
-//                document.querySelector('#player-' + activePlayer + '-progressBar').style.background = "linear-gradient(90deg, #EB4D4D" + 25 + "%, #2C729E " +75 + "%)";
             } else {
                 //next player
                 roundScore = 0;
@@ -356,6 +367,7 @@ function playerColorChange() {
     document.querySelector('.middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
     document.querySelector('.back .middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
     document.querySelector('#player-0-progressBar').style.background = p0Color;
+    document.querySelector('#player-0-box').style.background = p0Color;
     document.querySelector('#player-0-box').style.background = p0Color;
     document.querySelector('#name-0').style.color = p0Color;
     document.querySelector('#roll-0').style.color = p0Color;

@@ -159,6 +159,10 @@ body {
     transition: outline .75s ease-in-out;
 }
 
+.player-current-box {
+    transition: outline .75s ease-in-out;
+}
+
 .player-current-label {
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -295,7 +299,7 @@ i {
 
 .btn-roll {
     width: 100%;
-    margin: 18px 50% 0 50%;
+    margin: 50px 50% 0 50%;
     font-size: 20px;
     padding: 12px;
     color: #EB4D4D;

@@ -318,10 +318,10 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
             //random dice location
             document.getElementById('diceID').style.left = (0 + (Math.random() * 60)) + "%";
             document.getElementById('diceID').style.top = (45 + (Math.random() * 160)) + "px";
-            // voice comment on dice roll
-            var commentNumber = (Math.floor(Math.random() * 6));
             // VoiceOnOff check
             if (document.getElementById("voiceOnOff").innerHTML === "Voice Off") {
+                // voice comment on dice roll
+                var commentNumber = (Math.floor(Math.random() * 6));
                 jsonParse("diceComments.json", dice, commentNumber, "true");
             }
             //update the round score IF rolled number was not 1
@@ -329,6 +329,22 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
                 //add score
                 roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
+
+
+
+//                var diceCounter = dice;
+//                console.log("diceCounter = " + diceCounter);
+//                for (d = 0; d,diceCounter; d++) {
+//                    console.log("d = " + d);
+//                    setTimeout(function () {
+//                        roundScore -= 1;
+//                        console.log("roundScore - 1 = " + roundScore);
+//                        document.querySelector('#current-' + activePlayer).textContent = roundScore; 
+//                    }, 400);
+//                }
+
+
+
                 var pRed = document.querySelector("#p" + activePlayer + "Red").value;
                 var pGreen = document.querySelector("#p" + activePlayer + "Green").value;
                 var pBlue = document.querySelector("#p" + activePlayer + "Blue").value;
@@ -338,10 +354,13 @@ for (var i = 0; i, playerBtnRoll.length; i++) {
                     totalPlusCurrent = winScore;
                 }
                 document.querySelector('#player-' + activePlayer + '-progressBar').style.height = totalPlusCurrent + "%";
+                console.log("roundScore before else = " + roundScore);
             } else {
                 //next player
+                console.log("roundScore after else = " + roundScore);
                 roundScore = 0;
-                document.querySelector('#player-' + activePlayer + '-box').style.outline = 0;
+                console.log("roundScore after 0 = " + roundScore);
+                document.querySelector('#player-' + activePlayer + '-box').style.outline = scores[activePlayer] + "px solid rgb(" + pRed + ", " + pGreen + ", " + pBlue + ")";
                 document.querySelector('#player-' + activePlayer + '-progressBar').style.height = scores[activePlayer] + "%";
                 nextPlayer();
             }

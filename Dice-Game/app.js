@@ -396,7 +396,7 @@ function playerColorChange() {
     document.querySelector('.back .middleGround').style.background = "linear-gradient(90deg, " + p1Color + " 0%, " + p0Color + " 100%)";
     document.querySelector('#player-0-progressBar').style.background = p0Color;
     document.querySelector('#player-0-box').style.background = p0Color;
-    document.querySelector('#player-0-box').style.background = p0Color;
+    document.querySelector('#player-0-box').style.outline = roundScore + "px solid " + p0Color;
     document.querySelector('#name-0').style.color = p0Color;
     document.querySelector('#roll-0').style.color = p0Color;
     document.querySelector('#score-0').style.color = p0Color;
@@ -406,6 +406,7 @@ function playerColorChange() {
     document.querySelector('#roll-0').style.color = p0Color;
     document.querySelector('#player-1-progressBar').style.background = p1Color;
     document.querySelector('#player-1-box').style.background = p1Color;
+    document.querySelector('#player-1-box').style.outline = roundScore + "px solid " + p1Color;
     document.querySelector('#name-1').style.color = p1Color;
     document.querySelector('#roll-1').style.color = p1Color;
     document.querySelector('#score-1').style.color = p1Color;

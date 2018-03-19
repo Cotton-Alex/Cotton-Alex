@@ -52,11 +52,13 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 document.querySelector('#voiceOnOff').addEventListener('click', voiceOnOff);
 
 function voiceOnOff() {
-    console.log("inside toggleVoice function");
+    console.log("inside voiceOnOff function");
     if (document.getElementById("voiceOnOff").innerHTML === "Voice Off") {
         document.getElementById("voiceOnOff").innerHTML = "Voice On";
+        localStorage.setItem("voicePrefs", "voiceIsOff");
     } else if (document.getElementById("voiceOnOff").innerHTML === "Voice On") {
         document.getElementById("voiceOnOff").innerHTML = "Voice Off";
+        localStorage.setItem("voicePrefs", "voiceIsOn");
     } else {
         return;
     }
@@ -102,6 +104,11 @@ function checkLocalStorage() {
             document.querySelector('#p1Blue').value = p1Blue;
             document.querySelector('#p1Blue_out').value = p1Blue;
             playerColorChange();
+        }
+        if (localStorage.voicePrefs !== undefined) {
+            if (localStorage.voicePrefs === "voiceIsOff") {
+                document.getElementById("voiceOnOff").innerHTML = "Voice On";
+            } 
         }
     } else {
         alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");

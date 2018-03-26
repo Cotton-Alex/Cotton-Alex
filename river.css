@@ -208,6 +208,16 @@ dark blue - #00ccff
     appearance: none;
 }
 
+.btn:focus {
+    /*position: absolute;*/
+    background-color: #00aadd;
+    box-shadow: 0 0px #333;
+    transform: translateY(3px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .btn:hover {
     /*position: absolute;*/
     background-color: #4ddbff;

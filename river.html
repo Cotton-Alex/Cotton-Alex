@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <title>cit261</title>
 
         <!-- Mobile Specific Metas -->
@@ -10,7 +10,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
 
         <!-- FONT -->
-        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
         <!-- CSS -->
         <link rel="stylesheet" href="river.css">
@@ -22,7 +22,7 @@
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>-->
     </head>
     <!--<body>-->
-    <body onload="draw(), checkLocalStorage()">
+    <body onload="checkLocalStorage()">
         <section class="container">
             <div class="card">
                 <div class="front">
@@ -58,14 +58,14 @@
         <div id="topBank">
             <button class="btn" type="button" id="menuOn" onClick="menuOn()">Menu</button>
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="touchScreenMove('carrot')" on onClick="touchScreenMove('carrot')" ondragstart="drag(event)">
+                <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="touchScreenMove('carrot')" onClick="touchScreenMove('carrot')" ondragstart="drag(event)">
                 <img id="rabbit" src="images/rabbit.png" alt="rabbit" draggable="true" ontouchstart="touchScreenMove('rabbit')" onClick="touchScreenMove('rabbit')" ondragstart="drag(event)">
                 <img id="fox" src="images/fox.png" alt="fox" draggable="true" ontouchstart="touchScreenMove('fox')" onClick="touchScreenMove('fox')" ondragstart="drag(event)">
             </div>
         </div>
         <div id="water">
             <canvas id="canvasWater"></canvas>
-            <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)"></div>
+            <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)" ></div>
             <div id="boatFront" ondragover="allowDropBoat(event)" ondragleave="showBoatFront(event)"></div>
             <button class="btn" type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>
         </div>

@@ -40,7 +40,9 @@ document.querySelector('#menuOn').addEventListener('click', menuOn);
 function menuOn() {
     console.log("menuOn");
     document.querySelector(".container").style.left = "50%";
-    document.querySelector(".blur").style.filter = "blur(5px)";
+    document.querySelector("#topBank").style.filter = "blur(5px)";
+    document.querySelector("#water").style.filter = "blur(5px)";
+    document.querySelector("#bottomBank").style.filter = "blur(5px)";
 }
 
 document.querySelector('#play').addEventListener('click', menuOff);
@@ -48,7 +50,9 @@ document.querySelector('#play').addEventListener('click', menuOff);
 function menuOff() {
     console.log("menuOff");
     document.querySelector(".container").style.left = "-150%";
-    document.querySelector("#blur").style.filter = "blur(0px)";
+    document.querySelector("#topBank").style.filter = "blur(0px)";
+    document.querySelector("#water").style.filter = "blur(0px)";
+    document.querySelector("#bottomBank").style.filter = "blur(0px)";
 }
 
 function flip() {
@@ -101,7 +105,7 @@ function checkLocalStorage() {
             voice = ('US English Female');
             console.log("voice = " + voice);
         }
-    
+
     } else {
         alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
     }
@@ -439,9 +443,19 @@ function checkWin() {
 }
 
 
-function draw(x, y) {
+function draw() {
     var canvas = document.getElementById("canvasWater");
     var ctx = canvas.getContext("2d");
+    var width = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+    var height = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+    console.log("width = " + width);
+    console.log("height = " + height);
+//    
 //    ctx.mozImageSmoothingEnabled = false;
 //    ctx.webkitImageSmoothingEnabled = false;
 //    ctx.msImageSmoothingEnabled = false;
@@ -468,177 +482,186 @@ function draw(x, y) {
         waterFlow = 0;
     }
 
-    for (x = -100; x <= 600; x += 1) {
-        y = -10 - Math.sin((x - waterFlow) * Math.PI / 45) * 9;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#4ddbff";
-    ctx.fill();
-    ctx.beginPath();
+//    for (x = -100; x <= 600; x += 1) {
+//        y = -10 - Math.sin((x - waterFlow) * Math.PI / 45) * 9;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#4ddbff";
+//    ctx.fill();
+//    ctx.beginPath();
 
-    for (x = -100; x <= 600; x += 1) {
-        y = 0 - Math.sin((x - waterFlow + 20) * Math.PI / 45) * 12;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#00ccff";
-    ctx.fill();
-    ctx.beginPath();
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 0 - Math.sin((x - waterFlow + 20) * Math.PI / 45) * 12;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#00ccff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 10 - Math.sin((x + waterFlow) * Math.PI / 45) * 8;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#99ebff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 20 - Math.sin((x - waterFlow * 2) * Math.PI / 45) * 10;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#4ddbff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 30 - Math.sin((x + waterFlow) * Math.PI / 45) * 12;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#00ccff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//var red_fish_left = new Image();
+//    red_fish_left.addEventListener('load', function () {
+//        ctx.drawImage(red_fish_left,125,125,100,100);
+//    }, false);
+//    
+//    red_fish_left.src = 'images/red_fish_left.png';
+//    console.log(red_fish_left.src);
+//
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 40 - Math.sin((x - waterFlow + 10) * Math.PI / 45) * 8;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#99ebff";
+//    ctx.fill();
+//    ctx.beginPath();
 
-    for (x = -100; x <= 600; x += 1) {
-        y = 10 - Math.sin((x + waterFlow) * Math.PI / 45) * 8;
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 50 - Math.sin((x + waterFlow * 2) * Math.PI / 45) * 11;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#4ddbff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 60 - Math.sin((x - waterFlow) * Math.PI / 45) * 9;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#00ccff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 70 - Math.sin((x + waterFlow) * Math.PI / 45) * 12;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#99ebff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 80 - Math.sin((x - waterFlow - 15) * Math.PI / 45) * 9;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#4ddbff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 90 - Math.sin((x + waterFlow) * Math.PI / 45) * 11;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#00ccff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 100 - Math.sin((x - waterFlow * 2) * Math.PI / 45) * 8;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#99ebff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 110 - Math.sin((x + waterFlow + 20) * Math.PI / 45) * 10;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#4ddbff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+//    for (x = -100; x <= 600; x += 1) {
+//        y = 120 - Math.sin((x - waterFlow) * Math.PI / 45) * 12;
+//        ctx.lineTo(x, y);
+//    }
+//    ctx.lineTo(600, 500);
+//    ctx.lineTo(-100, 500);
+//    ctx.fillStyle = "#00ccff";
+//    ctx.fill();
+//    ctx.beginPath();
+//
+    for (x = -100; x <= width; x += 1) {
+        y = ((height / 20) * 8) - Math.sin((x + waterFlow + 35) * Math.PI / 45) * 8;
         ctx.lineTo(x, y);
     }
-    ctx.lineTo(600, 500);
+    ctx.lineTo(width, 500);
     ctx.lineTo(-100, 500);
     ctx.fillStyle = "#99ebff";
     ctx.fill();
     ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 20 - Math.sin((x - waterFlow * 2) * Math.PI / 45) * 10;
+//
+    for (x = -100; x <= width; x += 1) {
+        y = ((height / 20) * 9) - Math.sin((x - waterFlow) * Math.PI / 45) * 10;
         ctx.lineTo(x, y);
     }
-    ctx.lineTo(600, 500);
+    ctx.lineTo(width, 500);
     ctx.lineTo(-100, 500);
     ctx.fillStyle = "#4ddbff";
     ctx.fill();
     ctx.beginPath();
 
-    for (x = -100; x <= 600; x += 1) {
-        y = 30 - Math.sin((x + waterFlow) * Math.PI / 45) * 12;
+    for (x = 0; x <= width; x += 1) {
+        y = ((height / 20) * 10) - Math.sin((x + waterFlow * 2) * Math.PI / 45) * 15;
         ctx.lineTo(x, y);
     }
-    ctx.lineTo(600, 500);
+    ctx.lineTo(width, 500);
     ctx.lineTo(-100, 500);
     ctx.fillStyle = "#00ccff";
     ctx.fill();
     ctx.beginPath();
 
-    for (x = -100; x <= 600; x += 1) {
-        y = 40 - Math.sin((x - waterFlow + 10) * Math.PI / 45) * 8;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#99ebff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 50 - Math.sin((x + waterFlow * 2) * Math.PI / 45) * 11;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#4ddbff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 60 - Math.sin((x - waterFlow) * Math.PI / 45) * 9;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#00ccff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 70 - Math.sin((x + waterFlow) * Math.PI / 45) * 12;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#99ebff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 80 - Math.sin((x - waterFlow - 15) * Math.PI / 45) * 9;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#4ddbff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 90 - Math.sin((x + waterFlow) * Math.PI / 45) * 11;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#00ccff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 100 - Math.sin((x - waterFlow * 2) * Math.PI / 45) * 8;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#99ebff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 110 - Math.sin((x + waterFlow + 20) * Math.PI / 45) * 10;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#4ddbff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 120 - Math.sin((x - waterFlow) * Math.PI / 45) * 12;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#00ccff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 130 - Math.sin((x + waterFlow + 35) * Math.PI / 45) * 8;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#99ebff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 140 - Math.sin((x - waterFlow) * Math.PI / 45) * 10;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#4ddbff";
-    ctx.fill();
-    ctx.beginPath();
-
-    for (x = -100; x <= 600; x += 1) {
-        y = 150 - Math.sin((x + waterFlow * 2) * Math.PI / 45) * 11;
-        ctx.lineTo(x, y);
-    }
-    ctx.lineTo(600, 500);
-    ctx.lineTo(-100, 500);
-    ctx.fillStyle = "#00ccff";
-    ctx.fill();
-    ctx.beginPath();
-
-    var loopTimer = setTimeout('draw()', 60);
+    var loopTimer = setTimeout('draw()', 120);
 }
 
 function reset() {

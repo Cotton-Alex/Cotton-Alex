@@ -11,9 +11,9 @@ var rabbitBite = false;
 var win = false;
 var carrotSpeak = false;
 var rabbitSpeak = false;
-var responsiveVoice, commentNumber, response, voiceList, voice;
+var responsiveVoice, commentNumber, response, voiceList, voice, voiceChoice, storedVoice;
 
-voice = ('US English Female');
+//voice = ('US English Female');
 responsiveVoice.setDefaultVoice(voice);
 console.log("voice = " + voice);
 
@@ -38,15 +38,17 @@ console.log("select = " + select);
 document.querySelector('#menuOn').addEventListener('click', menuOn);
 
 function menuOn() {
-    console.log(menuOn);
+    console.log("menuOn");
     document.querySelector(".container").style.left = "50%";
+    document.querySelector(".blur").style.filter = "blur(5px)";
 }
- 
-document.querySelector('#play').addEventListener('click', menuOff); 
- 
+
+document.querySelector('#play').addEventListener('click', menuOff);
+
 function menuOff() {
     console.log("menuOff");
     document.querySelector(".container").style.left = "-150%";
+    document.querySelector("#blur").style.filter = "blur(0px)";
 }
 
 function flip() {
@@ -63,10 +65,11 @@ function flipBack() {
     voiceChoice = document.getElementById('voiceSelect');
     let newVoice = voiceChoice.selectedOptions;
     let output = "";
-    for (let i=0; i<newVoice.length; i++) {
+    for (let i = 0; i < newVoice.length; i++) {
         output = newVoice[i].label;
     }
     voice = (output);
+    localStorage.setItem("storedVoice", voice);
     console.log("voice = " + voice);
     responsiveVoice.setDefaultVoice(voice);
 //    output.innerHTML = output;
@@ -83,16 +86,40 @@ function checkLocalStorage() {
     if (typeof (localStorage) !== "undefined") { //checking for browser compatibility with local storage
         if (localStorage.showMenu !== null) {
             var displayMenu = localStorage.getItem('showMenu');
-                if (displayMenu === false) {
-                     document.getElementById("menu").setAttribute.left = "-150%";
-                } else {
-                    return;
-                }
-        } else {
-            return;
+            if (displayMenu === false) {
+                document.getElementById("menu").setAttribute.left = "-150%";
+            }
         }
+        if (localStorage.voicePrefs === "voiceIsOff") {
+            document.getElementById("voiceOnOff").innerHTML = "Voice On";
+        }
+        if (localStorage.storedVoice !== undefined) {
+            voice = localStorage.storedVoice;
+            console.log("voice = " + voice);
+        }
+        if (localStorage.storedVoice === undefined) {
+            voice = ('US English Female');
+            console.log("voice = " + voice);
+        }
+    
     } else {
         alert("Some features on this site are incompatible with your browser. For the best experience please update this browser or use a different one.");
+    }
+}
+
+
+document.querySelector('#voiceOnOff').addEventListener('click', voiceOnOff);
+
+function voiceOnOff() {
+    console.log("inside voiceOnOff function");
+    if (document.getElementById("voiceOnOff").innerHTML === "Voice Off") {
+        document.getElementById("voiceOnOff").innerHTML = "Voice On";
+        localStorage.setItem("voicePrefs", "voiceIsOff");
+    } else if (document.getElementById("voiceOnOff").innerHTML === "Voice On") {
+        document.getElementById("voiceOnOff").innerHTML = "Voice Off";
+        localStorage.setItem("voicePrefs", "voiceIsOn");
+    } else {
+        return;
     }
 }
 
@@ -407,7 +434,7 @@ function checkWin() {
             commentNumber = (Math.floor(Math.random() * 12));
             jsonParse("riverComments.json", 2, commentNumber, "true");
             win = true;
-        }, 700);
+        }, 5000);
     }
 }
 
@@ -415,10 +442,10 @@ function checkWin() {
 function draw(x, y) {
     var canvas = document.getElementById("canvasWater");
     var ctx = canvas.getContext("2d");
-    ctx.mozImageSmoothingEnabled = false;
-    ctx.webkitImageSmoothingEnabled = false;
-    ctx.msImageSmoothingEnabled = false;
-    ctx.ImageSmoothingEnabled = false;
+//    ctx.mozImageSmoothingEnabled = false;
+//    ctx.webkitImageSmoothingEnabled = false;
+//    ctx.msImageSmoothingEnabled = false;
+//    ctx.ImageSmoothingEnabled = false;
 
 //    var red_fish_left = new Image();
 //    red_fish_left.addEventListener('load', function () {

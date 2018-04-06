@@ -66,6 +66,7 @@ body {
         font-weight: bold;
         font-size: 140px;*/
     /*position: absolute;*/
+    filter: blur(0px);
     transition: transform 1s ease;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -303,6 +304,14 @@ dark blue - #00ccff
 }
 
 /*---- BODY  ----  BODY  ----  BODY  ----  BODY  ----  BODY  ----  BODY*/
+
+.groundBlur {
+  -webkit-animation: blur 0.5s linear forwards;
+  -moz-animation: blur 0.5s linear forwards;
+  -ms-animation: blur 0.5s linear forwards;
+  -o-animation: blur 0.5s linear forwards;
+  animation: blur 0.5s linear forwards;
+}
 
 #crossRiver {
     z-index: 5;

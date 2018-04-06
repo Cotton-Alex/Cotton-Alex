@@ -17,45 +17,46 @@
         <link rel="stylesheet" href="normalize.css">
 
         <!-- SCRIPTS -->
-        <script type="text/javascript" src="river.js"></script>
-        <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>-->
+        <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>
     </head>
     <!--<body>-->
-    <body onload="checkLocalStorage()">
+    <body onload="draw(), checkLocalStorage()">
         <section class="container">
             <div class="card">
                 <div class="front">
                     <div id="menuTitle">
-                                <div><strong>The Carrot,</strong></div><br>
-                                <div><strong>The Rabbit,</strong></div><br>
-                                <div><strong>and the Fox.</strong></div>
-                            </div>
-                            <div id="instructions"><p>The carrot, rabbit, and fox is an old
-                                    riddle. You play the part of the farmer who is
-                                    trying to get the carrot, rabbit, and fox across the
-                                    river without any of them getting eaten.
-                                    Do you have what it takes?</p></div>
-                            <div class="menuButtons">
-                                <button class="btn" type="button" id="play" onClick="menuOff()">Play</button>
-                                <br>
-                                <button class="btn" type="button" id="settings" onClick="flip()">Settings</button>
-                                <button class="btn" type="button" id="menuReset" onClick="reset()">Reset</button>                                
-                            </div>
+                        <div><strong>The Carrot,</strong></div><br>
+                        <div><strong>The Rabbit,</strong></div><br>
+                        <div><strong>and the Fox.</strong></div>
+                    </div>
+                    <div id="instructions"><p>The carrot, rabbit, and fox is an old
+                            riddle. You play the part of the farmer who is
+                            trying to get the carrot, rabbit, and fox across the
+                            river without any of them getting eaten.
+                            Do you have what it takes?</p></div>
+                    <div class="menuButtons">
+                        <button class="btn" type="button" id="play" onClick="menuOff()">Play</button>
+                        <br>
+                        <button class="btn" type="button" id="settings" onClick="flip()">Settings</button>
+                        <button class="btn" type="button" id="menuReset" onClick="reset()">Reset</button>                                
+                    </div>
                 </div>
                 <div class="back">
                     <div id="selectWrap">
-                        <select id="voiceSelect"></select>
-                        <br>
+                        <div id="voiceSection">
+                            <select id="voiceSelect"></select>
+                            <br>
                             <button id="voiceOnOff">Voice Off</button>
+                        </div>
                     </div>
-                            <div class="menuButtons">
-                                <button class="btn" type="button" id="Save" ontouchstart="flipBack()" onClick="flipBack()">Save</button>
-                            </div>
+                    <div class="menuButtons">
+                        <button class="btn" type="button" id="Save" ontouchstart="flipBack()" onClick="flipBack()">Save</button>
+                    </div>
                 </div>
             </div>
         </section>
-        <div id="topBank">
+        <div id="topBank" class="groundBlur">
             <button class="btn" type="button" id="menuOn" onClick="menuOn()">Menu</button>
             <div id="topDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <img id="carrot" src="images/carrotBright.png" alt="carrot" draggable="true" ontouchstart="touchScreenMove('carrot')" onClick="touchScreenMove('carrot')" ondragstart="drag(event)">
@@ -63,19 +64,20 @@
                 <img id="fox" src="images/fox.png" alt="fox" draggable="true" ontouchstart="touchScreenMove('fox')" onClick="touchScreenMove('fox')" ondragstart="drag(event)">
             </div>
         </div>
-        <div id="water">
+        <div id="water" class="groundBlur">
             <canvas id="canvasWater"></canvas>
             <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)" ></div>
             <div id="boatFront" ondragover="allowDropBoat(event)" ondragleave="showBoatFront(event)"></div>
             <button class="btn" type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>
         </div>
 
-        <div id="bottomBank">
+        <div id="bottomBank" class="groundBlur">
             <button class="btn" type="button" id="reset" onClick="reset()">Reset</button>
             <div id="bottomDrop" ondrop=null ondragover=null></div>
         </div>
         <!--</div>-->
         <br>
         <br>
+        <script src="river.js"></script>
     </body>
 </html>

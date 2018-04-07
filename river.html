@@ -21,7 +21,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>
     </head>
     <!--<body>-->
-    <body onload="draw(), checkLocalStorage()">
+    <body onload="checkLocalStorage(), widthAndHeight(), draw()">
         <section class="container">
             <div class="card">
                 <div class="front">
@@ -65,7 +65,8 @@
             </div>
         </div>
         <div id="water" class="groundBlur">
-            <canvas id="canvasWater" width="1200px" height="1200px"></canvas>
+<!--            <canvas id="canvasWater" width="1200" height="1200"></canvas>-->
+            <canvas id="canvasWater"></canvas>
             <div id="boat" ondrop="dropBoat(event)" ondragover="allowDrop(event)" ></div>
             <div id="boatFront" ondragover="allowDropBoat(event)" ondragleave="showBoatFront(event)"></div>
             <button class="btn" type="button" id="crossRiver" onClick="boatCross()">Cross the river</button>

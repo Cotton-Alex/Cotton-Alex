@@ -21,7 +21,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.2/screenfull.min.js"></script>
     </head>
     <!--<body>-->
-    <body onload="checkLocalStorage(), widthAndHeight(), draw()">
+    <body onload="checkLocalStorage(), widthAndHeight(), draw()" onresize="widthAndHeight()">
         <section class="container">
             <div class="card">
                 <div class="front">

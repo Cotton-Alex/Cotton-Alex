@@ -448,11 +448,11 @@ function checkWin() {
     }
 }
 
-window.addEventListener("resize", widthAndHeight);
-
-window.onresize = function() {
-    widthAndHeight();
-};
+//window.addEventListener("resize", widthAndHeight);
+//
+//window.onresize = function() {
+//    widthAndHeight();
+//};
 
 function widthAndHeight(){
     

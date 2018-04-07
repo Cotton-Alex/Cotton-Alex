@@ -444,15 +444,15 @@ function checkWin() {
             commentNumber = (Math.floor(Math.random() * 12));
             jsonParse("riverComments.json", 2, commentNumber, "true");
             win = true;
-        }, 5000);
+        }, 500);
     }
 }
 
-window.addEventListener('resize', widthAndHeight());
+window.addEventListener("resize", widthAndHeight);
 
-window.onresize = function() {
-    widthAndHeight();
-};
+//window.onresize = function() {
+//    widthAndHeight();
+//};
 
 function widthAndHeight(){
     

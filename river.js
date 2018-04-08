@@ -13,6 +13,9 @@ var carrotSpeak = false;
 var rabbitSpeak = false;
 var responsiveVoice, commentNumber, response, voiceList, voice, voiceChoice, storedVoice;
 var water, width, height, x1, x2, y1, y2;
+var lightWater = "#99ebff";
+var mediumWater = "#4ddbff";
+var darkWater = "#00ccff";
 
 //voice = ('US English Female');
 responsiveVoice.setDefaultVoice(voice);
@@ -313,6 +316,7 @@ function boatCross() {
     if (boatLocation === 0) {
         if (carrotParentId === "topDrop" && rabbitParentId === "topDrop" && foxParentId !== "topDrop") {
             bite("carrot");
+            redWater();
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
             winPossible = false;
             document.getElementById("boat").style.bottom = "0%";
@@ -322,6 +326,7 @@ function boatCross() {
             return;
         } else if (rabbitParentId === "topDrop" && foxParentId === "topDrop" && carrotParentId !== "topDrop") {
             bite("rabbit");
+            redWater();
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
             document.getElementById("boat").style.bottom = "0%";
@@ -340,6 +345,7 @@ function boatCross() {
     if (boatLocation === 1) {
         if (carrotParentId === "bottomDrop" && rabbitParentId === "bottomDrop" && foxParentId !== "bottomDrop") {
             bite("carrot");
+            redWater();
             document.getElementById("carrot").setAttribute("src", "images/carrot_bite.png");
             winPossible = false;
             document.getElementById("boat").style.bottom = null;
@@ -349,6 +355,7 @@ function boatCross() {
             return;
         } else if (rabbitParentId === "bottomDrop" && foxParentId === "bottomDrop" && carrotParentId !== "bottomDrop") {
             bite("rabbit");
+            redWater();
             document.getElementById("rabbit").setAttribute("src", "images/Rabbit_bite.png");
             winPossible = false;
             document.getElementById("boat").style.bottom = null;
@@ -366,6 +373,12 @@ function boatCross() {
     } else {
         console.log("boatCross error");
     }
+}
+
+function redWater() {
+    lightWater = "#FF675C";
+    mediumWater = "#CC0E00";
+    darkWater = "#7F0900";
 }
 
 function movementRulesUpdate(carrotParentId, rabbitParentId, foxParentId) {
@@ -448,12 +461,6 @@ function checkWin() {
     }
 }
 
-//window.addEventListener("resize", widthAndHeight);
-//
-//window.onresize = function() {
-//    widthAndHeight();
-//};
-
 function widthAndHeight(){
     
     water = document.getElementById("water");
@@ -527,7 +534,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -537,7 +544,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -547,7 +554,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -557,7 +564,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -567,7 +574,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -585,7 +592,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -595,7 +602,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -605,7 +612,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -615,7 +622,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -625,7 +632,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -635,7 +642,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -645,7 +652,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -655,7 +662,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -665,7 +672,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -675,7 +682,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -685,7 +692,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -695,7 +702,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
     
@@ -705,7 +712,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -715,7 +722,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -725,7 +732,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#00ccff";
+    ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -735,7 +742,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#99ebff";
+    ctx.fillStyle = lightWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -745,7 +752,7 @@ function draw() {
     }
     ctx.lineTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.fillStyle = "#4ddbff";
+    ctx.fillStyle = mediumWater;
     ctx.fill();
     ctx.beginPath();
 
@@ -776,4 +783,7 @@ function reset() {
     win = false;
     carrotSpeak = false;
     rabbitSpeak = false;
+    lightWater = "#99ebff";
+    mediumWater = "#4ddbff";
+    darkWater = "#00ccff";
 }

@@ -100,9 +100,15 @@ function checkLocalStorage() {
         }
         if (localStorage.voicePrefs === "voiceIsOff") {
             document.getElementById("voiceOnOff").innerHTML = "Voice On";
+            console.log("voicePrefs = " + localStorage.voicePrefs);
+        }
+        if (localStorage.sfxPrefs === "sfxIsOff") {
+            document.getElementById("sfxOnOff").innerHTML = "Sound Effects On";
+            console.log("sfxPrefs = " + localStorage.sfxPrefs);
         }
         if (localStorage.storedVoice !== undefined) {
             voice = localStorage.storedVoice;
+            responsiveVoice.setDefaultVoice(voice);
             console.log("voice = " + voice);
         }
         if (localStorage.storedVoice === undefined) {
@@ -128,6 +134,23 @@ function voiceOnOff() {
         document.getElementById("voiceOnOff").innerHTML = "Voice Off";
         localStorage.setItem("voicePrefs", "voiceIsOn");
         console.log("voice = voiceIsOn");
+    } else {
+        return;
+    }
+}
+
+document.querySelector('#sfxOnOff').addEventListener('click', sfxOnOff);
+
+function sfxOnOff() {
+    console.log("inside sfxOnOff function");
+    if (document.getElementById("sfxOnOff").innerHTML === "Sound Effects Off") {
+        document.getElementById("sfxOnOff").innerHTML = "Sound Effects On";
+        localStorage.setItem("sfxPrefs", "sfxIsOff");
+        console.log("sfx = sfxIsOff");
+    } else if (document.getElementById("sfxOnOff").innerHTML === "Sound Effects On") {
+        document.getElementById("sfxOnOff").innerHTML = "Sound Efects Off";
+        localStorage.setItem("sfxPrefs", "sfxIsOn");
+        console.log("sfx = sfxIsOn");
     } else {
         return;
     }
@@ -259,13 +282,14 @@ function dropBoat(ev) {
 }
 
 function bite(object) {
-    if (localStorage.voicePrefs === "voiceIsOff") {
-            return;
-        } else { 
+
     if (object === "carrot") {
         if (carrotBite === false) {
+            if (localStorage.sfxPrefs !== "sfxIsOff") {
             var audio = new Audio('audio/chomp.wav');
             audio.play();
+        }
+        if (localStorage.voicePrefs !== "voiceIsOff") {
             carrotBite = true;
             console.log("carrotBite = " + carrotBite);
             document.getElementById("reset").style.left = "2%";
@@ -279,26 +303,32 @@ function bite(object) {
             return;
         }
     }
+    }
     if (object === "rabbit") {
         if (rabbitBite === false) {
-            var audio = new Audio('audio/comic_bite.wav');
-            audio.play();
-            rabbitBite = true;
-            console.log("rabbitBite = " + rabbitBite);
-            document.getElementById("reset").style.left = "2%";
-            if (rabbitSpeak === false) {
-                setTimeout(function () {
-                    commentNumber = (Math.floor(Math.random() * 12));
-                    jsonParse("riverComments.json", 1, commentNumber, "true");
-                    rabbitSpeak = true;
-                }, 700);
+            if (localStorage.sfxPrefs !== "sfxIsOff") {
+
+                var audio = new Audio('audio/comic_bite.wav');
+                audio.play();
             }
+            if (localStorage.voicePrefs !== "voiceIsOff") {
+
+                rabbitBite = true;
+                console.log("rabbitBite = " + rabbitBite);
+                document.getElementById("reset").style.left = "2%";
+                if (rabbitSpeak === false) {
+                    setTimeout(function () {
+                        commentNumber = (Math.floor(Math.random() * 12));
+                        jsonParse("riverComments.json", 1, commentNumber, "true");
+                        rabbitSpeak = true;
+                    }, 700);
+                }
+                return;
+            }
+        } else {
             return;
         }
-    } else {
-        return;
     }
-}
 }
 function boatCross() {
     var carrotParentNode = document.getElementById("carrot").parentNode;
@@ -461,14 +491,14 @@ function checkWin() {
     }
 }
 
-function widthAndHeight(){
-    
+function widthAndHeight() {
+
     water = document.getElementById("water");
     width = window.innerWidth
             || document.documentElement.clientWidth
             || document.body.clientWidth;
     height = water.clientHeight;
-    
+
     x1 = window.innerWidth
             || document.documentElement.clientWidth
             || document.body.clientWidth;
@@ -477,10 +507,11 @@ function widthAndHeight(){
     console.log("y1 water.height = " + y1);
     y2 = water.clientHeight;
     console.log("y2 water.height = " + y2);
-    
+
     document.getElementById("canvasWater").setAttribute("width", width);
     document.getElementById("canvasWater").setAttribute("height", height);
-};
+}
+;
 
 function draw() {
     var canvas = document.getElementById("canvasWater");
@@ -705,7 +736,7 @@ function draw() {
     ctx.fillStyle = darkWater;
     ctx.fill();
     ctx.beginPath();
-    
+
     for (x = -100; x <= width; x += 1) {
         y = ((height / 20) * 16) - Math.sin((x - waterFlow - 15) * Math.PI / 45) * 9;
         ctx.lineTo(x, y);
